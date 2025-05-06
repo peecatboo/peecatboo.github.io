@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yusi Xu | E-Learning Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -23,15 +24,56 @@
 
   <main>
     <section id="about">
-      <h2>About Me</h2>
-      <p>I am a PhD candidate specializing in instructional design and e-learning development. With expertise in tools like Articulate Storyline, Xyleme, and SCORM packaging, I design impactful digital learning experiences based on models such as ADDIE and Kirkpatrick.</p>
+      <div class="about-container">
+        <h2><i class="fas fa-user-tie"></i> About Me</h2>
+        <p>
+          I'm an experienced <strong>eLearning Developer</strong> with over <strong>eight years</strong> of expertise in creating interactive, learner-centered training solutions. My work combines solid instructional design foundations—ADDIE, SAM, and Kirkpatrick's models—with technical proficiency in a wide range of authoring tools, including <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, <strong>Xyleme</strong>, <strong>Camtasia</strong>, and the <strong>Adobe Creative Cloud Suite</strong>.
+        </p>
+        <p>
+          I specialize in building SCORM-compliant modules for <strong>LMS integration</strong>, transforming complex concepts into engaging digital learning experiences. Whether collaborating with cross-functional teams or developing courses independently, I bring both <strong>creative design thinking</strong> and <strong>technical precision</strong> to every project.
+        </p>
+        <p>
+          Passionate about improving learning outcomes through thoughtful design, I invite you to explore my portfolio and see how I turn instructional goals into impactful eLearning.
+        </p>
+      </div>
     </section>
 
     <section id="projects">
-      <h2>Featured Courses</h2>
+      <h2><i class="fas fa-laptop-code"></i> Featured Courses</h2>
       
       <div class="course-category">
-        <h3>Interactive Simulations (Storyline 360)</h3>
+        <h3><i class="fas fa-rocket"></i> Rapid Development Courses (Xyleme)</h3>
+        <div class="course-grid">
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/compliance.jpg" alt="Compliance Training Preview">
+              <div class="course-overlay">
+                <a href="https://yourlink.com/course5" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Compliance Training</h3>
+              <p>Quick-to-deploy compliance course with interactive elements and real-time tracking. Perfect for rapid updates and modifications.</p>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/product-training.jpg" alt="Product Training Preview">
+              <div class="course-overlay">
+                <a href="https://yourlink.com/course6" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </div>
+            <div class="course-content">
+              <h3>Product Training</h3>
+              <p>Efficient product knowledge training with interactive elements and mobile-first design. Easy to update and maintain.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="course-category">
+        <h3><i class="fas fa-gamepad"></i> Interactive Simulations (Storyline 360)</h3>
         <div class="course-grid">
           <article class="course-card">
             <div class="course-image">
@@ -62,7 +104,7 @@
       </div>
 
       <div class="course-category">
-        <h3>Mobile-Friendly Courses (Rise 360)</h3>
+        <h3><i class="fas fa-mobile-alt"></i> Mobile-Friendly Courses (Rise 360)</h3>
         <div class="course-grid">
           <article class="course-card">
             <div class="course-image">
@@ -91,60 +133,74 @@
           </article>
         </div>
       </div>
+    </section>
 
-      <div class="course-category">
-        <h3>Rapid Development Courses (Xyleme)</h3>
-        <div class="course-grid">
-          <article class="course-card">
-            <div class="course-image">
-              <img src="images/compliance.jpg" alt="Compliance Training Preview">
-              <div class="course-overlay">
-                <a href="https://yourlink.com/course5" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Compliance Training</h3>
-              <p>Quick-to-deploy compliance course with interactive elements and real-time tracking. Perfect for rapid updates and modifications.</p>
-            </div>
-          </article>
+    <section id="skills">
+      <h2><i class="fas fa-lightbulb"></i> Skills & Tools</h2>
 
-          <article class="course-card">
-            <div class="course-image">
-              <img src="images/product-training.jpg" alt="Product Training Preview">
-              <div class="course-overlay">
-                <a href="https://yourlink.com/course6" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Product Training</h3>
-              <p>Efficient product knowledge training with interactive elements and mobile-first design. Easy to update and maintain.</p>
-            </div>
-          </article>
+      <div class="skills-container">
+        <div class="skills-category">
+          <h3><i class="fas fa-pen-fancy"></i> Authoring & Design Tools</h3>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> Articulate Storyline 360 & Rise</li>
+            <li><i class="fas fa-circle-check"></i> Xyleme LCMS</li>
+            <li><i class="fas fa-circle-check"></i> Adobe Captivate</li>
+            <li><i class="fas fa-circle-check"></i> Camtasia</li>
+            <li><i class="fas fa-circle-check"></i> Adobe Creative Cloud Suite</li>
+            <li><i class="fas fa-circle-check"></i> Canvas, Blackboard, Moodle</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3><i class="fas fa-graduation-cap"></i> Instructional Design</h3>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> ADDIE, SAM Models</li>
+            <li><i class="fas fa-circle-check"></i> Kirkpatrick's Four Levels</li>
+            <li><i class="fas fa-circle-check"></i> Curriculum & Module Design</li>
+            <li><i class="fas fa-circle-check"></i> Assessment & Evaluation Strategy</li>
+            <li><i class="fas fa-circle-check"></i> Adult Learning Theory</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3><i class="fas fa-microchip"></i> Technical</h3>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> SCORM 1.2 / 2004 Packaging</li>
+            <li><i class="fas fa-circle-check"></i> xAPI / Experience API</li>
+            <li><i class="fas fa-circle-check"></i> AI-Assisted Learning Design</li>
+            <li><i class="fas fa-circle-check"></i> HTML/CSS Basics</li>
+            <li><i class="fas fa-circle-check"></i> eLearning Publishing & QA Testing</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3><i class="fas fa-chart-bar"></i> Data & Analysis</h3>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> Linear Regression, ANOVA (basic)</li>
+            <li><i class="fas fa-circle-check"></i> SAS, SPSS, JMP</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3><i class="fas fa-comments"></i> Languages</h3>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> English (Fluent)</li>
+            <li><i class="fas fa-circle-check"></i> Mandarin (Native)</li>
+            <li><i class="fas fa-circle-check"></i> Cantonese (Fluent)</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Articulate Storyline 360 & Rise</li>
-        <li>Xyleme LCMS</li>
-        <li>SCORM 1.2 / 2004 Packaging</li>
-        <li>Instructional Design (ADDIE, SAM, Kirkpatrick)</li>
-        <li>Canvas, Blackboard, Moodle</li>
-        <li>HTML/CSS Basics</li>
-      </ul>
-    </section>
-
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: yusi.zhang@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <p>Email: xuyusi917@gmail.com</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/yusixu/" target="_blank">My LinkedIn</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Yusi Zhang. All rights reserved.</p>
+    <p>© 2025 Yusi Xu. All rights reserved.</p>
   </footer>
 </body>
 </html>
