@@ -1,0 +1,206 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.MultipleChoiceInnerWrap {
+    @include generate-style-block('MultipleChoiceQuestion') {}
+    .MultipleChoiceQuestionStem {
+        @include generate-style-block('MultipleChoiceQuestionStem') {
+            // @full
+            color: if(variable-exists(multiplechoice-color-stem-text), $multiplechoice-color-stem-text, $questions-color-text-dark);
+        }
+    }
+    .MultipleChoiceQuestionOptions {
+        @include generate-style-block('MultipleChoiceQuestionOptions') {
+            // @full
+            list-style: if(variable-exists(multiplechoice-options-list-style), $multiplechoice-options-list-style, none);
+            margin-left: if(variable-exists(multiplechoice-options-margin-left), $multiplechoice-options-margin-left, 0);
+            padding-left: if(variable-exists(multiplechoice-options-padding-left), $multiplechoice-options-padding-left, $questions-padding);
+        }
+        .MultipleChoiceQuestionOptionWrapper {
+            @include generate-style-block('MultipleChoiceQuestionOptionWrapper') {
+                // @full
+                display: if(variable-exists(multiplechoice-option-wrapper-display), $multiplechoice-option-wrapper-display, block);
+                border: if(variable-exists(multiplechoice-option-wrapper-border), $multiplechoice-option-wrapper-border, $questions-border-width $questions-border-style $questions-color-border);
+                background: if(variable-exists(multiplechoice-option-wrapper-background), $multiplechoice-option-wrapper-background, #FFF);
+                margin: if(variable-exists(multiplechoice-option-wrapper-margin), $multiplechoice-option-wrapper-margin, 0.1em 0);
+                transition: if(variable-exists(multiplechoice-option-wrapper-transitions), $multiplechoice-option-wrapper-transitions, 'background-color 300ms, border-color 300ms');
+            }
+            label {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperLabel') {
+                    display: flex;
+                }
+            }
+            &:after {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperAfter') {
+                    // @full
+                    content: "";
+                    display: block;
+                    height: 0;
+                    clear: both;
+                    visibility: hidden;
+                }
+            }
+
+            &.Enabled {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperEnabled') {
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperEnabledHover') {
+                        // @full
+                        background: if(variable-exists(multiplechoice-option-wrapper-background), $multiplechoice-option-wrapper-background, #FFF);
+                        border: if(variable-exists(multiplechoice-option-wrapper-border), $multiplechoice-option-wrapper-border, $questions-border-width $questions-border-style $questions-color-border);
+                    }
+                }
+                &.Selected {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperSelected') {
+                        // @full
+                        background: if(variable-exists(multiplechoice-option-wrapper-hover-background), $multiplechoice-option-wrapper-hover-background, lighten($questions-color-border, 5%));
+                        border: if(variable-exists(multiplechoice-option-wrapper-hover-border), $multiplechoice-option-wrapper-hover-border, $questions-border-width $questions-border-style darken($questions-color-border, 10%));
+                    }
+                    .MultpleChoiceQuestionOptionDistractorWrapper {
+                        @include generate-style-block('MultpleChoiceQuestionOptionWrapperEnabledSelectedDistractorWrapper') {
+                            // @full
+                            border: if(variable-exists(multiplechoice-option-distractor-wrapper-hover-border), $multiplechoice-option-distractor-wrapper-hover-border, $questions-border-width $questions-border-style darken($questions-color-border, 10%));
+                            border-width: if(variable-exists(multiplechoice-option-distractor-wrapper-hover-border-width), $multiplechoice-option-distractor-wrapper-hover-border-width, 0 0 0 $questions-border-width);
+                        }
+                    }
+                }
+                &.Desktop:hover {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperEnabledDesktopHover') {
+                        // @full
+                        background: if(variable-exists(multiplechoice-option-wrapper-hover-background), $multiplechoice-option-wrapper-hover-background, lighten($questions-color-border, 5%));
+                        border: if(variable-exists(multiplechoice-option-wrapper-hover-border), $multiplechoice-option-wrapper-hover-border, $questions-border-width $questions-border-style darken($questions-color-border, 10%));
+                    }
+                }
+            }
+            &.Correct, &.Selected.Correct {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperCorrect') {
+                    // @full
+                    border: if(variable-exists(multiplechoice-option-wrapper-correct-border), $multiplechoice-option-wrapper-correct-border, $questions-border-width $questions-border-style $questions-color-correct);
+                    background: if(variable-exists(multiplechoice-option-wrapper-correct-background), $multiplechoice-option-wrapper-correct-background, lighten($questions-color-correct, 45%));
+                    color: if(variable-exists(multiplechoice-color-option-wrapper-correct-text), $multiplechoice-color-option-wrapper-correct-text, $questions-color-correct);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperCorrectResponseFeedback') {
+                        // @full
+                        display: if(variable-exists(multiplechoice-responsefeedback-showing-display), $multiplechoice-responsefeedback-showing-display, block);
+                    }
+                }
+                @if $multiplechoice-show-feedback-icons == true {
+                    .FeedbackIcon.Correct {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperCorrectFeedbackIconCorrectIcon') {
+                            // @full
+                            display: if(variable-exists(multiplechoice-responsefeedback-icon-showing-display), $multiplechoice-responsefeedback-icon-showing-display, inline-block);
+                            fill: if(variable-exists(multiplechoice-color-responsefeedback-icon-correct-fill), $multiplechoice-color-responsefeedback-icon-correct-fill, $questions-color-correct);
+                        }
+                    }
+                    .MultipleChoiceQuestionOption {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperCorrectOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.Incorrect, &.Selected.Incorrect {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperIncorrect') {
+                    // @full
+                    border: if(variable-exists(multiplechoice-option-wrapper-incorrect-border), $multiplechoice-option-wrapper-incorrect-border, $questions-border-width $questions-border-style $questions-color-incorrect);
+                    background: if(variable-exists(multiplechoice-option-wrapper-incorrect-background), $multiplechoice-option-wrapper-incorrect-background, lighten($questions-color-incorrect, 40%));
+                    color: if(variable-exists(multiplechoice-color-option-wrapper-incorrect-text), $multiplechoice-color-option-wrapper-incorrect-text, $questions-color-incorrect);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperIncorrectResponseFeedback') {
+                        // @full
+                        display: if(variable-exists(multiplechoice-responsefeedback-showing-display), $multiplechoice-responsefeedback-showing-display, block);
+                    }
+                }
+                @if $multiplechoice-show-feedback-icons == true {
+                    .FeedbackIcon.Incorrect {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperIncorrectFeedbackIconIncorrectIcon') {
+                            // @full
+                            display: if(variable-exists(multiplechoice-responsefeedback-icon-showing-display), $multiplechoice-responsefeedback-icon-showing-display, inline-block);
+                            fill: if(variable-exists(multiplechoice-color-responsefeedback-icon-incorrect-fill), $multiplechoice-color-responsefeedback-icon-incorrect-fill, $questions-color-incorrect);
+                        }
+                    }
+                    .MultipleChoiceQuestionOption {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperIncorrectOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.AlsoCorrect {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperAlsoCorrect') {
+                    // @full
+                    border: if(variable-exists(multiplechoice-option-wrapper-alsoCorrect-border), $multiplechoice-option-wrapper-alsoCorrect-border, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                    background: if(variable-exists(multiplechoice-option-wrapper-alsoCorrect-background), $multiplechoice-option-wrapper-alsoCorrect-background, lighten($questions-color-alsoCorrect, 40%));
+                    color: if(variable-exists(multiplechoice-color-option-wrapper-alsoCorrect-text), $multiplechoice-color-option-wrapper-alsoCorrect-text, $questions-color-alsoCorrect);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MultipleChoiceQuestionOptionWrapperAlsoCorrectResponseFeedback') {
+                        // @full
+                        display: if(variable-exists(multiplechoice-responsefeedback-showing-display), $multiplechoice-responsefeedback-showing-display, block);
+                    }
+                }
+                @if $multiplechoice-show-feedback-icons == true {
+                    .FeedbackIcon.AlsoCorrect {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperalsoCorrectFeedbackIconAlsoCorrectIcon') {
+                            // @full
+                            display: if(variable-exists(multiplechoice-responsefeedback-icon-showing-display), $multiplechoice-responsefeedback-icon-showing-display, inline-block);
+                            fill: if(variable-exists(multiplechoice-color-responsefeedback-icon-alsocorrect-fill), $multiplechoice-color-responsefeedback-icon-alsocorrect-fill, $questions-color-alsoCorrect);
+                        }
+                    }
+                    .MultipleChoiceQuestionOption {
+                        @include generate-style-block('MultipleChoiceQuestionOptionWrapperAlsoCorrectOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .FeedbackIcon {
+                @include generate-style-block('MultipleChoiceQuestionOptionWrapperFeedbackIcon') {
+                    // @full
+                    display: if(variable-exists(multiplechoice-responsefeedback-icon-hidden-display), $multiplechoice-responsefeedback-icon-hidden-display, none);
+                    position: if(variable-exists(multiplechoice-responsefeedback-icon-position), $multiplechoice-responsefeedback-icon-position, static);
+                }
+            }
+            .MultipleChoiceQuestionOptionInputWrapper {
+                @include generate-style-block('MultipleChoiceQuestionOptionInputWrapper') {
+                    // @full
+                    float: if(variable-exists(multiplechoice-option-input-wrapper-float), $multiplechoice-option-input-wrapper-float, $left);
+                    padding:if(variable-exists(multiplechoice-option-input-wrapper-padding), $multiplechoice-option-input-wrapper-padding, $questions-padding);
+                    border-right: if(variable-exists(multiplechoice-option-input-wrapper-border-right), $multiplechoice-option-input-wrapper-border-right, none);
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+            }
+            .MultpleChoiceQuestionOptionDistractorWrapper {
+                @include generate-style-block('MultpleChoiceQuestionOptionDistractorWrapper') {
+                    // @full
+                    flex: 1 1 100%;
+                    padding:if(variable-exists(multiplechoice-option-distractor-wrapper-padding), $multiplechoice-option-distractor-wrapper-padding, $questions-padding);
+                    border: if(variable-exists(multiplechoice-option-distractor-wrapper-border), $multiplechoice-option-distractor-wrapper-border, $questions-border-width $questions-border-style $questions-color-border);
+                    border-width: if(variable-exists(multiplechoice-option-distractor-wrapper-border-width), $multiplechoice-option-distractor-wrapper-border-width, 0 0 0 $questions-border-width);
+                    border-left-width: if(variable-exists(multiplechoice-option-distractor-wrapper-border-left-width), $multiplechoice-option-distractor-wrapper-border-left-width, $questions-border-width);
+                    line-height: if(variable-exists(multiplechoice-option-distractor-wrapper-line-height), $multiplechoice-option-distractor-wrapper-line-height, 1.5em);
+                }
+            }
+        }
+    }
+}

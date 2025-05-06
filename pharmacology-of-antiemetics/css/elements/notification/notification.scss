@@ -1,0 +1,116 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@import 'toastr.scss';
+@import 'toastr-rtl-support.scss';
+
+.NotificationWrapper {
+    @include generate-style-block('NotificationWrapper') {
+        // @full
+        padding-top: 10px;
+    }
+    .PopupTitlebar {
+        @include generate-style-block('NotificationPopupTitlebar') {
+            // @full
+            display: none;
+        }
+    }
+    .PopupButtonsWrapper {
+        @include generate-style-block('NotificationPopupButtonsWrapper') {
+            // @full
+            background-color: if(variable-exists(notification-color-buttons-wrapper-background), $notification-color-buttons-wrapper-background, #f0f0f0);
+            border-radius: if(variable-exists(notification-buttons-wrapper-border-radius), $notification-buttons-wrapper-border-radius, 0 0 10px 10px);
+            border-top: if(variable-exists(notification-buttons-wrapper-border-top), $notification-buttons-wrapper-border-top, solid 1px);
+            border-top-color: if(variable-exists(notification-color-buttons-wrapper-border-top), $notification-color-buttons-wrapper-border-top, #d0d0d0);
+            margin: if(variable-exists(notification-buttons-wrapper-margin), $notification-buttons-wrapper-margin, 10px 0 0);
+            padding: if(variable-exists(notification-buttons-wrapper-padding), $notification-buttons-wrapper-padding, 5px) if(variable-exists(notification-buttons-wrapper-padding), $notification-buttons-wrapper-padding, 5px) 0 if(variable-exists(notification-buttons-wrapper-padding), $notification-buttons-wrapper-padding, 5px);
+            box-sizing: border-box;
+        }
+        .PopupButtons {
+            .NotificationButton {
+                @include generate-style-block('NotificationButton') {
+                    // @full
+                    padding: 8px 20px;
+                    margin-bottom: if(variable-exists(notification-buttons-wrapper-padding), $notification-buttons-wrapper-padding, 5px);
+                }
+            }
+        }
+    }
+    .NotificationContent {
+        @include generate-style-block('NotificationContent') {
+            // @full
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+}
+.AlertWrapper {
+    .AlertButton {
+        @include generate-style-block('NotificationAlertButton') {
+            // @full
+        }
+    }
+}
+.ConfirmWrapper {
+    & {
+        @include generate-style-block('ConfirmWrapper') {
+            // @full
+            max-width: 40%;
+        }
+    }
+    .ConfirmButton {
+        @include generate-style-block('NotificationConfirmButton') {
+            // @full
+        }
+    }
+}
+.NotifyWrapper {
+    @include generate-style-block('NotificationNotifyWrapper') {
+        // @full
+        user-select: none;
+    }
+    .NotifyTitle {
+        @include generate-style-block('NotificationNotifyTitle') {
+            // @full
+        }
+    }
+    .NotifyMessage {
+        @include generate-style-block('NotificationNotifyMessage') {
+            // @full
+        }
+    }
+    &.NotifySuccess {
+        @include generate-style-block('NotificationSuccess') {
+            // @full
+            background-color: if(variable-exists(notification-color-success), $notification-color-success, $elements-color-correct);
+        }
+    }
+    &.NotifyError {
+        @include generate-style-block('NotificationNotifyError') {
+            // @full
+            background-color: if(variable-exists(notification-color-error), $notification-color-error, $elements-color-incorrect);
+        }
+    }
+    &.NotifyInfo {
+        @include generate-style-block('NotificationNotifyInfo') {
+            // @full
+            background-color: if(variable-exists(notification-color-info), $notification-color-info, $elements-color-branding1);
+        }
+    }
+    &.NotifyWarning {
+        @include generate-style-block('NotificationNotifyWarning') {
+            // @full
+            background-color: if(variable-exists(notification-color-warning), $notification-color-warning, #f89406);
+        }
+    }
+}

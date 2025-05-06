@@ -1,0 +1,242 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.SequenceActivity {
+    @include generate-style-block('SequenceActivity') {}
+    .SequenceActivityInnerWrap {
+        @include generate-style-block('SequenceActivityInnerWrap') {}
+        .SequenceActivityOptionsWrapper {
+            @include generate-style-block('SequenceActivityOptionsWrapper') {
+                // @basic
+                font-size: if(variable-exists(sequenceActivity-font-size), $sequenceActivity-font-size, 1em);
+                font-family: if(variable-exists(sequenceActivity-font-body), $sequenceActivity-font-body, $elements-font-body);
+                font-weight: if(variable-exists(sequenceActivity-font-weight), $sequenceActivity-font-weight, $elements-font-weight);
+                color: if(variable-exists(sequenceActivity-color-text), $sequenceActivity-color-text, $elements-color-text-dark);
+                // @full
+                list-style: none;
+                padding-#{$left}: if(variable-exists(sequenceActivity-option-list-padding-left), $sequenceActivity-option-list-padding-left, 0);
+                margin-#{$left}: 0;
+            }
+
+            .SequnceActivityOptionWrapper {
+                @include generate-style-block('SeqeunceActivityOptionWrapper') {
+                    // @basic
+                    background: if(variable-exists(sequenceActivity-option-background), $sequenceActivity-option-background, #FFF);
+                    box-shadow: if(variable-exists(sequenceActivity-option-box-shadow), $sequenceActivity-option-box-shadow, $elements-box-shadow-dimensions $elements-color-alsoCorrect);
+                    color: if(variable-exists(sequenceActivity-color-option-text), $sequenceActivity-color-option-text, $elements-color-text-dark);
+                    // @full
+                    -moz-user-select: none;
+                    -o-user-select: none;
+                    -khtml-user-select: none;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    border: if(variable-exists(sequenceActivity-option-border), $sequenceActivity-option-border, $elements-border-width $elements-border-style darken($elements-color-border, 20%));
+                    margin: side-values(if(variable-exists(sequenceActivity-option-list-margin), $sequenceActivity-option-list-margin, $elements-margin/2 0));
+                    padding: side-values(if(variable-exists(sequenceActivity-option-padding), $sequenceActivity-option-padding, $elements-padding));
+                }
+
+                &:after {
+                    @include generate-style-block('SeqeunceActivityOptionWrapperAfter') {
+                        // @basic
+                        content: "''";
+                        display: block;
+                        height: 0;
+                        clear: both;
+                        visibility: hidden;
+                    }
+                }
+
+                &.Enabled {
+                    @include generate-style-block('SeqeunceActivityOptionWrapperEnabled') {
+                        opacity: 1;
+                    }
+                }
+
+                &.Disabled {
+                    @include generate-style-block('SeqeunceActivityOptionWrapperDisabled') {
+                        opacity: .7;
+                    }
+                }
+
+                &.SequenceActivityDraggingChosen {
+                    @include generate-style-block('SeqeunceActivityOptionDraggingChosen') {
+                        box-shadow: 0 5px 20px if(variable-exists(sequenceActivity-color-text), $sequenceActivity-color-text, $questions-color-text-dark);
+                    }
+
+                    .SequenceActivityHandle {
+                        @include generate-style-block('SeqeunceActivityOptionDraggingChosenHandle') {
+                            cursor: ns-resize;
+                            cursor: -webkit-grabbing;
+                        }
+                    }
+                }
+
+                &.Correct, &.Selected.Correct {
+                    @include generate-style-block('SeqeunceActivityOptionCorrect') {
+                        // @basic
+                        box-shadow: if(variable-exists(sequenceActivity-option-box-shadow), $sequenceActivity-option-box-shadow, 0 0 6px $questions-color-alsoCorrect);
+                        background: if(variable-exists(sequenceActivity-option-background-correct), $sequenceActivity-option-background-correct, lighten($elements-color-correct, 60%));
+                        color: if(variable-exists(sequenceActivity-color-option-text-correct), $sequenceActivity-color-option-text-correct, $elements-color-text-dark);
+                        // @full
+                        border: if(variable-exists(sequenceActivity-option-border-correct), $sequenceActivity-option-border-correct, $elements-border-width $elements-border-style $elements-color-correct);
+                    }
+
+                    @if $sequenceActivity-show-feedback-icons == true {
+                        .FeedbackIcon.Correct {
+                            @include generate-style-block('SeqeunceActivityFeedbackIconCorrect') {
+                                // @basic
+                                // @full
+                                display: if(variable-exists(sequenceActivity-responsefeedback-icon-showing-display), $sequenceActivity-responsefeedback-icon-showing-display, inline-block);
+                                fill: if(variable-exists(sequenceActivity-color-responsefeedback-icon-correct-fill), $sequenceActivity-color-responsefeedback-icon-correct-fill, $elements-color-correct);
+                            }
+                        }
+                    }
+                }
+
+                &.Incorrect, &.Selected.Incorrect {
+                    @include generate-style-block('SeqeunceActivityOptionIncorrect') {
+                        // @basic
+                        background: if(variable-exists(sequenceActivity-option-background-incorrect), $sequenceActivity-option-background-incorrect, lighten($elements-color-incorrect, 60%));
+                        color: if(variable-exists(sequenceActivity-color-option-text-incorrect), $sequenceActivity-color-option-text-incorrect, $elements-color-text-dark);
+                        // @full
+                        border: if(variable-exists(sequenceActivity-option-border-incorrect), $sequenceActivity-option-border-incorrect, $elements-border-width $elements-border-style $elements-color-incorrect);
+                    }
+
+                    @if $sequenceActivity-show-feedback-icons == true {
+                        .FeedbackIcon.Incorrect {
+                            @include generate-style-block('SeqeunceActivityFeedbackIconIncorrect') {
+                                // @basic
+                                // @full
+                                display: if(variable-exists(sequenceActivity-responsefeedback-icon-showing-display), $sequenceActivity-responsefeedback-icon-showing-display, inline-block);
+                                fill: if(variable-exists(sequenceActivity-color-responsefeedback-icon-incorrect-fill), $sequenceActivity-color-responsefeedback-icon-incorrect-fill, $elements-color-incorrect);
+                            }
+                        }
+                    }
+                }
+
+                .SequenceActivityHandle {
+                    @include generate-style-block('SequenceActivityHandle') {
+                        // @basic
+                        cursor: if(variable-exists(sequenceActivity-handle-cursor), $sequenceActivity-handle-cursor, ns-resize);
+                        cursor: -webkit-grab;
+                        fill: if(variable-exists(sequenceActivity-color-text), $sequenceActivity-color-text, $questions-color-text-dark);
+                        // @full
+                        width: 44px;
+                        height: 44px;
+                        padding: 10px;
+                        box-sizing: border-box;
+                        float: if(variable-exists(sequenceActivity-handle-float), $sequenceActivity-handle-float, $left);
+                        -moz-user-select: none;
+                        -o-user-select: none;
+                        -khtml-user-select: none;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+                }
+
+                .SequenceActivitySelectBox {
+                    @include generate-style-block('SequenceActivitySelectBox') {
+                        // @basic
+                        // @full
+                        display: none;
+                        float: if(variable-exists(sequenceActivity-selectbox-float), $sequenceActivity-selectbox-float, $left);
+                        width: if(variable-exists(sequenceActivity-selectbox-width), $sequenceActivity-selectbox-width, 22%);
+                        height: if(variable-exists(sequenceActivity-selectbox-height), $sequenceActivity-selectbox-height, 35px);
+                    }
+                }
+
+                .SequenceActivityDistractorStem {
+                    @include generate-style-block('SequenceActivityDistractorStem') {
+                        // @basic
+                        // @full
+                        -moz-user-select: none;
+                        -o-user-select: none;
+                        -khtml-user-select: none;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        float: if(variable-exists(sequenceActivity-stem-float), $sequenceActivity-stem-float, $right);
+                        padding: side-values(if(variable-exists(sequenceActivity-stem-padding), $sequenceActivity-stem-padding, 0 $elements-padding));
+                        box-sizing: if(variable-exists(sequenceActivity-stem-box-sizing), $sequenceActivity-stem-box-sizing, border-box);
+                        width: if(variable-exists(sequenceActivity-stem-width), $sequenceActivity-stem-width, calc(100% - 22%));
+                    }
+                }
+
+                .FeedbackIcon {
+                    @include generate-style-block('SeqeunceActivityFeedbackIcon') {
+                        // @basic
+                        // @full
+                        display: if(variable-exists(sequenceActivity-responsefeedback-icon-hidden-display), $sequenceActivity-responsefeedback-icon-hidden-display, none);
+                        float: $left;
+                    }
+                }
+            }
+
+            &.SelectionEnabled {
+                .SeqeunceActivityOptionWrapper {
+                    @include generate-style-block('SeqeunceActivityOptionWrapperSelectionEnabled') {
+                        // @basic
+                        // @full
+                        -moz-user-select: inherit;
+                        -o-user-select: inherit;
+                        -khtml-user-select: inherit;
+                        -webkit-user-select: inherit;
+                        -ms-user-select: inherit;
+                        user-select: inherit;
+                    }
+
+                    .SequenceActivityDistractorStem {
+                        @include generate-style-block('SequenceActivityDistractorStemSelectionEnabled') {
+                            // @basic
+                            // @full
+                            -moz-user-select: inherit;
+                            -o-user-select: inherit;
+                            -khtml-user-select: inherit;
+                            -webkit-user-select: inherit;
+                            -ms-user-select: inherit;
+                            user-select: inherit;
+                        }
+                    }
+                }
+            }
+        }
+
+        .QuestionSolution, .ShowSolutionBtn {
+            @include generate-style-block('SequenceActivitySolutionCommon') {
+                // @basic
+                // @full
+                margin-bottom: if(variable-exists(sequenceActivity-show-solution-margin-bottom), $sequenceActivity-show-solution-margin-bottom, 10px);
+                margin-#{$right}: if(variable-exists(sequenceActivity-show-solution-margin-left), $sequenceActivity-show-solution-margin-left, 2px);
+            }
+        }
+
+        .ShowSolutionBtn {
+            @include generate-style-block('SequenceActivityShowSolutionBtn') {
+                // @basic
+                // @full
+                min-width: if(variable-exists(sequenceActivity-show-solution-btn-width), $sequenceActivity-show-solution-btn-width, 120px);
+                width: auto;
+            }
+
+            &.Closed {
+                @include generate-style-block('SequenceActivityShowSolutionBtnClosed') {
+                    // @basic
+                    // @full
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$table-font-body : $elements-font-body;
+$table-font-size : $elements-font-size;
+$table-font-weight: $elements-font-weight;
+$table-header-copy-font-weight: bold;
+
+$table-header-font-body: $elements-header-font-body;
+$table-header-font-size: $elements-header-font-size;
+$table-header-font-weight: $elements-header-font-weight;
+
+$table-font-body-row-header: $table-header-font-body;
+$table-font-size-row-header: 1em;
+$table-font-weight-row-header: bold;
+$table-text-decoration-row-header: none;
+$table-text-align-row-header: center;
+
+$table-font-body-row-footer: $table-font-body-row-header;
+$table-font-size-row-footer: $table-font-size-row-header;
+$table-font-weight-row-footer: $table-font-weight-row-header;
+$table-text-decoration-row-footer: $table-text-decoration-row-header;
+$table-text-align-row-footer: $table-text-align-row-header;

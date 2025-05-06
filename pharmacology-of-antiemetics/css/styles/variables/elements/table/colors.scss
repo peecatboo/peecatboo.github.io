@@ -1,0 +1,27 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$table-color-border: #ddd;
+$table-color-background-row: #fefefe;
+$table-color-background-row-odd: #f9f9f9;
+$table-color-background-row-hover: #fefefe;
+$table-color-background-row-header: $elements-color-container-background-light; //same as footer
+$table-color-background-row-footer: $table-color-background-row-header;
+$table-color-border-cell: $table-color-border;
+
+$table-color-header-text: $elements-color-text-dark;
+$table-color-footer-text: $table-color-header-text;
+
+$table-box-shadow-color: $elements-box-shadow-color;
+$table-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$table-box-shadow: $table-box-shadow-dimensions $table-box-shadow-color;

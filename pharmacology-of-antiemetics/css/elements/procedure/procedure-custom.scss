@@ -1,0 +1,39 @@
+@include customize-style-block('ProcedureStepUserAction') {
+    overflow: auto;
+    transition: max-height $procedure-transition-duration;
+    &:last-child {
+        margin-bottom: .5em;
+    }
+}
+
+@include customize-style-block('ProcedureStepOpenStepUserAction') {
+    max-height: initial;
+}
+
+@include customize-style-block('ProcedureStepUserActionNestedDiv') {
+    @if $dir==rtl {
+        margin-left: 0;
+    }
+    @else {
+        margin-right: 1.5em;
+    }
+
+    &.Figure {
+        margin-top: 0px;
+    }
+}
+
+.SystemResponse {
+  position: relative;
+  
+  & > .Icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  & > .RichText {
+    padding-left: 50px;
+  }
+  
+}

@@ -1,0 +1,146 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.CourseProgressLink {
+    @include generate-style-block('CourseProgressLink') {
+        // @full
+        position: relative;
+        text-align: center;
+        top: -3px; // WPS-3964 using top instead of margin-top as a FF fix
+    }
+}
+.CourseProgress {
+    @include generate-style-block('CourseProgress') {
+        // @full
+        margin: side-values(if(variable-exists(courseProgress-margin), $courseProgress-margin, 0 auto));
+        display: inline-block;
+    }
+    .CourseProgressList {
+        @include generate-style-block('CourseProgressList') {
+            // @full
+            display: inline-block;
+            margin: side-values(if(variable-exists(courseProgress-list-margin), $courseProgress-list-margin, 0));
+            padding: side-values(if(variable-exists(courseProgress-list-padding), $courseProgress-list-padding, 0));
+            list-style: none;
+        }
+        .CourseProgressListItem {
+            @include generate-style-block('CourseProgressListItem') {
+                // @full
+                float: $left;
+                margin: side-values(if(variable-exists(courseProgress-marker-margin), $courseProgress-marker-margin, 4px 2px 0));
+                width: if(variable-exists(courseProgress-marker-width-mobile), $courseProgress-marker-width-mobile, 3px);
+                height: if(variable-exists(courseProgress-marker-height-mobile), $courseProgress-marker-height-mobile, 3px);
+                background: if(variable-exists(courseProgress-marker-background), $courseProgress-marker-background, rgba(255,255,255,0));
+                border: if(variable-exists(courseProgress-marker-border), $courseProgress-marker-border, 2px solid $component-color-text-lightened);
+                border-radius: corner-values(if(variable-exists(courseProgress-marker-border-radius), $courseProgress-marker-border-radius, 100%));
+            }
+            @media #{$basic-screen-query-narrow} {
+                & {
+                    @include generate-style-block('CourseProgressListNarrowScreen') {
+                        // @full
+                        width: if(variable-exists(courseProgress-marker-width-narrow), $courseProgress-marker-width-narrow, 5px);
+                        height: if(variable-exists(courseProgress-marker-height-narrow), $courseProgress-marker-height-narrow, 5px);
+                    }
+                }
+            }
+            @media #{$basic-screen-query-normal} {
+                & {
+                    @include generate-style-block('CourseProgressListNormalScreen') {
+                        // @full
+                        width: if(variable-exists(courseProgress-marker-width-normal), $courseProgress-marker-width-normal, 5px);
+                        height: if(variable-exists(courseProgress-marker-height-normal), $courseProgress-marker-height-normal, 5px);
+                    }
+                }
+            }
+            &.Active {
+                @include generate-style-block('CourseProgressListItemActive') {
+                    // @full
+                    border-width: if(variable-exists(courseProgress-marker-border-width-active), $courseProgress-marker-border-width-active, 3px);
+                    margin: side-values(if(variable-exists(courseProgress-marker-margin-active), $courseProgress-marker-margin-active, 3px 2px 0));
+                    background: if(variable-exists(courseProgress-marker-background-active), $courseProgress-marker-background-active, 3px);
+                }
+            }
+            &.Progress {
+                @include generate-style-block('CourseProgressListItemProgress') {
+                    // @full
+                    background: if(variable-exists(courseProgress-marker-background-progress), $courseProgress-marker-background-progress, rgba(255,255,255,0.5));
+                }
+            }
+            &.Visible {
+                @include generate-style-block('CourseProgressListItemVisible') {}
+            }
+            &.Hidden {
+                @include generate-style-block('CourseProgressListItemHidden') {}
+            }
+            &.Enabled {
+                @include generate-style-block('CourseProgressListItemEnabled') {}
+            }
+            &.Disabled {
+                @include generate-style-block('CourseProgressListItemDisabled') {}
+            }
+            &.Completed {
+                @include generate-style-block('CourseProgressListItemCompleted') {
+                    // @full
+                    background: if(variable-exists(courseProgress-marker-background-completed), $courseProgress-marker-background-completed, $component-color-text-lightened);
+                }
+            }
+            &.Incompleted {
+                @include generate-style-block('CourseProgressListItemIncompleted') {
+                    // @full
+                    background: none;
+                }
+            }
+            &.Progress.Incompleted {
+                @include generate-style-block('CourseProgressListItemProgressIncompleted') {
+                    // @full
+                    background: if(variable-exists(courseProgress-marker-background-progress-incompleted), $courseProgress-marker-background-progress-incompleted, rgba(255,255,255,0.5));
+                }
+            }
+            &.Completed.Satisfied {
+                @include generate-style-block('CourseProgressListItemCompletedSatisfied') {
+                    // @full
+                    border-color: if(variable-exists(courseProgress-marker-border-color-satisfied), $courseProgress-marker-border-color-satisfied, $component-color-correct);
+                    background-color: if(variable-exists(courseProgress-marker-background-color-satisfied), $courseProgress-marker-background-color-satisfied, $component-color-correct);
+                }
+            }
+            &.Completed.NotSatisfied {
+                @include generate-style-block('CourseProgressListItemCompletedNotSatisfied') {
+                    // @full
+                    border-color: if(variable-exists(courseProgress-marker-border-color-notsatisfied), $courseProgress-marker-border-color-notsatisfied, $component-color-incorrect);
+                    background-color: if(variable-exists(courseProgress-marker-background-color-notsatisfied), $courseProgress-marker-background-color-notsatisfied, $component-color-incorrect);
+                }
+            }
+        }
+    }
+    .CourseProgressRange {
+        @include generate-style-block('CourseProgressRange') {
+            // @full
+            color: if(variable-exists(courseProgress-color-text-lightened), $courseProgress-color-text-lightened, $component-color-text-lightened);
+            margin: side-values(0 5px);
+        }
+    }
+
+    .CourseProgressLength {
+        @include generate-style-block('CourseProgressLength') {
+            // @full
+            color: if(variable-exists(courseProgress-color-text-lightened), $courseProgress-color-text-lightened, $component-color-text-lightened);
+            margin: side-values(0 5px);
+        }
+    }
+
+    .CourseProgressLine {
+        @include generate-style-block('CourseProgressLine') {
+            // @full
+        }
+    }
+}

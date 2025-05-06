@@ -1,0 +1,148 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ChoiceBranch {
+    @include generate-style-block('ChoiceBranch') {
+        // @full
+        margin: if(variable-exists(choicebranch-margin), $choicebranch-margin, $questions-margin) auto;
+        text-align: center;
+    }
+    .ChoiceBranchInnerWrap {
+        @include generate-style-block('ChoiceBranchInnerWrap') {
+            // @full
+            box-sizing: border-box;
+            padding: side-values(if(variable-exists(questions-padding), $questions-padding, 1.5em));
+            border-width: side-values(if(variable-exists(questions-border-width), $questions-border-width, 2px));
+            border-style: if(variable-exists(questions-border-style), $questions-border-style, solid);
+            border-color: if(variable-exists(questions-color-border), $questions-color-border, #E3E3E3);
+            border-radius: corner-values(if(variable-exists(questions-border-radius), $questions-border-radius, 5px));
+            background-color: if(variable-exists(questions-color-container-background-light), $questions-color-container-background-light, #ECF0F1);
+            position: if(variable-exists(questions-position), $questions-position, relative);
+            text-align: $left;
+        }
+        @media #{$basic-screen-query-wide} {
+            @include generate-style-block('ChoiceBranchInnerWrapWideScreen') {
+                // @full
+                display: inline-block;
+                max-width: 590px;
+                min-width: 590px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .ChoiceBranchStem {
+            @include generate-style-block('ChoiceBranchStem') {
+                // @full
+                color: if(variable-exists(choicebranch-color-stem-text), $choicebranch-color-stem-text, $questions-color-text-dark);
+            }
+        }
+        .ChoiceBranchOptions {
+            @include generate-style-block('ChoiceBranchOptions') {
+                // @full
+                list-style: if(variable-exists(choicebranch-options-list-style), $choicebranch-options-list-style, none);
+                margin-#{$left}: if(variable-exists(choicebranch-options-margin-left), $choicebranch-options-margin-left, 0);
+                padding-#{$left}: if(variable-exists(choicebranch-options-padding-left), $choicebranch-options-padding-left, $questions-padding);
+            }
+
+            .ChoiceBranchOptionWrapper {
+                @include generate-style-block('ChoiceBranchOptionWrapper') {
+                    // @full
+                    display: if(variable-exists(choicebranch-option-wrapper-display), $choicebranch-option-wrapper-display, block);
+                    border: if(variable-exists(choicebranch-option-wrapper-border), $choicebranch-option-wrapper-border, $questions-border-width $questions-border-style $questions-color-border);
+                    background: if(variable-exists(choicebranch-option-wrapper-background), $choicebranch-option-wrapper-background, #FFF);
+                    margin: side-values(if(variable-exists(choicebranch-option-wrapper-margin), $choicebranch-option-wrapper-margin, 0.1em 0));
+                    transition: if(variable-exists(choicebranch-option-wrapper-transitions), $choicebranch-option-wrapper-transitions, (background-color $choicebranch-transition-duration, border-color $choicebranch-transition-duration));
+                }
+
+                &:after {
+                    @include generate-style-block('ChoiceBranchOptionWrapperAfter') {
+                        // @full
+                        content: "''";
+                        display: block;
+                        height: 0;
+                        clear: both;
+                        visibility: hidden;
+                    }
+                }
+
+                &.Enabled {
+                    &:hover, &.Selected {
+                        @include generate-style-block('ChoiceBranchOptionWrapperHoverSelected') {
+                            // @full
+                            background: if(variable-exists(choicebranch-option-wrapper-hover-background), $choicebranch-option-wrapper-hover-background, lighten($questions-color-border, 5%));
+                            border: if(variable-exists(choicebranch-option-wrapper-hover-border), $choicebranch-option-wrapper-hover-border, $questions-border-width $questions-border-style darken($questions-color-border, 10%));
+                        }
+                        .MultpleChoiceQuestionOptionDistractorWrapper {
+                            @include generate-style-block('ChoiceBranchMultpleChoiceDistractorWrapper') {
+                                // @full
+                                border: if(variable-exists(choicebranch-option-wrapper-hover-border), $choicebranch-option-wrapper-hover-border, $questions-border-width $questions-border-style darken($questions-color-border, 10%));
+                            }
+                        }
+                    }
+                }
+                .ChoiceBranchOptionInputWrapper {
+                    @include generate-style-block('ChoiceBranchOptionInputWrapper') {
+                        // @full
+                        float: if(variable-exists(choicebranch-option-input-wrapper-float), $choicebranch-option-input-wrapper-float, $left);
+                        padding: side-values(if(variable-exists(choicebranch-option-input-wrapper-padding), $choicebranch-option-input-wrapper-padding, $questions-padding));
+                        border-#{$right}: if(variable-exists(choicebranch-option-input-wrapper-border-right), $choicebranch-option-input-wrapper-border-right, none);
+                    }
+                }
+                .ChoiceBranchOptionDistractorWrapper {
+                    @include generate-style-block('ChoiceBranchOptionDistractorWrapper') {
+                        // @full
+                        overflow: if(variable-exists(choicebranch-option-distractor-wrapper-overflow), $choicebranch-option-distractor-wrapper-overflow, auto);
+                        padding: side-values(if(variable-exists(choicebranch-option-distractor-wrapper-padding), $choicebranch-option-distractor-wrapper-padding, $questions-padding));
+                        border: if(variable-exists(choicebranch-option-distractor-wrapper-border), $choicebranch-option-distractor-wrapper-border, $questions-border-width $questions-border-style $questions-color-border);
+                        border-width: if(variable-exists(choicebranch-option-distractor-wrapper-border-width), $choicebranch-option-distractor-wrapper-border-width, 0);
+                        border-#{$left}-width: if(variable-exists(choicebranch-option-distractor-wrapper-border-left-width), $choicebranch-option-distractor-wrapper-border-left-width, $questions-border-width);
+                    }
+                }
+            }
+        }
+        .ChoiceBranchSubmitWrapper {
+            @include generate-style-block('ChoiceBranchSubmitWrapper') {
+                // @full
+                margin: side-values(if(variable-exists(choicebranch-submit-margin), $choicebranch-submit-margin, 10px 0));
+            }
+            .ChoiceBranchSubmit {
+                @include generate-style-block('ChoiceBranchSubmit') {
+                    // @full
+                    font-size: if(variable-exists(choicebranch-submit-font-size), $choicebranch-submit-font-size, 1.2em);
+                    padding: side-values(if(variable-exists(choicebranch-submit-padding), $choicebranch-submit-padding, 8px 20px));
+                    -webkit-appearance: none;
+                }
+            }
+            .Disabled {
+                @include generate-style-block('ChoiceBranchSubmitWrapperDisabled') {
+                    // @full
+                    cursor: auto;
+                    opacity: 0.3;
+                }
+            }
+        }
+        .ChoiceBranchResetWrapper {
+            @include generate-style-block('ChoiceBranchResetWrapper') {
+                // @full
+                float: if(variable-exists(choicebranch-rest-wrapper-float), $choicebranch-reset-wrapper-float, $right);
+            }
+            .ChoiceBranchReset {
+                @include generate-style-block('ChoiceBranchReset') {
+                    // @full
+                    font-size: if(variable-exists(choicebranch-reset-font-size), $choicebranch-reset-font-size, 1.2em);
+                    padding: side-values(if(variable-exists(choicebranch-reset-padding), $choicebranch-reset-padding, 8px 20px));
+                }
+            }
+        }
+    }
+}

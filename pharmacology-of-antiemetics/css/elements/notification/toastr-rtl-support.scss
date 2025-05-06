@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+/*
+ * Toastr
+ * Version 2.0.1
+ * Copyright 2012 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: John Papa and Hans Fjällemark
+ * Project: https://github.com/CodeSeven/toastr
+ */
+.toast-top-left {
+  @if $dir == rtl {
+    right: 12px;
+    left: auto;
+  } @else {
+    left: 12px;
+  }
+}
+.toast-top-right {
+  @if $dir == rtl {
+    left: 12px;
+    right: auto;
+  } @else {
+    right: 12px;
+  }
+}
+.toast-bottom-right {
+  @if $dir == rtl {
+    left: 12px;
+    right: auto;
+  } @else {
+    right: 12px;
+  }
+}
+.toast-bottom-left {
+  @if $dir == rtl {
+    right: 12px;
+    left: auto;
+  } @else {
+    left: 12px;
+  }
+}
+#toast-container > div {
+  padding: side-values(15px 15px 15px 50px);
+  @if $dir == rtl {
+    background-position: right 15px center;
+  } @else {
+    background-position: 15px center;
+  }
+}

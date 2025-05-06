@@ -1,0 +1,117 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@mixin SidebarRightNotMobile() {
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: if(variable-exists(sidebarRight-not-mobile-position), $sidebarRight-not-mobile-position, relative);
+    #{$right}: if(variable-exists(sidebarRight-not-mobile-right), $sidebarRight-not-mobile-right, auto);
+    #{$left}: auto;
+    top: if(variable-exists(sidebarRight-not-mobile-top), $sidebarRight-not-mobile-top, auto);
+    height: if(variable-exists(sidebarRight-not-mobile-height), $sidebarRight-not-mobile-height, 100%);
+    width: if(variable-exists(sidebarRight-not-mobile-width), $sidebarRight-not-mobile-width, auto);
+    padding: if(variable-exists(sidebarRight-not-mobile-padding), $sidebarRight-not-mobile-padding, 0);
+    background-color: if(variable-exists(sidebarRight-not-mobile-background-color), $sidebarRight-not-mobile-background-color, #f5f5f5);
+    vertical-align: if(variable-exists(sidebarRight-not-mobile-vertical-align), $sidebarRight-not-mobile-vertical-align, top);
+    z-index: if(variable-exists(sidebarRight-not-mobile-z-index), $sidebarRight-not-mobile-z-index, 3);
+
+    .NavigationButton {
+        color: if(variable-exists(sidebarRight-not-mobile-navigation-button-color), $sidebarRight-not-mobile-navigation-button-color, #ccc);
+        fill: if(variable-exists(sidebarRight-not-mobile-navigation-button-fill), $sidebarRight-not-mobile-navigation-button-fill, #ccc);
+        background: if(variable-exists(sidebarRight-not-mobile-navigation-button-background), $sidebarRight-not-mobile-navigation-button-background, transparent);
+
+        .SVGIcon {
+            width: if(variable-exists(sidebarRight-not-mobile-navigation-button-SVGIcon-width), $sidebarRight-not-mobile-navigation-button-SVGIcon-width, 23mm);
+            height: if(variable-exists(sidebarRight-not-mobile-navigation-button-SVGIcon-height), $sidebarRight-not-mobile-navigation-button-SVGIcon-height, 40mm);
+        }
+
+        &:hover {
+            color: if(variable-exists(sidebarRight-not-mobile-navigation-button-hover-color), $sidebarRight-not-mobile-navigation-button-hover-color, #FFF);
+            fill: if(variable-exists(sidebarRight-not-mobile-navigation-button-hover-fill), $sidebarRight-not-mobile-navigation-button-hover-fill, #FFF);
+            background-color: if(variable-exists(sidebarRight-not-mobile-navigation-button-hover-background-color), $sidebarRight-not-mobile-navigation-button-hover-background-color, #B3B3B3);
+        }
+
+        &.Disabled {
+            opacity: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-opacity), $sidebarRight-not-mobile-navigation-button-disabled-opacity, 1);
+            color: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-color), $sidebarRight-not-mobile-navigation-button-disabled-color, #E0E0E0);
+            fill: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-fill), $sidebarRight-not-mobile-navigation-button-disabled-fill, #E0E0E0);
+            cursor: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-cursor), $sidebarRight-not-mobile-navigation-button-disabled-cursor, default);
+
+            &:hover {
+                background-color: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-hover-background-color), $sidebarRight-not-mobile-navigation-button-disabled-hover-background-color, transparent);
+                color: if(variable-exists(sidebarRight-not-mobile-navigation-button-disabled-hover-color), $sidebarRight-not-mobile-navigation-button-disabled-hover-color, #E0E0E0);
+            }
+        }
+    }
+}
+
+@include customize-style-block('SidebarRight') {
+    position: if(variable-exists(sidebarRight-position), $sidebarRight-position, absolute);
+    bottom: if(variable-exists(sidebarRight-bottom), $sidebarRight-bottom, 0);
+    #{$right}: if(variable-exists(sidebarRight-right), $sidebarRight-right, 0);
+    width: if(variable-exists(sidebarRight-width), $sidebarRight-width, 11mm);
+    height: if(variable-exists(sidebarRight-height), $sidebarRight-height, 11mm);
+    z-index: if(variable-exists(sidebarRight-z-index), $sidebarRight-z-index, 6);
+    margin: if(variable-exists(sidebarRight-margin), $sidebarRight-margin, 0);
+    padding: if(variable-exists(sidebarRight-padding), $sidebarRight-padding, 0);
+
+    .NavigationButton {
+        position: if(variable-exists(sidebarRight-navigation-button-position), $sidebarRight-navigation-button-position, absolute);
+        left: if(variable-exists(sidebarRight-navigation-button-left), $sidebarRight-navigation-button-left, 0);
+        top: if(variable-exists(sidebarRight-navigation-button-top), $sidebarRight-navigation-button-top, 0);
+        background: if(variable-exists(sidebarRight-navigation-button-background), $sidebarRight-navigation-button-background, rgba(17, 17, 17, 0.35));
+        width: if(variable-exists(sidebarRight-navigation-button-width), $sidebarRight-navigation-button-width, 100%);
+        min-width: if(variable-exists(sidebarRight-navigation-button-min-width), $sidebarRight-navigation-button-min-width, 100%);
+        height: if(variable-exists(sidebarRight-navigation-button-height), $sidebarRight-navigation-button-height, 100%);
+        min-height: if(variable-exists(sidebarRight-navigation-button-min-height), $sidebarRight-navigation-button-min-height, 100%);
+        cursor: if(variable-exists(sidebarRight-navigation-button-cursor), $sidebarRight-navigation-button-cursor, pointer);
+        padding: if(variable-exists(sidebarRight-navigation-button-padding), $sidebarRight-navigation-button-padding, 0);
+        border: if(variable-exists(sidebarRight-navigation-button-border), $sidebarRight-navigation-button-border, none);
+        color: if(variable-exists(sidebarRight-navigation-button-color), $sidebarRight-navigation-button-color, #fff);
+        fill: if(variable-exists(sidebarRight-navigation-button-fill), $sidebarRight-navigation-button-fill, #fff);
+        opacity: if(variable-exists(sidebarRight-navigation-button-opacity), $sidebarRight-navigation-button-opacity, 1);
+        font-weight: if(variable-exists(sidebarRight-navigation-button-font-weight), $sidebarRight-navigation-button-font-weight, normal);
+        font-family: if(variable-exists(sidebarRight-navigation-button-font-family), $sidebarRight-navigation-button-font-family, "Courier New");
+        text-align: if(variable-exists(sidebarRight-navigation-button-text-align), $sidebarRight-navigation-button-text-align, $left);
+        outline: if(variable-exists(sidebarRight-navigation-button-outline), $sidebarRight-navigation-button-outline, 0);
+        border-radius: if(variable-exists(sidebarRight-navigation-button-border-radius), $sidebarRight-navigation-button-border-radius, 0);
+        transition: background-color if(variable-exists(sidebarRight-navigation-button-transition), $sidebarRight-navigation-button-transition, 200ms);
+
+        .SVGIcon {
+            width: if(variable-exists(sidebarRight-navigation-button-SVGIcon-width), $sidebarRight-navigation-button-SVGIcon-width, 100%);
+            height: if(variable-exists(sidebarRight-navigation-button-SVGIcon-height), $sidebarRight-navigation-button-SVGIcon-height, 100%);
+        }
+
+        span {
+            display: if(variable-exists(sidebarRight-navigation-button-span-display), $sidebarRight-navigation-button-span-display, none);
+        }
+
+        &.Disabled {
+            opacity: if(variable-exists(sidebarRight-navigation-button-disabled-opacity), $sidebarRight-navigation-button-disabled-opacity, .2);
+        }
+    }
+
+    @media #{$basic-screen-query-narrow} {
+        @include SidebarRightNotMobile;
+        width: if(variable-exists(sidebarRight-width-narrow), $sidebarRight-width-narrow, auto);
+    }
+
+    @media #{$basic-screen-query-normal} {
+        width: if(variable-exists(sidebarLeft-width-normal), $sidebarLeft-width-normal, auto);
+    }
+
+    @media #{$basic-screen-query-wide} {
+        width: if(variable-exists(sidebarLeft-width-wide), $sidebarLeft-width-wide, auto);
+    }
+}

@@ -1,0 +1,84 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$content-padding: $layout-padding;
+$content-margin: $layout-margin;
+
+$content-border-width: $layout-border-width;
+$content-border-style: $layout-border-style;
+
+$content-transition-duration: $layout-transition-duration;
+
+$content-open-display: $layout-open-display;
+$content-open-overflow: $layout-open-overflow;
+$content-opening-display: $layout-opening-display;
+$content-opening-overflow: $layout-opening-overflow;
+
+$content-closed-display: $layout-closed-display;
+$content-closed-overflow: $layout-closed-overflow;
+$content-closing-display: $layout-closing-display;
+$content-closing-overflow: $layout-closing-overflow;
+
+$content-pageouterwrap-position: absolute;
+$content-pageouterwrap-top: $header-height;
+$content-pageouterwrap-bottom: auto;
+$content-pageouterwrap-left: auto;
+$content-pageouterwrap-right: auto;
+$content-pageouterwrap-oveflow: auto;
+$content-pageouterwrap-width: 100%;
+$content-pageouterwrap-height-fallback: 80%;
+$content-pageouterwrap-height-calc: calc(100% - #{$header-height} - #{$footer-height});
+$content-pageouterwrap-background: $content-color-pageinnerwrap-background;
+
+$content-pageinnerwrap-position: relative;
+$content-pageinnerwrap-width: 100%;
+$content-pageinnerwrap-height: 100%;
+
+$content-body-width: 100%;
+$content-body-height: 100%;
+$content-body-overflow: auto;
+
+/*$content-pagebody-height: auto*/
+$content-pagebody-height: auto;
+$content-pagebody-width: auto;
+$content-pagebody-margin: 0 10%;
+$content-pagebody-width-narrow: auto;
+$content-pagebody-margin-narrow: 0 10%;
+$content-pagebody-width-normal: auto;
+$content-pagebody-margin-normal: 0 10%;
+$content-pagebody-width-wide: 990px;
+$content-pagebody-margin-wide: 0 auto;
+$content-pagebody-padding: 0 0 $content-padding 0;
+$content-pagebody-background: $content-color-pagebody-background;
+$content-pagebody-box-sizing: border-box;
+
+$content-title-margin: 0;
+$content-title-padding: 10px 0;
+
+$content-loader-position: absolute;
+$content-loader-width: 60px;
+$content-loader-height: $content-loader-width;
+
+$content-loader-top-no-calc: 45%;
+$content-loader-left-no-calc: 48%;
+$content-loader-top: calc(50% - #{$content-loader-height}/2);
+$content-loader-left: calc(50% - #{$content-loader-width}/2);
+
+$content-loader-border-style: $layout-border-style;
+$content-loader-border-width: 6px;
+$content-loader-border-radius: 100%;
+$content-loader-border-top: $content-loader-border-style $content-loader-border-width $content-loader-foreground-color;
+$content-loader-border-right: $content-loader-border-style $content-loader-border-width $content-loader-background-color;
+$content-loader-border-bottom: $content-loader-border-style $content-loader-border-width $content-loader-background-color;
+$content-loader-border-left: $content-loader-border-style $content-loader-border-width $content-loader-background-color;
+$content-loader-border-radius: 50%;

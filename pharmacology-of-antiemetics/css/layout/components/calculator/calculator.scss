@@ -1,0 +1,115 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.CalculatorContainer {
+    @include generate-style-block('CalculatorContainer') {
+        // @full
+        max-width: if(variable-exists(calculator-container-width), $calculator-container-width, 200px);
+        height: if(variable-exists(calculator-container-height), $calculator-container-height, auto);
+        padding: if(variable-exists(calculator-container-padding), $calculator-container-padding, 0);
+        margin: 0 auto;
+    }
+        .CalculatorExpression {
+        @include generate-style-block('CalculatorExpression') {
+            // @full
+            font-family: if(variable-exists(calculator-expression-font), $calculator-expression-font, monospace);
+            word-break: if(variable-exists(calculator-expression-word-break), $calculator-expression-word-break, break-all);
+            text-align: if(variable-exists(calculator-expression-textalign), $calculator-expression-textalign, $right);
+            overflow: if(variable-exists(calculator-expression-overflow), $calculator-expression-overflow, auto);
+            max-height: if(variable-exists(calculator-expression-height), $calculator-expression-height, 100px);
+        }
+        .CalculatorExpressionLine {
+                @include generate-style-block('CalculatorExpressionLine') {
+                    // @full
+                    display: if(variable-exists(calculator-expression-line-display), $calculator-expression-line-display, block);
+                    width: if(variable-exists(calculator-input-width), $calculator-input-width, 184px);
+                    margin: if(variable-exists(calculator-input-margin), $calculator-input-margin, 0 5px 5px 5px);
+                    border: if(variable-exists(calculator-expression-border), $calculator-expression-border, 1px dashed #ccc);
+                    padding: if(variable-exists(calculator-expression-padding), $calculator-expression-padding, 1px 1px 1px 2px);
+                }
+                span {
+                @include generate-style-block('CalculatorExpressionLineItem') {
+                    // @full
+                    padding-right: if(variable-exists(calculator-expression-line-span-padding-right), $calculator-expression-line-span-padding-right, 4px);
+                    white-space: if(variable-exists(calculator-expression-line-span-whitespace), $calculator-expression-line-span-whitespace, nowrap);
+                    display: if(variable-exists(calculator-expression-line-span-display), $calculator-expression-line-span-display, inline-block);
+                }
+            }
+        }
+    }
+    .CalculatorBody {
+        @include generate-style-block('CalculatorBody') {
+            // @full
+            font-family: if(variable-exists(calculator-font), $calculator-font, monospace);
+        }
+    }
+    .Row {
+        @include generate-style-block('CalculatorRow') {
+            // @full
+            clear: if(variable-exists(calculator-row-clear), $calculator-row-clear, both);
+        }
+        .Button {
+            @include generate-style-block('CalculatorButton') {
+                // @full
+                font-size: if(variable-exists(calculator-button-font-size), $calculator-button-font-size, 15px);
+                font-family: if(variable-exists(calculator-font), $calculator-font, monospace);
+                padding: if(variable-exists(calculator-button-padding), $calculator-button-padding, 5px);
+            }
+        }
+        .Button.Digit {
+            @include generate-style-block('CalculatorButtonDigit') {
+                // @full
+                width: if(variable-exists(calculator-button-width), $calculator-button-width, 40px);
+                min-width: if(variable-exists(calculator-button-width), $calculator-button-width, 40px);
+                margin: if(variable-exists(calculator-button-margin), $calculator-button-margin, 5px);
+                color: if(variable-exists(calculator-button-color), $calculator-button-color, rgba(255,255,255,1));
+                background-color: if(variable-exists(calculator-digit-background), $calculator-digit-background, rgba(136,158,190,1) !important);
+            }
+        }
+        .Button.Sign {
+            @include generate-style-block('CalculatorButtonSign') {
+                // @full
+                width: if(variable-exists(calculator-button-width), $calculator-button-width, 40px);
+                min-width: if(variable-exists(calculator-button-width), $calculator-button-width, 40px);
+                margin: if(variable-exists(calculator-button-margin), $calculator-button-margin, 5px);
+                color: if(variable-exists(calculator-button-color), $calculator-button-color, rgba(255,255,255,1));
+            }
+        }
+        .Button.Sign.Equals {
+            @include generate-style-block('CalculatorButtonSignEquals') {
+                // @full
+                width: if(variable-exists(calculator-button-equals-width), $calculator-button-equals-width, 90px);
+                min-width: if(variable-exists(calculator-button-equals-width), $calculator-button-equals-width, 90px);
+                color: if(variable-exists(calculator-button-color), $calculator-button-color, rgba(255,255,255,1));
+            }
+        }
+        .CalculatorInput {
+            @include generate-style-block('CalculatorInput') {
+                // @full
+                resize: if(variable-exists(calculator-textarea-resize), $calculator-textarea-resize, none);
+                text-align: if(variable-exists(calculator-textarea-textalign), $calculator-textarea-textalign, $right);
+                height: if(variable-exists(calculator-input-height), $calculator-input-height, 40px);
+                margin: if(variable-exists(calculator-input-margin), $calculator-input-margin, 0 5px 5px 5px);
+                width: if(variable-exists(calculator-input-width), $calculator-input-width, 184px);
+                font-size: if(variable-exists(calculator-input-font-size), $calculator-input-font-size, 15px);
+                overflow: if(variable-exists(calculator-input-overflow), $calculator-input-overflow, hidden);
+            }
+        }
+        .CalculatorInput:focus {
+            @include generate-style-block('CalculatorInputFocus') {
+                // @full
+                outline: if(variable-exists(calculator-textarea-outline), $calculator-textarea-outline, none);
+            }
+        }
+    }
+}

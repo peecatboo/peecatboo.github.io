@@ -1,0 +1,157 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+#PageOuterWrap {
+    @include generate-style-block('PageOuterWrap') {
+        // @full
+        position: if(variable-exists(content-pageouterwrap-position), $content-pageouterwrap-position, absolute);
+        top: if(variable-exists(content-pageouterwrap-top), $content-pageouterwrap-top, 64px);
+        bottom: if(variable-exists(content-pageouterwrap-bottom), $content-pageouterwrap-bottom, auto);
+        left: if(variable-exists(content-pageouterwrap-left), $content-pageouterwrap-left, auto);
+        right: if(variable-exists(content-pageouterwrap-right), $content-pageouterwrap-right, auto);
+        overflow: if(variable-exists(content-pageouterwrap-oveflow), $content-pageouterwrap-oveflow, auto);
+        width: if(variable-exists(content-pageouterwrap-width), $content-pageouterwrap-width, 100%);
+        height: if(variable-exists(content-pageouterwrap-height-fallback), $content-pageouterwrap-height-fallback, 80%); // fallback
+        height: if(variable-exists(content-pageouterwrap-height-calc), $content-pageouterwrap-height-calc, (calc(100% - #{$header-height} - #{$footer-height})));
+        background: if(variable-exists(content-pageouterwrap-background), $content-pageouterwrap-background, #FFF);
+    }
+}
+#PageInnerWrap {
+    @include generate-style-block('PageInnerWrap') {
+        // @full
+        position: if(variable-exists(content-pageinnerwrap-position), $content-pageinnerwrap-position, relative);
+        height: if(variable-exists(content-pageinnerwrap-height), $content-pageinnerwrap-height, 100%);
+        width: if(variable-exists(content-pageinnerwrap-width), $content-pageinnerwrap-width, 100%);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+}
+#PageBodyWrapper {
+    @include generate-style-block('PageBodyWrapper') {
+        flex: 0 1 100%;
+    }
+}
+.Body {
+    @include generate-style-block('Body') {
+        // @full
+        width: if(variable-exists(content-body-width), $content-body-width, 100%);
+        height: if(variable-exists(content-body-height), $content-body-height, 100%);
+        overflow: if(variable-exists(content-body-overflow), $content-body-overflow, auto);
+    }
+}
+#PageBody, .PageBody {
+    @include generate-style-block('PageBody') {
+        // @full
+        width: if(variable-exists(content-pagebody-width), $content-pagebody-width, auto);
+        height: if(variable-exists(content-pagebody-height), $content-pagebody-height, auto);
+        margin: if(variable-exists(content-pagebody-margin), $content-pagebody-margin, 0 10%);
+        padding: if(variable-exists(content-pagebody-padding), $content-pagebody-padding, 0 0 $content-padding 0);
+        color: if(variable-exists(content-color-text-main), $content-color-text-main, #535353);
+        font-family: if(variable-exists(content-font-body), $content-font-body, $layout-font-body);
+        font-size: if(variable-exists(content-font-size), $content-font-size, 1em);
+        font-weight: if(variable-exists(content-font-weight), $content-font-weight, $layout-font-weight);
+        background: if(variable-exists(content-pagebody-background), $content-pagebody-background, #FFF);
+        -webkit-overflow-scrolling: initial;
+        box-sizing: if(variable-exists(content-pagebody-box-sizing), $content-pagebody-box-sizing, border-box);
+    }
+    .ParaBlock {
+        @include generate-style-block('PageBodyParaBlock') {
+            // @full
+            @extend .clearfix;
+        }
+    }
+    &.ControlHeight {
+        @include generate-style-block('PageBodyControlHeight') {
+            // @full
+            height: 100%;
+        }
+    }
+    .Button {
+        @include generate-style-block('PageBodyButton') {
+            // @full
+            font-family: if(variable-exists(content-font-body), $content-font-body, $layout-font-body);
+            font-size: if(variable-exists(content-font-size), $content-font-size, 1em);
+            font-weight: if(variable-exists(content-font-weight), $content-font-weight, $layout-font-weight);
+        }
+    }
+    @media #{$basic-screen-query-narrow} {
+        @include generate-style-block('PageBodyButtonNarrowScreen') {
+            // @full
+            width: if(variable-exists(content-pagebody-width-narrow), $content-pagebody-width-narrow, auto);
+            margin: if(variable-exists(content-pagebody-margin-narrow), $content-pagebody-margin-narrow, 0 10%);
+        }
+    }
+    @media #{$basic-screen-query-normal} {
+        @include generate-style-block('PageBodyButtonNormalScreen') {
+            // @full
+            width: if(variable-exists(content-pagebody-width-normal), $content-pagebody-width-normal, auto);
+            margin: if(variable-exists(content-pagebody-margin-normal), $content-pagebody-margin-normal, 0 10%);
+        }
+    }
+    @media #{$basic-screen-query-wide} {
+        @include generate-style-block('PageBodyButtonWideScreen') {
+            // @full
+            width: if(variable-exists(content-pagebody-width-wide), $content-pagebody-width-wide, 990px);
+            margin: if(variable-exists(content-pagebody-margin-wide), $content-pagebody-margin-wide, 0 auto);
+        }
+    }
+}
+.Title {
+    @include generate-style-block('Title') {
+        // @full
+        margin: if(variable-exists(content-title-margin), $content-title-margin, 0);
+        padding: if(variable-exists(content-title-padding), $content-title-padding, 10px 0);
+    }
+}
+.Spinner {
+    @include generate-style-block('Spinner') {
+        // @full
+        position: if(variable-exists(content-loader-position), $content-loader-position, absolute);
+        width: if(variable-exists(content-loader-width), $content-loader-width, 60px);
+        height: if(variable-exists(content-loader-height), $content-loader-height, 60px);
+        top: if(variable-exists(content-loader-top-no-calc), $content-loader-top-no-calc, 45%);
+        left: if(variable-exists(content-loader-left-no-calc), $content-loader-left-no-calc, 48%);
+        top: calc(if(variable-exists(content-loader-top), $content-loader-top, 50% - 60px/2));
+        left: calc(if(variable-exists(content-loader-left), $content-loader-left, 50% - 60px/2));
+        border-top: if(variable-exists(content-loader-border-top), $content-loader-border-top, $layout-border-style 6px $layout-color-branding1);
+        border-right: if(variable-exists(content-loader-border-right), $content-loader-border-right, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-bottom: if(variable-exists(content-loader-border-bottom), $content-loader-border-bottom, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-left: if(variable-exists(content-loader-border-left), $content-loader-border-left, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-radius: if(variable-exists(content-loader-border-radius), $content-loader-border-radius, 100%);
+        animation: rotation .6s infinite linear;
+        -webkit-animation: rotation .6s infinite linear;
+        -moz-animation: rotation .6s infinite linear;
+        -ms-animation: rotation .6s infinite linear;
+    }
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+}
+
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}

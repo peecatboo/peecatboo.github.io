@@ -1,0 +1,96 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// $navigationTree-base-padding                    : 25px;
+// $navigationTree-padding                         : 0 0 0 $navigationTree-base-padding;
+// $navigationTree-margin                          : $component-margin;
+
+// $navigationTree-height                          : auto;
+// $navigationTree-height-result                   : $menu-componentlinks-item-height;
+// $navigationTree-max-height                      : calc(100% - #{$navigationTree-height-result});
+// $navigationTree-max-height-fallback             : 84%;
+// $navigationTree-position                        : relative;
+// $navigationTree-overflow                        : auto;
+// $navigationTree-white-space                     : normal;
+
+// $navigationTree-border-width                    : $component-border-width;
+// $navigationTree-border-style                    : $component-border-style;
+
+// $navigationTree-list-style                      : none;
+// $navigationTree-sub-menu-list-style             : $navigationTree-list-style;
+// $navigationTree-sub-menu-padding                : 0;
+
+
+// $navigationTree-transition-duration             : $component-transition-duration;
+
+// $navigationTree-open-display                    : $component-open-display;
+// $navigationTree-open-overflow                   : $component-open-overflow;
+// $navigationTree-opening-display                 : $component-opening-display;
+// $navigationTree-opening-overflow                : $component-opening-overflow;
+
+// $navigationTree-closed-display                  : $component-closed-display;
+// $navigationTree-closed-overflow                 : $component-closed-overflow;
+// $navigationTree-closing-display                 : $component-closing-display;
+// $navigationTree-closing-overflow                : $component-closing-overflow;
+
+// $navigationTree-marker-display                  : block;
+// $navigationTree-marker-width                    : 7px;
+// $navigationTree-marker-height                   : $navigationTree-marker-width;
+// $navigationTree-marker-position                 : absolute;
+// $navigationTree-marker-left                     : 0;
+// $navigationTree-marker-margin                   : $navigationTree-base-padding/2 + ($navigationTree-base-padding/2*0.1);
+// $navigationTree-marker-content                  : '';
+// $navigationTree-marker-background               : rgba(255,255,255,0);
+// $navigationTree-marker-border-style             : solid;
+// $navigationTree-marker-border-width             : 2px;
+
+
+// $navigationTree-marker-border-radius            : 100%;
+// $navigationTree-marker-border                   : $navigationTree-marker-border-width $navigationTree-marker-border-style $navigationTree-marker-border-color;
+
+// $navigationTree-item-display                    : block;
+// $navigationTree-item-cursor                     : pointer;
+// // $navigationTree-item-margin                     : auto auto auto if($dir == rtl, 30px, 15px);
+// $navigationTree-item-margin                     : 0;
+// $navigationTree-item-line-height                : 24px;
+// $navigationTree-item-hover-background           : $navigationTree-item-hover-color-background;
+// $navigationTree-item-opacity-enabled            : 1;
+// $navigationTree-item-opacity-disabled           : .7;
+// // Needed for list item indentation calculation
+// $navigationTree-item-padding-left               : $navigationTree-base-padding*1.5;
+// $navigationTree-item-padding                    : $navigationTree-base-padding/2 $navigationTree-base-padding/2 $navigationTree-base-padding/2 $navigationTree-item-padding-left;
+
+
+// $navigationTree-item-display-open               : block;
+// $navigationTree-item-display-closed             : none;
+
+// $navigationTreeItem-expand-icon-vertical-align  : middle;
+// $navigationTreeItem-expand-icon-invisible-visibility: hidden;
+// $navigationTreeItem-expand-icon-expanded-transform  : rotate(90deg);
+// $navigationTreeItem-expand-icon-collapsed-transform : rotate(0deg);
+// $navigationTreeItem-expand-icon-margin-left: -$navigationTree-base-padding;
+
+// $navigationTree-marker-display-open             : block;
+// $navigationTree-marker-display-closed           : none;
+
+// $navigationTree-marker-background-incompleted   : none;
+
+// $navigationTree-marker-border-width-active      : 4px;
+// $navigationTree-marker-left-active              : $navigationTree-marker-left - 2px;
+// $navigationTree-marker-background-active        : rgba(255,255,255,0.5);
+
+// $navigationTree-marker-background-progress      : rgba(255,255,255,0.5);
+
+// $navigationTree-marker-width-container          : $navigationTree-marker-width + 4px;
+// $navigationTree-marker-height-container         : $navigationTree-marker-height + 4px;
+// $navigationTree-marker-left-container           : $navigationTree-marker-left - 2px;

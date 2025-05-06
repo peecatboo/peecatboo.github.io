@@ -1,0 +1,315 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+// NOTE:
+// Various "@if" blocks were created after a refactor of course/page resources
+// to utilize a base "resource" component. The "@if" blocks attempt to utilize
+// previously existing variable values if they exist, otherwise skipping the
+// declaration altogether.
+
+#MainMenuCourseResourcesContainer, .CourseResourcesContainer {
+    @include generate-style-block('CourseResourcesContainer') {
+
+        @if variable-exists(courseResources-padding) {
+            padding: side-values($courseResources-padding);
+        }
+    }
+
+    a {
+        @include generate-style-block('CourseResourcesLink') {
+        }
+    }
+
+    &.Closed {
+        @include generate-style-block('CourseResourcesItemClosed') {
+        }
+    }
+
+    &.Open {
+        @include generate-style-block('CourseResourcesItemOpen') {
+        }
+    }
+
+    .Heading {
+        @include generate-style-block('CourseResourcesHeading') {
+            // @basic
+            @if variable-exists(courseResources-header-font-weight) {
+                font-weight: $courseResources-header-font-weight;
+            }
+
+            @if variable-exists(courseResources-header-font-size) {
+                font-size: $courseResources-header-font-size;
+            }
+        }
+    }
+
+    .Index {
+        @include generate-style-block('CourseResourcesIndex') {
+            // @basic
+            // @full
+            @if variable-exists(courseResources-index-margin-right) {
+                margin-#{right}: $courseResources-index-margin-right;
+            }
+            @if variable-exists(courseResources-index-margin-top) {
+                margin-top: $courseResources-index-margin-top;
+            }
+            @if variable-exists(courseResources-index-float) {
+                float: $courseResources-index-float;
+            }
+        }
+    }
+
+    .Contents {
+        @include generate-style-block('CourseResourcesContents') {
+            // @basic
+            // @full
+            @if variable-exists(courseResources-contents-margin-top) {
+                margin-top: $courseResources-contents-margin-top;
+            }
+        }
+
+        .Supplements {
+            .Supplement {
+                @include generate-style-block('CourseResourcesContentsSupplement') {
+                }
+
+                a {
+                    @include generate-style-block('CourseResourcesContentsSupplementType') {
+                        // @basic
+                        @if variable-exists(courseResources-supplement-font-weight) {
+                            font-weight: $courseResources-supplement-font-weight;
+                        }
+                        @if variable-exists(courseResources-supplement-font-size) {
+                            font-size: $courseResources-supplement-font-size;
+                        }
+                        // @full
+                        @if variable-exists(courseResources-supplement-margin) {
+                            margin: side-values($courseResources-supplement-margin);
+                        }
+                        @if variable-exists(courseResources-supplement-display) {
+                            display: $courseResources-supplement-display;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Resources {
+            &.Closed {
+                @include generate-style-block('CourseResourcesContentsResourcesClosed') {
+                }
+            }
+
+            .Resource {
+                @include generate-style-block('CourseResourcesResource') {
+                }
+
+                .CourseResourcesItem {
+                    @include generate-style-block('CourseResourcesSupplementsItemHeader') {
+                        // @basic
+                        @if variable-exists(courseResources-supplements-font-size) {
+                            font-size: $courseResources-supplements-font-size;
+                        }
+                        @if variable-exists(courseResources-supplements-font-weight) {
+                            font-weight: $courseResources-supplements-font-weight;
+                        }
+                        @if variable-exists(courseResources-supplements-cursor) {
+                            cursor: $courseResources-supplements-cursor;
+                        }
+                        @if variable-exists(courseResources-supplements-text-decoration) {
+                            text-decoration: $courseResources-supplements-text-decoration;
+                        }
+                        // @full
+                        @if variable-exists(courseResources-supplements-display) {
+                            display: $courseResources-supplements-display;
+                        }
+                        @if variable-exists(courseResources-supplements-padding) {
+                            padding: side-values($courseResources-supplements-padding);
+                        }
+                    }
+                }
+            }
+        }
+
+        .Supplements h1 {
+            @include generate-style-block('CourseResourcesSupplementsHeader') {
+                // @basic
+                font-size: if(variable-exists(courseResources-h1-font-size), $courseResources-h1-font-size, 1.2em);
+                font-weight: if(variable-exists(courseResources-h1-font-weight), $courseResources-h1-font-weight, bold);
+                // @full
+                padding: if(variable-exists(courseResources-h1-padding), $courseResources-h1-padding, 5px 0);
+            }
+        }
+
+        .FlashCardsComponent {
+            &[data-size="3.5 x 5"], & {
+                .FlashCards {
+                    li {
+                        @include generate-style-block('CourseResourcesFlashCardsItem3.5x5') {
+                        }
+                    }
+                }
+            }
+            &[data-size="4 x 6"] {
+                .FlashCards {
+                    li {
+                        @include generate-style-block('CourseResourcesFlashCardsItem4x6') {
+                        }
+                    }
+                }
+            }
+        }
+
+        .FlashObject, .FlashXML {
+            @include generate-style-block('CourseResourcesFlash') {
+            }
+        }
+
+        .CategoriesContainer .CategoriesContentContainer .Panel .PanelItem .CategoryContentTitle {
+            @include generate-style-block('CourseResourcesCategoryContentTitle') {
+            }
+            .Title {
+                @include generate-style-block('CourseResourcesCategoryContentTitleTitle') {
+                }
+            }
+        }
+
+        .CategoriesContainer .CategoriesTabs .CategoryItem {
+            @include generate-style-block('CourseResourcesCategoryItem') {
+            }
+            &:hover, .Active {
+                @include generate-style-block('CourseResourcesCategoryItemActive') {
+                }
+            }
+        }
+
+        .CustomNote {
+            @include generate-style-block('CourseResourcesCustomNote') {
+            }
+        }
+
+        .TabsComponent {
+            .ResponsiveHeading {
+                @include generate-style-block('CourseResourcesTabsResponsiveHeading') {
+                }
+            }
+            > .TabsNavigation {
+                &.Horizontal  {
+                    @include generate-style-block('CourseResourcesTabsNavigation') {
+                    }
+                }
+                > .TabsNavigationItem {
+                    > .TabsPanelTitle {
+                        @include generate-style-block('CourseResourcesTabsTitle') {
+                        }
+                    }
+                    > .TabsPanelIndex {
+                        @include generate-style-block('CourseResourcesTabsPanelIndex') {
+                        }
+                        &:before {
+                            @include generate-style-block('CourseResourcesTabsPanelIndexBefore') {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .CategoriesContainer .CategoriesContentContainer .Panel {
+            @include generate-style-block('CourseResourcesPanel') {
+            }
+        }
+
+        .CategoriesContainer, .CustomNote, .TableWrapper, .DocWriter, .TabsComponent, .List, .ProgramCode, .QuoteBlock  {
+            @include generate-style-block('CourseResourcesMarginOverrides') {
+            }
+        }
+
+        .ParaBlockContent {
+            @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+                @include generate-style-block('CourseResourcesParablockNormalScreen') {
+                }
+            }
+        }
+
+        .MarginNoteWrapper {
+            @include generate-style-block('CourseResourcesMarginNoteWrapper') {
+            }
+            .MarginNote {
+                > * {
+                    @include generate-style-block('CourseResourcesMarginNoteContent') {
+                    }
+                }
+                .MarginNoteIcon {
+                    @include generate-style-block('CourseResourcesMarginNoteIcon') {
+                    }
+                }
+            }
+        }
+
+        .Equation {
+            @include generate-style-block('CourseResourcesEquation') {
+                // @basic
+                // @full
+                @if variable-exists(courseResources-supplements-equation-background) {
+                    background: $courseResources-supplements-equation-background;
+                }
+                @if variable-exists(courseResources-supplements-equation-display) {
+                    display: $courseResources-supplements-equation-display;
+                }
+                @if variable-exists(courseResources-supplements-equation-padding) {
+                    padding: side-values($courseResources-supplements-equation-padding);
+                }
+                @if variable-exists(courseResources-supplements-equation-margin) {
+                    margin: side-values($courseResources-supplements-equation-margin);
+                }
+            }
+        }
+
+        .List {
+            @include generate-style-block('CourseResourcesList') {
+            }
+        }
+
+        .Topic {
+            @include generate-style-block('CourseResourcesTopic') {
+                // @basic
+                // @full
+                @if variable-exists(courseResources-supplements-topic-padding) {
+                    padding: side-values($courseResources-supplements-topic-padding);
+                }
+            }
+        }
+
+        .ParaBlock {
+            @include generate-style-block('CourseResourcesParaBlock') {
+                // @basic
+                // @full
+                @if variable-exists(courseResources-supplements-parablock-padding) {
+                    padding: side-values($courseResources-supplements-parablock-padding);
+                }
+            }
+        }
+
+        .SupplementItem.Open {
+            @include generate-style-block('CourseResourcesSupplementItemOpen') {
+            }
+        }
+
+        .SupplementItem.Closed {
+            @include generate-style-block('CourseResourcesSupplementItemClosed') {
+            }
+        }
+    }
+}

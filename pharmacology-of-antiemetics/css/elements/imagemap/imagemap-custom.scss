@@ -1,0 +1,31 @@
+@include customize-style-block('ImageMapInstructions') {
+    text-align: left;
+}
+
+@include customize-style-block('ImageMapOverlayDisplayAreaHotSpotContent') {
+    background-color: #ffffff;
+}
+
+@include customize-style-block('ImageMapOverlayHotSpotContent') {
+    position: fixed;
+    display: none;
+    padding: 5px;
+    background-color: #ffffff;
+    overflow: auto;
+    z-index: 1;
+}
+@include customize-style-block('ImageMapOverlayDirectSvg') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+                stroke : if(variable-exists(imagemap-color-stroke), $imagemap-color-stroke, #FFFFFF);
+            }
+@include customize-style-block('ImageMapOverlayDirectSvgChildren') {
+                    // @full
+                    fill: #ffffff;
+                    fill-opacity: 0;
+                    stroke-width: 50;
+                    transition: opacity 200ms;
+                }
+          

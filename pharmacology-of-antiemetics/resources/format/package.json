@@ -1,0 +1,15 @@
+{
+  "name": "format_test_result_files",
+  "description": "Command to format test results files",
+  "license": "MIT",
+  "repository": {},
+  "version": "0.0.1",
+  "scripts": {
+    "prettier:install": "npm install",
+    "prettier:fix": "prettier --config \"./.prettierrc\" --write --check \"./../../test/resources/**/*.html\"",
+    "format": "node -v && npm run prettier:install && npm run prettier:fix"
+  },
+  "dependencies": {
+    "prettier": "1.19.0"
+  }
+}

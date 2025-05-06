@@ -1,0 +1,23 @@
+@include customize-style-block('MarginNote') {
+  display: block;
+  &:after {
+    content: 'Select icon above to View';
+    display: block;
+    font-size: .7em;
+    color: $basic-color-branding2;
+  }
+  
+  @media #{$basic-screen-query-narrow} {
+    &:after {
+      display: none;
+    }    
+  }
+}
+
+@include customize-style-block('MarginNoteWrapper') {
+  display: block; 
+}
+
+.MarginNoteWrapper .MarginNote .MarginNoteIcon .SVGIcon{fill:#075669;}
+
+.PopupWrapper .PopupTitlebar{background:#075669;}

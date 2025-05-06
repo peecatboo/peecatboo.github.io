@@ -1,0 +1,69 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// these colors are often used as skin colors, used to style skin header, buttons, etc.
+// by default there are gradients,
+// to make them solid use the same value for both variables
+$basic-color-branding1: #34495E !default;
+$basic-color-branding2: #2C3E50 !default;
+$basic-color-visited: #2C3E50 !default;
+
+$basic-color-border: #E3E3E3 !default;
+$basic-color-page-background: #FFF !default;
+$basic-color-container-background-light: #ECF0F1 !default;
+$basic-color-container-background-dark: #000 !default;
+
+$basic-color-text-dark: #535353 !default; // common text
+$basic-color-text-lightened: lighten($basic-color-text-dark, 25%) !default; // for "disabled" text
+$basic-color-text-light: #fff !default; // text on dark background
+$basic-color-text-links: #2980B9 !default;
+
+$basic-color-h1: inherit !default;
+$basic-color-h1-background: inherit !default;
+
+$basic-color-h2: inherit !default;
+$basic-color-h2-background: inherit !default;
+
+$basic-color-h3: inherit !default;
+$basic-color-h3-background: inherit !default;
+
+$basic-color-h4: inherit !default;
+$basic-color-h4-background: inherit !default;
+
+$basic-color-h5: inherit !default;
+$basic-color-h5-background: inherit !default;
+
+$basic-color-h6: inherit !default;
+$basic-color-h6-background: inherit !default;
+
+$basic-color-link: $basic-color-text-links !default;
+$basic-color-link-background: inherit !default;
+
+$basic-color-link-hover: $basic-color-branding2 !default;
+$basic-color-link-background-hover: inherit !default;
+
+$basic-color-link-active: $basic-color-branding2 !default;
+$basic-color-link-background-active: inherit !default;
+
+$basic-color-link-visited: $basic-color-visited !default;
+$basic-color-link-background-visited: inherit !default;
+
+$basic-color-correct: #16A085 !default; // color for correct feedback, etc.
+$basic-color-incorrect: #C0392B !default; // color for correct feedback, etc.
+$basic-color-alsoCorrect: #75A1CF !default;
+
+$basic-box-shadow-color: fade-out($basic-color-container-background-dark, 0.5) !default;
+$basic-box-shadow-dimensions: 0 0 10px !default;
+$basic-box-shadow: $basic-box-shadow-dimensions $basic-box-shadow-color !default;
+
+$basic-overlay-color: fade-out($basic-color-container-background-dark, 0.1) !default;

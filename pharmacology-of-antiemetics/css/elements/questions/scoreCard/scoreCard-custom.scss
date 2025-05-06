@@ -1,0 +1,45 @@
+@include customize-style-block('ScoreCard') {
+    background-color: $basic-color-branding1;
+    padding-bottom: 20px;
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, mix($basic-color-branding1,white, 10%), $basic-color-branding1);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, mix($basic-color-branding1,white, 10%), $basic-color-branding1);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, mix($basic-color-branding1,white, 10%), $basic-color-branding1);
+}
+
+@include customize-style-block('ScoreCardSectionInfoContainer') {
+    text-align: left;
+    margin: 0 20px 0 20px;
+    .Caption {
+        text-align: left;
+        width: auto;
+        padding-left: 0;
+    }
+    .Value {
+        text-align: left;
+        width: auto;
+    }
+    .Feedback {
+        text-align: left;
+    }
+    .RetakeContainer {
+        text-align: left;
+    }
+}
+
+@include customize-style-block('ScoreCardSectionInfoContainerRetakeContainerRetake') {
+	background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    
+    &:hover {
+      background-color: $basic-color-branding1;
+      border-color: $basic-color-branding1;
+      color: #FFFFFF;
+    }
+}
+
+@include customize-style-block('ScoreCardQuestionsListQuestionTitle') {
+    text-align: left;
+}

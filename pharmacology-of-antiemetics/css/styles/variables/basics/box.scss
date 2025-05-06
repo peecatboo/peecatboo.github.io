@@ -1,0 +1,38 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// This is used for calculations of sidebar/content widths,
+// do not neglect this value and hard-code $basic-screen-query-wide's value directly
+$basic-screen-query-wide-value: 1220px !default;
+
+$basic-padding: 1.5em !default;
+$basic-margin: 1.5em !default;
+
+$basic-border-width: 2px !default;
+$basic-border-style: solid !default;
+$basic-border-radius: 5px !default;
+
+$basic-transition-duration: 500ms !default;
+
+$basic-open-display: block !default;
+$basic-open-overflow: auto !default;
+$basic-opening-display: block !default;
+$basic-opening-overflow: hidden !default;
+
+$basic-closed-display: none !default;
+$basic-closed-overflow: hidden !default;
+$basic-closing-display: block !default;
+$basic-closing-overflow: hidden !default;
+
+$basic-textarea-padding: 10px !default;
+$basic-textarea-width: 90% !default;

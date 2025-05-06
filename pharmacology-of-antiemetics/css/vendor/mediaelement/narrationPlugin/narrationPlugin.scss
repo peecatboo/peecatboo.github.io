@@ -1,0 +1,28 @@
+.mejs-narration-button {
+    @include generate-style-block('MediaPlayerNarrationPluginButton') {}
+
+    > button {
+        @include generate-style-block('MediaPlayerNarrationPluginButtonButton') {}
+        background: transparent url("vendor/mediaelement/narrationPlugin/narrationButton.svg");
+        background-position: -2px -2px;
+    }
+}
+
+.Fullscreen.reviewMediaElement .mejs-narration-button {
+    // Remove button in review sessions, as it will not show in fullscreen due to various limitations
+    display: none;
+}
+
+.MediaPlayerAVScriptPopup {
+    @include generate-style-block('MediaPlayerAVScriptPopup') {}
+
+    .AVscript {
+        @include generate-style-block('MediaPlayerAVScriptPopupAVScript') {
+            display: block;
+        }
+    }
+
+    min-width: 400px;
+    min-height: 30%;
+    max-width: 40%;
+}

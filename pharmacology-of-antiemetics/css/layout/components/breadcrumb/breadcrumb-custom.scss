@@ -1,0 +1,7 @@
+@include customize-style-block('BreadcrumbItem') {
+  color: $basic-color-branding2;
+}
+
+@include customize-style-block('BreadcrumbDelimiter') {
+  color: $basic-color-branding2;
+}

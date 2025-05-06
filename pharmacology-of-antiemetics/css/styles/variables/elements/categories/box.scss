@@ -1,0 +1,53 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$categories-padding: $elements-padding;
+$categories-margin: $elements-margin;
+
+$categories-border-width: $elements-border-width;
+$categories-border-style: $elements-border-style;
+$categories-border-radius: $elements-border-radius;
+
+$categories-transition-duration: $elements-transition-duration;
+
+$categories-element-margin: 16px 0 16px 0;
+
+$categories-border-width: $categories-border-width*2;
+
+$categories-tabs-float: $left;
+$categories-tabs-width: 150px;
+
+$categories-expand-icon-vertical-align: middle;
+$categories-expand-icon-transform: rotate(0deg);
+$categories-expand-icon-transform-active: rotate(90deg);
+$categories-expand-icon-transform-rtl: rotate(180deg);
+$categories-expand-icon-transform-active-rtl: rotate(90deg);
+$categories-expand-icon-pointer-events: none;
+
+
+$categories-panel-content-max-height: 500px; // has to be some value in px in order to animate
+$categories-panel-padding: 0 20px 0 20px;
+$categories-panel-margin: 0;
+
+$categories-panel-heading-padding: 4px 6px 4px 6px;
+$categories-panel-heading-radius: 0;
+$categories-panel-content-padding: 0 4px 0 4px;
+
+$categories-tabs-margin: 0;
+$categories-tabs-padding: 0;
+
+$categories-content-container-padding: 0;
+
+$categories-item-padding: $categories-padding/2;
+
+$categories-transition-duration: $elements-transition-duration;

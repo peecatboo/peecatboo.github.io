@@ -1,0 +1,68 @@
+//Full Screen Stuff
+#PageBodyWrapper.FullBGImage #PageBody {
+    background: none;
+    .Page > .Topic > .Title {
+        padding-left: 10px;
+        border-radius: 5px;
+        font-weight: 200;
+        margin-bottom: 5px;
+    }
+    .Page > .QuestionBlock > .Title {
+        padding-left: 10px;
+        border-radius: 5px;
+        font-weight: 200;
+        margin-bottom: 5px;
+    }
+    .Page > .Procedure > .Title {
+        padding-left: 10px;
+        border-radius: 5px;
+        font-weight: 200;
+        margin-bottom: 5px;
+    }
+    .Page > .Topic > .ParaBlock {
+        background-color: none;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .Page > .Procedure > .StepGroup {
+        background-color: rgba(255, 255, 255, 0.80);
+        border-radius: 5px;
+        padding: 10px;
+        .StepHead {
+            background: none;
+        }
+    }
+    .Topic > .ParaBlock {
+        background-color: none;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
+.SpinnerWrap {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: white;
+    z-index: 96;
+
+    .Spinner2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        margin: -30px 0px 0px -30px;
+        border-top: if(variable-exists(content-loader-border-top), $content-loader-border-top, $layout-border-style 6px $layout-color-branding1);
+        border-right: if(variable-exists(content-loader-border-right), $content-loader-border-right, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-bottom: if(variable-exists(content-loader-border-bottom), $content-loader-border-bottom, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-left: if(variable-exists(content-loader-border-left), $content-loader-border-left, $layout-border-style 6px fade-out($layout-color-branding1, 0.6));
+        border-radius: if(variable-exists(content-loader-border-radius), $content-loader-border-radius, 100%);
+        animation: rotation .6s infinite linear;
+        -webkit-animation: rotation .6s infinite linear;
+        -moz-animation: rotation .6s infinite linear;
+        -ms-animation: rotation .6s infinite linear;
+    }
+}

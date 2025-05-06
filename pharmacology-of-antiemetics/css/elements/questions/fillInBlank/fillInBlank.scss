@@ -1,0 +1,77 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.FillInBlankQuestion {
+    @include generate-style-block('FillInBlankQuestion') {}
+    .FillInBlankOption {
+        @include generate-style-block('FillInBlankOption') {
+            // @basic
+            // @full
+            margin: 2px;
+            // 100% - (left and right margins)
+            max-width: calc(100% - 4px);
+            box-sizing: border-box;
+        }
+
+        &.Correct, &.Incorrect {
+            @include generate-style-block('FillInBlankOptionCorrectIncorrect') {
+                // @basic
+                // @full
+                border-width: 1px;
+                margin: 3px;
+            }
+        }
+
+        &.Correct {
+            @include generate-style-block('FillInBlankOptionCorrect') {
+                // @basic
+                border-color: if(variable-exists(fillInBlank-color-correct), $fillInBlank-color-correct, $elements-color-correct);
+                background-color: lighten(if(variable-exists(fillInBlank-color-correct), $fillInBlank-color-correct, $elements-color-correct), 45%);
+                color: darken(if(variable-exists(fillInBlank-color-correct), $fillInBlank-color-correct, $elements-color-correct), 45%);
+                // @full
+            }
+            @if $fillInBlank-show-feedback-icons == true {
+                @include generate-style-block('FillInBlankOptionCorrectFeedback') {
+                    // @basic
+                    // @full
+                    #{if(variable-exists(fillInBlank-correct-feedback-emphasis-property), $fillInBlank-correct-feedback-emphasis-property, font-weight)}: if(variable-exists(fillInBlank-correct-feedback-emphasis-value), $fillInBlank-correct-feedback-emphasis-value, bold)
+                }
+            }
+        }
+
+        &.Incorrect {
+            @include generate-style-block('FillInBlankOptionIncorrect') {
+                // @basic
+                border-color: if(variable-exists(fillInBlank-color-incorrect), $fillInBlank-color-incorrect, $elements-color-incorrect);
+                background-color: lighten(if(variable-exists(fillInBlank-color-incorrect), $fillInBlank-color-incorrect, $elements-color-incorrect), 45%);
+                color: darken(if(variable-exists(fillInBlank-color-incorrect), $fillInBlank-color-incorrect, $elements-color-incorrect), 45%);
+                // @full
+            }
+            @if $fillInBlank-show-feedback-icons == true {
+                @include generate-style-block('FillInBlankOptionIncorrectFeedback') {
+                    // @basic
+                    // @full
+                    #{if(variable-exists(fillInBlank-incorrect-feedback-emphasis-property), $fillInBlank-incorrect-feedback-emphasis-property, font-weight)}: if(variable-exists(fillInBlank-incorrect-feedback-emphasis-value), $fillInBlank-incorrect-feedback-emphasis-value, line-through)
+                }
+            }
+        }
+    }
+
+    .FillInBlankOptionCount {
+        @include generate-style-block('FillInBlankOptionCount') {
+            // @basic
+            // @full
+            display: none;
+        }
+    }
+}

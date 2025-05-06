@@ -1,0 +1,52 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$header-transition-duration: $layout-transition-duration;
+
+$header-open-display: $layout-open-display;
+$header-open-overflow: $layout-open-overflow;
+$header-opening-display: $layout-opening-display;
+$header-opening-overflow: $layout-opening-overflow;
+
+$header-closed-display: $layout-closed-display;
+$header-closed-overflow: $layout-closed-overflow;
+$header-closing-display: $layout-closing-display;
+$header-closing-overflow: $layout-closing-overflow;
+
+$header-default-display: $header-closed-display;
+
+$header-height: 11mm;
+$header-menu-icon-height: $header-height;
+$header-menu-icon-width: $header-height;
+
+$header-subsection-min-height: $header-height;
+
+$header-logo-padding: 0;
+$header-logo-position: static;
+$header-logo-top: auto;
+$header-logo-bottom: auto;
+$header-logo-left: auto;
+$header-logo-right: auto;
+
+$header-title-margin: 0;
+$header-title-padding: 20px 0;
+$header-title-padding-normal: 15px 0 15px 5px;
+
+$header-content-wrapper-position: relative;
+$header-content-wrapper-height: $header-height;
+
+$header-courseProgress-width: auto;
+$header-courseProgress-min-width: 64px;
+$header-courseProgress-float: $right;
+$header-courseProgress-height: $header-height;
+$header-courseProgress-valign: ($header-height / 2) - 8px;

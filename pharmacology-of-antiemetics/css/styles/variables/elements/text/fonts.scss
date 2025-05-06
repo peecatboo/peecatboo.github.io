@@ -1,0 +1,59 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$text-font-body : $elements-font-body;
+$text-font-size : $elements-font-size;
+$text-font-weight: $elements-font-weight;
+$text-monospace-font-body: $elements-monospace-font-body;
+
+$text-header-font-body: $text-font-body;
+$text-header-font-size: $elements-header-font-size;
+$text-header-font-weight: $elements-header-font-weight;
+
+$text-inlineapplicationprompt-font-style: italic;
+
+$text-commandname-font-weight: bold;
+$text-commandname-font-family: $text-monospace-font-body;
+
+$text-inlinekeyword-font-weight: bold;
+$text-inlinekeyword-font-style: italic;
+
+$text-inlineinstructortext-font-weight: normal;
+$text-inlineinstructortext-font-style: italic;
+$text-inlineinstructortext-text-transform: uppercase;
+
+$text-inlinewindowname-font-weight: bold;
+$text-inlinewindowname-font-variant: small-caps;
+
+$text-inlinekeyboard-font-variant: small-caps;
+
+$text-inlinelabfile-font-weight: bold;
+$text-inlinelabfile-font-style: italic;
+
+$text-inlinemenuselection-font-weight: bold;
+
+$text-inlinevariabletext-font-family: $text-monospace-font-body;
+
+$text-syntaxarg-font-style: italic;
+$text-syntaxarg-font-family: courier;
+
+$text-syntaxkeyword-font-weight: bold;
+$text-syntaxkeyword-font-family: $text-monospace-font-body;
+$text-syntaxkeyword-font-style: italic;
+
+$text-inlinecode-font-family: $text-monospace-font-body;
+
+$text-inlinetypethis-font-family: $text-monospace-font-body;
+$text-inlinetypethis-font-style: italic;
+$text-inlinetypethis-font-weight: bold;
+$text-inlinetypethis-content-after: '\00a0\00a0';

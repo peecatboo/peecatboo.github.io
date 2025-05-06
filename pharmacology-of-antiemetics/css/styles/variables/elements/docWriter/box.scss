@@ -1,0 +1,48 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$docWriter-text-align: $left;
+
+$docWriter-transition-duration: $elements-transition-duration;
+
+$docWriter-entryName-padding: 4px 10px;
+$docWriter-entryName-border-radius: 0;
+$docWriter-entryName-cursor: pointer;
+
+$docWriter-entry-hint-margin-top: 15px;
+
+$docWriter-container-padding: 10px;
+$docWriter-container-height: 170px;
+
+$docWriter-string-margin-top: 5px;
+$docWriter-string-display: block;
+
+$docWriter-field-container-padding: 0 $docWriter-container-padding;
+$docWriter-field-container-height: 0;
+$docWriter-field-container-overflow: auto;
+
+$docWriter-textarea-padding: $basic-textarea-padding;
+$docWriter-textarea-font-family: $basic-textarea-font-family;
+$docWriter-textarea-width: $basic-textarea-width;
+
+$docWriter-buttons-padding-top: 20px;
+$docWriter-buttons-margin-right: 5px;
+
+$docWriter-charsLeft-margin: 3px;
+
+$docWriter-buttons-wrapper-padding: 10px;
+$docWriter-buttons-wrapper-margin: 0;
+$docWriter-buttons-wrapper-border-radius: 0 0 5px 5px;
+$docWriter-buttons-wrapper-background: #F0F0F0;
+$docWriter-buttons-wrapper-border-top: solid 1px #CCC;
+$docWriter-buttons-wrapper-box-sizing: border-box;

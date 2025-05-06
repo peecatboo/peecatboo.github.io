@@ -1,0 +1,93 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$glossary-padding: $component-padding;
+$glossary-margin: $component-margin;
+
+$glossary-border-width: $component-border-width;
+$glossary-border-style: $component-border-style;
+
+$glossary-transition-duration: $component-transition-duration;
+
+$glossary-open-display: $component-open-display;
+$glossary-open-overflow: $component-open-overflow;
+$glossary-opening-display: $component-opening-display;
+$glossary-opening-overflow: $component-opening-overflow;
+
+$glossary-closed-display: $component-closed-display;
+$glossary-closed-overflow: $component-closed-overflow;
+$glossary-closing-display: $component-closing-display;
+$glossary-closing-overflow: $component-closing-overflow;
+
+$glossary-height: auto;
+$glossary-box-sizing: border-box;
+$glossary-overflow: auto;
+
+$glossary-content-height: $menu-topmatter-height + $menu-componentlinks-item-height;
+$glossary-content-max-height: calc(100% - #{$glossary-content-height});
+
+$glossary-heading-clear: both;
+
+/** @depreciated **/
+$glossary-index-margin-right: -22px;
+$glossary-index-margin-top: -12px;
+$glossary-index-float: $right;
+/* -------------- */
+
+$glossary-index-position: absolute;
+$glossary-index-top: auto;
+$glossary-index-bottom: auto;
+$glossary-index-left: auto;
+$glossary-index-right: 16px;
+
+$glossary-index-horizontal-position: relative;
+$glossary-index-horizontal-top: auto;
+$glossary-index-horizontal-bottom: auto;
+$glossary-index-horizontal-left: auto;
+$glossary-index-horizontal-right: auto;
+$glossary-index-horizontal-zindex: 1;
+$glossary-index-horizontal-padding: 5px;
+$glossary-index-horizontal-margin-bottom: 15px;
+
+$glossary-index-font-size: 14px;
+$glossary-index-font-size-normal: 13px;
+$glossary-index-font-size-disabled: 11px;
+
+$glossary-index-link-margin: 0;
+$glossary-index-link-padding: 0;
+$glossary-index-link-padding-normal: 0 2px 0 0;
+$glossary-index-link-display: inline-block;
+
+$glossary-letter-display: block;
+$glossary-letter-text-align: center;
+$glossary-letter-padding: 3px;
+$glossary-letter-border-radius: 3px;
+$glossary-letter-margin: 0;
+
+$glossary-term-list-style-type: none;
+$glossary-term-cursor: pointer;
+$glossary-term-text-decoration: underline;
+$glossary-term-text-decoration-hover: underline;
+
+$glossary-termlist-padding-right: 10px;
+$glossary-termlist-horizontal-padding-right: 0;
+
+$glossary-letter-termlist-padding: 0px;
+
+$glossary-letter-listitem-border: 0;
+$glossary-letter-listitem-hover-border: 0;
+
+$glossary-letter-disabled-opacity: 0.5;
+$glossary-letter-disabled-font-size: 75%;
+
+$glossary-term-cursor-content: text;

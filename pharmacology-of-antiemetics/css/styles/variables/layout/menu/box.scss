@@ -1,0 +1,226 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$menu-padding: $layout-padding;
+$menu-margin: $layout-margin;
+
+$menu-border-width: $layout-border-width;
+$menu-border-style: $layout-border-style;
+
+$menu-box-shadow-color: $layout-box-shadow-color;
+$menu-box-shadow-dimensions: $layout-box-shadow-dimensions;
+$menu-box-shadow: $menu-box-shadow-dimensions $menu-box-shadow-color;
+
+$menu-transition-duration: $layout-transition-duration;
+
+$menu-initial-position: absolute;
+$menu-initial-top: 0px;
+$menu-initial-bottom: auto;
+$menu-initial-left: 0px;
+$menu-initial-right: auto;
+$menu-initial-min-height: 100%;
+$menu-initial-max-height: 100%;
+$menu-initial-height: 100%;
+$menu-initial-max-width: 100%;
+$menu-inital-display: none;
+$menu-initial-overflow: hidden;
+$menu-initial-white-space: nowrap;
+$menu-initial-text-overflow: ellipsis;
+$menu-transition: max-width $menu-transition-duration, width $menu-transition-duration;
+
+$menu-open-left-initial-top: 0;
+$menu-open-left-initial-bottom: auto;
+$menu-open-left-initial-left: 0;
+$menu-open-left-initial-right: auto;
+
+$menu-open-right-initial-top: 0;
+$menu-open-right-initial-bottom: auto;
+$menu-open-right-initial-left: auto;
+$menu-open-right-initial-right: 0;
+
+$menu-open-top-initial-top: 0;
+$menu-open-top-initial-bottom: auto;
+$menu-open-top-initial-left: 0;
+$menu-open-top-initial-right: auto;
+
+$menu-open-bottom-initial-top: auto;
+$menu-open-bottom-initial-bottom: 0;
+$menu-open-bottom-initial-left: 0;
+$menu-open-bottom-initial-right: auto;
+
+$menu-box-sizing: border-box;
+
+$menu-open-display: $layout-open-display;
+$menu-open-overflow: auto;
+$menu-open-text-overflow: ellipsis;
+$menu-open-position: absolute;
+$menu-open-width: 100%;
+$menu-open-narrow-width: auto;
+$menu-open-narrow-max-width: 65%;
+$menu-open-normal-width: $menu-open-narrow-width;
+$menu-open-normal-max-width: 74%;
+$menu-open-wide-width: $menu-open-narrow-width;
+$menu-open-wide-max-width: 79%;
+$menu-opening-overflow: hidden;
+$menu-opening-text-overflow: clip;
+$menu-opening-position: absolute;
+$menu-opening-word-wrap: nowrap;
+$menu-opening-width: 100%;
+$menu-opening-component-overflow: $menu-opening-overflow;
+$menu-opening-component-text-overflow: $menu-opening-text-overflow;
+$menu-opening-component-word-wrap: $menu-opening-word-wrap;
+
+$menu-closed-display: $layout-closed-display;
+$menu-closed-overflow: hidden;
+$menu-closed-text-overflow: clip;
+$menu-closed-position: absolute;
+$menu-closed-max-width: 0%;
+$menu-closed-word-wrap: nowrap;
+$menu-closed-box-shadow: 0;
+$menu-closed-component-overflow: $menu-closed-overflow;
+$menu-closed-component-text-overflow: $menu-closed-text-overflow;
+$menu-closed-component-word-wrap: $menu-opening-word-wrap;
+
+$left-right-menu-width: 100%;
+$left-right-menu-width-narrow: 60%;
+$left-right-menu-width-normal: 50%;
+$left-right-menu-width-wide: 33%;
+
+$top-bottom-menu-height: 500px;
+$top-bottom-menu-max-height: 100%;
+$top-bottom-menu-height-narrow: $top-bottom-menu-height;
+$top-bottom-menu-height-normal: $top-bottom-menu-height;
+$top-bottom-menu-height-wide: $top-bottom-menu-height;
+
+
+$menu-component-open-display: block;
+$menu-component-open-min-width: 310px;
+
+$menu-component-closed-display: none;
+
+$menu-component-enabled-display: inherit;
+$menu-component-disabled-display: none;
+
+$menu-topmatter-height: 64px;
+$menu-topmatter-icon-height: $menu-topmatter-height;
+$menu-topmatter-icon-width: $menu-topmatter-icon-height;
+$menu-topmatter-icon-display: block;
+$menu-topmatter-icon-float: $left;
+$menu-topmatter-icon-text-indent: 120%;
+$menu-topmatter-icon-white-space: nowrap;
+$menu-topmatter-icon-overflow: hidden;
+$menu-topmatter-icon-border: none;
+$menu-topmatter-icon-background: $menu-color-topmatter-icon-background $menu-icon-url center center no-repeat;
+
+$menu-topmatter-title-margin: 0 $menu-margin 0 0;
+$menu-topmatter-title-height: $menu-topmatter-height;
+$menu-topmatter-title-padding: inherit inherit inherit 5px;
+$menu-topmatter-title-line-height: 2.4em;
+$menu-topmatter-title-overflow: hidden;
+$menu-topmatter-title-text-overflow: inherit;
+$menu-topmatter-title-text-shadow: 0 0 5px $menu-color-topmatter-title-text-shadow;
+
+$menu-list-padding: 15px 0;
+
+$menu-componentlinks-padding-left: 0;
+$menu-componentlinks-margin: 0;
+
+$menu-componentlinks-item-display: inline-block;
+$menu-componentlinks-item-height: 36px;
+$menu-componentlinks-item-width: 93px;
+$menu-componentlinks-item-padding: 10px 0;
+$menu-componentlinks-item-box-sizing: border-box;
+$menu-componentlinks-item-transition: background-color $menu-transition-duration, color $menu-transition-duration;
+$menu-componentlinks-item-cursor: pointer;
+$menu-componentlinks-item-overflow: hidden;
+$menu-componentlinks-item-text-overflow: ellipsis;
+$menu-componentlinks-item-word-wrap: nowrap;
+$menu-componentlinks-item-background: $menu-color-componentlinks-item-background;
+$menu-componentlinks-item-background-hover: $menu-color-componentlinks-item-background-hover;
+$menu-componentlinks-item-link-display: inline-block;
+$menu-componentlinks-item-link-width: 93px;
+$menu-componentlinks-item-link-padding: 10px 0;
+$menu-componentlinks-item-link-box-sizing: border-box;
+$menu-componentlinks-item-link-transition: $menu-componentlinks-item-transition;
+$menu-componentlinks-item-link-background: $menu-color-componentlinks-item-link-background;
+
+$menu-componentlinks-dropdownicon-overflow: hidden;
+$menu-componentlinks-dropdownicon-overflow-hover: visible;
+$menu-componentlinks-dropdownicon-position: relative;
+$menu-componentlinks-dropdownicon-z-index: 102;
+$menu-componentlinks-dropdownicon-before-content: '|||';
+$menu-componentlinks-dropdownicon-before-position: absolute;
+$menu-componentlinks-dropdownicon-before-height: 50%;
+$menu-componentlinks-dropdownicon-before-margin: auto;
+$menu-componentlinks-dropdownicon-before-top: 0;
+$menu-componentlinks-dropdownicon-before-bottom: 0;
+$menu-componentlinks-dropdownicon-before-left: 0;
+$menu-componentlinks-dropdownicon-before-right: 0;
+$menu-componentlinks-dropdownicon-before-transform: rotate(0deg);
+$menu-componentlinks-dropdownicon-links-display: none;
+$menu-componentlinks-dropdownicon-links-position: absolute;
+$menu-componentlinks-dropdownicon-links-top: 100%;
+$menu-componentlinks-dropdownicon-links-bottom: auto;
+$menu-componentlinks-dropdownicon-links-left: auto;
+$menu-componentlinks-dropdownicon-links-right: 0px;
+$menu-componentlinks-dropdownicon-links-zindex: 2;
+$menu-componentlinks-dropdownicon-hover-links-display: block;
+$menu-componentlinks-dropdownicon-hover-links-link-display: block;
+
+$menu-componentlinks-dropdown-links-padding: 10px;
+
+$menu-extendedcontent-position: absolute;
+$menu-extendedcontent-background: $menu-color-extendedcontent-background;
+$menu-extendedcontent-height: 100%;
+$menu-extendedcontent-min-height: 100%;
+$menu-extendedcontent-top: 0px;
+$menu-extendedcontent-bottom: auto;
+$menu-extendedcontent-left: auto;
+$menu-extendedcontent-right: 0px;
+$menu-extendedcontent-max-width: 0px;
+$menu-extendedcontent-min-width: 0px;
+$menu-extendedcontent-max-width-open: 100%;
+$menu-extendedcontent-min-width-open: 200px;
+$menu-extendedcontent-max-width-opening: 100%;
+$menu-extendedcontent-zindex: 102;
+$menu-extendedcontent-box-sizing: content-box;
+$menu-extendedcontent-padding-top:initial;
+$menu-extendedcontent-padding-left: initial;
+$menu-extendedcontent-padding-bottom: initial;
+$menu-extendedcontent-padding-right: 20px;
+$menu-extendedcontent-transition: max-width $menu-transition-duration;
+$menu-extendedcontent-text-overflow-opening: clip;
+$menu-extendedcontent-text-overflow-closed: clip;
+$menu-extendedcontent-word-wrap-opening: nowrap;
+$menu-extendedcontent-word-wrap-closed: nowrap;
+$menu-extendedcontent-overflow: hidden;
+$menu-extendedcontent-overflow-open: auto;
+$menu-extendedcontent-overflow-opening: hidden;
+$menu-extendedcontent-overflow-closed: hidden;
+$menu-extendedcontent-inner-width: $menu-extendedcontent-max-width-open;
+$menu-extendedcontent-inner-padding: 25px 50px;
+$menu-extendedcontent-inner-box-sizing: border-box;
+$menu-extendedcontent-closeicon-float: $right;
+$menu-extendedcontent-closeicon-clear: both;
+$menu-extendedcontent-closeicon-padding: 2px 5px;
+$menu-extendedcontent-closeicon-border-radius: 3px;
+$menu-extendedcontent-closeicon-background: $menu-color-extendedcontent-closeicon-background;
+$menu-extendedcontent-closeicon-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+$menu-extendedcontent-closeicon-border: 1px solid #aaa;
+$menu-extendedcontent-closeicon-cursor: pointer;
+$menu-extendedcontent-closeicon-zindex: 2;
+$menu-extendedcontent-content-margin: 50px auto 0;
+
+// $menu-content-height-no-calc: 84%;
+// $menu-content-height-difference: $menu-topMatter-height + $menu-componentLinks-height;
+// $menu-content-height: calc(100% - $menu-content-height-difference);

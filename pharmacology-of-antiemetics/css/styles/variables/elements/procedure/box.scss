@@ -1,0 +1,34 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$procedure-stepgroup-margin: 10px 0 20px;
+
+$procedure-substep-margin-left: 20px;
+
+$procedure-step-head-padding: 4px 10px;
+$procedure-step-head-border-radius: 0;
+$procedure-step-head-animated-cursor: pointer;
+
+$procedure-expand-icon-vertical-align: middle;
+$procedure-expand-icon-transform: rotate(0deg);
+$procedure-expand-icon-transform-active: rotate(90deg);
+$procedure-expand-icon-transform-rtl: rotate(180deg);
+$procedure-expand-icon-transform-active-rtl: rotate(90deg);
+$procedure-expand-icon-pointer-events: none;
+
+$procedure-step-user-action-max-height: 300px;
+$procedure-step-user-action-padding: $elements-padding;
+
+$procedure-transition-duration: $elements-transition-duration;
+
+$procedure-step-number-after-margin: 0 3px 0 3px;

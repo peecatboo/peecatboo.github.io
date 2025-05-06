@@ -1,0 +1,108 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.MarginNote {
+    @include generate-style-block('MarginNote') {
+        // @full
+        display: none;
+    }
+}
+.MarginNoteWrapper {
+    @include generate-style-block('MarginNoteWrapper') {
+        // @full
+        float: #{$right};
+        width: if(variable-exists(marginnote-width-narrow), $marginnote-width-narrow, 40px);
+        height: 100%;
+    }
+    & * {
+        @include generate-style-block('MarginNoteWrapperChildren') {
+            // @full
+            max-width: 100%;
+        }
+    }
+    .MarginNote {
+        @include generate-style-block('MarginNoteWrapperMarginNote') {
+            // @full
+            display: block;
+            min-width: 35px;
+            min-height: 35px;
+            margin: 10px 0;
+            padding: 0;
+            color: if(variable-exists(marginnote-color-text), $marginnote-color-text, lighten($elements-color-text-dark, 13%));
+        }
+        @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+            @include generate-style-block('MarginNoteWrapperMarginNoteNormalWide') {
+                // @full
+                padding: 4px;
+                border-top: solid 1px if(variable-exists(marginnote-color-text), $marginnote-color-text, lighten($elements-color-text-dark, 13%));
+            }
+            &:hover {
+                @include generate-style-block('MarginNoteWrapperMarginNoteHover') {
+                    // @full
+                    border-top: solid 1px if(variable-exists(marginnote-color-text-hover), $marginnote-color-text-hover, $elements-color-text-dark);
+                    color: if(variable-exists(marginnote-color-text-hover), $marginnote-color-text-hover, $elements-color-text-dark);
+                }
+            }
+        }
+        > * {
+            @include generate-style-block('MarginNoteWrapperMarginNoteDirectChildren') {
+                // @full
+                display: none;
+            }
+            @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+                @include generate-style-block('MarginNoteWrapperMarginNoteDirectChildrenNormalWide') {
+                    // @full
+                    display: block;
+                }
+            }
+        }
+        .MarginNoteIcon {
+            @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+                @include generate-style-block('MarginNoteWrapperMarginNoteIconNormalWide') {
+                    // @full
+                    display: none;
+                }
+            }
+            @include generate-style-block('MarginNoteWrapperMarginNoteIcon') {
+                // @full
+                position: if(variable-exists(marginnote-icon-position), $marginnote-icon-position, relative);
+                display: if(variable-exists(marginnote-icon-display), $marginnote-icon-display, block);
+                background: if(variable-exists(marginnote-icon-background), $marginnote-icon-background, none);
+                width: if(variable-exists(marginnote-icon-width), $marginnote-icon-width, 11mm);
+                height: if(variable-exists(marginnote-icon-height), $marginnote-icon-height, 11mm);
+                text-indent: if(variable-exists(marginnote-icon-text-indent), $marginnote-icon-text-indent, 120%);
+                white-space: if(variable-exists(marginnote-icon-whitespace), $marginnote-icon-whitespace, nowrap);
+                overflow: if(variable-exists(marginnote-icon-overflow), $marginnote-icon-overflow, hidden);
+                border: if(variable-exists(marginnote-icon-border), $marginnote-icon-border, none);
+            }
+            .SVGIcon {
+                @include generate-style-block('MarginNoteSVGIcon') {
+                    // @full
+                    position: if(variable-exists(marginnote-icon-svg-position), $marginnote-icon-svg-position, absolute);
+                    width: if(variable-exists(marginnote-icon-svg-width), $marginnote-icon-svg-width, 90%);
+                    height: if(variable-exists(marginnote-icon-svg-height), $marginnote-icon-svg-height, 90%);
+                    top: if(variable-exists(marginnote-icon-svg-top), $marginnote-icon-svg-top, 0);
+                    left: if(variable-exists(marginnote-icon-svg-left), $marginnote-icon-svg-left, 0);
+                    fill: if(variable-exists(marginnote-icon-svg-fill), $marginnote-icon-svg-fill, $elements-color-branding2);
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+        @include generate-style-block('MarginNoteWrapperNormalWide') {
+            // @full
+            width: if(variable-exists(marginnote-width), $marginnote-width, 200px);
+        }
+    }
+}

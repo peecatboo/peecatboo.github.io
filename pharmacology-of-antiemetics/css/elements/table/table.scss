@@ -1,0 +1,342 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.TableWrapper {
+    @include generate-style-block('TableWrapper') {
+        // @full
+        margin: if(variable-exists(table-margin), $table-margin, 20px 0);
+        overflow: auto;
+    }
+}
+.ChartTableWrapper {
+    @include generate-style-block('ChartTableWrapper') {
+        // @full
+        margin: if(variable-exists(table-margin), $table-margin, 20px 0);
+        overflow: auto;
+        position: relative;
+    }
+}
+.TableChartAlignright {
+    @include generate-style-block('TableChartAlignRight') {
+        // @full
+        margin-left: auto;
+    }
+}
+.TableChartAligncenter {
+    @include generate-style-block('TableChartAlignCenter') {
+        // @full
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.TableChartContainer {
+    @include generate-style-block('TableChartContainer') {
+        // @full
+        min-width: 250px;
+    }
+}
+.Table {
+    @include generate-style-block('Table') {
+        // @full
+        border-collapse: collapse;
+        display: if(variable-exists(table-mobile-table-display), $table-mobile-table-display, inline);
+        border: if(variable-exists(table-mobile-table-border), $table-mobile-table-border, none);
+        background: if(variable-exists(table-mobile-table-background), $table-mobile-table-background, none);
+        width: auto;
+    }
+
+    tbody {
+        @include generate-style-block('TableBody') {
+            // @full
+            float: left;
+        }
+    }
+
+    .TableHeader {
+        @include generate-style-block('TableHeader') {
+            // @full
+            display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+            float: if(variable-exists(table-header-copy-float), $table-header-copy-float, $left);
+            padding: if(variable-exists(table-header-copy-padding), $table-header-copy-padding, 10px);
+            width: if(variable-exists(table-header-copy-width), $table-header-copy-width, 120px);
+            font-weight: if(variable-exists(table-header-copy-font-weight), $table-header-copy-font-weight, bold);
+        }
+
+        // WPS-7107 - render "*" instead of numbers in mobile screen mode
+        @include customize-style-block('FootnoteMarkerPlaceholderBefore') {
+            // @full
+            content: "*";
+        }
+    }
+
+    .TableRow {
+        @include generate-style-block('TableRow') {
+            // @full
+            background-color: if(variable-exists(table-color-background-row), $table-color-background-row, #fefefe);
+            display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+            clear: if(variable-exists(table-mobile-table-row-clear), $table-mobile-table-row-clear, both);
+            border-bottom: 2px solid if(variable-exists(table-color-border), $table-color-border, #ddd);
+        }
+
+        &:nth-of-type(odd) {
+            @include generate-style-block('TableRowOddChild') {
+                // @full
+                background-color: if(variable-exists(table-color-background-row-odd), $table-color-background-row-odd, #f9f9f9);
+            }
+        }
+
+        &:hover {
+            @include generate-style-block('TableRowHover') {
+                // @full
+                background-color: if(variable-exists(table-color-background-row-hover), $table-color-background-row-hover, #fefefe);
+            }
+        }
+
+        &.TableHeaderRow {
+            @include generate-style-block('TableHeaderRow') {
+                // @full
+                color: if(variable-exists(table-color-header-text), $table-color-header-text, $elements-color-text-dark);
+                background: if(variable-exists(table-color-background-row-header), $table-color-background-row-header, $elements-color-container-background-light);
+                font-family: if(variable-exists(table-font-body-row-header), $table-font-body-row-header, $elements-header-font-body);
+                font-size: if(variable-exists(table-font-size-row-header), $table-font-size-row-header, 1em);
+                font-weight: if(variable-exists(table-font-weight-row-header), $table-font-weight-row-header, bold);
+                text-decoration: if(variable-exists(table-text-decoration-row-header), $table-text-decoration-row-header, none);
+                text-align: if(variable-exists(table-text-align-row-header), $table-text-align-row-header, center);
+                display: if(variable-exists(table-mobile-table-header-display), $table-mobile-table-header-display, none);
+            }
+
+            .TableCell {
+                color: inherit;
+            }
+        }
+        &.TableFooterRow {
+            @include generate-style-block('TableFooterRow') {
+                // @full
+                color: if(variable-exists(table-color-footer-text), $table-color-footer-text, $elements-color-text-dark);
+                background: if(variable-exists(table-color-background-row-footer), $table-color-background-row-footer, $elements-color-container-background-light);
+                font-family: if(variable-exists(table-font-body-row-footer), $table-font-body-row-footer, $elements-header-font-body);
+                font-size: if(variable-exists(table-font-size-row-footer), $table-font-size-row-footer, 1em);
+                font-weight: if(variable-exists(table-font-weight-row-footer), $table-font-weight-row-footer, bold);
+                text-decoration: if(variable-exists(table-text-decoration-row-footer), $table-text-decoration-row-footer, none);
+                text-align: if(variable-exists(table-text-align-row-footer), $table-text-align-row-footer, center);
+            }
+        }
+    }
+
+    .TableCell {
+        @include generate-style-block('TableCell') {
+            // @full
+            color: $elements-color-text-dark;
+            display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+            padding: if(variable-exists(table-mobile-table-cell-padding), $table-mobile-table-cell-padding, 0);
+            border-top: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+            border-left: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+            border-right: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+        }
+        &.IsHeaderColumn1 {
+            @include generate-style-block('TableEmbeddedHeaderColumn') {
+                @extend .TableRow.TableHeaderRow;
+                display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block)!important;
+            }
+        }
+    }
+    .TableCellContent {
+        @include generate-style-block('TableCellContent') {
+            // @full
+            display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+            float: if(variable-exists(table-header-copy-float), $table-header-copy-float, $left);
+            padding: if(variable-exists(table-header-copy-padding), $table-header-copy-padding, 10px);
+        }
+    }
+    &.TableNoBorder {
+        @include generate-style-block('TableNoBorder') {
+            // @full
+            border: none;
+        }
+
+        .TableRow {
+            @include generate-style-block('TableNoBorderTableRow') {
+                // @full
+                background: none;
+                border: none;
+            }
+        }
+
+        .TableCell {
+            @include generate-style-block('TableNoBorderTableCell') {
+                // @full
+                background: none;
+                border: none;
+            }
+        }
+    }
+}
+.cb {
+    @include generate-style-block('Tablecb') {
+        // @full
+        display: block;
+        clear: both;
+        overflow: hidden;
+        height: 0;
+    }
+}
+
+@media #{$basic-screen-query-normal} {
+    .Table {
+        @include generate-style-block('TableNormalScreen') {
+            // @full
+            border: solid 1px if(variable-exists(table-color-border), $table-color-border, #ddd);
+            display: table;
+        }
+
+        tbody {
+            @include generate-style-block('TableBodyNormalScreen') {
+                // @full
+                float: none;
+            }
+        }
+
+        .TableHeader {
+             @include generate-style-block('TableHeaderNormalScreen') {
+                 // @full
+                 display: none;
+             }
+
+             // WPS-7107 - render as usual in normal screen mode
+             @include customize-style-block('FootnoteMarkerPlaceholderBefore') {
+                // @full
+                 counter-increment: footnote;
+                 content: counter(footnote);
+             }
+        }
+
+        .TableCell {
+            @include generate-style-block('TableCellNormalScreen') {
+                // @full
+                border: solid 1px if(variable-exists(table-color-border-cell), $table-color-border-cell, #ddd);
+                padding: if(variable-exists(table-padding-cell), $table-padding-cell, 10px 15px);
+                display: table-cell;
+            }
+
+            &.IsHeaderColumn1 {
+            @include generate-style-block('TableEmbeddedHeaderColumnNormalScreen') {
+                    padding: if(variable-exists(table-padding-cell), $table-padding-cell, 10px 15px);
+                    display: table-cell!important;
+                }
+            }
+
+            .TableCellContent {
+                @include generate-style-block('TableCellContentNormalScreen') {
+                    // @full
+                    display: block;
+                    float: none;
+                }
+            }
+        }
+
+        .TableRow {
+            @include generate-style-block('TableRowNormalScreen') {
+                // @full
+                display: table-row;
+                clear: none;
+                border-bottom: none;
+            }
+
+            &.TableHeaderRow {
+                @include generate-style-block('TableHeaderRowNormalScreen') {
+                    // @full
+                    display: table-row;
+                }
+            }
+        }
+    }
+
+    #MainMenuCourseResourcesContainer {
+        .Table {
+            @include generate-style-block('TableInCourseResources') {
+                // @full
+                display: if(variable-exists(table-mobile-table-display), $table-mobile-table-display, inline);
+                border: if(variable-exists(table-mobile-table-border), $table-mobile-table-border, none);
+            }
+
+            tbody {
+                @include generate-style-block('TableInCourseResourcesBody') {
+                    // @full
+                    float: left;
+                }
+            }
+            .TableHeader {
+                @include generate-style-block('TableInCourseResourcesHeader') {
+                    // @full
+                    display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+                }
+            }
+            .TableCell {
+                @include generate-style-block('TableInCourseResourcesCell') {
+                    // @full
+                    display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+                    padding: if(variable-exists(table-mobile-table-cell-padding), $table-mobile-table-cell-padding, 0);
+                    border-top: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+                    border-left: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+                    border-right: if(variable-exists(table-mobile-table-cell-border), $table-mobile-table-cell-border, none);
+                }
+                .TableCellContent {
+                    @include generate-style-block('TableInCourseResourcesCellContent') {
+                        // @full
+                        display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+                        float: if(variable-exists(table-header-copy-float), $table-header-copy-float, $left);
+                    }
+                }
+            }
+            .TableRow {
+                @include generate-style-block('TableInCourseResourcesRow') {
+                    // @full
+                    display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block);
+                    clear: if(variable-exists(table-mobile-table-row-clear), $table-mobile-table-row-clear, both);
+                    border-bottom: 2px solid if(variable-exists(table-color-border), $table-color-border, #ddd);
+                }
+                &.TableHeaderRow {
+                    @include generate-style-block('TableInCourseResourcesHeaderRow') {
+                        // @full
+                        display: if(variable-exists(table-mobile-table-header-display), $table-mobile-table-header-display, none);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// target IE11 only
+// WPS-5634
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .Table {
+        width: 100%;
+        table-layout: fixed;
+    }
+}
+
+.TableTitleWrapper {
+    @include generate-style-block('TableTitleWrapper') {
+        // @full
+        clear: both;
+        font-size: 150%;
+    }
+}
+.TableCaptionWrapper {
+    @include generate-style-block('TableCaptionWrapper') {
+        // @full
+        clear: both;
+        padding: 6px;
+        font-style: italic;
+    }
+}

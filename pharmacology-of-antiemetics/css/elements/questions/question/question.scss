@@ -1,0 +1,664 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.QuestionBlock {
+    @include generate-style-block('QuestionBlock') {
+        // @full
+        margin: $questions-margin auto;
+        color: $questions-color-text-dark;
+    }
+}
+
+.Question {
+    @include generate-style-block('Question') {
+        // @full
+        margin: $questions-margin auto;
+        text-align: center;
+    }
+}
+
+.QuestionInnerWrap {
+    @include generate-style-block('QuestionInnerWrapper') {
+        // @full
+        box-sizing: border-box;
+        padding: $questions-padding;
+        border-width: $questions-innerwrap-border-width;
+        border-style: $questions-innerwrap-border-style;
+        border-color: $questions-innerwrap-color-border;
+        border-radius: $questions-innerwrap-border-radius;
+        background-color: $questions-color-container-background-light;
+        position: $questions-position;
+        text-align: $left;
+    }
+
+    .QuestionStem {
+        @include generate-style-block('QuestionStem') {}
+
+        h3 {
+            div {
+                @include generate-style-block('QuestionStemContainer') {
+                    // @full
+                    font-size: 0.8em;
+                }
+
+                &.RichText {
+                    @include generate-style-block('QuestionStemRichText') {
+                        // @full
+                        font-size: 1em;
+                    }
+                }
+
+                .mejs-currenttime {
+                    @include generate-style-block('QuestionStemMejsCurrenttime') {
+                        // @full
+                        font-size: 1.65em;
+                        font-weight: normal;
+                    }
+                }
+
+                .mejs-duration {
+                    @include generate-style-block('QuestionStemMejsDuration') {
+                        // @full
+                        font-size: 1.65em;
+                        font-weight: normal;
+                    }
+                }
+
+                .mejs-time-float-current {
+                    @include generate-style-block('QuestionStemMejsTimeFloatCurrent') {
+                        // @full
+                        font-size: 1.65em;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    .QuestionInstructions {
+        @include generate-style-block('QuestionInstructions') {
+            // @full
+            font-style: $questions-question-instructions-font-style;
+        }
+    }
+
+    @media #{$basic-screen-query-wide} {
+        @include generate-style-block('QuestionInnerWrapperWideScreen') {
+            // @full
+            display: inline-block;
+            max-width: 100%;
+            min-width: 590px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .AttemptCounter {
+        @include generate-style-block('QuestionAttemptCounter') {
+            // @full
+            display: inline-block;
+            margin: 0 $questions-margin;
+        }
+    }
+
+    .SupplementOverlayStatic.QuestionSubmitWrapper {
+        @include generate-style-block('QuestionSupplementOverlayStaticQuestionSubmitWrapper') {
+            // @full
+            display: none;
+        }
+    }
+
+    .QuestionSubmitWrapper {
+        @include generate-style-block('QuestionSubmitWrapper') {
+            // @full
+            margin: side-values($questions-submit-margin);
+        }
+
+        .QuestionSubmit {
+            @include generate-style-block('QuestionSubmit') {
+                // @full
+                font-size: 1.2em;
+                padding: side-values($questions-submit-padding);
+            }
+        }
+    }
+
+    .QuestionSupplementOuterWrapper {
+        @include generate-style-block('QuestionSupplements') {
+            // @full
+            position: $questions-supplements-outer-position;
+            top: $questions-supplements-outer-top;
+            bottom: $questions-supplements-outer-bottom;
+            left: $questions-supplements-outer-left;
+            right: $questions-supplements-outer-right;
+            transition: $questions-supplements-outer-transition;
+            width: $questions-supplements-outer-width;
+            overflow: $questions-supplements-outer-overflow-closed;
+            background-color: $questions-color-supplements-outer-background;
+            color: $questions-color-text-light;
+            z-index: 3;
+            max-height: $questions-supplements-outer-max-height-closed;
+        }
+
+        &:hover {
+             @include generate-style-block('QuestionSupplementsHover') {}
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsHoverToggleIcon') {
+                    // @full
+                    background-color: $questions-color-supplements-toggleicon-background;
+                }
+            }
+        }
+
+        .QuestionSupplementToggleIcon {
+            @include generate-style-block('QuestionSupplementsToggleIcon') {
+                // @full
+                width: $questions-supplements-toggleicon-width;
+                height: $questions-supplements-toggleicon-height;
+                box-sizing: $questions-supplements-toggleicon-box-sizing;
+                text-align: $questions-supplements-toggleicon-text-align;
+                position: $questions-supplements-toggleicon-position;
+                top: $questions-supplements-toggleicon-top;
+                bottom: $questions-supplements-toggleicon-bottom;
+                left: $questions-supplements-toggleicon-left;
+                right: $questions-supplements-toggleicon-right;
+                cursor: $questions-supplements-toggleicon-cursor;
+                font-size: $questions-supplements-toggleicon-font-size;
+                font-weight: $questions-supplements-toggleicon-font-weight;
+                background-color: fade-out($questions-color-supplements-toggleicon-background, 0.5);
+            }
+
+            &:before {
+                @include generate-style-block('QuestionSupplementsToggleIconBefore') {
+                    // @full
+                    content: $questions-supplements-toggleicon-closed-symbol;
+                }
+            }
+        }
+
+        &.SupplementOverlayStatic {
+            @include generate-style-block('QuestionSupplementsStatic') {
+                // @full
+                position: static;
+                background: transparent;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsStaticToggleIcon') {
+                    // @full
+                    display: none;
+                }
+            }
+
+            .QuestionSupplementInnerWrapper {
+                @include generate-style-block('QuestionSupplementsStaticInnerWrapper') {
+                    // @full
+                    padding: 0;
+                    background: transparent;
+                }
+            }
+        }
+
+        &.Disabled {
+            @include generate-style-block('QuestionSupplementsDisabled') {
+                // @full
+                max-height: 0;
+            }
+        }
+
+        &.Opening {
+            @include generate-style-block('QuestionSupplementsOpening') {
+                // @full
+                overflow: $questions-supplements-outer-overflow-opening;
+                max-height: $questions-supplements-outer-max-height-open;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsOpeningToggleIcon') {
+                    // @full
+                    background-color: $questions-color-supplements-toggleicon-background;
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsOpeningToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-opened-symbol;
+                    }
+                }
+            }
+        }
+
+        &.Open {
+            @include generate-style-block('QuestionSupplementsOpen') {
+                // @full
+                max-height: $questions-supplements-outer-max-height-open;
+                overflow: $questions-supplements-outer-overflow-open;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsOpenToggleIcon') {
+                    // @full
+                    background-color: $questions-color-supplements-toggleicon-background;
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsOpenToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-opened-symbol;
+                    }
+                }
+            }
+        }
+
+        &.Visible {
+            @include generate-style-block('QuestionSupplementsVisible') {
+                // @full
+                max-height: $questions-supplements-outer-max-height-open;
+                overflow: $questions-supplements-outer-overflow-open;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsVisibleToggleIcon') {
+                    // @full
+                    background-color: $questions-color-supplements-toggleicon-background;
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsVisibleToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-opened-symbol;
+                    }
+                }
+            }
+        }
+
+        &.Closing {
+            @include generate-style-block('QuestionSupplementsClosing') {
+                // @full
+                max-height: $questions-supplements-outer-max-height-closed;
+                overflow: $questions-supplements-outer-overflow-closed;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsClosingToggleIcon') {
+                    // @full
+                    background-color: fade-out($questions-color-supplements-toggleicon-background, 0.5);
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsClosingToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-closed-symbol;
+                    }
+                }
+            }
+        }
+
+        &.Closed {
+            @include generate-style-block('QuestionSupplementsClosed') {
+                // @full
+                max-height: $questions-supplements-outer-max-height-closed;
+                overflow: $questions-supplements-outer-overflow-closed;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsClosedToggleIcon') {
+                    // @full
+                    background-color: fade-out($questions-color-supplements-toggleicon-background, 0.5);
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsClosedToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-closed-symbol;
+                    }
+                }
+            }
+        }
+
+        &.Invisible {
+            @include generate-style-block('QuestionSupplementsInvisible') {
+                // @full
+                max-height: $questions-supplements-outer-max-height-closed;
+                overflow: $questions-supplements-outer-overflow-closed;
+            }
+
+            .QuestionSupplementToggleIcon {
+                @include generate-style-block('QuestionSupplementsInvisibleToggleIcon') {
+                    // @full
+                    background-color: fade-out($questions-color-supplements-toggleicon-background, 0.5);
+                }
+
+                &:before {
+                    @include generate-style-block('QuestionSupplementsInvisibleToggleIconBefore') {
+                        // @full
+                        content: $questions-supplements-toggleicon-closed-symbol;
+                    }
+                }
+            }
+        }
+
+        .QuestionSupplementInnerWrapper {
+            @include generate-style-block('QuestionSupplementsContent') {
+                // @full
+                position: $questions-supplements-inner-position;
+                top: $questions-supplements-inner-top;
+                bottom: $questions-supplements-inner-bottom;
+                left: $questions-supplements-inner-left;
+                right: $questions-supplements-inner-right;
+                padding-top: $questions-supplements-inner-padding-top;
+                padding-bottom: $questions-supplements-inner-padding-bottom;
+                padding-left: $questions-supplements-inner-padding-left;
+                padding-right: $questions-supplements-inner-padding-right;
+            }
+        }
+    }
+
+    .PositiveFeedback {
+        @include generate-style-block('QuestionPositiveFeedback') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-correct;
+            border-radius: $questions-border-radius;
+            color: darken($questions-color-correct, 10%);
+            background-color: transparentize($questions-color-correct, .6);
+            font-size: 1.1em;
+            fill: $questions-color-responsefeedback-icon-correct-fill;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionPositiveFeedbackActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionPositiveFeedbackIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .NegativeFeedback {
+        @include generate-style-block('QuestionNegativeFeedback') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-incorrect;
+            border-radius: $questions-border-radius;
+            color: darken($questions-color-incorrect, 10%);
+            background-color: transparentize($questions-color-incorrect, .6);
+            font-size: 1.1em;
+            fill: $questions-color-responsefeedback-icon-incorrect-fill;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionNegativeFeedbackActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionNegativeFeedbackIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .ResponseFeedback {
+        @include generate-style-block('QuestionResponseFeedback') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-border;
+            border-radius: $questions-border-radius;
+            white-space: pre-wrap;
+            font-size: 1.1em;
+            color: inherit;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionResponseFeedbackActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionResponseFeedbackIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .IncorrectNotice {
+        @include generate-style-block('QuestionIncorrectNotice') {
+            // @full
+            color: $questions-color-incorrect;
+            font-size: 1.1em;
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-border;
+            border-radius: $questions-border-radius;
+            fill: $questions-color-responsefeedback-icon-incorrect-fill;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionIncorrectNoticeActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionIncorrectNoticeIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .Hint {
+        @include generate-style-block('QuestionHint') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            color: $questions-supplement-text-color;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-border;
+            border-radius: $questions-border-radius;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionHintActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionHintIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .Advice {
+        @include generate-style-block('QuestionAdvice') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            color: $questions-supplement-text-color;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-border;
+            border-radius: $questions-border-radius;
+        }
+
+        &.Active {
+            @include generate-style-block('QuestionAdviceActive') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('QuestionAdviceIcon') {
+                // @full
+                float: $questions-supplements-feedback-icon-float;
+                margin-#{$right}: 0.5em;
+                display: if($questions-show-feedback-icons, block, none);
+            }
+        }
+    }
+
+    .QuestionFlagIcon {
+        @include generate-style-block('QuestionFlagIcon') {
+            // @full
+            position: relative;
+            top: $questions-flag-icon-top;
+            bottom: $questions-flag-icon-bottom;
+            left: $questions-flag-icon-left;
+            right: $questions-flag-icon-right;
+            cursor: $questions-flag-icon-cursor;
+            font-size: $questions-flag-icon-font-size;
+            width: $questions-flag-icon-width;
+            height: $questions-flag-icon-height;
+            overflow: $questions-flag-icon-overflow;
+            text-indent: $questions-flag-icon-text-indent;
+            float: $questions-flag-icon-float;
+            margin: $questions-flag-icon-margin;
+            user-select: none;
+            display: none;
+        }
+
+        &:hover {
+            @include generate-style-block('QuestionFlagIconHover') {
+                // @full
+                cursor: pointer;
+            }
+        }
+
+        &.Disabled {
+            @include generate-style-block('QuestionFlagIconDisabled') {
+                // @full
+                cursor: initial;
+            }
+        }
+
+        .SVGIcon {
+            @include generate-style-block('QuestionFlagIconSVGIcon') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                fill: $questions-flag-icon-svg-fill;
+                stroke: $questions-flag-icon-svg-stroke;
+                margin: $questions-flag-icon-svg-margin;
+                pointer-events: none;
+            }
+        }
+
+        .UnflaggedIcon {
+            @include generate-style-block('QuestionFlagIconSVGIconUnflaggedIcon') {
+                // @full
+                display: block;
+            }
+        }
+
+        .FlaggedIcon {
+            @include generate-style-block('QuestionFlagIconSVGIconFlaggedIcon') {
+                // @full
+                display: none;
+            }
+        }
+
+        &.Flagged {
+
+            @include generate-style-block('QuestionFlagIconFlagged') {}
+
+            .UnflaggedIcon {
+                @include generate-style-block('QuestionFlagIconFlaggedUnflaggedIcon') {
+                    // @full
+                    display: none;
+                }
+            }
+
+            .FlaggedIcon {
+                @include generate-style-block('QuestionFlagIconFlaggedFlaggedIcon') {
+                    // @full
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.PopupContent {
+        @include generate-style-block('QuestionSupplementsPopup') {
+            // @full
+            border: none;
+            border-radius: 0;
+            position: static;
+            min-width: 300px;
+        }
+
+        .QuestionSupplementOuterWrapper {
+            @include generate-style-block('QuestionSupplementsPopupContent') {
+                // @full
+                position: static;
+                max-height: none;
+                background: transparent;
+            }
+        }
+    }
+}

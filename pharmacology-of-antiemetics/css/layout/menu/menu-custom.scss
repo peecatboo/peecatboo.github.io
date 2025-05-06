@@ -1,0 +1,76 @@
+/*
+Copyright c 2016 Xyleme, Inc., 1881 9th Street, Suite 300, Boulder, Colorado 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+*/
+@include customize-style-block('MainMenuRegions') {
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+@include customize-style-block('MainMenuTopRegion') {
+    text-align: center;
+  
+  
+    .ComponentLinksWrapper {
+        display: inline-block;
+    }
+
+    .MenuIcon, .ComponentLink, .ExitButtonLink {
+        background: none;
+        margin: 0px;
+
+        &:hover, &.Active {
+            background: none;
+
+            .SVGIcon {
+                fill: $basic-color-branding1;
+            }
+        }
+
+        .SVGIcon {
+            fill: $basic-color-branding2;
+
+            &.CalculatorIcon {
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+
+    .MenuIcon, .ExitButtonLink {
+        &:hover {
+            .SVGIcon {
+                fill: $basic-color-branding2;
+            }
+        }
+        .SVGIcon {
+            fill: $basic-color-branding1;
+        }
+    }
+}	
+   
+@include customize-style-block('MainMenuWrapper') {
+    .After {
+        height: 70px;
+        background: url(../img/logo.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding-top: 10px;
+    }
+  
+  }
+
+

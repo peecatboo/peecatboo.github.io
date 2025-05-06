@@ -1,0 +1,146 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+body {
+    .PreserveWhitespace {
+        @include generate-style-block('PreserveTextWhitespace') {
+            white-space: pre;
+        }
+    }
+    .Overline {
+        @include generate-style-block('Overline') {
+            // @full
+            text-decoration: overline;
+        }
+    }
+    .DoubleUnderline {
+        @include generate-style-block('DoubleUnderline') {
+            // @full
+            border-bottom: 0.3em double;
+        }
+    }
+    .InLineQuote {}
+    .InLineApplicationPrompt {
+        @include generate-style-block('InLineApplicationPrompt') {
+            // @full
+            font-style: if(variable-exists(text-inlineapplicationprompt-font-style), $text-inlineapplicationprompt-font-style, italic);
+        }
+    }
+    .CommandName {
+        @include generate-style-block('CommandName') {
+            // @full
+            font-weight: if(variable-exists(text-commandname-font-weight), $text-commandname-font-weight, bold);
+            font-family: if(variable-exists(text-commandname-font-family), $text-commandname-font-family, $elements-monospace-font-body);
+        }
+    }
+    .InLineKeyword {
+        @include generate-style-block('InLineKeyword') {
+            // @full
+            font-weight: if(variable-exists(text-inlinekeyword-font-weight), $text-inlinekeyword-font-weight, bold);
+            font-style: if(variable-exists(text-inlinekeyword-font-style), $text-inlinekeyword-font-style, italic);
+        }
+    }
+    .InLineInstructorText {
+        @include generate-style-block('InLineInstructorText') {
+            // @full
+            font-weight: if(variable-exists(text-inlineinstructortext-font-weight), $text-inlineinstructortext-font-weight, normal);
+            font-style: if(variable-exists(text-inlineinstructortext-font-style), $text-inlineinstructortext-font-style, italic);
+            text-transform: if(variable-exists(text-inlineinstructortext-text-transform), $text-inlineinstructortext-text-transform, uppercase);
+        }
+    }
+    .InLineWindowName {
+        @include generate-style-block('InLineWindowName') {
+            // @full
+            font-weight: if(variable-exists(text-inlinewindowname-font-weight), $text-inlinewindowname-font-weight, bold);
+            font-variant: if(variable-exists(text-inlinewindowname-font-variant), $text-inlinewindowname-font-variant, small-caps);
+        }
+    }
+    .InLineKeyboard {
+        @include generate-style-block('InLineKeyboard') {
+            // @full
+            font-variant: if(variable-exists(text-inlinekeyboard-font-variant), $text-inlinekeyboard-font-variant, small-caps);
+        }
+    }
+    .InLineLabFile {
+        @include generate-style-block('InLineLabFile') {
+            // @full
+            font-weight: if(variable-exists(text-inlinelabfile-font-weight), $text-inlinelabfile-font-weight, bold);
+            font-style: if(variable-exists(text-inlinelabfile-font-style), $text-inlinelabfile-font-style, italic);
+        }
+    }
+    .InLineMenuSelection {
+        @include generate-style-block('InLineMenuSelection') {
+            // @full
+            font-weight: if(variable-exists(text-inlinemenuselection-font-weight), $text-inlinemenuselection-font-weight, bold);
+        }
+    }
+    .InLineVariableText {
+        @include generate-style-block('InLineVariableText') {
+            // @full
+            font-family: if(variable-exists(text-inlinevariabletext-font-family), $text-inlinevariabletext-font-family, $elements-monospace-font-body);
+        }
+    }
+    .SyntaxArg {
+        @include generate-style-block('SyntaxArg') {
+            // @full
+            font-style: if(variable-exists(text-syntaxarg-font-style), $text-syntaxarg-font-style, italic);
+            font-family: if(variable-exists(text-syntaxarg-font-family), $text-syntaxarg-font-family, courier);
+        }
+    }
+    .SyntaxKeyword {
+        @include generate-style-block('SyntaxKeyword') {
+            // @full
+            font-weight: if(variable-exists(text-syntaxkeyword-font-weight), $text-syntaxkeyword-font-weight, bold);
+            font-family: if(variable-exists(text-syntaxkeyword-font-family), $text-syntaxkeyword-font-family, $elements-monospace-font-body);
+            font-style: if(variable-exists(text-syntaxkeyword-font-style), $text-syntaxkeyword-font-style, italic);
+        }
+    }
+    .InLineCode {
+        @include generate-style-block('InLineCode') {
+            // @full
+            font-family: if(variable-exists(text-inlinecode-font-family), $text-inlinecode-font-family, $elements-monospace-font-body);
+            color: if(variable-exists(text-inlinecode-color), $text-inlinecode-color, $elements-color-text-lightened);
+        }
+    }
+    .InLineTypeThis {
+        @include generate-style-block('InLineTypeThis') {
+            // @full
+            font-family: if(variable-exists(text-inlinetypethis-font-family), $text-inlinetypethis-font-family, $elements-monospace-font-body);
+            font-style: if(variable-exists(text-inlinetypethis-font-style), $text-inlinetypethis-font-style, italic);
+            font-weight: if(variable-exists(text-inlinetypethis-font-weight), $text-inlinetypethis-font-weight, bold);
+            color: if(variable-exists(text-inlinetypethis-color), $text-inlinetypethis-color, $elements-color-text-lightened);
+        }
+        &:after {
+            @include generate-style-block('InLineTypeThisAfter') {
+                // @full
+                content: if(variable-exists(text-inlinetypethis-content-after), $text-inlinetypethis-content-after, '\00a0\00a0');
+            }
+        }
+    }
+    .Highlight {
+        @include generate-style-block('Highlight') {
+            // @full
+            background-color: if(variable-exists(text-background-color-highlight), $text-background-color-highlight, #ff0);
+        }
+    }
+    .EndTextWrap {
+        @include generate-style-block('EndTextWrap') {
+            // @full
+            clear: both;
+            font-size: 0;
+            line-height: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+}

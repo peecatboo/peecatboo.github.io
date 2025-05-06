@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+@import 'prefix-mixins/sample-prop-to-prefix';
+@import 'prefix-mixins/sample-value-to-prefix';
+
+// lists of properties and values that should be prefix
+// "sample-property-to-prefix" is
+// for demonstration purposes only
+// to show how stuff can be handled
+//
+$prefix-properties: (
+    'sample-prop-to-prefix'
+);
+
+$prefix-values: (
+    'sample-value-to-prefix'
+);
+
+// helper
+// check if value is in the list
+@function contains($list, $val) {
+    @if not(index($list, $val)) { @return false;}
+    @return true;
+}
+
+// helper
+// check if given property or value
+// should be prefixed
+@function should-prefix ($prop, $val) {
+    @if contains($prefix-properties, $prop) {@return true;}
+    @if contains($prefix-values, $val) {@return true;}
+    @return false;
+}
+
+
+@mixin autoprefix($prop, $val) {
+    // if neither prop nor value
+    // are in list or stuff that
+    // should be prefixed
+    // insert it as it is
+    @if not should-prefix($prop, $val) {
+        #{$prop}: #{$val};
+    } @else {
+        // here check if prop or value
+        // should be prefixed
+        // and call appropriate mixin
+        // eg.
+        @if $prop == 'sample-prop-to-prefix' {
+            @include sample-prop-to-prefix($prop, $val);
+        } @else if $val == 'sample-value-to-prefix' {
+            @include sample-value-to-prefix($prop, $val);
+        }
+    }
+}

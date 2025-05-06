@@ -1,0 +1,86 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$menu-open-width: 350px;
+$menu-open-narrow-max-width: 66%;
+$menu-open-normal-width: auto;
+$menu-open-normal-max-width: $menu-open-width;
+$menu-open-wide-width: $menu-open-width;
+$menu-open-wide-max-width: $menu-open-width;
+
+$left-right-menu-width: 100%;
+$left-right-menu-width-narrow: 100%;
+$left-right-menu-width-normal: 350px;
+$left-right-menu-width-wide: 350px;
+
+$menu-topmatter-height: 11mm;
+$menu-topmatter-background: transparent $menu-topmatter-background-image no-repeat center center;
+$menu-topmatter-background-size: auto 60%;
+
+$menu-topmatter-icon-height: 11mm;
+// $menu-topmatter-icon-background: $menu-color-topmatter-icon-background $menu-icon-url center center no-repeat;
+$menu-topmatter-icon-background: none;
+
+$menu-exit-button-position: relative;
+$menu-exit-button-padding: 0;
+$menu-exit-button-border: none;
+
+$menu-exit-button-text-indent: 120%;
+$menu-exit-button-overflow: hidden;
+
+$menu-notebook-wrap-width: 75%;
+$menu-notebook-wrap-margin: 0 auto;
+
+$menu-notebook-title-text-transform: uppercase;
+$menu-notebook-title-color: white;
+$menu-notebook-title-margin: 0.2em 0;
+$menu-notebook-text-min-height: 250px;
+
+$menu-componentlinks-item-float: none;
+$menu-componentlinks-item-icon-width: 16px;
+$menu-componentlinks-item-icon-height: 16px;
+$menu-componentlinks-item-title-max-width: 90%;
+
+$menu-list-padding: 0;
+
+$menu-componentlinks-padding-left: 10px;
+$menu-componentlinks-white-space: normal;
+$menu-componentlinks-float: none;
+$menu-componentlinks-item-height: 42px;
+$menu-componentlinks-item-line-height: 38px;
+$menu-componentlinks-item-width: auto;
+$menu-componentlinks-item-max-width: 90%;
+$menu-componentlinks-item-padding: 0 12px;
+$menu-componentlinks-item-margin: 3px;
+$menu-componentlinks-item-word-wrap: normal;
+$menu-componentlinks-item-link-width: 100px;
+
+$menu-componentlinks-item-border: none;
+$menu-componentlinks-item-border-radius: 5px;
+
+$menu-componentlinks-dropdownicon-before-position: static;
+$menu-componentlinks-dropdownicon-before-top: auto;
+$menu-componentlinks-dropdownicon-before-bottom: auto;
+$menu-componentlinks-dropdownicon-before-left: auto;
+$menu-componentlinks-dropdownicon-before-right: auto;
+
+$menu-middle-padding-top: 10px;
+$menu-middle-box-sizing: padding-box;
+
+$menu-accordion-li-width: 100%;
+$menu-accordion-li-margin: 0;
+$menu-accordion-li-border-radius: 0;
+$menu-accordion-li-border-bottom: solid 1px #494949;
+$menu-accordion-li-padding-left: 10px;
+$menu-accordion-li-svg-margin: 0 10px;

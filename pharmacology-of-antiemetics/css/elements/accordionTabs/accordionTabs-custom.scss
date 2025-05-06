@@ -1,0 +1,18 @@
+ @include customize-style-block('AccordionTabsPanel') {
+
+    border-color: #287339;
+    
+}
+
+
+@include customize-style-block('AccordionTabsPanelResponsiveHeading'){
+
+    border-bottom-color: #287339;
+    background-color: #287339;
+  	margin-bottom: 1em;
+  
+}
+
+.ResponsiveHeading.TabsNavigationItem{
+  box-shadow: 0px 8px 5px 0px $elements-box-shadow-color;
+}

@@ -1,0 +1,47 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$courseProgress-padding                         : 25px;
+$courseProgress-margin                          : 0 auto;
+
+$courseProgress-height                          : auto;
+$courseProgress-height-result                   : $menu-topmatter-height + $menu-componentlinks-item-height;
+// $courseProgress-max-height                      : calc(100% - #{$courseProgress-height-result});
+// $courseProgress-max-height-fallback             : 84%;
+
+$courseProgress-border-width                    : $component-border-width;
+$courseProgress-border-style                    : $component-border-style;
+
+$courseProgress-list-style                      : none;
+$courseProgress-list-margin                     : 0;
+$courseProgress-list-padding                    : 0;
+$courseProgress-sub-menu-list-style             : $courseProgress-list-style;
+$courseProgress-marker-width-mobile             : 3px;
+$courseProgress-marker-height-mobile            : $courseProgress-marker-width-mobile;
+$courseProgress-marker-width-narrow             : 5px;
+$courseProgress-marker-height-narrow            : $courseProgress-marker-width-narrow;
+$courseProgress-marker-width-normal             : 5px;
+$courseProgress-marker-height-normal            : $courseProgress-marker-width-normal;
+$courseProgress-marker-background               : rgba(255,255,255,0);
+$courseProgress-marker-border-style             : solid;
+$courseProgress-marker-border-width             : 2px;
+$courseProgress-marker-border-radius            : 100%;
+$courseProgress-marker-border                   : $courseProgress-marker-border-width $courseProgress-marker-border-style $courseProgress-marker-border-color;
+
+$courseProgress-marker-margin                   : 4px 2px 0;
+$courseProgress-marker-margin-active            : 3px 2px 0;
+$courseProgress-marker-border-width-active      : 3px;
+$courseProgress-marker-background-active        : none;
+
+$courseProgress-marker-background-progress      : rgba(255,255,255,0.5);
+$courseProgress-marker-background-completed     : $component-color-text-lightened;

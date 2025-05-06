@@ -1,0 +1,291 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.DragDropInnerWrap {
+    @include generate-style-block('DragDrop') {}
+    .DragDropImageWrapper {
+        @include generate-style-block('DragDropImageWrapper') {
+            // @full
+            position: relative;
+            margin: 10px 0;
+            padding: 10px;
+            opacity: 0;
+            overflow: auto;
+            box-sizing: border-box;
+            transition: opacity 1s;
+        }
+
+        & > * {
+            @include generate-style-block('DragDropImageWrapperDirectChildren') {
+                // @full
+                transform-origin: $left top;
+                -webkit-transform-origin: $left top;
+            }
+        }
+
+        .DragDropImage {
+            @include generate-style-block('DragDropImageWrapperImage') {
+                // @full
+                border: solid 6px white;
+                box-shadow: 0 0 8px #aaa;
+                border-radius: 5px;
+                width: auto;
+                height: auto;
+            }
+        }
+        .DragDropObjects {
+            @include generate-style-block('DragDropObjects') {
+                // @full
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .DragObject {
+                @include generate-style-block('DragObject') {
+                    // @full
+                    position: absolute;
+                    white-space: nowrap;
+                    user-select: none;
+
+                    > * {
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            .DragStart {
+                @include generate-style-block('DragDropDragStart') {
+                    // @full
+                    z-index: 3;
+                    cursor: move;
+                }
+
+                .DragTextInner {
+                    @include generate-style-block('DragDropDragStartDragTextInner') {
+                        transition: text-shadow 200ms linear;
+                    }
+                }
+
+                > * {
+                    @include generate-style-block('DragDropDragStartDirectChildren') {
+                        // @full
+                        vertical-align: top;
+                    }
+                }
+                &.draggable {
+                    @include generate-style-block('DragDropDragStartDraggable') {
+                        // @full
+                        cursor: move;
+                    }
+                }
+                &:before {
+                    @include generate-style-block('DragDropDragStartBefore') {
+                        // @full
+                        content: ' ';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1; // this makes :before appear beneath element content
+                        background: none;
+                        box-shadow: none;
+                        transition: all 200ms;
+                    }
+                }
+                &.Highlighted {
+                    @include generate-style-block('DragDropDragStartHighlighted') {}
+                    &:before {
+                        @include generate-style-block('DragDropDragStartHighlightedBefore') {
+                            // @full
+                            background: rgba(0,0,0,.1);
+                            box-shadow: 0 5px 10px rgba(0,0,0,.8);
+                        }
+                    }
+                }
+                // scale :before in text drags to visually create padding
+                &.DragText.Highlighted{
+                    @include generate-style-block('DragDropDragStartDragTextHighlighted') {}
+                    .DragTextInner {
+                        @include generate-style-block('DragDropDragStartDragTextInnerHighlighted') {
+                            text-shadow: 0 5px 5px rgba(0,0,0,.5);
+                        }
+                    }
+                    &:before {
+                        @include generate-style-block('DragDropDragStartDragTextHighlightedBefore') {
+                            // @full
+                            transform: scale(1.3, 1.1);
+                            background: none;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            .Distractor {
+                @include generate-style-block('DragDropObjectsDistractor') {
+                    // @full
+                    z-index: 3;
+                    cursor: move;
+                }
+                &.draggable {
+                    @include generate-style-block('DragDropObjectsDistractorDraggable') {
+                        // @full
+                        cursor: move;
+                    }
+                }
+                .DragTextInner {
+                    @include generate-style-block('DragDropObjectsDistractorDragTextInner') {
+                        transition: text-shadow 200ms linear;
+                    }
+                }
+                &:before {
+                    @include generate-style-block('DragDropObjectsDistractorBefore') {
+                        // @full
+                        content: ' ';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1; // this makes :before appear beneath element content
+                        background: none;
+                        box-shadow: none;
+                        transition: all 200ms;
+                    }
+                }
+                &.Highlighted {
+                    @include generate-style-block('DragDropObjectsDistractorHighlighted') {}
+                    &:before {
+                        @include generate-style-block('DragDropObjectsDistractorHighlightedBefore') {
+                            // @full
+                            background: rgba(0,0,0,.1);
+                            box-shadow: 0 5px 5px rgba(0,0,0,.5);
+                        }
+                    }
+                }
+                &.DragText.Highlighted{
+                    @include generate-style-block('DragDropObjectsDistractorDragTextHighlighted') {}
+                    .DragTextInner {
+                        @include generate-style-block('DragDropObjectsDistractorDragTextInnerHighlighted') {
+                            text-shadow: 0 5px 10px rgba(0,0,0,.8);
+                        }
+                    }
+                    &:before {
+                        @include generate-style-block('DragDropObjectsDistractorDragTextHighlightedBefore') {
+                            // @full
+                            transform: scale(1.3, 1.1);
+                            background: none;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            .DragTarget {
+                @include generate-style-block('DragDropObjectsDragTarget') {
+                    // @full
+                    opacity: 0;
+                    z-index: 2;
+                }
+            }
+            .Visible {
+                @include generate-style-block('DragDropObjectsVisible') {
+                    // @full
+                    transition: opacity 200ms;
+                    opacity: 1;
+                }
+            }
+            .FeedbackIcon {
+                @include generate-style-block('DragDropObjectsFeedbackIcons') {
+                    // @full
+                    display: if(variable-exists(dragDrop-feedback-icons-display-initial), $dragDrop-feedback-icons-display-initial, none);
+                    position: if(variable-exists(dragDrop-feedback-icons-position), $dragDrop-feedback-icons-position, absolute);
+                }
+                &.CorrectIcon {
+                    @include generate-style-block('DragDropObjectsFeedbackIconsCorrectIcon') {
+                        // @full
+                        fill: if(variable-exists(dragDrop-color-correct), $dragDrop-color-correct, $elements-color-correct);
+                        stroke: if(variable-exists(dragDrop-color-correct), $dragDrop-color-correct, $elements-color-correct);
+                    }
+                }
+                &.IncorrectIcon {
+                    @include generate-style-block('DragDropObjectsFeedbackIconsIncorrectIcon') {
+                        // @full
+                        fill: if(variable-exists(dragDrop-color-incorrect), $dragDrop-color-incorrect, $elements-color-incorrect);
+                        stroke: if(variable-exists(dragDrop-color-incorrect), $dragDrop-color-incorrect, $elements-color-incorrect);
+                    }
+                }
+            }
+            > .Correct {
+                @include generate-style-block('DragDropObjectsCorrect') {
+                    // @full
+                    opacity: 1;
+                    transition: all 200ms;
+                    outline: solid 2px if(variable-exists(dragDrop-color-correct), $dragDrop-color-correct, $elements-color-correct) !important;
+                    background: transparentize(if(variable-exists(dragDrop-color-correct), $dragDrop-color-correct, $elements-color-correct), .6);
+                    border: solid 2px if(variable-exists(dragDrop-color-correct), $dragDrop-color-correct, $elements-color-correct) !important;
+                }
+
+                @if $dragDrop-show-feedback-icons == true {
+                    &.DragImage {
+                        .FeedbackIcon.CorrectIcon {
+                            @include generate-style-block('DragDropObjectsDragImageFeedbackIconCorrectIcon') {
+                                // @full
+                                display: if(variable-exists(dragDrop-feedback-icons-display-visible), $dragDrop-feedback-icons-display-visible, inline-block);
+                            }
+                        }
+                    }
+                }
+            }
+            > .Incorrect {
+                @include generate-style-block('DragDropObjectsIncorrect') {
+                    // @full
+                    opacity: 1;
+                    transition: all 200ms;
+                    outline: solid 2px if(variable-exists(dragDrop-color-incorrect), $dragDrop-color-incorrect, $elements-color-incorrect) !important;
+                    background: transparentize(if(variable-exists(dragDrop-color-incorrect), $dragDrop-color-incorrect, $elements-color-incorrect), .6);
+                    border: solid 2px if(variable-exists(dragDrop-color-correct), $dragDrop-color-incorrect, $elements-color-incorrect) !important;
+                }
+                @if $dragDrop-show-feedback-icons == true {
+                    #{$dragDrop-incorrect-feedback-emphasis-property}: $dragDrop-incorrect-feedback-emphasis-value;
+                    &.DragImage {
+                        .FeedbackIcon.IncorrectIcon {
+                            @include generate-style-block('DragDropObjectsDragImageFeedbackIconIncorrectIcon') {
+                                // @full
+                                display: if(variable-exists(dragDrop-feedback-icons-display-visible), $dragDrop-feedback-icons-display-visible, inline-block);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .Highlighted {
+                @include generate-style-block('DragDropObjectsHighlighted') {
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .DragDropShowAnswer {
+        @include generate-style-block('DragDropShowAnswer') {
+            display: none;
+        }
+    }
+
+    .ShowSolutionButton {
+        @include generate-style-block('DragDropShowSolutionButton') {}
+    }
+}

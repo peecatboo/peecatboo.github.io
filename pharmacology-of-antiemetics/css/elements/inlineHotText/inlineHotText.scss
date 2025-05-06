@@ -1,0 +1,38 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.InLineHotText {
+    @include generate-style-block('InLineHotText') {
+        // @full
+        background-color: if(variable-exists(inlineHotText-background-color), $inlineHotText-background-color, $elements-color-container-background-light);
+        color: if(variable-exists(inlineHotText-color), $inlineHotText-color, $elements-color-text-dark);
+        font-weight: if(variable-exists(inlineHotText-font-weight), $inlineHotText-font-weight, normal);
+        text-decoration: if(variable-exists(inlineHotText-text-decoration), $inlineHotText-text-decoration, none);
+        border-width: if(variable-exists(inlineHotText-border-width), $inlineHotText-border-width, 0 0 1px);
+        border-style: if(variable-exists(inlineHotText-border-style), $inlineHotText-border-style, dashed);
+        border-color: if(variable-exists(inlineHotText-border-color), $inlineHotText-border-color, $elements-color-text-links);
+        cursor: if(variable-exists(inlineHotText-cursor), $inlineHotText-cursor, pointer);
+    }
+    &:hover {
+        @include generate-style-block('InLineHotTextHover') {
+            // @full
+            background-color: if(variable-exists(inlineHotText-hover-background-color), $inlineHotText-hover-background-color, $elements-color-container-background-light);
+            color: if(variable-exists(inlineHotText-hover-color), $inlineHotText-hover-color, $elements-color-text-links);
+            font-weight: if(variable-exists(inlineHotText-hover-font-weight), $inlineHotText-hover-font-weight, normal);
+            text-decoration: if(variable-exists(inlineHotText-hover-text-decoration), $inlineHotText-hover-text-decoration, none);
+            border-width: if(variable-exists(inlineHotText-hover-border-width), $inlineHotText-hover-border-width, 0 0 1px);
+            border-style: if(variable-exists(inlineHotText-hover-border-style), $inlineHotText-hover-border-style, dashed);
+            border-color: if(variable-exists(inlineHotText-hover-border-color), $inlineHotText-hover-border-color, $elements-color-text-links);
+        }
+    }
+}

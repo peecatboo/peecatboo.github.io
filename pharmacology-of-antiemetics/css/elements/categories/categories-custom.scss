@@ -1,0 +1,9 @@
+@include customize-style-block('CategoriesCategoryItem') {
+  background-color: $categories-panel-heading-background-color;
+  border-#{right}-color: $categories-panel-heading-background-color;
+}
+
+@include customize-style-block('CategoriesItemTitle') {
+                // @full
+                font-size: 1.15em;
+            }

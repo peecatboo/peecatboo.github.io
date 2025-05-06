@@ -1,0 +1,55 @@
+$slick-arrow-color: #075669;
+.CarouselTabs .TabsPanels .slick-dots li.Completed button:before{color: #075669 !important;}
+
+
+.CarouselTabs {
+    .slick-prev, .slick-next {
+        &:before {
+            color:$slick-arrow-color !important;
+            //to align outline vertically
+            position: relative;
+            top: 3px;
+          	font-size: 35px;
+        }
+    }
+  
+    .slick-prev{
+    left: -40px;
+  }
+}
+
+
+
+.CarouselTabs .TabsPanels.slick-slider{
+
+box-shadow: 0px 3px 3px 3px $elements-box-shadow-color;
+
+}
+
+.noAdaptiveHeight {
+    .slick-slide {
+        height: auto;
+        img {
+            height: auto !important;
+        }
+      	padding: 1em;
+		margin: 0.5em;
+    }
+
+    .slick-track {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .slick-list {
+        height: auto !important;
+    }
+  
+  .slick-dots{
+
+	bottom:-43px;
+
+	}
+}

@@ -1,0 +1,31 @@
+<!--
+@license
+Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+-->
+<div class="PopupWrapper <%= popupWrapperClass %>" tabindex="-1" style="<%=computedStyle%>" role="<%=role%>" aria-label="<%= title %>" aria-modal="<%=modal%>">
+    <div class="PopupTitlebar">
+        <span class="PopupTitlebarTitle"><%= title %></span>
+        <span class="PopupTitlebarClose" title="<%= closeButtonLabel %>"></span>
+    </div>
+    <div class="PopupContent <%= popupContentClass %>"></div>
+    <% if (buttons && buttons.length > 0) { %>
+        <div class="PopupButtonsWrapper">
+            <div class="PopupButtons">
+                <% _.each(buttons, function(button) {%>
+                    <button class="PopupButton <%=button.buttonClass%>" alt="<%=button.text%>" title="<%=button.text%>"
+                        onclick="(<%=button.click%>).call(this)">
+                        <%=button.text%>
+                    </button>
+                <%})%>
+            </div>
+        </div>
+    <% } %>
+</div>

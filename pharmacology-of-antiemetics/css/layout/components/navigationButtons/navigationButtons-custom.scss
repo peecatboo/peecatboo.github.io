@@ -1,0 +1,9 @@
+ .NavigationButtonsLink {
+   .NavigationButton {
+     .SVGIcon {
+       &, &:hover {
+         fill: inherit;
+       }
+     }
+   }
+ }

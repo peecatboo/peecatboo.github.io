@@ -1,0 +1,116 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+/* footnote counters */
+
+//must do that for right numbering of footnotes
+body {
+    @include generate-style-block('FootnoteCounterBody') {
+        // @full
+        counter-reset: footnote 0 footnoteContent 0;
+    }
+}
+.PopupContent {
+    @include generate-style-block('FootnoteCounterPopup') {
+        // @full
+        counter-reset: footnote 0 footnoteContent 0;
+    }
+}
+.FootnoteMarker {
+    .FootnoteMarkerPlaceholder {
+        &:before {
+            @include generate-style-block('FootnoteMarkerPlaceholderBefore') {
+                // @full
+                counter-increment: footnote;
+                content: counter(footnote);
+            }
+        }
+    }
+}
+.FootnoteMarker {
+    @include generate-style-block('FootnoteMarker') {
+        // @full
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .FootnoteMarkerPlaceholder {
+        @include generate-style-block('FootnoteMarkerPlaceholder') {
+            // @full
+            color: if(variable-exists(footnote-color-text-marker), $footnote-color-text-marker, $elements-color-text-lightened);
+        }
+        &:hover {
+            @include generate-style-block('FootnoteMarkerPlaceholderHover') {
+                // @full
+                color: if(variable-exists(footnote-color-text-marker-hover), $footnote-color-text-marker-hover, $elements-color-branding1);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.FootnoteContent {
+    @include generate-style-block('FootnoteContent') {
+        // @full
+        display: none;
+        position: relative;
+        padding: 3px;
+        margin: 10px;
+        color: if(variable-exists(footnote-color-text-content), $footnote-color-text-content, $elements-color-text-lightened);
+        word-wrap: if(variable-exists(footnote-word-wrap), $footnote-word-wrap, break-word);
+        word-break: if(variable-exists(footnote-word-break), $footnote-word-break, break-word);
+        clear: both;
+        border-top-style: solid;
+        border-width: 1px;
+        border-color: if(variable-exists(footnote-color-border-content), $footnote-color-border-content, $elements-color-text-lightened);
+        padding-#{$left}: 24px;
+    }
+
+    &:hover {
+        @include generate-style-block('FootnoteContentHover') {
+            // @full
+            border-top-color: if(variable-exists(footnote-color-border-content-hover), $footnote-color-border-content-hover, $elements-color-branding1);
+            color: if(variable-exists(footnote-color-text-content-hover), $footnote-color-text-content-hover, $elements-color-text-dark);
+        }
+        &:before {
+            @include generate-style-block('FootnoteContent:hoverBefore') {
+                // @full
+                background: if(variable-exists(footnote-color-background-content-marker-hover), $footnote-color-background-content-marker-hover, $elements-color-branding1);
+                color: if(variable-exists(footnote-color-text-content-marker-hover), $footnote-color-text-content-marker-hover, #fff);
+            }
+        }
+    }
+    &:before {
+        @include generate-style-block('FootnoteContentBefore') {
+            // @full
+            counter-increment: footnoteContent;
+            content: counter(footnoteContent);
+            position: absolute;
+            top: 0;
+            background: if(variable-exists(footnote-color-background-content-marker), $footnote-color-background-content-marker, $elements-color-text-lightened);
+            padding: 0 5px;
+            color: if(variable-exists(footnote-color-text-content-marker), $footnote-color-text-content-marker, #fff);
+            #{$left}: 0;
+        }
+    }
+
+    &.HighlightFootnote {
+        @include generate-style-block('FootnoteContentHighlight') {
+            @keyframes higlightFootnote {
+                0% {background-color: transparent;}
+                50% {background-color: transparentize($elements-color-text-lightened, 0.6);}
+                100% {background-color: transparent;}
+            }
+            animation: higlightFootnote 2s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+}

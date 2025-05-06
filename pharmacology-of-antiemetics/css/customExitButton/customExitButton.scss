@@ -1,0 +1,41 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+/* To bring this file into action copy it into css/customExitButton/ folder and add the following line to css/custom.css file:
+@import 'customExitButton/customExitButton.scss';
+*/
+
+#InlineExitButton {
+
+    width: 100%;
+
+    .CustomExitButtonLink {
+        box-sizing: initial;
+        margin-left: auto;  // to align the button to the left change this setting to 0 (leave margin-right: auto;)
+        margin-right: auto; // to align the button to the right change this setting to 0 (leave margin-left: auto;)
+        padding-top: 22px;  // this setting controls distance from the top button edge to button text
+        color: #00608F; // defines button text color
+        fill: #00608F;  // defines button icon color
+        background-color: #FFFFFF; // deffines button background color; uncomment this line if you need to change background color and replace $basic-color-branding1 with the color you need
+        text-shadow: none; // defines shadow settings for button text; uncomment this line if you need to set/change them and change the settings as you need
+        border: solid 2px #075669; // defines button border settings; if you need to change them uncomment this line and enter your values 
+
+        &:hover {
+            color: #FFF; // defines button text color on hover
+            fill: #FFF;  // defines button icon color on hover
+            background-color: #00608F; // deffines button background color on hover; uncomment this line if you need to change background color and replace $basic-color-branding1 with the color you need
+            //text-shadow: 0 0 3px #000; // defines shadow settings for button text on hover; uncomment this line if you need to set/change them and change the settings as you need
+            //border: solid 1px #22303d; // defines button border settings on hover; if you need to change them uncomment this line and enter your values 
+    }
+    }
+}

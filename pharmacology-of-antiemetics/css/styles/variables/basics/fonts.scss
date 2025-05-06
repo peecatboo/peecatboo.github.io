@@ -1,0 +1,78 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$basic-font-body: "Open Sans", Verdana, sans-serif !default;
+$basic-font-size: 0.8em !default;
+$basic-body-font-size: 1rem !default;
+$basic-font-weight: normal !default;
+$basic-monospace-font-body: Consolas, Courier, monospace !default;
+$basic-text-align: $left !default;
+$basic-text-line-height: normal !default;
+
+$basic-header-font-body: $basic-font-body !default;
+$basic-header-font-size: 2.5em !default;
+$basic-header-font-weight: bold !default;
+$basic-header-font-decoration: none !default;
+
+$basic-h1-font-body: $basic-header-font-body !default;
+$basic-h1-font-size: 2em !default;
+$basic-h1-font-weight: normal !default;
+$basic-h1-font-decoration: none !default;
+
+$basic-h2-font-body: $basic-header-font-body !default;
+$basic-h2-font-size: 1.8em !default;
+$basic-h2-font-weight: normal !default;
+$basic-h2-font-decoration: none !default;
+
+$basic-h3-font-body: $basic-header-font-body !default;
+$basic-h3-font-size: 1.6em !default;
+$basic-h3-font-weight: bold !default;
+$basic-h3-font-decoration: none !default;
+
+$basic-h4-font-body: $basic-header-font-body !default;
+$basic-h4-font-size: 1em !default;
+$basic-h4-font-weight: bold !default;
+$basic-h4-font-decoration: none !default;
+
+$basic-h5-font-body: $basic-header-font-body !default;
+$basic-h5-font-size: 0.8em !default;
+$basic-h5-font-weight: bold !default;
+$basic-h5-font-decoration: none !default;
+
+$basic-h6-font-body: $basic-header-font-body !default;
+$basic-h6-font-size: 0.6em !default;
+$basic-h6-font-weight: bold !default;
+$basic-h6-font-decoration: none !default;
+
+$basic-link-font-body: $basic-font-body !default;
+$basic-link-font-size: 1em !default;
+$basic-link-font-weight: normal !default;
+$basic-link-font-decoration: none !default;
+
+$basic-link-font-body-hover: $basic-link-font-body !default;
+$basic-link-font-size-hover: $basic-link-font-size !default;
+$basic-link-font-weight-hover: $basic-link-font-weight !default;
+$basic-link-font-decoration-hover: underline !default;
+
+$basic-link-font-body-active: $basic-link-font-body !default;
+$basic-link-font-size-active: $basic-link-font-size !default;
+$basic-link-font-weight-active: $basic-link-font-weight !default;
+$basic-link-font-decoration-active: underline !default;
+
+$basic-link-font-body-visited: $basic-link-font-body !default;
+$basic-link-font-size-visited: $basic-link-font-size !default;
+$basic-link-font-weight-visited: $basic-link-font-weight !default;
+$basic-link-font-decoration-visited: underline !default;
+
+$basic-textarea-font-family: serif !default;
+$basic-textarea-font-size: 20px !default;

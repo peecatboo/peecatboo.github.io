@@ -1,0 +1,38 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ParaBlock {
+    @include generate-style-block('ParaBlock') {
+        // @full
+        margin: if(variable-exists(parablock-margin), $parablock-margin, auto 0);
+    }
+    .ParaBlockContent {
+        @include generate-style-block('ParaBlockContent') {
+            // @full
+            margin-#{$right}: if(variable-exists(parablock-margin-right-narrow), $parablock-margin-right-narrow, if(variable-exists(marginnote-width-narrow), $marginnote-width-narrow, 40px));
+        }
+
+        @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+            @include generate-style-block('ParaBlockContentNormalWideScreen') {
+                // @full
+                margin-#{$right}: if(variable-exists(parablock-margin-right), $parablock-margin-right, if(variable-exists(marginnote-width), $marginnote-width, 200px)) + 10px;
+            }
+        }
+    }
+    .RichText {
+        @include generate-style-block('ParaBlockRichText') {
+            // @full
+            margin: if(variable-exists(parablock-richtext-margin), $parablock-richtext-margin, 1.5em 0);
+        }
+    }
+}

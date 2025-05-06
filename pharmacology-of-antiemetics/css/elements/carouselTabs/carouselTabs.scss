@@ -1,0 +1,102 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.CarouselTabs {
+    // Configure proper load path for SLICK assets
+    $slick-loader-path: '../img/';
+    $slick-arrow-color: black;
+
+    @extend .clearfix;
+
+    @include generate-style-block('CarouselTabsContainer') {
+        // @basic
+        // @full
+        // width: 95% !important;
+        margin: 0 auto;
+        padding: 5px 40px;
+        background: $basic-color-container-background-light;
+        border-radius: 25px;
+
+    }
+
+    .TabsNavigation {
+        // Vanilla Tab Element Tabs List
+        @include generate-style-block('CarouselTabsNavigationList') {
+            // @full
+            display: none;
+        }
+    }
+
+    .slick-prev, .slick-next, .slick-dots li button {
+        &:before {
+            @include generate-style-block('CarouselTabsNavigationElements') {
+                color: black!important;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .slick-prev, .slick-next {
+        &:focus {
+            @include generate-style-block('CarouselTabsNavigationElementsFocus') {
+                outline: auto 1px;
+                outline: -webkit-focus-ring-color auto 1px;
+            }
+        }
+    }
+
+    // show completion here for panels
+    .TabsPanels {
+        .Completed {
+            .TabsPanel {
+                @include generate-style-block('CarouselTabsPanelCompleted') {
+                    height: auto;
+                    box-sizing:border-box;
+                    padding:5px;
+                }
+            }
+        }
+        .slick-dots {
+            li.Completed button:before {
+                @include generate-style-block('CarouselTabsDotCompleted') {
+                    color: $basic-color-correct !important;
+                }
+            }
+            li.Completed.slick-active button:before {
+                @include generate-style-block('CarouselTabsDotActive') {
+                    color: $basic-color-correct !important;
+                }
+            }
+        }
+        &.slick-slider {
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+
+        }
+    }
+}
+
+@media (hover: none) {
+    @include generate-style-block('CarouselTabPanelsTablet') {
+        .TabPanels.slick-slider {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+}

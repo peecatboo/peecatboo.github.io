@@ -1,0 +1,23 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$multiplechoice-options-padding-left: 0;
+
+$multiplechoice-option-wrapper-border-radius: 2px;
+$multiplechoice-option-wrapper-margin: 0.7em 0;
+$multiplechoice-option-wrapper-cursor: pointer;
+
+$multiplechoice-option-wrapper-hover-border: $multiplechoice-border-width $multiplechoice-border-style darken($multiplechoice-color-branding1, 10%);
+$multiplechoice-option-distractor-wrapper-hover-border: none;
+$multiplechoice-option-distractor-wrapper-border-width: 0;
+$multiplechoice-option-distractor-wrapper-border-left-width: 0;

@@ -1,0 +1,31 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$customNote-color-branding1: $elements-color-branding1;
+$customNote-color-branding2: $elements-color-branding2;
+
+$customNote-color-border: $elements-color-border;
+$customNote-color-container-background-light: $elements-color-container-background-light;
+$customNote-color-container-background-dark: $elements-color-container-background-dark;
+$customNote-color-background: fade-out($customNote-color-branding1, 0.9);
+
+$customNote-color-text-dark: $elements-color-text-dark;
+$customNote-color-text-lightened: $elements-color-text-lightened;
+$customNote-color-text-light: $elements-color-text-light;
+$customNote-color-text-links: $elements-color-text-links;
+
+$customNote-color-text: $customNote-color-text-dark;
+
+$customNote-box-shadow-color: $elements-box-shadow-color;
+$customNote-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$customNote-box-shadow: $customNote-box-shadow-dimensions $customNote-box-shadow-color;

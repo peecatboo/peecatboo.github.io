@@ -1,0 +1,50 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$multiplechoice-color-branding1: $questions-color-branding1;
+$multiplechoice-color-branding2: $questions-color-branding2;
+
+$multiplechoice-color-border: $questions-color-border;
+$multiplechoice-color-page-background: $questions-color-page-background;
+$multiplechoice-color-container-background-light: $questions-color-container-background-light;
+$multiplechoice-color-container-background-dark: $questions-color-container-background-dark;
+
+$multiplechoice-color-text-dark: $questions-color-text-dark;
+$multiplechoice-color-text-lightened: $questions-color-text-lightened;
+$multiplechoice-color-text-light: $questions-color-text-light;
+$multiplechoice-color-text-links: $questions-color-text-links;
+$multiplechoice-color-text: $questions-color-text-dark;
+
+$multiplechoice-color-correct: $questions-color-correct;
+$multiplechoice-color-incorrect: $questions-color-incorrect;
+$multiplechoice-color-alsoCorrect: $questions-color-alsoCorrect;
+
+$multiplechoice-color-stem-text: $multiplechoice-color-text;
+
+$multiplechoice-box-shadow-color: $questions-box-shadow-color;
+$multiplechoice-box-shadow-dimensions: $questions-box-shadow-dimensions;
+$multiplechoice-box-shadow: $multiplechoice-box-shadow-dimensions $multiplechoice-box-shadow-color;
+$multiplechoice-overlay-color: $questions-overlay-color;
+
+$multiplechoice-color-option-wrapper-background: #FFF;
+$multiplechoice-color-option-wrapper-background-hover: lighten($multiplechoice-color-border, 5%);
+$multiplechoice-color-option-wrapper-correct-background: lighten($multiplechoice-color-correct, 45%);
+$multiplechoice-color-option-wrapper-incorrect-background: lighten($multiplechoice-color-incorrect, 40%);
+$multiplechoice-color-option-wrapper-alsoCorrect-background: lighten($multiplechoice-color-alsoCorrect, 40%);
+$multiplechoice-color-option-wrapper-correct-text: $multiplechoice-color-correct;
+$multiplechoice-color-option-wrapper-incorrect-text: $multiplechoice-color-incorrect;
+$multiplechoice-color-option-wrapper-alsoCorrect-text: $multiplechoice-color-alsoCorrect;
+
+$multiplechoice-color-responsefeedback-icon-correct-fill: $multiplechoice-color-correct;
+$multiplechoice-color-responsefeedback-icon-incorrect-fill: $multiplechoice-color-incorrect;
+$multiplechoice-color-responsefeedback-icon-alsocorrect-fill: $multiplechoice-color-alsoCorrect;

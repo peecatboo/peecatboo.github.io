@@ -1,0 +1,45 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+.Breadcrumb {
+    @include generate-style-block('Breadcrumb') {
+        // @full
+        white-space: if(variable-exists(breadcrumb-white-space), $breadcrumb-white-space, nowrap);
+        overflow: if(variable-exists(breadcrumb-white-overflow), $breadcrumb-white-overflow, hidden);
+        height: if(variable-exists(breadcrumb-container-height), $breadcrumb-container-height, hidden);
+        padding: side-values(if(variable-exists(breadcrumb-container-padding), $breadcrumb-container-padding, 0));
+        display: if(variable-exists(breadcrumb-display), $breadcrumb-display, inline-block);
+    }
+    @media #{$basic-screen-query-normal} {
+        @include generate-style-block('BreadcrumbNormalScreen') {
+            // @full
+            display: if(variable-exists(breadcrumb-display-normal), $breadcrumb-display-normal, block);
+        }
+    }
+    .Item {
+        @include generate-style-block('BreadcrumbItem') {
+            // @full
+            color: if(variable-exists(breadcrumb-item-color), $breadcrumb-item-color, $layout-color-text-dark);
+            display: if(variable-exists(breadcrumb-item-display), $breadcrumb-item-display, inline-block);
+        }
+    }
+    .Delimiter {
+        @include generate-style-block('BreadcrumbDelimiter') {
+            // @full
+            color: if(variable-exists(breadcrumb-delimiter-color), $breadcrumb-delimiter-color, $layout-color-text-dark);
+            padding: side-values(if(variable-exists(breadcrumb-delimiter-padding), $breadcrumb-delimiter-padding, 0 4px 0 4px));
+            display: if(variable-exists(breadcrumb-delimiter-display), $breadcrumb-delimiter-display, inline-block);
+        }
+    }
+}

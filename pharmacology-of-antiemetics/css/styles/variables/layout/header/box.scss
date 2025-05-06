@@ -1,0 +1,94 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$header-position: absolute;
+$header-top: 0px;
+$header-bottom: auto;
+$header-left: auto;
+$header-right: auto;
+$header-default-display: block;
+
+$header-width: 100%;
+$header-height: 64px;
+
+$header-padding: $layout-padding;
+$header-margin: $layout-margin;
+
+$header-border-width: $layout-border-width;
+$header-border-style: $layout-border-style;
+
+$header-transition-duration: 1s;
+
+// $header-open-display: $layout-open-display;
+// $header-open-overflow: $layout-open-overflow;
+// $header-opening-display: $layout-opening-display;
+// $header-opening-overflow: $layout-opening-overflow;
+
+// $header-closed-display: $layout-closed-display;
+// $header-closed-overflow: $layout-closed-overflow;
+// $header-closing-display: $layout-closing-display;
+// $header-closing-overflow: $layout-closing-overflow;
+
+$header-menu-icon-position: relative;
+$header-menu-icon-display: block;
+$header-menu-icon-float: $left;
+$header-menu-icon-width: $header-height;
+$header-menu-icon-height: $header-height;
+$header-menu-icon-text-indent: 120%;
+$header-menu-icon-white-space: nowrap;
+$header-menu-icon-overflow: hidden;
+$header-menu-icon-border: none;
+
+$header-menu-icon-svgIcon-position: absolute;
+$header-menu-icon-svgIcon-width: 8mm;
+$header-menu-icon-svgIcon-height: 8mm;
+$header-menu-icon-svgIcon-fill: #fff;
+$header-menu-icon-svgIcon-top: 50%;
+$header-menu-icon-svgIcon-left: 50%;
+$header-menu-icon-svgIcon-transform: translate(-50%, -50%);
+
+$header-menu-icon-active-background: rgba(0, 0, 0, .2);
+
+$header-title-margin: 0 0 0 20px;
+$header-title-padding: 22px 0 15px;
+$header-title-padding-normal: 4px 15px 0 0;
+$header-title-height: auto;
+$header-title-line-height: normal;
+$header-title-overflow: hidden;
+$header-title-white-space: nowrap;
+$header-title-max-width-initial: 50%;
+$header-title-max-width-normal: 64%;
+$header-title-max-width-wide: 70%;
+$header-title-text-overflow: ellipsis;
+$header-title-cursor: pointer;
+
+$header-expanded-height: auto;
+
+$header-expanded-title-height: auto;
+$header-expanded-title-line-height: $header-title-line-height;
+$header-expanded-title-overflow: auto;
+$header-expanded-title-white-space: normal;
+$header-expanded-title-text-overflow: clip;
+
+
+$header-logo-height: initial;
+$header-logo-padding: 16px 10px 0;
+$header-logo-position: relative;
+$header-logo-float: $right;
+
+$header-logo-display-initial: none;
+$header-small-logo-display-initial: block;
+
+$header-logo-display-normal: block;
+$header-small-logo-display-normal: none;

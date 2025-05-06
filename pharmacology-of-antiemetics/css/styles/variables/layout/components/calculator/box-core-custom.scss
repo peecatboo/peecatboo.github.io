@@ -1,0 +1,41 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$calculator-body-float: left;
+$calculator-body-width: 230px;
+$calculator-body-margin: 0 auto;
+$calculator-body-padding: 10px;
+$calculator-body-border: solid 1px;
+$calculator-body-border-radius: 4px;
+
+$calculator-expression-width: $calculator-body-width;
+$calculator-expression-margin: 0.3em auto;
+
+$calculator-expression-line-margin: 1.5em auto 0px auto;
+$calculator-expression-line-padding: 5px;
+$calculator-expression-line-border: dotted 1px;
+
+$calculator-input-width: 95%;
+$calculator-input-padding: 0 10px;
+$calculator-input-border: solid 1px;
+
+$calculator-button-width: 45px;
+$calculator-button-height: $calculator-button-width;
+$calculator-button-margin: 3px;
+$calculator-button-padding: 0;
+$calculator-button-border: none;
+$calculator-button-border-radius: 2px;
+$calculator-button-box-shadow: none;
+$calculator-button-text-shadow: none;
+
+$calculator-button-equals-width: 95px;

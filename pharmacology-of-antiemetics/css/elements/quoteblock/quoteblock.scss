@@ -1,0 +1,42 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.QuoteBlock {
+    @include generate-style-block('QuoteBlock') {
+        // @full
+        position: relative;
+        font-style: italic;
+        background: rgba(if(variable-exists(quoteblock-color-background), $quoteblock-color-background, $elements-color-branding1) ,.1);
+        padding: side-values(if(variable-exists(quoteblock-padding), $quoteblock-padding, 10px 10px 10px 100px));
+        margin: side-values(if(variable-exists(quoteblock-margin), $quoteblock-margin, 10px 0 10px 0));
+        text-align: if(variable-exists(quoteblock-text-align), $quoteblock-text-align, if-ltr(left, right));
+        min-height: 40px;
+        overflow: hidden;
+    }
+    &:before {
+        @include generate-style-block('QuoteBlockBefore') {
+            // @full
+            position: absolute;
+            top: 0;
+            width: 100px;
+            color: if(variable-exists(quoteblock-color-quote), $quoteblock-color-quote, $elements-color-branding1);
+            opacity: .5;
+            font-size: if(variable-exists(quoteblock-font-size-quote), $quoteblock-font-size-quote, 114pt);
+            font-weight: if(variable-exists(quoteblock-font-weight-quote), $quoteblock-font-weight-quote, bold);
+            font-family: if(variable-exists(quoteblock-font-family-quote), $quoteblock-font-family-quote, monospace);
+            line-height: if(variable-exists(quoteblock-font-line-height-quote), $quoteblock-font-line-height-quote, 90pt);
+            content: '\"';
+            #{$left}: if(variable-exists(quoteblock-position-left), $quoteblock-position-left, 0);
+        }
+    }
+}

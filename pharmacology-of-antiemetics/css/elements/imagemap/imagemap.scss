@@ -1,0 +1,175 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ImageMap {
+    @include generate-style-block('ImageMap') {
+        // @full
+        position: relative;
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+    & > * {
+        @include generate-style-block('ImageMapDirectChildren') {
+            // @full
+            overflow: hidden;
+        }
+    }
+    .Instructions {
+        @include generate-style-block('ImageMapInstructions') {
+            // @full
+            text-align: center;
+        }
+    }
+    .Caption {
+        @include generate-style-block('ImageMapCaption') {
+            // @full
+            font-style: italic;
+        }
+    }
+    .ImageMapOverlayWrapper {
+        @include generate-style-block('ImageMapOverlayWrapper') {
+            // @full
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: initial;
+            padding: 0 0 10px;
+
+            // forcibly change language direction
+            // to persist same positions
+            direction: ltr;
+        }
+
+        * {
+            @include generate-style-block('ImageMapOverlayWrapperChildren') {
+                // @full
+                transform-origin: $left top;
+                -webkit-transform-origin: $left top;
+            }
+        }
+    }
+    .ImageMapOverlay {
+        @include generate-style-block('ImageMapOverlay') {
+            // @full
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            height: 0;
+            transition: opacity if(variable-exists(imagemap-transition-duration), $imagemap-transition-duration, 2 * $elements-transition-duration);
+        }
+        .ImageMapImage {
+            @include generate-style-block('ImageMapOverlayImage') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        > svg {
+            @include generate-style-block('ImageMapOverlayDirectSvg') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+                stroke : if(variable-exists(imagemap-color-stroke), $imagemap-color-stroke, #222);
+            }
+            & * {
+                @include generate-style-block('ImageMapOverlayDirectSvgChildren') {
+                    // @full
+                    fill: #fff;
+                    fill-opacity: .0;
+                    stroke-width: 1;
+                    transition: opacity 200ms;
+                }
+            }
+            .Hidden {
+                @include generate-style-block('ImageMapOverlayDirectSvgHidden') {
+                    // @full
+                    opacity: 0;
+                }
+            }
+            .Visible {
+                @include generate-style-block('ImageMapOverlayDirectSvgVisible') {
+                    // @full
+                    opacity: 1;
+                }
+            }
+            .CompletedMark {
+                @include generate-style-block('ImageMapOverlayDirectSvgCompletedMark') {
+                    // @full
+                    display: none;
+                    fill-opacity: 1;
+                    stroke: none;
+                }
+            }
+            .Completed {
+                .CompletedMark {
+                    @include generate-style-block('ImageMapOverlayDirectSvgCompletedCompletedMark') {
+                        // @full
+                        display: block;
+                    }
+                    .checkMarkWrapper {
+                        @include generate-style-block('ImageMapOverlayDirectSvgCompletedCompletedMarkcheckMarkWrapper') {
+                        }
+                    }
+
+                    .MarkCircle circle {
+                        @include generate-style-block('ImageMapOverlayDirectSvgCompletedCompletedMarkCirclecircle') {
+                            fill: #43b343;
+                            stroke: green;
+                            fill-opacity: 1;
+                        }
+                    }
+
+                    .MarkCheck {
+                        @include generate-style-block('ImageMapOverlayDirectSvgCompletedCompletedMarkMarkCheck') {
+                            fill-opacity: 1;
+                            stroke: white;
+                        }
+                    }
+                }
+
+
+
+            }
+
+        }
+        .DisplayArea {
+            @include generate-style-block('ImageMapOverlayDisplayArea') {
+                // @full
+                position: absolute;
+                overflow: auto;
+                visibility: hidden;
+                background-color: if(variable-exists(imagemap-color-hotspotContent-background), $imagemap-color-hotspotContent-background, rgba(255, 255, 255, .8));
+                direction: $dir;
+            }
+            .HotSpotContent {
+                @include generate-style-block('ImageMapOverlayDisplayAreaHotSpotContent') {
+                    // @full
+                    position: static;
+                    background-color: none;
+                }
+            }
+        }
+        .HotSpotContent {
+            @include generate-style-block('ImageMapOverlayHotSpotContent') {
+                // @full
+                position: fixed;
+                display: none;
+                padding: 3px;
+                background-color: if(variable-exists(imagemap-color-hotspotContent-background), $imagemap-color-hotspotContent-background, rgba(255, 255, 255, .8));
+                overflow: auto;
+                z-index: 1;
+            }
+        }
+    }
+}

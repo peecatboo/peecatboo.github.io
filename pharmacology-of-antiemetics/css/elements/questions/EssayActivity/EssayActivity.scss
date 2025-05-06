@@ -1,0 +1,35 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.EssayActivityInnerWrap {
+    @include generate-style-block('EssayActivity') {}
+    .EssayTextarea {
+        @include generate-style-block('EssayTextArea') {
+            // @name Essay Multi-line Text Input
+            // @full
+            padding: if(variable-exists(basic-textarea-padding), $basic-textarea-padding, 10px);
+            font-family: if(variable-exists(basic-textarea-font-family), $basic-textarea-font-family, serif);
+            font-size: if(variable-exists(basic-textarea-font-size), $basic-textarea-font-size, 20px);
+            width: if(variable-exists(basic-textarea-width), $basic-textarea-width, 90%);
+        }
+    }
+    .QuestionCopyPasteWrapper {
+        .Button {
+            @include generate-style-block('EssayActionButtons') {
+                // @name Essay Cut, Copy and Paste Buttons
+                // @full
+                margin: 0 2px 2px 0;
+            }
+        }
+    }
+}

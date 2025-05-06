@@ -1,0 +1,344 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.MatrixInnerWrap {
+    @include generate-style-block('MatrixInnerWrap') {
+        // @full
+        font-family: if(variable-exists(matrix-font-body), $matrix-font-body, $questions-font-body);
+        font-size: if(variable-exists(matrix-font-size), $matrix-font-size, 1.0em);
+        font-weight: if(variable-exists(matrix-font-weight), $matrix-font-weight, $questions-font-weight);
+    }
+    .MatrixQuestionTable {
+        @include generate-style-block('MatrixQuestionTable') {
+            // @full
+            border-spacing: 0;
+            border-collapse: separate;
+            width: 100%;
+            max-width: 100%;
+            border: if(variable-exists(matrix-mobile-table-border), $matrix-mobile-table-border, none);
+            background: if(variable-exists(matrix-mobile-table-background), $matrix-mobile-table-background, none);
+        }
+    }
+    .MatrixQuestionStem {
+        @include generate-style-block('MatrixQuestionStem') {
+            // @full
+            color: if(variable-exists(matrix-color-stem-text), $matrix-color-stem-text, $questions-color-text-dark);
+        }
+    }
+    .MatrixQuestionColumnHeaders {
+        .MatrixQuestionColumnHeader {
+            @include generate-style-block('MatrixQuestionColumnHeader') {
+                // @full
+                padding: side-values(if(variable-exists(matrix-padding), $matrix-padding, $questions-padding));
+                border-style: if(variable-exists(matrix-border-width), $matrix-border-width, $questions-border-width) if(variable-exists(matrix-border-style), $matrix-border-style, $questions-border-style) if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border);
+                background-color: lighten(if(variable-exists(matrix-color-option-background), $matrix-color-option-background, #FFF), 20%);
+                font-family: if(variable-exists(matrix-header-font-body), $matrix-header-font-body, $questions-header-font-body);
+                font-size: if(variable-exists(matrix-header-font-size), $matrix-header-font-size, 1.0em);
+                font-weight: if(variable-exists(matrix-header-font-weight), $matrix-header-font-weight, bold);
+                display: if(variable-exists(matrix-mobile-table-header-display), $matrix-mobile-table-header-display, none);
+            }
+        }
+    }
+    .MatrixQuestionStatements {
+        .MatrixQuestionStatement {
+            @include generate-style-block('MatrixQuestionStatement') {
+                // @full
+                background-color: lighten(if(variable-exists(matrix-color-option-background), $matrix-color-option-background, #FFF), 20%);
+                display: if(variable-exists(matrix-mobile-element-display), $matrix-mobile-element-display, block);
+                clear: if(variable-exists(matrix-mobile-element-clear), $matrix-mobile-element-clear, both);
+            }
+            &.Correct, &.Selected.Correct {
+                @include generate-style-block('MatrixQuestionStatementCorrect') {
+                    // @full
+                    border-color: if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct);
+                    background-color: lighten(if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct), 45%);
+                    color: if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MatrixQuestionStatementCorrectResponseFeedback') {
+                        // @full
+                        display: block;
+                    }
+                }
+            }
+            &.Incorrect, &.Selected.Incorrect {
+                @include generate-style-block('MatrixQuestionStatementIncorrect') {
+                    // @full
+                    border-color: if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect);
+                    background-color: lighten(if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect), 40%);
+                    color: if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MatrixQuestionStatementIncorrectResponseFeedback') {
+                        // @full
+                        display: block;
+                    }
+                }
+            }
+            .ResponseFeedback {
+                @include generate-style-block('MatrixQuestionStatementResponseFeedback') {
+                    // @full
+                    font-family: if(variable-exists(matrix-font-body), $matrix-font-body, $questions-font-body);
+                    font-size: if(variable-exists(matrix-font-size), $matrix-font-size, 1.0em);
+                    font-weight: if(variable-exists(matrix-font-weight), $matrix-font-weight, $questions-font-weight);
+                }
+            }
+            .MatrixQuestionStatementStem {
+                @include generate-style-block('MatrixQuestionStatementStem') {
+                    // @full
+                    padding: side-values(if(variable-exists(matrix-mobile-option-wrapper-padding), $matrix-mobile-option-wrapper-padding, 10px));
+                    border: if(variable-exists(matrix-border-width), $matrix-border-width, $questions-border-width) if(variable-exists(matrix-border-style), $matrix-border-style, $questions-border-style) if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border);
+                    font-family: if(variable-exists(matrix-header-font-body), $matrix-header-font-body, $questions-header-font-body);
+                    font-size: if(variable-exists(matrix-header-font-size), $matrix-header-font-size, 1.0em);
+                    font-weight: if(variable-exists(matrix-header-font-weight), $matrix-header-font-weight, bold);
+                    display: block;
+                    background-color: lighten(if(variable-exists(matrix-color-option-background), $matrix-color-option-background, #FFF), 20%);
+                    box-sizing: border-box;
+                    width: 100%;
+                    float: $left;
+                    clear: both;
+                }
+            }
+        }
+        .MatrixQuestionOptionWrapper {
+            @include generate-style-block('MatrixQuestionOptionWrapper') {
+                // @full
+                border: if(variable-exists(matrix-border-width), $matrix-border-width, $questions-border-width) if(variable-exists(matrix-border-style), $matrix-border-style, $questions-border-style) if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border);
+                background-color: if(variable-exists(matrix-color-option-background), $matrix-color-option-background, #FFF);
+                transition: (background-color if(variable-exists(matrix-transition-duration), $matrix-transition-duration, $questions-transition-duration), border-color if(variable-exists(matrix-transition-duration), $matrix-transition-duration, $questions-transition-duration));
+                verticle-align: if(variable-exists(matrix-option-vertical-align), $matrix-option-vertical-align, middle);
+                font-size: if(variable-exists(matrix-mobile-option-wrapper-font-size), $matrix-mobile-option-wrapper-font-size, 90%);
+                display: if(variable-exists(matrix-mobile-element-display), $matrix-mobile-element-display, block);
+                padding: side-values(if(variable-exists(matrix-mobile-option-wrapper-padding), $matrix-mobile-option-wrapper-padding, 10px));
+                box-sizing: border-box;
+                width: 100%;
+                float: $left;
+                clear: both;
+            }
+            .FeedbackIcon {
+                @include generate-style-block('MatrixQuestionFeedbackIcon') {
+                    // @full
+                    display: none;
+                    float: $left;
+                }
+            }
+            .MatrixQuestionOptionLabel {
+                @include generate-style-block('MatrixQuestionOptionLabel') {
+                    // @full
+                    height: if(variable-exists(matrix-option-label-height), $matrix-option-label-height, 100%);
+                    cursor: if(variable-exists(matrix-option-cursor), $matrix-option-cursor, pointer);
+                    display: if(variable-exists(matrix-mobile-element-display), $matrix-mobile-element-display, block);
+                    padding: side-values(if(variable-exists(matrix-mobile-option-label-padding), $matrix-mobile-option-label-padding, 0));
+                }
+                .MatrixQuestionOption {
+                    @include generate-style-block('MatrixQuestionOption') {
+                        // @full
+                        cursor: if(variable-exists(matrix-option-cursor), $matrix-option-cursor, pointer);
+                        vertical-align: if(variable-exists(matrix-label-vertical-align), $matrix-label-vertical-align, middle);
+                        transform: translate(0, 0); // WPS-5425
+                    }
+                }
+                .MatrixTableHeader {
+                    @include generate-style-block('MatrixTableHeader') {
+                        // @full
+                        display: if(variable-exists(matrix-mobile-header-display), $matrix-mobile-header-display, inline-block);
+                        padding: side-values(if(variable-exists(matrix-mobile-header-padding), $matrix-mobile-header-padding, 0 0 0 5px));
+                        vertical-align: if(variable-exists(matrix-label-vertical-align), $matrix-label-vertical-align, middle);
+                    }
+                }
+            }
+            &:hover {
+                @include generate-style-block('MatrixQuestionOptionWrapperHover') {
+                    // @full
+                    border: if(variable-exists(matrix-border-width), $matrix-border-width, $questions-border-width) if(variable-exists(matrix-border-style), $matrix-border-style, $questions-border-style) if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border);
+                    background-color: if(variable-exists(matrix-color-option-background), $matrix-color-option-background, #FFF);
+                }
+            }
+            &.Desktop:hover {
+                @include generate-style-block('MatrixQuestionOptionWrapperHoverDesktop') {
+                    // @full
+                    background-color: if(variable-exists(matrix-color-option-background-hover), $matrix-color-option-background-hover, lighten($matrix-color-border, 5%));
+                    border-color: darken(if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border), 10%);
+                }
+            }
+            &.Selected {
+                @include generate-style-block('MatrixQuestionOptionWrapperSelected') {
+                    // @full
+                    background-color: if(variable-exists(matrix-color-option-background-hover), $matrix-color-option-background-hover, lighten($matrix-color-border, 5%));
+                    border-color: darken(if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border), 10%);
+                }
+            }
+            &:hover, &.Desktop:hover, &.Selected {
+                .MultpleChoiceQuestionOptionDistractorWrapper {
+                    @include generate-style-block('MultpleChoiceQuestionOptionDistractorWrapperHoverSelected') {
+                        // @full
+                        border-color: darken(if(variable-exists(matrix-color-border), $matrix-color-border, $questions-color-border), 10%);
+                    }
+                }
+            }
+            &.Correct, &.Selected.Correct {
+                @include generate-style-block('MatrixQuestionOptionWrapperCorrect') {
+                    // @full
+                    border-color: if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct);
+                    background-color: lighten(if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct), 45%);
+                    color: if(variable-exists(matrix-color-correct), $matrix-color-correct, $questions-color-correct);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MatrixQuestionOptionWrapperCorrectResponseFeedback') {
+                        // @full
+                        display: block;
+                    }
+                }
+                @if $matrix-show-feedback-icons == true {
+                    .FeedbackIcon.Correct {
+                        @include generate-style-block('MatrixQuestionOptionWrapperCorrectFeedbackIconCorrectIcon') {
+                            // @full
+                            display: block;
+                            fill: if(variable-exists(matrix-color-responsefeedback-icon-correct-fill), $matrix-color-responsefeedback-icon-correct-fill, $questions-color-correct);
+                        }
+                    }
+                    .MatrixQuestionOption {
+                        @include generate-style-block('MatrixQuestionOptionWrapperCorrectMatrixQuestionOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.Incorrect, &.Selected.Incorrect {
+                @include generate-style-block('MatrixQuestionOptionWrapperIncorrect') {
+                    // @full
+                    border-color: if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect);
+                    background-color: lighten(if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect), 40%);
+                    color: if(variable-exists(matrix-color-incorrect), $matrix-color-incorrect, $questions-color-incorrect);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MatrixQuestionOptionWrapperIncorrectResponseFeedback') {
+                        // @full
+                        display: block;
+                    }
+                }
+                @if $matrix-show-feedback-icons == true {
+                    .FeedbackIcon.Incorrect {
+                        @include generate-style-block('MatrixQuestionOptionWrapperIncorrectFeedbackIconIncorrectIcon') {
+                            // @full
+                            display: block;
+                            fill: if(variable-exists(matrix-color-responsefeedback-icon-incorrect-fill), $matrix-color-responsefeedback-icon-incorrect-fill, $questions-color-incorrect);
+                        }
+                    }
+                    .MatrixQuestionOption {
+                        @include generate-style-block('MatrixQuestionOptionWrapperIncorrectMatrixQuestionOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.AlsoCorrect {
+                @include generate-style-block('MatrixQuestionOptionWrapperAlsoCorrect') {
+                    // @full
+                    border-color: if(variable-exists(matrix-color-alsoCorrect), $matrix-color-alsoCorrect, $questions-color-alsoCorrect);
+                    background-color: lighten(if(variable-exists(matrix-color-alsoCorrect), $matrix-color-alsoCorrect, $questions-color-alsoCorrect), 30%);
+                    color: if(variable-exists(matrix-color-alsoCorrect), $matrix-color-alsoCorrect, $questions-color-alsoCorrect);
+                }
+                .ResponseFeedback {
+                    @include generate-style-block('MatrixQuestionOptionWrapperAlsoCorrectResponseFeedback') {
+                        // @full
+                        display: block;
+                    }
+                }
+                @if $matrix-show-feedback-icons == true {
+                    .FeedbackIcon.AlsoCorrect {
+                        @include generate-style-block('MatrixQuestionOptionWrapperAlsoCorrectFeedbackIconAlsoCorrectIcon') {
+                            // @full
+                            display: block;
+                            fill: if(variable-exists(matrix-color-responsefeedback-icon-alsocorrect-fill), $matrix-color-responsefeedback-icon-alsocorrect-fill, $questions-color-alsoCorrect);
+                        }
+                    }
+                    .MatrixQuestionOption {
+                        @include generate-style-block('MatrixQuestionOptionWrapperAlsoCorrectMatrixQuestionOption') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+fieldset {
+    @include generate-style-block('MatrixQuestionFieldset') {
+        // @full
+        border: none;
+        float: left;
+        width: 100%;
+    }
+}
+@media #{$basic-screen-query-normal} {
+    .MatrixInnerWrap {
+        .MatrixQuestionTable {
+            @include generate-style-block('MatrixQuestionTableNormalScreen') {
+                // @full
+                display: table;
+                border: none;
+                background: none;
+            }
+            .MatrixQuestionColumnHeaders {
+                @include generate-style-block('MatrixQuestionColumnHeadersNormalScreen') {
+                    // @full
+                    display: table-row;
+                }
+                .MatrixQuestionColumnHeader {
+                    @include generate-style-block('MatrixQuestionColumnHeaderNormalScreen') {
+                        // @full
+                        display: table-cell;
+                    }
+                }
+            }
+            .MatrixQuestionStatements {
+                .MatrixQuestionStatement {
+                    @include generate-style-block('MatrixQuestionStatementNormalScreen') {
+                        // @full
+                        display: table-row;
+                        clear: none;
+                    }
+                }
+                .MatrixQuestionStatementStem,
+                .MatrixQuestionOptionWrapper {
+                    @include generate-style-block('MatrixQuestionOptionWrapperNormalScreen') {
+                        // @full
+                        font-size: inherit;
+                        display: table-cell;
+                        padding: side-values(if(variable-exists(matrix-padding), $matrix-padding, $questions-padding));
+                        width: auto;
+                        float: none;
+                        clear: none;
+                    }
+                    .MatrixQuestionOptionLabel {
+                        @include generate-style-block('MatrixQuestionOptionLabelNormalScreen') {
+                            // @full
+                            display: block;
+                            padding: side-values(if(variable-exists(matrix-padding), $matrix-padding, $questions-padding));
+                        }
+                    }
+                    .MatrixTableHeader {
+                        @include generate-style-block('MatrixTableHeaderNormalScreen') {
+                            // @full
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

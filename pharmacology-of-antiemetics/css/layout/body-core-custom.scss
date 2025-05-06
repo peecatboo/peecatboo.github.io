@@ -1,0 +1,46 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@include customize-style-block('BodyElement') {
+    font-family: if(variable-exists(basic-font-body), $basic-font-body, '"Open Sans", Verdana, sans-serif');
+    line-height: 1; // Set to if(variable-exists(base-line-height), $base-line-height, "value-not-found") to take on browser default of 150%
+    position: relative;
+    background-color: if(variable-exists(basic-color-body-background), $basic-color-body-background, #FFF);
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    & > * {
+        vertical-align: bottom;
+        top: 0;
+    }
+
+    &.hideOffCanvas {
+        overflow-x: hidden;
+    }
+}
+
+
+@include customize-style-block('PageMain') {
+    // Hack for sidebar positions when "calc()" is not supported
+    text-align: center;
+    overflow: hidden;
+}
+
+// this is overriding @mixin element-invisible from utilities/base/mixin.scss
+// using this we get rid of extra useless pixels in layout and not corrupting layout after print preview
+.hide {
+    display: none;
+}

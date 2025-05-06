@@ -1,0 +1,96 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$questions-show-feedback-icons: true;
+
+$questions-padding: $elements-padding;
+$questions-margin: $elements-margin;
+
+$questions-border-width: $elements-border-width;
+$questions-border-style: $elements-border-style;
+$questions-border-radius: $elements-border-radius;
+$questions-position: relative;
+
+$questions-innerwrap-border-width: 0;
+$questions-innerwrap-border-style: $questions-border-style;
+$questions-innerwrap-border-radius: $questions-border-radius;
+
+$questions-transition-duration: $elements-transition-duration;
+
+$questions-attempt-counter-vertical-align: middle;
+$questions-attempt-counter-line-height: 36px;
+
+$questions-submit-padding: 8px 20px;
+$questions-submit-margin: 10px 0;
+
+$questions-supplements-outer-width: 100%;
+$questions-supplements-outer-position: absolute;
+$questions-supplements-outer-overflow-closed: hidden;
+$questions-supplements-outer-overflow-opening: hidden;
+$questions-supplements-outer-overflow-open: auto;
+$questions-supplements-outer-top: auto;
+$questions-supplements-outer-bottom: 0px;
+$questions-supplements-outer-left: 0px;
+$questions-supplements-outer-right: auto;
+$questions-supplements-outer-transition-properties: max-height;
+$questions-supplements-outer-transition: $questions-supplements-outer-transition-properties $questions-transition-duration;
+
+$questions-supplements-inner-position: relative;
+$questions-supplements-inner-top: auto;
+$questions-supplements-inner-bottom: auto;
+$questions-supplements-inner-left: auto;
+$questions-supplements-inner-right: auto;
+
+$questions-supplements-toggleicon-width: 100%;
+$questions-supplements-toggleicon-font-size: 1.7em;
+$questions-supplements-toggleicon-font-weight: normal;
+$questions-supplements-toggleicon-height: $questions-supplements-toggleicon-font-size - 0.2em;
+$questions-supplements-toggleicon-text-align: center;
+$questions-supplements-toggleicon-box-sizing: border-box;
+$questions-supplements-toggleicon-position: static;
+$questions-supplements-toggleicon-top: auto;
+$questions-supplements-toggleicon-bottom: auto;
+$questions-supplements-toggleicon-left: auto;
+$questions-supplements-toggleicon-right: auto;
+$questions-supplements-toggleicon-opened-symbol: '\21E9';
+$questions-supplements-toggleicon-closed-symbol: '\21E7';
+$questions-supplements-toggleicon-cursor: pointer;
+
+$questions-supplements-outer-max-height-open: 100%;
+$questions-supplements-outer-max-height-closed: $questions-supplements-toggleicon-font-size + 0.2em;
+
+$questions-supplements-inner-padding-top: $questions-padding;
+$questions-supplements-inner-padding-bottom: $questions-padding;
+$questions-supplements-inner-padding-left: $questions-padding;
+$questions-supplements-inner-padding-right: $questions-padding;
+
+$questions-supplements-feedback-icon-float: $left;
+$questions-supplements-feedback-icon-direcitonal-margin-property: margin-#{$right};
+$questions-supplements-feedback-icon-direcitonal-margin-value: 0.5em;
+
+$questions-flag-icon-float: $right;
+$questions-flag-icon-width: 11mm;
+$questions-flag-icon-height: 11mm;
+$questions-flag-icon-cursor: pointer;
+$questions-flag-icon-overflow: hidden;
+$questions-flag-icon-text-indent: 100%;
+$questions-flag-icon-position: static;
+$questions-flag-icon-top: auto;
+$questions-flag-icon-bottom: auto;
+$questions-flag-icon-left: auto;
+$questions-flag-icon-right: auto;
+$questions-flag-icon-margin: -5mm -5mm 0 0;
+
+$questions-flag-icon-svg-fill: $questions-color-branding1;
+$questions-flag-icon-svg-stroke: $questions-color-branding1;
+$questions-flag-icon-svg-margin: 10px;

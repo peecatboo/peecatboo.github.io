@@ -1,0 +1,13 @@
+{
+  "name": "web-publisher-jsdoc",
+  "version": "0.0.0",
+  "description": "Package to handle JsDoc rendering",
+  "private": true,
+  "scripts": {
+    "generate-docs": "./node_modules/.bin/jsdoc -c ./config.json"
+  },
+  "devDependencies": {
+    "jsdoc": "3.4.0",
+    "ink-docstrap": "1.2.1"
+  }
+}

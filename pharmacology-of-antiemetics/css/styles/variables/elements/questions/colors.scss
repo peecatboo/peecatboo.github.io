@@ -1,0 +1,47 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$questions-color-branding1: $elements-color-branding1;
+$questions-color-branding2: $elements-color-branding2;
+
+$questions-color-border: $elements-color-border;
+$questions-color-page-background: $elements-color-page-background;
+$questions-color-container-background-light: $elements-color-container-background-light;
+$questions-color-container-background-dark: $elements-color-container-background-dark;
+
+$questions-color-text-dark: $elements-color-text-dark;
+$questions-color-text-lightened: $elements-color-text-lightened;
+$questions-color-text-light: $elements-color-text-light;
+$questions-color-text-links: $elements-color-text-links;
+
+$questions-color-correct: $elements-color-correct;
+$questions-color-incorrect: $elements-color-incorrect;
+$questions-color-alsoCorrect: $elements-color-alsoCorrect;
+
+$questions-supplement-text-color: $questions-color-text-dark;
+
+$questions-color-stem-text: $questions-color-text-dark;
+
+$questions-innerwrap-color-border: $questions-color-border;
+
+$questions-box-shadow-color: $elements-box-shadow-color;
+$questions-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$questions-box-shadow: $questions-box-shadow-dimensions $questions-box-shadow-color;
+$questions-overlay-color: $elements-overlay-color;
+
+$questions-color-supplements-toggleicon-background: $questions-color-branding1;
+$questions-color-supplements-outer-background: fade-out(#FFF, 0.3);
+
+$questions-color-responsefeedback-icon-correct-fill: $questions-color-correct;
+$questions-color-responsefeedback-icon-incorrect-fill: $questions-color-incorrect;
+$questions-color-responsefeedback-icon-alsocorrect-fill: $questions-color-alsoCorrect;

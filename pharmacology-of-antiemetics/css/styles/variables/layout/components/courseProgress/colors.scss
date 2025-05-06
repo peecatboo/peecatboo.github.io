@@ -1,0 +1,37 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$courseProgress-color-branding1                        : $component-color-branding1;
+$courseProgress-color-branding2                        : $component-color-branding2;
+
+$courseProgress-color-text-dark                        : $component-color-text-dark;
+$courseProgress-color-text-lightened                   : $component-color-text-lightened;
+$courseProgress-color-text-light                       : $component-color-text-light;
+$courseProgress-color-text-links                       : $component-color-text-links;
+
+$courseProgress-box-shadow-color                       : $component-box-shadow-color;
+$courseProgress-box-shadow-dimensions                  : $component-box-shadow-dimensions;
+$courseProgress-box-shadow                             : $courseProgress-box-shadow-dimensions $courseProgress-box-shadow-color;
+
+$courseProgress-color-correct                          : $component-color-correct;
+$courseProgress-color-incorrect                        : $component-color-incorrect;
+
+$courseProgress-marker-border-color                    : $component-color-text-lightened;
+
+$courseProgress-marker-border-color-satisfied          : $courseProgress-color-correct;
+$courseProgress-marker-background-color-satisfied      : $courseProgress-color-correct;
+$courseProgress-marker-border-color-notsatisfied       : $courseProgress-color-incorrect;
+$courseProgress-marker-background-color-notsatisfied   : $courseProgress-color-incorrect;
+$courseProgress-marker-background-progress-incompleted : rgba(255,255,255,0.5);
+
+$courseProgress-item-hover-color-background            : darken($courseProgress-color-text-light, 75%);

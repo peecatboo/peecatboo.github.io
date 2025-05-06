@@ -1,0 +1,40 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// directional.scss imported discretely due to the fact that it is required at a
+// higher level than other vendor frameworks.
+@import 'vendor/directional/directional.scss';
+@import 'fonts/fonts.scss';
+@import 'fonts/fonts-core-custom.scss';
+@import 'fonts/fonts-custom.scss';
+@import 'styles/styles.scss';
+@import 'styles/styles-core-custom.scss';
+@import 'styles/styles-custom.scss';
+@import 'utilities/utilities.scss';
+@import 'utilities/utilities-core-custom.scss';
+@import 'utilities/utilities-custom.scss';
+@import 'layout/layout.scss';
+@import 'layout/layout-core-custom.scss';
+@import 'layout/layout-custom.scss';
+@import 'elements/elements.scss';
+@import 'elements/elements-core-custom.scss';
+@import 'elements/elements-custom.scss';
+@import 'cloudPlayer/cloudPlayer.scss';
+@import 'cloudPlayer/cloudPlayer-core-custom.scss';
+@import 'cloudPlayer/cloudPlayer-custom.scss';
+@import 'vendor/vendor.scss';
+@import 'vendor/vendor-core-custom.scss';
+@import 'vendor/vendor-custom.scss';
+@import 'application-core-custom.scss';
+@import 'custom.scss';
+@import 'review.scss';

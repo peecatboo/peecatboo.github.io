@@ -1,0 +1,22 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$marginnote-color-text: lighten($elements-color-text-dark, 13%);
+$marginnote-color-text-hover: $elements-color-text-dark;
+
+$marginnote-box-shadow-color: $elements-box-shadow-color;
+$marginnote-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$marginnote-box-shadow: $marginnote-box-shadow-dimensions $marginnote-box-shadow-color;
+
+$marginnote-icon-svg-fill: $elements-color-branding2;
+$marginnote-icon-background: none;

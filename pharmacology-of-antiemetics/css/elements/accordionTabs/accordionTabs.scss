@@ -1,0 +1,134 @@
+///*!
+// * @license
+// * Copyright c 2020 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+.AccordionTabs {
+    @include generate-style-block('AccordionTabs') {
+
+        & > .TabsNavigation {
+            @include generate-style-block('AccordionTabsTabsNavigation') {
+
+                display: none !important;
+            }
+        }
+
+        & > .TabsPanels {
+            @include generate-style-block('AccordionTabsPanels') {
+
+                counter-reset: tabIndex;
+
+                &.HiddenLoading {
+                    @include generate-style-block('AccordionTabsHiddenLoading') {
+
+                        display: none;
+                    }
+                }
+
+                .TabsPanel {
+                    @include generate-style-block('AccordionTabsPanel') {
+
+                        border: 2px solid $tabs-color-branding2;
+                        padding-top: 0;
+                        margin-top: 0;
+
+                        .TabContent {
+                            @include generate-style-block('AccordionTabsPanelContent') {
+
+                                margin: 0;
+                                margin-left: 1.5em;
+                                margin-right: 1.5em;
+                                // max-height is an arbitrarily high value because overflow needs to be hidden
+                                // in order to keep scrollbars hidden during animations
+                                max-height: 20000px;
+                                overflow: hidden;
+                                transition: max-height 0.3s;
+                                transition-delay: 0.3s;
+                            }
+                        }
+
+                        &.TabsHiddenPanel {
+                            @include generate-style-block('AccordionTabsHiddenPanel') {
+
+                                position: relative; // fixes WPS-7016, was: position: initial;
+                                height: auto;
+                                opacity: inherit;
+
+                                .TabContent {
+                                    @include generate-style-block('AccordionTabsHiddenPanelContent') {
+
+                                        max-height: 0;
+                                        transition: max-height 0.3s;
+                                    }
+                                }
+                            }
+                        }
+
+                        .ResponsiveHeading.TabsNavigationItem {
+                            @include generate-style-block('AccordionTabsPanelResponsiveHeading') {
+
+                                position: relative;
+                                margin: 0;
+                                border-bottom: 2px solid $tabs-color-branding2;
+                                background-color: $tabs-color-branding2;
+                                padding: 10px 10px 10px 10px;
+                                padding-#{$left}: 3em;
+                                color: #FFF;
+                                cursor: pointer;
+                                display: block;
+
+                                &:before {
+                                    @include generate-style-block('AccordionTabsPanelResponsiveHeadingBefore') {
+
+                                        // Checkmark symbol
+                                        content: '\2714';
+                                        position: absolute;
+                                        #{$left}: 0.5em;
+                                        visibility: hidden;
+                                    }
+                                }
+
+                                &:after {
+                                    @include generate-style-block('AccordionTabsPanelResponsiveHeadingAfter') {
+
+                                        counter-increment: tabIndex;
+                                        content: counter(tabIndex) " |";
+                                        position: absolute;
+                                        #{$left}: 1.5em;
+                                    }
+                                }
+
+                                &.Completed {
+                                    @include generate-style-block('AccordionTabsPanelResponsiveHeadingCompleted') {
+
+                                        &:before {
+                                            visibility: visible;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.Vertical {
+
+        @include generate-style-block('AccordionTabsPanelsVerticalOverride') {
+            & > .TabsPanels {
+                float: none;
+                width: inherit;
+                padding: 1.5em 0;
+            }
+        }
+    }
+}

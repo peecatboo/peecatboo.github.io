@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$sidebarRight-position: absolute;
+$sidebarRight-bottom: 0;
+$sidebarRight-right: 0;
+$sidebarRight-width: 11mm;
+
+$sidebarRight-width-narrow: auto;
+$calcWidth-normal: $layout-pagemain-width-normal/2;
+$sidebarRight-width-normal: auto;
+$calcWidth-wide: $layout-pagemain-width-wide/2;
+$sidebarRight-width-wide-fallback: auto;
+$sidebarRight-width-wide: auto;
+
+$sidebarRight-height: 11mm;
+$sidebarRight-z-index: 6;
+$sidebarRight-margin: 0;
+$sidebarRight-padding: 0;
+
+$sidebarRight-navigation-button-position: absolute;
+$sidebarRight-navigation-button-left: 0;
+$sidebarRight-navigation-button-top: 0;
+$sidebarRight-navigation-button-width: 100%;
+$sidebarRight-navigation-button-min-width: 100%;
+$sidebarRight-navigation-button-height: 100%;
+$sidebarRight-navigation-button-min-height: 100%;
+$sidebarRight-navigation-button-cursor: pointer;
+$sidebarRight-navigation-button-padding: 0;
+$sidebarRight-navigation-button-border: none;
+$sidebarRight-navigation-button-outline: 0;
+$sidebarRight-navigation-button-border-radius: 0;
+$sidebarRight-navigation-button-transition: 200ms;
+
+$sidebarRight-navigation-button-SVGIcon-width: 100%;
+$sidebarRight-navigation-button-SVGIcon-height: 100%;
+
+$sidebarRight-navigation-button-span-display: none;
+
+$sidebarRight-navigation-button-disabled-opacity: .2;
+
+$sidebarRight-not-mobile-position: relative;
+$sidebarRight-not-mobile-right: auto;
+$sidebarRight-not-mobile-top: auto;
+$sidebarRight-not-mobile-height: 100%;
+$sidebarRight-not-mobile-width: auto;
+$sidebarRight-not-mobile-padding: 0;
+$sidebarRight-not-mobile-vertical-align: top;
+$sidebarRight-not-mobile-z-index: 3;
+
+$sidebarRight-not-mobile-navigation-button-SVGIcon-width: 23mm;
+$sidebarRight-not-mobile-navigation-button-SVGIcon-height: 40mm;
+
+$sidebarRight-not-mobile-navigation-button-disabled-cursor: default;

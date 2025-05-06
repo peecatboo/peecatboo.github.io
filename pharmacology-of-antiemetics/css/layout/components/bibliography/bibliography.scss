@@ -1,0 +1,126 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// @variables
+$bibliography-citation-border-color: grey;
+
+.BibliographyContent {
+    @include generate-style-block('BibliographyContent') {
+        color: $component-color-text-light;
+    }
+
+    .BibliographyContainer {}
+
+    .BibliogrpahyTitle {
+        @include generate-style-block('BibliographyTitle') {
+            @extend .AccessiblyHidden;
+        }
+    }
+
+    .BibliographyCitationList {
+        @include generate-style-block('BibliographyCitationList') {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        .BibliographyCitationTypeContainer {
+            @include generate-style-block('BibliographyCitationTypeContainer') {
+
+            }
+
+            .BibliographyCitationTypeHeader {
+                @include generate-style-block('BibliographyCitationTypeHeading') {
+                    background-color: darken($component-color-text-light, 80%);
+                    color: inherit;
+                    cursor: pointer;
+                    margin: 0;
+                    padding: 15px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border: 0 solid darken($component-color-text-light, 30%);
+                    border-bottom-width: 2px;
+                    transition: background-color 300ms;
+                }
+
+                &:hover {
+                    @include generate-style-block('BibliographyCitationTypeHeadingHover') {
+                        background-color: darken($component-color-text-light, 65%);
+                    }
+                }
+            }
+
+            &.Active {
+                @include generate-style-block('BibliographyCitationTypeContainerActive') {}
+
+                .BibliographyCitationTypeHeader {
+                    @include generate-style-block('BibliographyCitationTypeHeadingActive') {
+                        background-color: darken($component-color-text-light, 65%);
+                    }
+                }
+
+                .BibliographyCitationSubList {
+                    @include generate-style-block('BibliographyCitationTypeContainerSubListActive') {
+                        height: auto;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .BibliographyCitationSubList {
+                @include generate-style-block('BibliographyCitationTypeContainerSubList') {
+                    height: 0;
+                    overflow-y: hidden;
+                }
+            }
+        }
+
+        .BibliographyCitationTypeCounter {
+            @include generate-style-block('BibliographyCitationTypeCounter') {
+                float: right;
+                font-size: 1rem;
+                font-weight: normal;
+            }
+        }
+
+
+        .Citation {
+            @include generate-style-block('BibliographyCitationListItem') {
+                padding: 20px;
+                border-bottom: 1px dotted $bibliography-citation-border-color;
+                transition: background-color 300ms;
+            }
+
+            &:hover {
+                @include generate-style-block('BibliographyCitationListItemHover') {
+                    background-color: transparentize($bibliography-citation-border-color, 0.6);
+                }
+            }
+
+            &.HighlightCitation {
+                @include generate-style-block('BibliographyCitationListItemHighlight') {
+                    @keyframes higlightCitation {
+                        0% {background-color: transparent;}
+                        50% {background-color: lighten($bibliography-citation-border-color, 40%);}
+                        100% {background-color: $bibliography-citation-border-color;}
+                    }
+                    animation: higlightCitation 1s;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+ }

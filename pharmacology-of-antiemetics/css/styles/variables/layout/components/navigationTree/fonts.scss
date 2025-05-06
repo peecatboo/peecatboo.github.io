@@ -1,0 +1,26 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$navigationTree-font-body : $component-font-body;
+$navigationTree-font-size : 1.0em;
+$navigationTree-font-weight: $component-font-weight;
+
+$navigationTree-header-font-body: $component-header-font-body;
+$navigationTree-header-font-size: $component-header-font-size;
+$navigationTree-header-font-weight: $component-header-font-weight;
+
+$navigationTree-item-text-decoration: none;
+// suggested: on for light text on dark backgrounds, off for dark text on light backgrounds
+$navigationTree-item-font-smoothing: off;
+
+$navigationTree-node-item-font-weight-active: bold;

@@ -1,0 +1,74 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+@import 'map-extend';
+@import '../autoprefix/autoprefix';
+
+// map to contain all customizations
+// keys: element names
+// values: maps with styles
+$GLOBAL_ELEMENTS_MAP: ();
+
+// map to contain all parent selectors of the context in which generate-style-block is called
+// keys: element names
+// values: selector chain of context in which generate-style-block is called for that element
+$BLOCK_SELECTORS: ();
+
+@mixin customize ($name: '', $styles: ()) {
+    @if $name == '' { @error 'element name can not be empty';}
+    $new_styles: $styles;
+    $old_styles: map-get($GLOBAL_ELEMENTS_MAP, $name);
+    @if $old_styles != null {
+        $new_styles: map_extend($old_styles, $styles);
+    }
+    $GLOBAL_ELEMENTS_MAP: map-merge($GLOBAL_ELEMENTS_MAP, ($name: $new_styles)) !global;
+}
+
+
+@mixin generate-style ($name, $styles: ()) {
+    $custom: map-get($GLOBAL_ELEMENTS_MAP, $name);
+    $new: $styles;
+    @if $custom != null {
+        $new: map-extend($styles, $custom);
+    }
+    @each $prop, $val in $new {
+        // WPS-4642 Temporarily circumvent "autoprefix" as it is not working
+        // in the JRuby compiler.
+        // @include autoprefix($prop, $val);
+        #{$prop}: $val;
+    }
+}
+
+@mixin generate-style-block ($name: '') {
+  $selector: &;
+  $BLOCK_SELECTORS: map-merge($BLOCK_SELECTORS, ($name: $selector)) !global;
+
+  @content; // core
+}
+
+@mixin customize-style-block ($name) {
+  @if $name == '' {
+    // Here better use "body" or smth as root selector
+    @error 'element name can not be empty';
+  }
+
+  $selector: map-get($BLOCK_SELECTORS, $name);
+
+  @if $selector == null {
+    @warn '#{$name} does not exist';
+  } @else {
+    #{$selector} {
+        /* Customization of the '#{$name}' block */
+        @content // custom
+    }
+  }
+}

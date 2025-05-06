@@ -1,0 +1,30 @@
+@include customize-style-block('MatrixQuestionColumnHeader') {
+  padding: 5px;
+}
+
+@include customize-style-block('MatrixQuestionOptionWrapperNormalScreen') {
+  padding: 10px;
+}
+
+.MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.Selected {
+    background-color: #ffffff;
+    border-color: #005f8e;
+}
+
+.MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.Incorrect, .MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.Selected.Incorrect {
+    border-color: #C0392B;
+    background-color: #ffffff;
+    color: #C0392B;
+}
+
+.MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.Correct, .MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.Selected.Correct {
+    border-color: #49742A;
+    background-color: #ffffff;
+    color: #49742A;
+}
+
+.MatrixInnerWrap .MatrixQuestionStatements .MatrixQuestionOptionWrapper.AlsoCorrect {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #49742A;
+}

@@ -1,0 +1,45 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.StaticPageContainer {
+    @include generate-style-block('StaticPageContainer') {
+        // @full
+        overflow: auto;
+        position: relative;
+        padding: 15px;
+        box-sizing: border-box;
+        color: #fff;
+    }
+}
+.StaticPageWrapper {
+    .StaticPageContent {
+        @include generate-style-block('StaticPageContent') {
+            // @full
+            height: 100%;
+            box-sizing: border-box;
+        }
+        > div {
+            @include generate-style-block('StaticPageContentContainer') {
+                // @full
+                height: 100%;
+            }
+        }
+        iframe {
+            @include generate-style-block('StaticPageContentIFrame') {
+                // @full
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

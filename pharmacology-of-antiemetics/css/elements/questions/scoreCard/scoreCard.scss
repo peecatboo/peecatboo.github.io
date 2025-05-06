@@ -1,0 +1,209 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ScoreCard {
+    @include generate-style-block('ScoreCard') {}
+    .Caption {
+        @include generate-style-block('ScoreCardCaption') {
+
+            // @full
+            text-align: $right;
+            display: inline-block;
+            width: 48%;
+            padding: 5px;
+            font-size: 1.2em;
+            box-sizing: border-box;
+        }
+        &:after {
+            @include generate-style-block('ScoreCardCaptionAfter') {
+                // @full
+                content: ':';
+            }
+        }
+    }
+    .Value {
+        @include generate-style-block('ScoreCardValue') {
+            // @full
+            text-align: $left;
+            font-weight: bold;
+            display: inline-block;
+            width: 48%;
+            padding: 5px;
+            font-size: 1.2em;
+            box-sizing: border-box;
+        }
+        .ScoreCardDivide {
+            @include generate-style-block('ScoreCardValueScoreCardDivide') {
+                // @full
+                display: inline-block;
+                margin: 0 -3px;
+            }
+        }
+    }
+    .SectionInfoContainer {
+        @include generate-style-block('ScoreCardSectionInfoContainer') {
+            // @full
+            padding-top: 20px;
+        }
+        .RetakeContainer {
+            @include generate-style-block('ScoreCardSectionInfoContainerRetakeContainer') {
+                // @full
+                text-align: $right;
+            }
+            .Attempts {
+                @include generate-style-block('ScoreCardSectionInfoContainerRetakeContainerAttempts') {
+                    // @full
+                    padding: 5px;
+                }
+            }
+            .Retake {
+                @include generate-style-block('ScoreCardSectionInfoContainerRetakeContainerRetake') {
+                    // @full
+                    font-size: 1.2em;
+                    padding: 8px 20px;
+                }
+            }
+        }
+        .Feedback {
+            @include generate-style-block('ScoreCardSectionInfoContainerFeedback') {
+                // @full
+                margin: 20px 0;
+                font-size: 1.4em;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+    .SubSectionInfoContainer {
+        .Caption {
+            @include generate-style-block('ScoreCardSubSectionInfoContainerCaption') {
+                // @full
+                font-size: 1em;
+            }
+        }
+        .Value {
+            @include generate-style-block('ScoreCardSubSectionInfoContainerValue') {
+                // @full
+                font-size: 1em;
+            }
+        }
+    }
+    .QuestionsList {
+        @include generate-style-block('ScoreCardQuestionsList') {
+            // @full
+            width: 90%;
+            margin: 10px auto;
+            border-collapse: collapse;
+            border: solid 1px if(variable-exists(scoreCard-color-border), $scoreCard-color-border, $elements-color-border);
+        }
+        .Question {
+            @include generate-style-block('ScoreCardQuestionsListQuestion') {
+                // @full
+                background-color: if(variable-exists(scoreCard-color-container-background-light), $scoreCard-color-container-background-light, $elements-color-container-background-light);
+            }
+            &:nth-child(odd) {
+                @include generate-style-block('ScoreCardQuestionsListOddQuestions') {
+                    // @full
+                    background-color: lighten(if(variable-exists(scoreCard-color-container-background-light), $scoreCard-color-container-background-light, $elements-color-container-background-light), 3%);
+                }
+            }
+            // &.Correct {
+            //     background-color: lighten($scoreCard-color-correct, 40%);
+            // }
+
+            // &.Incorrect {
+            //     background-color: lighten($scoreCard-color-incorrect, 40%);
+            // }
+
+            .Result {
+                @include generate-style-block('ScoreCardQuestionsListQuestionResult') {
+                    // @full
+                    width: 40px;
+                    text-align: center;
+                    padding: 10px;
+                    border: solid 1px if(variable-exists(scoreCard-color-border), $scoreCard-color-border, $elements-color-border);
+                }
+                &:before {
+                    @include generate-style-block('ScoreCardQuestionsListQuestionBefore') {
+                        // @full
+                        font-size: 1.5em;
+                    }
+                }
+                &.Correct {
+                    @include generate-style-block('ScoreCardQuestionsListQuestionCorrect') {}
+                    &:before {
+                        @include generate-style-block('ScoreCardQuestionsListQuestionCorrectBefore') {
+                            // @full
+                            color: if(variable-exists(scoreCard-color-correct), $scoreCard-color-correct, $elements-color-correct);
+                            content: "\2714";
+                        }
+                    }
+                }
+                &.Incorrect {
+                    @include generate-style-block('ScoreCardQuestionsListQuestionIncorrect') {}
+                    &:before {
+                        @include generate-style-block('ScoreCardQuestionsListQuestionIncorrectBefore') {
+                            // @full
+                            color: if(variable-exists(scoreCard-color-incorrect), $scoreCard-color-incorrect, $elements-color-incorrect);
+                            content: "\00d7";
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .Title {
+                @include generate-style-block('ScoreCardQuestionsListQuestionTitle') {
+                    // @full
+                    padding: 10px;
+                    border: solid 1px if(variable-exists(scoreCard-color-border), $scoreCard-color-border, $elements-color-border);
+                    user-select: none;
+                }
+            }
+            .Review {
+                @include generate-style-block('ScoreCardQuestionsListQuestionReview') {
+                    // @full
+                    cursor: pointer;
+                }
+                &:hover {
+                    @include generate-style-block('ScoreCardQuestionsListQuestionHover') {
+                        // @full
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .NotSupported {
+        @include generate-style-block('ScoreCardNotSupported') {
+            // @full
+            background-color: #FFFFFF;
+            font-weight: bold;
+            font-size: if(variable-exists(questions-font-size), $questions-font-size, $elements-font-size) * 2;
+            position: absolute;
+            display: table;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        span {
+            @include generate-style-block('ScoreCardNotSupportedText') {
+                // @full
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                margin: auto;
+            }
+        }
+    }
+}

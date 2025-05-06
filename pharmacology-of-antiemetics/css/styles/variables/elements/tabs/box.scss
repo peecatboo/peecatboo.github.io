@@ -1,0 +1,77 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$tabs-padding: $elements-padding;
+$tabs-margin: $elements-margin;
+
+$tabs-border-width: $elements-border-width*2;
+$tabs-border-style: $elements-border-style;
+$tabs-border-radius: $elements-border-radius;
+
+$tabs-transition-duration: $elements-transition-duration;
+
+$tabs-wrapper-margin: $tabs-margin 0;
+
+$tabs-instructions-margin: $tabs-margin/2 0;
+
+$tabs-navigation-list-style: none;
+$tabs-navigation-box-sizing: border-box;
+$tabs-navigation-padding: 0;
+$tabs-navigation-margin: 0;
+$tabs-navigation-background: $tabs-color-background;
+$tabs-navigation-counter: tabsNum;
+$tabs-navigation-vertical-width: 20%;
+$tabs-navigation-vertical-float: $left;
+
+$tabs-navigation-item-cursor: pointer;
+$tabs-navigation-item-box-sizing: border-box;
+$tabs-navigation-item-horizontal-float: $left;
+$tabs-navigation-item-padding: $tabs-padding/2 $tabs-padding/2 $tabs-padding/2 $tabs-padding;
+$tabs-navigation-item-horizontal-padding-left: $tabs-padding;
+$tabs-navigation-item-horizontal-padding-right: $tabs-padding;
+$tabs-navigation-item-vertical-padding-top: $tabs-padding;
+$tabs-navigation-item-vertical-padding-bottom: $tabs-padding;
+$tabs-navigation-item-border: 0 transparent solid;
+$tabs-navigation-item-horizontal-border-bottom-width: $tabs-border-width;
+$tabs-navigation-item-vertical-border-right-width: $tabs-border-width;
+
+$tabs-navigation-item-index-display: inline;
+$tabs-navigation-item-index-display-normal: inline;
+$tabs-navigation-item-index-display-wide: inline;
+$tabs-navigation-item-index-before-content: counter(#{$tabs-navigation-counter}) ' ';
+$tabs-navigation-item-index-before-content-wide: counter(#{$tabs-navigation-counter}) ' | ' ;
+$tabs-navigation-item-word-break: break-word;
+$tabs-navigation-item-max-width: 250px;
+$tabs-navigation-item-overflow: hidden;
+$tabs-navigation-horizontal-display: flex;
+$tabs-navigation-item-horizontal-flex: 1;
+$tabs-navigation-item-horizontal-display: block;
+
+$tabs-navigation-item-title-display: none;
+$tabs-navigation-item-title-display-normal: inline;
+
+$tabs-nagation-completion-indicator-top: auto;
+$tabs-nagation-completion-indicator-left: $tabs-padding/5;
+
+$tabs-panels-border: 0 $tabs-color-border-panel solid;
+$tabs-panels-box-sizing: border-box;
+$tabs-panels-padding: $tabs-padding 0;
+$tabs-panels-vertical-padding: 0 $tabs-padding;
+$tabs-panels-horizontal-border-top-width: 0;
+$tabs-panels-vertical-float: $right;
+$tabs-panels-vertical-width: 80%;
+
+$tabs-panel-display: none;
+$tabs-panel-display-active: block;
+
+$tabs-responsive-heading-margin: 0 auto 20px;

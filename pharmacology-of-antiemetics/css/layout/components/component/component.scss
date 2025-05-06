@@ -1,0 +1,119 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ComponentLink {
+    @include generate-style-block('ComponentLink') {
+        display: block;
+        color: inherit;
+        font: inherit
+    }
+    &.Visible {
+        @include generate-style-block('ComponentLinkVisible') {
+        }
+    }
+    &:hover {
+        @include generate-style-block('ComponentLinkHover') {
+            text-decoration: none
+        }
+    }
+    &.Hidden {
+        @include generate-style-block('ComponentLinkHidden') {
+            // @full
+            display: none;
+        }
+    }
+    &.Active {
+        @include generate-style-block('ComponentLinkActive') {
+        }
+    }
+    &.Inactive {
+        @include generate-style-block('ComponentLinkInactive') {
+        }
+    }
+    &.Enabled {
+        @include generate-style-block('ComponentLinkEnabled') {
+        }
+    }
+    &.Disabled {
+        @include generate-style-block('ComponentLinkDisabled') {
+        }
+    }
+    .ComponentLinkTitle {
+        @include generate-style-block('ComponentLinkTitle') {
+        }
+    }
+    .ComponentLinkIcon {
+        @include generate-style-block('ComponentLinkIcon') {
+        }
+    }
+
+    .ComponentLinkIcon, .ComponentLinkTitle {
+        &.Visible {
+            @include generate-style-block('ComponentLinkIconTitleVisible') {
+                // @full
+                display: inherit;
+            }
+        }
+        &.Hidden {
+            @include generate-style-block('ComponentLinkIconTitleHidden') {
+                // @full
+                display: none;
+            }
+        }
+        &.VisibleWide {
+            @media #{$basic-screen-query-wide} {
+                @include generate-style-block('ComponentLinkIconTitleVisibleWideScreen') {
+                    // @full
+                    display: inherit;
+                }
+            }
+        }
+        &.VisibleMedium {
+            @media #{$basic-screen-query-normal} {
+                @include generate-style-block('ComponentLinkIconTitleVisibleNormalScreen') {
+                    // @full
+                    display: inherit;
+                }
+            }
+        }
+        &.VisibleNarrow {
+            @media #{$basic-screen-query-narrow} {
+                @include generate-style-block('ComponentLinkIconTitleVisibleNarrowScreen') {
+                    // @full
+                    display: inherit;
+                }
+            }
+        }
+    }
+}
+
+.ComponentLinkTitle.hideTitle {
+    @include generate-style-block('ComponentLinkTitleHidden') {
+        @extend .AccessiblyHidden;
+    }
+}
+
+.ComponentContent {
+    &.Visible {
+        @include generate-style-block('ComponentContentVisible') {
+            // @full
+            display: initial;
+        }
+    }
+    &.Hidden {
+        @include generate-style-block('ComponentContentHidden') {
+            // @full
+            display: none;
+        }
+    }
+}

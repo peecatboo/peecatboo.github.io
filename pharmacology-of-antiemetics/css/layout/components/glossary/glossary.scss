@@ -1,0 +1,298 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+.GlossaryContainer {
+    @include generate-style-block('GlossaryContainer') {
+        // @basic
+        color: if(variable-exists(glossary-color-text), $glossary-color-text, $layout-color-text-light);
+        // @full
+        box-sizing: if(variable-exists(glossary-box-sizing), $glossary-box-sizing, border-box);
+        padding: side-values(if(variable-exists(glossary-padding), $glossary-padding, $layout-padding));
+        height: if(variable-exists(glossary-height), $glossary-height, auto);
+        max-height: if(variable-exists(glossary-content-max-height), $glossary-content-max-height, calc(100% - (64px + 36px)));
+    }
+
+    &.Closed, &.Hidden {
+        @include generate-style-block('GlossaryContainerClosed') {
+            // @basic
+            // @full
+            display: if(variable-exists(glossary-closed-display), $glossary-closed-display, $layout-closed-display);
+        }
+    }
+
+    &.Open, &.Visible {
+        @include generate-style-block('GlossaryContainerOpen') {
+            // @basic
+            // @full
+            display: if(variable-exists(glossary-open-display), $glossary-open-display, $layout-open-display);
+        }
+    }
+
+    .Glossary {
+        @include generate-style-block('Glossary') {
+            // @basic
+            // @full
+            padding-#{$right}: if(variable-exists(glossary-termlist-padding-right), $glossary-termlist-padding-right, 10px);
+        }
+        &.Horizontal {
+            @include generate-style-block('GlossaryHorizontal') {
+                // @basic
+                // @full
+                padding-#{$right}: if(variable-exists(glossary-termlist-horizontal-padding-right), $glossary-termlist-horizontal-padding-right, 0);
+            }
+            .Index {
+                @include generate-style-block('GlossaryHorizontalIndex') {
+                    // @basic
+                    background: if(variable-exists(glossary-color-contents-letter-background), $glossary-color-contents-letter-background, rgba(95,103,110,.3));
+                    border-radius: corner-values(if(variable-exists(glossary-letter-border-radius), $glossary-letter-border-radius, 3px));
+                    // @full
+                    position: if(variable-exists(glossary-index-horizontal-position), $glossary-index-horizontal-position, relative);
+                    top: if(variable-exists(glossary-index-horizontal-top), $glossary-index-horizontal-top, auto);
+                    bottom: if(variable-exists(glossary-index-horizontal-bottom), $glossary-index-horizontal-bottom, auto);
+                    z-index: if(variable-exists(glossary-index-horizontal-zindex), $glossary-index-horizontal-zindex, 1);
+                    text-align: justify;
+                    -ms-text-justify: distribute-all-lines;
+                    text-justify: distribute-all-lines;
+                    white-space: normal;
+                    font-size: 1px;
+                    #{$left}: if(variable-exists(glossary-index-horizontal-left), $glossary-index-horizontal-left, auto);
+                    #{$right}: if(variable-exists(glossary-index-horizontal-right), $glossary-index-horizontal-right, auto);
+                    padding: side-values(if(variable-exists(glossary-index-horizontal-padding), $glossary-index-horizontal-padding, 5px));
+                    margin-bottom: if(variable-exists(glossary-index-horizontal-margin-bottom), $glossary-index-horizontal-margin-bottom, 15px);
+                }
+                &:after {
+                    @include generate-style-block('GlossaryHorizontalIndexAfter') {
+                        // @basic
+                        // @full
+                        content: '';
+                        width: 100%;
+                        display: inline-block;
+                        font-size: 0;
+                    }
+                }
+                a {
+                    @include generate-style-block('GlossaryHorizontalIndexLink') {
+                        // @basic
+                        font-size: if(variable-exists(glossary-index-font-size), $glossary-index-font-size, 14px);
+                        // @full
+                        display: if(variable-exists(glossary-index-link-display), $glossary-index-link-display, inline-block);
+                        margin: side-values(if(variable-exists(glossary-index-link-margin), $glossary-index-link-margin, 0));
+                        padding: side-values(if(variable-exists(glossary-index-link-padding), $glossary-index-link-padding, 0));
+                    }
+                    @media #{$basic-screen-query-normal} {
+                        @include generate-style-block('GlossaryHorizontalIndexANormalScreen') {
+                            // @basic
+                            font-size: if(variable-exists(glossary-index-font-size-normal), $glossary-index-font-size-normal, 13px);
+                            // @full
+                            text-align: $left;
+                            padding: side-values(if(variable-exists(glossary-index-link-padding-normal), $glossary-index-link-padding-normal, 0 2px 0 0));
+                        }
+                    }
+                    &:hover {
+                        @include generate-style-block('GlossaryHorizontalIndexLinkHover') {
+                            // @basic
+                            text-decoration: underline;
+                            // @full
+                        }
+                    }
+                    &.Disabled {
+                        @include generate-style-block('GlossaryHorizontalIndexLinkDisabled') {
+                            // @basic
+                            cursor: default;
+                            font-weight: normal;
+                            font-size: if(variable-exists(glossary-index-font-size-disabled), $glossary-index-font-size-disabled, 11px);
+                            // @full
+                        }
+                        &:hover {
+                            @include generate-style-block('GlossaryHorizontalIndexLinkDisabledHover') {
+                                // @basic
+                                text-decoration: none;
+                                // @full
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Index {
+        @include generate-style-block('GlossaryIndex') {
+            // @basic
+            // @full
+            position: if(variable-exists(glossary-index-position), $glossary-index-position, absolute);
+            top: if(variable-exists(glossary-index-top), $glossary-index-top, auto);
+            bottom: if(variable-exists(glossary-index-bottom), $glossary-index-bottom, auto);
+            #{$left}: if(variable-exists(glossary-index-left), $glossary-index-left, auto);
+            #{$right}: if(variable-exists(glossary-index-right), $glossary-index-right, 16px);
+        }
+        a {
+            @include generate-style-block('GlossaryIndexLink') {
+                // @basic
+                color: if(variable-exists(glossary-color-index-letter), $glossary-color-index-letter, $layout-color-text-light);
+                text-decoration: if(variable-exists(glossary-index-text-decoration), $glossary-index-text-decoration, none);
+                font-weight: if(variable-exists(glossary-index-font-weight), $glossary-index-font-weight, bold);
+                // @full
+                display: if(variable-exists(glossary-letter-display), $glossary-letter-display, block);
+            }
+            &.Disabled {
+                @include generate-style-block('GlossaryIndexLinkDisabled') {
+                    // @basic
+                    opacity: if(variable-exists(glossary-letter-disabled-opacity), $glossary-letter-disabled-opacity, 0.5);
+                    font-size: if(variable-exists(glossary-letter-disabled-font-size), $glossary-letter-disabled-font-size, 75%);
+                    // @full
+                }
+            }
+        }
+    }
+    .Contents {
+        @include generate-style-block('GlossaryContents') {
+            // @basic
+            // @full
+            position: relative;
+            overflow: auto;
+        }
+        .Letter {
+            @include generate-style-block('GlossaryContentsLetter') {
+                // @basic
+                color: if(variable-exists(glossary-color-contents-letter), $glossary-color-contents-letter, $layout-color-text-light);
+                background: if(variable-exists(glossary-color-contents-letter-background), $glossary-color-contents-letter-background, rgba(95,103,110,.3));
+                border-radius: corner-values(if(variable-exists(glossary-letter-border-radius), $glossary-letter-border-radius, 3px));
+                // @full
+                display: if(variable-exists(glossary-letter-display), $glossary-letter-display, block);
+                text-align: if(variable-exists(glossary-letter-text-align), $glossary-letter-text-align, center);
+                padding: side-values(if(variable-exists(glossary-letter-padding), $glossary-letter-padding, 3px));
+                margin: side-values(if(variable-exists(glossary-letter-margin), $glossary-letter-margin, 0));
+            }
+        }
+        .LetterTermList {
+            @include generate-style-block('GlossaryLetterTermList') {
+                // @basic
+                // @full
+                padding: side-values(if(variable-exists(glossary-letter-termlist-padding), $glossary-letter-termlist-padding, 0px));
+            }
+            .LetterListItem {
+                @include generate-style-block('GlossaryLetterListItem') {
+                    // @basic
+                    cursor: if(variable-exists(glossary-term-cursor), $glossary-term-cursor, pointer);
+                    // @full
+                    list-style: if(variable-exists(glossary-term-list-style-type), $glossary-term-list-style-type, none);
+                    border: if(variable-exists(glossary-letter-listitem-border), $glossary-letter-listitem-border, 0);
+                }
+                &:hover{
+                    @include generate-style-block('GlossaryLetterListItemHover') {
+                        // @basic
+                        color: if(variable-exists(glossary-color-text-light), $glossary-color-text-light, $layout-color-text-light);
+                        // @full
+                        border: if(variable-exists(glossary-letter-listitem-hover-border), $glossary-letter-listitem-hover-border, 0);
+                    }
+                }
+                .GlossaryItemTerm {
+                    @include generate-style-block('GlossaryItemTerm') {
+                        // @basic
+                        color: if(variable-exists(glossary-color-term), $glossary-color-term, $layout-color-text-light);
+                        font-size: if(variable-exists(glossary-term-font-size), $glossary-term-font-size, 1.2em);
+                        text-decoration: if(variable-exists(glossary-term-text-decoration), $glossary-term-text-decoration, underline);
+                        // @full
+                    }
+                    &:hover {
+                        @include generate-style-block('GlossaryItemTermHover') {
+                            // @basic
+                            text-decoration: if(variable-exists(glossary-term-text-decoration-hover), $glossary-term-text-decoration-hover, underline);
+                            // @full
+                        }
+                    }
+                }
+                .Separator {
+                    @include generate-style-block('GlossarySeparator') {
+                        // @basic
+                        // @full
+                        display: none;
+                    }
+                }
+                .Definition {
+                    @include generate-style-block('GlossaryDefinition') {
+                        // @basic
+                        text-decoration: none;
+                        // @full
+                        display: block;
+                        padding: 5px 0 10px 0;
+                        border-bottom: 1px solid if(variable-exists(glossary-color-contents-letter-background), $glossary-color-contents-letter-background, rgba(95,103,110,.3));
+                    }
+                    &.Closed {
+                        @include generate-style-block('GlossaryDefinitionClosed') {
+                            // @basic
+                            // @full
+                            display: if(variable-exists(glossary-closed-display), $glossary-closed-display, $layout-closed-display);
+                        }
+                    }
+                    &.Open {
+                        @include generate-style-block('GlossaryDefinitionOpen') {
+                            // @basic
+                            // @full
+                            display: if(variable-exists(glossary-open-display), $glossary-open-display, $layout-open-display);
+                        }
+                    }
+                    .Audio {
+                        @include generate-style-block('GlossaryDefinitionAudio') {
+                            // @basic
+                            // @full
+                            margin-top: 10px;
+                            width: 100%;
+                        }
+                    }
+                    .List {
+                        @include generate-style-block('GlossaryDefinitionList') {
+                            // @basic
+                            color: inherit;
+                            // @full
+                        }
+                    }
+                }
+                a {
+                    @include generate-style-block('GlossaryLetterListItemLink') {
+                        // @basic
+                        color: if(variable-exists(glossary-color-text-light), $glossary-color-text-light, $layout-color-text-light);
+                        // @full
+                    }
+                }
+            }
+        }
+    }
+}
+
+.GlossaryItem {
+    .Term {
+        &, &:link, &:visited, &:hover {
+            @include generate-style-block('GlossaryItemTermLink') {
+                // @basic
+                cursor: if(variable-exists(glossary-term-cursor-content), $glossary-term-cursor-content, text);
+                color: if(variable-exists(glossary-color-term-content), $glossary-color-term-content, $layout-color-text-dark);
+                font-family: if(variable-exists(glossary-term-font-family-content), $glossary-term-font-family-content, inherit);
+                font-weight: if(variable-exists(glossary-term-font-weight-content), $glossary-term-font-weight-content, inherit);
+                font-size: if(variable-exists(glossary-term-font-size-content), $glossary-term-font-size-content, 1.6em);
+                text-decoration: if(variable-exists(glossary-term-text-decoration-content), $glossary-term-text-decoration-content, none);
+                // @full
+            }
+        }
+    }
+}
+
+.Definition {
+    @include generate-style-block('Definition') {
+        // @basic
+        // @full
+        margin-bottom: 1em;
+        cursor: default;
+    }
+}

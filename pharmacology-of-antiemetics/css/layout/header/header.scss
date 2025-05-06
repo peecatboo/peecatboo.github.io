@@ -1,0 +1,153 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+#PageHeader {
+    @include generate-style-block('PageHeader') {
+        // @full
+        position: if(variable-exists(header-position), $header-position, absolute);
+        top: if(variable-exists(header-top), $header-top, 0px);
+        bottom: if(variable-exists(header-bottom), $header-bottom, auto);
+        left: if(variable-exists(header-left), $header-left, auto);
+        right: if(variable-exists(header-right), $header-right, auto);
+        width: if(variable-exists(header-width), $header-width, 100%);
+        height: if(variable-exists(header-height), $header-height, 64px);
+        display: if(variable-exists(header-default-display), $header-default-display, block);
+        box-shadow: if(variable-exists(header-box-shadow), $header-box-shadow, $layout-font-body);
+        transistion: height if(variable-exists(header-transition-duration), $header-transition-duration, 1s);
+        color: if(variable-exists(header-color-text), $header-color-text, #fff); // text on dark background
+        font-family: if(variable-exists(header-font-body), $header-font-body, $layout-font-body);
+        font-size: if(variable-exists(header-font-size), $header-font-size, $layout-font-size);
+        font-weight: if(variable-exists(header-font-weight), $header-font-weight, normal);
+        background: if(variable-exists(header-background-color1), $header-background-color1, #34495E);
+        background: linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+        background-image: -moz-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+        background-image: -webkit-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+        background-image: -ms-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+    }
+
+    .Button {
+        @include generate-style-block('PageHeaderButton') {
+            // @full
+            font-family: if(variable-exists(header-font-body), $header-font-body, $layout-font-body);
+            font-size: if(variable-exists(header-font-size), $header-font-size, $layout-font-size);
+            font-weight: if(variable-exists(header-font-weight), $header-font-weight, normal);
+        }
+    }
+    .MenuIcon {
+        @include generate-style-block('PageHeaderMenuIcon') {
+            // @full
+            position: if(variable-exists(header-menu-icon-position), $header-menu-icon-position, relative);
+            display: if(variable-exists(header-menu-icon-display), $header-menu-icon-display, block);
+            float: if(variable-exists(header-menu-icon-float), $header-menu-icon-float, if-ltr(left, right));
+            width: if(variable-exists(header-menu-icon-width), $header-menu-icon-width, 64px);
+            height: if(variable-exists(header-menu-icon-height), $header-menu-icon-height, 64px);
+            white-space: if(variable-exists(header-menu-icon-white-space), $header-menu-icon-white-space, nowrap);
+            overflow: if(variable-exists(header-menu-icon-overflow), $header-menu-icon-overflow, hidden);
+            border: if(variable-exists(header-menu-icon-border), $header-menu-icon-border, none);
+        }
+        .SVGIcon {
+            @include generate-style-block('PageHeaderMenuIconSVGIcon') {
+                // @full
+                position: if(variable-exists(header-menu-icon-svgIcon-position), $header-menu-icon-svgIcon-position, absolute);
+                top: calc(#{if(variable-exists(header-menu-icon-svgIcon-top), $header-menu-icon-svgIcon-top, 50%)} - #{if(variable-exists(header-menu-icon-svgIcon-width), $header-menu-icon-svgIcon-width, 8mm) / 2});
+                left: calc(#{if(variable-exists(header-menu-icon-svgIcon-left), $header-menu-icon-svgIcon-left, 50%)} - #{if(variable-exists(header-menu-icon-svgIcon-height), $header-menu-icon-svgIcon-height, 8mm) / 2});
+                width: if(variable-exists(header-menu-icon-svgIcon-width), $header-menu-icon-svgIcon-width, 8mm);
+                height: if(variable-exists(header-menu-icon-svgIcon-height), $header-menu-icon-svgIcon-height, 8mm);
+                fill: if(variable-exists(header-menu-icon-svgIcon-fill), $header-menu-icon-svgIcon-fill, #fff);
+            }
+        }
+        &:active {
+        }
+    }
+    .Title {
+        @include generate-style-block('PageHeaderTitle') {
+            // @full
+            font-family: if(variable-exists(header-header-font-body), $header-header-font-body, $layout-font-body);
+            font-size: if(variable-exists(header-header-font-size), $header-header-font-size, 1.2em);
+            font-weight: if(variable-exists(header-header-font-weight), $header-header-font-weight, bold);
+            padding: side-values(if(variable-exists(header-title-padding), $header-title-padding, 22px 0 15px));
+            height: if(variable-exists(header-title-height), $header-title-height, auto);
+            line-height: if(variable-exists(header-title-line-height), $header-title-line-height, normal);
+            overflow: if(variable-exists(header-title-overflow), $header-title-overflow, hidden);
+            white-space: if(variable-exists(header-title-white-space), $header-title-white-space, nowrap);
+            text-overflow: if(variable-exists(header-title-text-overflow), $header-title-text-overflow, ellipsis);
+            cursor: if(variable-exists(header-title-cursor), $header-title-cursor, pointer);
+        }
+        .FootnoteMarker {
+            @include generate-style-block('PageHeaderTitleFootnoteMarker') {
+                // @full
+                display: none;
+            }
+        }
+    }
+    &.Expanded {
+        @include generate-style-block('PageHeaderTitleExpanded') {
+            // @full
+            height: if(variable-exists(header-expanded-height), $header-expanded-height, auto);
+        }
+        .Title {
+            @include generate-style-block('PageHeaderTitleExpandedTitle') {
+                // @full
+                height: if(variable-exists(header-expanded-title-height), $header-expanded-title-height, auto);
+                line-height: if(variable-exists(header-expanded-title-line-height), $header-expanded-title-line-height, normal);
+                overflow: if(variable-exists(header-expanded-title-overflow), $header-expanded-title-overflow, auto);
+                white-space: if(variable-exists(header-expanded-title-white-space), $header-expanded-title-white-space, normal);
+                text-overflow: if(variable-exists(header-expanded-title-text-overflow), $header-expanded-title-text-overflow, clip);
+            }
+        }
+    }
+    .Logo {
+        @include generate-style-block('PageHeaderLogo') {
+            // @full
+            height: if(variable-exists(header-logo-height), $header-logo-height, initial);
+            padding : side-values(if(variable-exists(header-logo-padding), $header-logo-padding, 16px 10px 0));
+            position: if(variable-exists(header-logo-position), $header-logo-position, relative);
+            float: if(variable-exists(header-logo-float), $header-logo-float, if-ltr(right, left));
+            display: if(variable-exists(header-logo-display-initial), $header-logo-display-initial, none);
+        }
+    }
+    .SmallLogo {
+        @include generate-style-block('PageHeaderSmallLogo') {
+            // @full
+            height: if(variable-exists(header-logo-height), $header-logo-height, initial);
+            padding : side-values(if(variable-exists(header-logo-padding), $header-logo-padding, 16px 10px 0));
+            position: if(variable-exists(header-logo-position), $header-logo-position, relative);
+            float: if(variable-exists(header-logo-float), $header-logo-float, if-ltr(right, left));
+            display: if(variable-exists(header-small-logo-display-initial), $header-small-logo-display-initial, block);
+        }
+    }
+    @media #{$basic-screen-query-narrow} {}
+    @media #{$basic-screen-query-normal} {
+        .SmallLogo {
+            @include generate-style-block('PageHeaderSmallLogoNormalScreen') {
+                // @full
+                display: if(variable-exists(header-small-logo-display-normal), $header-small-logo-display-normal, none);
+            }
+        }
+        .Logo {
+            @include generate-style-block('PageHeaderLogoNormalScreen') {
+                // @full
+                display: if(variable-exists(header-logo-display-normal), $header-logo-display-normal, block);
+            }
+        }
+        .Title {
+            @include generate-style-block('PageHeaderTitleNormalScreen') {
+                // @full
+                font-size: if(variable-exists(header-header-font-size-normal), $header-header-font-size-normal, 2em);
+                padding: side-values(if(variable-exists(header-title-padding-normal), $header-title-padding-normal, 4px 15px 0 0));
+            }
+        }
+    }
+    @media #{$basic-screen-query-wide} {}
+}

@@ -1,0 +1,297 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.BinDropInnerWrap {
+    @include generate-style-block('BinDrop') {}
+    .BinDropImageWrapper {
+        @include generate-style-block('BinDropImageWrapper') {
+            // @full
+            position: relative;
+            margin: 10px 0;
+            padding: 10px;
+            opacity: 0;
+            overflow: auto;
+            box-sizing: border-box;
+            transition: opacity 1s;
+        }
+        & > * {
+            @include generate-style-block('BinDropImageWrapperDirectChildren') {
+                // @full
+                transform-origin: $left top;
+                -webkit-transform-origin: $left top;
+            }
+        }
+        .BinDropImage {
+            @include generate-style-block('BinDropImageWrapperImage') {
+                // @full
+                border: solid 6px white;
+                box-shadow: 0 0 8px #aaa;
+                border-radius: 5px;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+    .BinDropObjectsWrapper {
+        @include generate-style-block('BinDropObjectsWrapper') {
+            // @full
+            position: absolute;
+        }
+        .BinDropBinsContainer {
+            @include generate-style-block('BinDropBinsContainer') {
+                // @full
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                fill: white;
+                fill-opacity: 0;
+                stroke: #000;
+                stroke-width: 1;
+            }
+            .BinDropBin {
+                @include generate-style-block('BinDropBin') {
+                    // @full
+                    opacity: .1;
+                    transition: opacity 200ms;
+                }
+            }
+            .DisplayArea {
+                @include generate-style-block('BinDropBinsContainerDisplayArea') {
+                    // @full
+                    position: absolute;
+                    color: #000;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+            }
+            .DisplayAreaContent {
+                @include generate-style-block('BinDropBinsDisplayAreaContent') {
+                    // @full
+                    position: absolute;
+                    color: #000;
+                }
+            }
+        }
+        .BinDropAlternateBinsContainer {
+            @include generate-style-block('BinDropAlternateBinsContainer') {
+                // @full
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+            }
+            .BinDropAlternateBinShape {
+                @include generate-style-block('BinDropAlternateBinShape') {
+                    // @full
+                    position: absolute;
+                }
+                .BinDropOption {
+                    @include generate-style-block('BinDropAlternateBinShapeOption') {
+                        // @full
+                        display: inline;
+                        float: left;
+                        margin: 1px 4px;
+                    }
+                }
+            }
+        }
+        .BinDropOptionsContainer {
+            @include generate-style-block('BinDropOptionsContainer') {
+                // @full
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                fill: white;
+                fill-opacity: 0;
+                stroke: #000;
+                stroke-width: 1;
+            }
+            .BinDropBin {
+                @include generate-style-block('BinDropOptionsContainerBin') {
+                    // @full
+                    opacity: .1;
+                }
+            }
+            .DisplayAreaContent {
+                @include generate-style-block('BinDropOptionsContainerDisplayAreaContent') {
+                    // @full
+                    position: absolute;
+                    color: #000;
+                }
+            }
+            .DisplayArea {
+                @include generate-style-block('BinDropOptionsContainerDisplayArea') {
+                    // @full
+                    position: absolute;
+                    color: #000;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+            }
+            .BinDropOption {
+                @include generate-style-block('BinDropOptionsContainerOption') {
+                    // @full
+                    position: absolute;
+                    z-index: 3;
+                    cursor: move;
+                    cursor: -webkit-grab;
+                    cursor: -moz-grab;
+                    word-break: break-word; // Chrome
+                    word-wrap: break-word; // IE11
+
+                    > * {
+                        vertical-align: top;
+                    }
+
+                    &.draggable {
+                        cursor: -webkit-grabbing;
+                        cursor: -moz-grabbing;
+                    }
+
+                    &.DragText {
+                        transition: text-shadow 200ms linear;
+                    }
+
+                    &.DistractorText {
+                        transition: text-shadow 200ms linear;
+                    }
+
+                    &:before {
+                        content: ' ';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1; // this makes :before appear beneath element content
+                        background: none;
+                        box-shadow: none;
+                        transition: all 200ms;
+                    }
+
+                    &.Highlighted {
+                        &:before {
+                            background: rgba(0,0,0,.1);
+                            box-shadow: 0 5px 10px rgba(0,0,0,.8);
+                        }
+                    }
+
+                    // scale :before in text drags to visually create padding
+                    &.DragText.Highlighted {
+                        text-shadow: 0 5px 5px rgba(0,0,0,.5);
+                        &:before {
+                            background: none;
+                            box-shadow: none;
+                            transform: scale(1.3, 1.1);
+                        }
+                    }
+
+                    &.Distractor.Highlighted {
+                        &:before {
+                            background: rgba(0,0,0,.1);
+                            box-shadow: 0 5px 10px rgba(0,0,0,.8);
+                        }
+                    }
+
+                    &.Distractor.DistractorText.Highlighted {
+                        text-shadow: 0 5px 5px rgba(0,0,0,.5);
+                        &:before {
+                            background: none;
+                            box-shadow: none;
+                            transform: scale(1.3, 1.1);
+                        }
+                    }
+                }
+            }
+        }
+        .FeedbackIcon {
+            @include generate-style-block('BinDropObjectsWrapperFeedbackIcon') {
+                // @full
+                display: if(variable-exists(binDrop-feedback-icons-display-initial), $binDrop-feedback-icons-display-initial, none);
+                position: if(variable-exists(binDrop-feedback-icons-position), $binDrop-feedback-icons-position, absolute);
+            }
+            &.CorrectIcon {
+                @include generate-style-block('BinDropObjectsWrapperFeedbackCorrectIcon') {
+                    // @full
+                    fill: if(variable-exists(binDrop-color-correct), $binDrop-color-correct, $elements-color-correct);
+                    stroke: if(variable-exists(binDrop-color-correct), $binDrop-color-correct, $elements-color-correct);
+                }
+            }
+            &.IncorrectIcon {
+                @include generate-style-block('BinDropObjectsWrapperFeedbackIncorrectIcon') {
+                    // @full
+                    fill: if(variable-exists(binDrop-color-incorrect), $binDrop-color-incorrect, $elements-color-incorrect);
+                    stroke: if(variable-exists(binDrop-color-incorrect), $binDrop-color-incorrect, $elements-color-incorrect);
+                }
+            }
+        }
+        .Correct {
+            @include generate-style-block('BinDropObjectsWrapperFeedbackCorrect') {
+                // @full
+                border: solid 2px if(variable-exists(binDrop-color-correct), $binDrop-color-correct, $elements-color-correct) !important;
+                background: transparentize(if(variable-exists(binDrop-color-correct), $binDrop-color-correct, $elements-color-correct), .6);
+            }
+            @include prefix(transition, .5s);
+            @if $binDrop-show-feedback-icons == true {
+                &.DragImage {
+                    .FeedbackIcon.CorrectIcon {
+                        @include generate-style-block('BinDropObjectsDragImageFeedbackCorrectIcon') {
+                            // @full
+                            display: if(variable-exists(binDrop-feedback-icons-display-visible), $binDrop-feedback-icons-display-visible, inline-block);
+                        }
+                    }
+                }
+            }
+        }
+        .Incorrect {
+            @include generate-style-block('BinDropObjectsWrapperFeedbackIncorrect') {
+                // @full
+                border: solid 2px if(variable-exists(binDrop-color-incorrect), $binDrop-color-incorrect, $elements-color-incorrect) !important;
+                background: transparentize(if(variable-exists(binDrop-color-incorrect), $binDrop-color-incorrect, $elements-color-incorrect), .6);
+            }
+            @include prefix(transition, .5s);
+            @if $binDrop-show-feedback-icons == true {
+                #{$binDrop-incorrect-feedback-emphasis-property}: $binDrop-incorrect-feedback-emphasis-value;
+                &.DragImage, &.DistractorImage {
+                    .FeedbackIcon.IncorrectIcon {
+                        @include generate-style-block('BinDropObjectsDragImageFeedbackIncorrectIcon') {
+                            // @full
+                            display: if(variable-exists(binDrop-feedback-icons-display-visible), $binDrop-feedback-icons-display-visible, inline-block);
+                        }
+                    }
+                }
+            }
+        }
+        .Highlighted {
+            @include generate-style-block('BinDropObjectsWrapperHighlighted') {
+                // @full
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+    .BinDropShowAnswer {
+        @include generate-style-block('BinDropShowAnswer') {
+            // @full
+            display: none;
+        }
+    }
+}

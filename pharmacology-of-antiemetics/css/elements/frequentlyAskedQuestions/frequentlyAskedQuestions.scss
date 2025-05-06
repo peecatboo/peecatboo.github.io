@@ -1,0 +1,99 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.FrequentlyAskedQuestions {
+    @include generate-style-block('FrequentlyAskedQuestions') {
+        // @full
+        font-family: if(variable-exists(frequently-asked-questions-font-body), $frequently-asked-questions-font-body, $elements-font-body);
+        font-weight: if(variable-exists(frequently-asked-questions-font-weight), $frequently-asked-questions-font-weight, $elements-font-weight);
+        font-size: if(variable-exists(frequently-asked-questions-font-size), $frequently-asked-questions-font-size, 1em);
+        color: if(variable-exists(frequently-asked-questions-color-text), $frequently-asked-questions-color-text, $elements-color-text-dark);
+        background-color: if(variable-exists(frequently-asked-questions-color-container-background-light), $frequently-asked-questions-color-container-background-light, $elements-color-container-background-light);
+        padding: side-values(if(variable-exists(frequently-asked-questions-padding), $frequently-asked-questions-padding, $elements-padding));
+    }
+    .FAQCategory, .FAQ {
+        @include generate-style-block('FAQCategory') {
+            // @full
+            width: if(variable-exists(frequently-asked-questions-category-width), $frequently-asked-questions-category-width, 100%);
+            border-top: if(variable-exists(frequently-asked-questions-category-border-top), $frequently-asked-questions-category-border-top, 1px solid #000);
+            border-bottom: if(variable-exists(frequently-asked-questions-category-border-bottom), $frequently-asked-questions-category-border-bottom, none);
+            border-#{$right}: if(variable-exists(frequently-asked-questions-category-border-right), $frequently-asked-questions-category-border-right, none);
+            border-#{$left}: if(variable-exists(frequently-asked-questions-category-border-left), $frequently-asked-questions-category-border-left, none);
+            margin: side-values(if(variable-exists(frequently-asked-questions-category-margin), $frequently-asked-questions-category-margin, $elements-margin 0 0 0));
+        }
+
+        > .Title {
+            @include generate-style-block('FAQCategoryTitle') {
+                // @full
+                font-size: if(variable-exists(frequently-asked-questions-header-font-size), $frequently-asked-questions-header-font-size, 1.2em);
+                font-weight: if(variable-exists(frequently-asked-questions-header-font-weight), $frequently-asked-questions-header-font-weight, bold);
+            }
+        }
+    }
+    .FAQQuestion, .FAQShortAnswer {
+        @include generate-style-block('FAQQuestionShortAnswer') {
+            // @full
+            padding: side-values(if(variable-exists(frequently-asked-questions-item-padding), $frequently-asked-questions-item-padding, 0 0 5px 25px));
+            min-height: 1em;
+        }
+    }
+    .FAQShortAnswer {
+        @include generate-style-block('FAQShortAnswer') {
+            // @full
+            margin-bottom: if(variable-exists(frequently-asked-questions-answer-margin-bottom), $frequently-asked-questions-answer-margin-bottom, 5px);
+        }
+    }
+    .FAQPrefix {
+
+        $beforeAfter: if-ltr('after', 'before');
+
+        @include generate-style-block('FAQPrefix') {
+            // @full
+            width: if(variable-exists(frequently-asked-questions-prefix-width), $frequently-asked-questions-prefix-width, 25px);
+            font-weight: if(variable-exists(frequently-asked-questions-prefix-font-weight), $frequently-asked-questions-prefix-font-weight, bold);
+            vertical-align: if(variable-exists(frequently-asked-questions-prefix-vertical-align), $frequently-asked-questions-prefix-vertical-align, top);
+            float: if(variable-exists(frequently-asked-questions-prefix-float), $frequently-asked-questions-prefix-float, $left);
+            margin-#{$left}: -(if(variable-exists(frequently-asked-questions-prefix-width), $frequently-asked-questions-prefix-width, 25px));
+        }
+
+        &::#{$beforeAfter} {
+            @include generate-style-block('FAQPrefixBefore') {
+                // @full
+                content: ":";
+            }
+        }
+    }
+    .FAQQuestionContent {
+        @include generate-style-block('FAQQuestionContent') {
+            // @full
+            font-weight: if(variable-exists(frequently-asked-questions-question-font-weight), $frequently-asked-questions-question-font-weight, bold);
+        }
+    }
+    .FAQShortAnswerContent {
+        // WPS-2703 Short answer is displaced in FAQ on Modern skin
+        .ParaBlock {
+            // Unfortunately !important needed due to messed up .ParaBlock selector scope "#PageBody .ParaBlock" overriding everything
+            @include generate-style-block('FAQShortAnswerContentParaBlock') {
+                // @full
+                margin: side-values(if(variable-exists(frequently-asked-questions-answer-parablock-margin), $frequently-asked-questions-answer-parablock-margin, 0));
+                line-height: if(variable-exists(frequently-asked-questions-answer-parablock-line-height), $frequently-asked-questions-answer-parablock-line-height, normal) !important;
+            }
+        }
+    }
+    .FAQSubCategoryCell {
+        @include generate-style-block('FAQSubCategoryCell') {
+            // @full
+            padding: side-values(if(variable-exists(frequently-asked-questions-sub-category-cell-padding), $frequently-asked-questions-sub-category-cell-padding, 0 0 0 25px));
+        }
+    }
+}
