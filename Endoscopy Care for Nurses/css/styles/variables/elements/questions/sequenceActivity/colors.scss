@@ -1,0 +1,54 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$sequenceActivity-color-branding1: $questions-color-branding1;
+$sequenceActivity-color-branding2: $questions-color-branding2;
+
+$sequenceActivity-color-border: $questions-color-border;
+$sequenceActivity-color-page-background: $questions-color-page-background;
+$sequenceActivity-color-container-background-light: $questions-color-container-background-light;
+$sequenceActivity-color-container-background-dark: $questions-color-container-background-dark;
+
+$sequenceActivity-color-text-dark: $questions-color-text-dark;
+$sequenceActivity-color-text-lightened: $questions-color-text-lightened;
+$sequenceActivity-color-text-light: $questions-color-text-light;
+$sequenceActivity-color-text-links: $questions-color-text-links;
+$sequenceActivity-color-text: $sequenceActivity-color-text-dark;
+
+$sequenceActivity-color-correct: $questions-color-correct;
+$sequenceActivity-color-incorrect: $questions-color-incorrect;
+$sequenceActivity-color-alsoCorrect: $questions-color-alsoCorrect;
+
+$sequenceActivity-box-shadow-color: $questions-box-shadow-color;
+$sequenceActivity-box-shadow-dimensions: 0 0 6px;
+$sequenceActivity-box-shadow: $sequenceActivity-box-shadow-dimensions $sequenceActivity-box-shadow-color;
+
+$sequenceActivity-color-option-background: #FFF;
+$sequenceActivity-color-option-border: darken($sequenceActivity-color-border, 20%);
+$sequenceActivity-color-option-text: $sequenceActivity-color-text-dark;
+$sequenceActivity-color-option-background-hover: lighten($sequenceActivity-color-container-background-light, 5%);
+$sequenceActivity-color-option-border-hover: lighten($sequenceActivity-color-option-border, 10%);
+$sequenceActivity-color-option-background-selected: lighten($sequenceActivity-color-container-background-light, 5%);
+$sequenceActivity-color-option-border-selected: lighten($sequenceActivity-color-option-border, 10%);
+$sequenceActivity-color-option-border-correct: $sequenceActivity-color-correct;
+$sequenceActivity-color-option-border-incorrect: $sequenceActivity-color-incorrect;
+$sequenceActivity-color-option-background-correct: lighten($sequenceActivity-color-correct, 60%);
+$sequenceActivity-color-option-background-incorrect: lighten($sequenceActivity-color-incorrect, 60%);
+$sequenceActivity-color-option-text-correct: $sequenceActivity-color-option-text;
+$sequenceActivity-color-option-text-incorrect: $sequenceActivity-color-option-text;
+$sequenceActivity-color-option-box-shadow: $sequenceActivity-color-alsoCorrect;
+$sequenceActivity-option-box-shadow-dimensions: $sequenceActivity-box-shadow-dimensions;
+$sequenceActivity-option-box-shadow: $sequenceActivity-option-box-shadow-dimensions $sequenceActivity-color-option-box-shadow;
+
+$sequenceActivity-color-responsefeedback-icon-correct-fill: $sequenceActivity-color-correct;
+$sequenceActivity-color-responsefeedback-icon-incorrect-fill: $sequenceActivity-color-incorrect;

@@ -1,0 +1,39 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@mixin auto-numbering($sep: ".", $numbered-element: li, $nested-parent: ul, $counter: item){
+    $sel: ();
+
+    // represents sub-wrappers
+    $sel: append($sel, unquote($nested-parent));
+
+    #{$sel} {
+        list-style: none;
+        margin-left: 0;
+    }
+
+
+    // list and root
+    $sel: append($sel, unquote('&'), comma);
+
+    #{$sel} {
+        // reset counter on sub-wrappers and root
+        counter-reset: #{$counter};
+
+        > #{$numbered-element}:before {
+            counter-increment: #{$counter};
+            content: counters(#{$counter}, "#{$sep}") "\00a0";
+            padding: 0 10px;
+        }
+    }
+}

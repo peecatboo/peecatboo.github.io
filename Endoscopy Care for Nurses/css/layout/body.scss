@@ -1,0 +1,95 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+html {
+    @include generate-style-block('HtmlElement') {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        direction: $dir;
+        font-family: if(variable-exists(layout-font-body), $layout-font-body, $basic-font-body);
+        font-size: if(variable-exists(layout-font-size), $layout-font-size, $basic-font-size);
+        text-align: if(variable-exists(basic-text-align), $basic-text-align, left);
+
+    }
+}
+
+body {
+    @include generate-style-block('BodyElement') {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        direction: $dir;
+        font-family: if(variable-exists(layout-font-body), $layout-font-body, $basic-font-body);
+        text-align: if(variable-exists(basic-text-align), $basic-text-align, left);
+        //font-size: if(variable-exists(basic-font-size), $basic-font-size, 11pt);
+    }
+}
+
+#PageMain {
+    -webkit-overflow-scrolling: touch;
+    @include generate-style-block('PageMain') {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#SVGIconsContainer {
+    @include generate-style-block('SVGIconsContainer') {
+        display: none;
+    }
+}
+
+#SkipToContentLink {
+    @include generate-style-block('SkipToContentLink') {
+        padding: if(variable-exists(layout-SkipToContentLink-padding), $layout-SkipToContentLink-padding, 10px);
+        position: if(variable-exists(layout-SkipToContentLink-position), $layout-SkipToContentLink-position, absolute);
+        display: if(variable-exists(layout-SkipToContentLink-display), $layout-SkipToContentLink-display, block);
+        top: if(variable-exists(layout-SkipToContentLink-top), $layout-SkipToContentLink-top, -40px);
+        bottom: if(variable-exists(layout-SkipToContentLink-bottom), $layout-SkipToContentLink-bottom, auto);
+        left: if(variable-exists(layout-SkipToContentLink-left), $layout-SkipToContentLink-left, 0);
+        right: if(variable-exists(layout-SkipToContentLink-right), $layout-SkipToContentLink-right, auto);
+        color: if(variable-exists(layout-SkipToContentLink-font-color), $layout-SkipToContentLink-font-color, $layout-color-text-light);
+        border: if(variable-exists(layout-SkipToContentLink-border), $layout-SkipToContentLink-border, 1px solid);
+        border-width: if(variable-exists(layout-SkipToContentLink-border-width), $layout-SkipToContentLink-border-width, 0);
+        border-radius: if(variable-exists(layout-SkipToContentLink-border-radius), $layout-SkipToContentLink-border-radius, 0 0 5px 0);
+        background: if(variable-exists(layout-SkipToContentLink-background), $layout-SkipToContentLink-background, $layout-color-branding1);
+        transition: if(variable-exists(layout-SkipToContentLink-transition), $layout-SkipToContentLink-transition, top 0.2s ease-in-out);
+        z-index: if(variable-exists(layout-SkipToContentLink-z-index), $layout-SkipToContentLink-z-index, 1);
+        box-sizing: border-box;
+    }
+
+    &:focus {
+        @include generate-style-block('SkipToContentLinkFocus') {
+            top: if(variable-exists(layout-SkipToContentLink-top-focus), $layout-SkipToContentLink-top-focus, 0);
+            bottom: if(variable-exists(layout-SkipToContentLink-bottom-focus), $layout-SkipToContentLink-bottom-focus, auto);
+            left: if(variable-exists(layout-SkipToContentLink-left-focus), $layout-SkipToContentLink-left-focus, 0);
+            right: if(variable-exists(layout-SkipToContentLink-right-focus), $layout-SkipToContentLink-left-focus, auto);
+            background: if(variable-exists(layout-SkipToContentLink-background-focus), $layout-SkipToContentLink-background-focus, $layout-color-branding1);
+            z-index: 1000;
+        }
+    }
+}
+
+.GetFocus,
+.SetFocus,
+.SetFocusOnContent {
+    @include generate-style-block('GetFocus') {
+        width: 0;
+        height: 0;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+    }
+}

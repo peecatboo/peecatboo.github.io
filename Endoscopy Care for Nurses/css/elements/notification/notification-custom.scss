@@ -1,0 +1,31 @@
+.NotifyWrapper {
+    @include generate-style-block('NotificationNotifyWrapper') {
+        // @full
+        user-select: none;
+    }
+    .NotifyTitle {
+        @include generate-style-block('NotificationNotifyTitle') {
+            // @full
+        }
+    }
+    .NotifyMessage {
+        @include generate-style-block('NotificationNotifyMessage') {
+            // @full
+        }
+    }
+    &.NotifyInfo {
+        @include generate-style-block('NotificationNotifyInfo') {
+            // @full
+            background-color: #075669;
+        }
+    }
+}
+
+@include customize-style-block('NotificationPopupButtonsWrapper') {
+  background-color: #ffffff;
+  border: none;
+}
+
+@include customize-style-block('NotificationButton') {
+  padding: 15px 42px;
+}

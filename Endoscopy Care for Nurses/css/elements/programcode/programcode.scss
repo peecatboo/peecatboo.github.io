@@ -1,0 +1,39 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ProgramCode {
+    @include generate-style-block('ProgramCode') {
+        // @basic
+        font-family: if(variable-exists(programcode-font-family), $programcode-font-family, monospace);
+        font-size: 9pt;
+        white-space: pre;
+        word-wrap: break-word;
+        border: dashed 2px if(variable-exists(programcode-color-border), $programcode-color-border, $elements-color-text-lightened);
+        text-align: left;
+        direction: if(variable-exists(programcode-text-direction), $programcode-text-direction, ltr);
+        background-color: if(variable-exists(programcode-color-background), $programcode-color-background, #222);
+        color: if(variable-exists(programcode-color-text), $programcode-color-text, $elements-color-text-lightened);
+        // @full
+        max-width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .Highlight {
+        @include generate-style-block('ProgramCodeHightlight') {
+            // @full
+            background-color: if(variable-exists(programcode-color-background-highlight), $programcode-color-background-highlight, #ff0);
+            color: lighten(if(variable-exists(programcode-color-text), $programcode-color-text, $elements-color-text-lightened), 13%);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$menu-color-branding1: $layout-color-branding1;
+$menu-color-branding2: $layout-color-branding2;
+
+$menu-color-text-dark: $layout-color-text-dark;
+$menu-color-text-lightened: $layout-color-text-lightened;
+$menu-color-text-light: $layout-color-text-light;
+$menu-color-text-links: $layout-color-text-links;
+
+$menu-color-correct: $layout-color-correct;
+$menu-color-incorrect: $layout-color-incorrect;
+
+$menu-box-shadow-color: $layout-box-shadow-color;
+$menu-box-shadow-dimensions: $layout-box-shadow-dimensions;
+$menu-box-shadow: $menu-box-shadow-dimensions $menu-box-shadow-color;
+
+$menu-overlay-color: $layout-overlay-color;
+
+$menu-color-background: $menu-overlay-color;
+
+$menu-extened-content-background-color: $layout-extened-content-background-color;
+
+$menu-color-topmatter-icon-background: transparent;
+
+$menu-color-topmatter-title: $menu-color-text-light;
+$menu-color-topmatter-title-text-shadow: white;
+
+$menu-color-list: $menu-color-text-light;
+
+$menu-color-navigation-item: $menu-color-list;
+$menu-color-navigation-item-active: $menu-color-branding1;
+
+$menu-color-componentlinks-item-text: white;
+
+$menu-color-componentlinks-item-background: rgba(95, 103, 110, 0.5);
+$menu-color-componentlinks-item-background-hover: white;
+$menu-color-componentlinks-item-text-hover: black;
+$menu-color-componentlinks-item-link-text: white;
+$menu-color-componentlinks-item-link-background: $menu-color-componentlinks-item-background;
+$menu-color-componentlinks-item-link-background-hover: white;
+$menu-color-componentlinks-item-link-text-hover: black;
+
+$menu-color-componentlinks-dropdown-links-background: #FFF;
+$menu-color-componentlinks-dropdown-links-background-hover: black;
+$menu-color-componentlinks-dropdown-links-text: black;
+$menu-color-componentlinks-dropdown-links-text-hover: white;
+
+$menu-color-extendedcontent-background: $menu-extened-content-background-color;
+$menu-color-extendedcontent-text: $menu-color-text-light;
+$menu-color-extendedcontent-closeicon-text: #000;
+$menu-color-extendedcontent-closeicon-background: #eee;
+$menu-color-extendedcontent-text-links: lighten($menu-color-text-links, 10%);

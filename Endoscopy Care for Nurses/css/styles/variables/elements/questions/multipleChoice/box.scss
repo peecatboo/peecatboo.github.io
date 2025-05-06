@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$multiplechoice-show-feedback-icons: $questions-show-feedback-icons;
+
+$multiplechoice-padding: $questions-padding;
+$multiplechoice-margin: $questions-margin;
+
+$multiplechoice-border-width: $questions-border-width;
+$multiplechoice-border-style: $questions-border-style;
+$multiplechoice-border-radius: $questions-border-radius;
+$multiplechoice-border: $multiplechoice-border-width $multiplechoice-border-style $multiplechoice-color-border;
+
+$multiplechoice-transition-duration: 0.3s;
+
+$multiplechoice-options-list-style: none;
+$multiplechoice-options-margin-left: 0;
+$multiplechoice-options-padding-left: $multiplechoice-padding;
+
+$multiplechoice-option-wrapper-display: block;
+$multiplechoice-option-wrapper-border: $multiplechoice-border;
+$multiplechoice-option-wrapper-background: $multiplechoice-color-option-wrapper-background;
+$multiplechoice-option-wrapper-margin: 0.1em 0;
+$multiplechoice-option-wrapper-transitions: background-color $multiplechoice-transition-duration, border-color $multiplechoice-transition-duration;
+$multiplechoice-option-wrapper-hover-background: $multiplechoice-color-option-wrapper-background-hover;
+$multiplechoice-option-wrapper-hover-border: $multiplechoice-border-width $multiplechoice-border-style darken($multiplechoice-color-border, 10%);
+$multiplechoice-option-wrapper-correct-background: $multiplechoice-color-option-wrapper-correct-background;
+$multiplechoice-option-wrapper-correct-border: $multiplechoice-border-width $multiplechoice-border-style $multiplechoice-color-correct;
+$multiplechoice-option-wrapper-incorrect-background: $multiplechoice-color-option-wrapper-incorrect-background;
+$multiplechoice-option-wrapper-incorrect-border: $multiplechoice-border-width $multiplechoice-border-style $multiplechoice-color-incorrect;
+$multiplechoice-option-wrapper-alsoCorrect-background: $multiplechoice-color-option-wrapper-alsoCorrect-background;
+$multiplechoice-option-wrapper-alsoCorrect-border: $multiplechoice-border-width $multiplechoice-border-style $multiplechoice-color-alsoCorrect;
+
+$multiplechoice-responsefeedback-hidden-display: none;
+$multiplechoice-responsefeedback-showing-display: block;
+
+$multiplechoice-option-input-wrapper-float: $left;
+$multiplechoice-option-input-wrapper-padding: $multiplechoice-padding;
+$multiplechoice-option-input-wrapper-border-right: none;
+
+$multiplechoice-option-distractor-wrapper-overflow: auto;
+$multiplechoice-option-distractor-wrapper-padding: $multiplechoice-padding;
+$multiplechoice-option-distractor-wrapper-border: $multiplechoice-border;
+$multiplechoice-option-distractor-wrapper-border-width: 0 0 0 $multiplechoice-border-width;
+
+$multiplechoice-responsefeedback-icon-hidden-display: none;
+$multiplechoice-responsefeedback-icon-showing-display: inline-block;
+$multiplechoice-responsefeedback-icon-position: static;
+
+/** @depreciated */
+$multiplechoice-option-distractor-wrapper-border-left-width: $multiplechoice-border-width;
+$multiplechoice-option-distractor-wrapper-hover-border: $multiplechoice-option-wrapper-hover-border;
+$multiplechoice-option-distractor-wrapper-hover-border-width: $multiplechoice-option-distractor-wrapper-border-width;

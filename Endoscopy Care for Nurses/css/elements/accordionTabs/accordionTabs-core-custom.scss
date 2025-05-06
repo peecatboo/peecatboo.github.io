@@ -1,0 +1,11 @@
+@include customize-style-block('AccordionTabsPanel') {
+
+    border-color: $tabs-color-branding1;
+}
+
+@include customize-style-block('AccordionTabsPanelResponsiveHeading') {
+
+    border-bottom-color: $tabs-color-branding1;
+    background-color: $tabs-color-branding1;
+}
+

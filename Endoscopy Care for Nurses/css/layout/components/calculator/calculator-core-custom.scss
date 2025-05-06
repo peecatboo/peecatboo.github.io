@@ -1,0 +1,83 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@include customize-style-block('CalculatorContainer') {
+    max-width: none;
+    overflow: auto;
+    text-align: center;
+    margin-top: if(variable-exists(menu-padding), $menu-padding, $layout-padding);
+}
+
+@include customize-style-block('CalculatorExpression') {
+    width: if(variable-exists(calculator-expression-width), $calculator-expression-width, 230px);
+    margin: if(variable-exists(calculator-expression-margin), $calculator-expression-margin, 0.3em auto);
+}
+
+@include customize-style-block('CalculatorExpressionLine') {
+    margin: if(variable-exists(calculator-expression-line-margin), $calculator-expression-line-margin, 1.5em auto);   //compare variables
+    padding: if(variable-exists(calculator-expression-line-padding), $calculator-expression-line-padding, 5px);
+    color: if(variable-exists(calculator-expression-line-color), $calculator-expression-line-color, #000);
+    border-color: if(variable-exists(calculator-expression-line-border-color), $calculator-expression-line-border-color, #f5a515);
+    font-size: 120%;
+    white-space: normal;
+}
+
+@include customize-style-block('CalculatorBody') {
+    width: if(variable-exists(calculator-body-width), $calculator-body-width, 230px);
+    margin: if(variable-exists(calculator-body-margin), $calculator-body-margin, 0 auto);
+    border: if(variable-exists(calculator-body-border), $calculator-body-border, solid 1px);
+    border-color: if(variable-exists(calculator-body-border-color), $calculator-body-border-color, rgba(0,0,0,.5));
+    background-color: if(variable-exists(calculator-body-background-color), $calculator-body-background-color, rgba(0,0,0,.2));
+    border-radius: if(variable-exists(calculator-body-border-radius), $calculator-body-border-radius, 4px);
+    padding: if(variable-exists(calculator-body-padding), $calculator-body-padding, 10px);
+}
+
+@include customize-style-block('CalculatorRow') {
+    &:first-child {
+        padding: 10px 0;
+    }
+}
+
+@include customize-style-block('CalculatorButton') {
+    width : if(variable-exists(calculator-button-width), $calculator-button-width, 45px);
+    height: if(variable-exists(calculator-button-height), $calculator-button-height, 45px);
+    margin: if(variable-exists(calculator-button-margin), $calculator-button-margin, 3px);
+    border: if(variable-exists(calculator-button-border), $calculator-button-border, none);
+    border-radius: if(variable-exists(calculator-button-border-radius), $calculator-button-border-radius, 2px);
+    box-shadow: if(variable-exists(calculator-button-box-shadow), $calculator-button-box-shadow, none);
+    text-shadow: if(variable-exists(calculator-button-text-shadow), $calculator-button-text-shadow, none);
+    color: if(variable-exists(calculator-button-color), $calculator-button-color, white);
+    background-color: if(variable-exists(calculator-button-background-color), $calculator-button-background-color, $component-color-branding1);
+    transition: background-color 300ms;
+
+    &:hover {
+        background-color: lighten(if(variable-exists(calculator-button-background-color), $calculator-button-background-color, $component-color-branding1), 30%);
+    }
+}
+
+@include customize-style-block('CalculatorButtonDigit') {
+    background-color: if(variable-exists(calculator-button-digit-background-color), $calculator-button-digit-background-color, #393939) !important;
+
+    &:hover {
+        background-color: lighten(if(variable-exists(calculator-button-digit-background-color), $calculator-button-digit-background-color, #393939), 30%) !important;
+    }
+}
+
+@include customize-style-block('CalculatorInput') {
+    padding: if(variable-exists(calculator-input-padding), $calculator-input-padding, 0 10px);
+    background: if(variable-exists(calculator-input-background-color), $calculator-input-background-color, #222);
+    color: if(variable-exists(calculator-input-color), $calculator-input-color, #fefefe);
+    line-height: if(variable-exists(calculator-input-height), $calculator-input-height, 40px);
+    border: if(variable-exists(calculator-input-border), $calculator-input-border, solid 1px);
+    border-color: if(variable-exists(calculator-input-border-color), $calculator-input-border-color, #444);
+}

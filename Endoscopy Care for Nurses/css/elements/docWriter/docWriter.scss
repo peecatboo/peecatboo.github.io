@@ -1,0 +1,169 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.DocWriter {
+    @include generate-style-block('DocWriter') {
+        // @full
+        text-align: if(variable-exists(docWriter-text-align), $docWriter-text-align, if-ltr(left, right));
+    }
+
+    .Instructions {
+        @include generate-style-block('DocWriterInstructions') {
+            // @full
+            font-style: if(variable-exists(docWriter-instuctions-font-style), $docWriter-instuctions-font-style, italic);
+        }
+    }
+
+    .Entry {
+
+        .EntryName {
+            @include generate-style-block('DocWriterEntryName') {
+                // @full
+                background: if(variable-exists(docWriter-entryName-color-background), $docWriter-entryName-color-background, $elements-color-container-background-light);
+                color: if(variable-exists(docWriter-entryName-color), $docWriter-entryName-color, $elements-color-branding1);
+                font-weight: if(variable-exists(docWriter-entryName-font-weight), $docWriter-entryName-font-weight, bold);
+                padding: side-values(if(variable-exists(docWriter-entryName-padding), $docWriter-entryName-padding, 4px 10px));
+                border-radius: if(variable-exists(docWriter-entryName-border-radius), $docWriter-entryName-border-radius, 0);
+                cursor: if(variable-exists(docWriter-entryName-cursor), $docWriter-entryName-cursor, pointer);
+            }
+        }
+
+        .UserPrompt {
+            @include generate-style-block('DocWriterUserPrompt') {
+                // @full
+                display: if(variable-exists(docWriter-string-display), $docWriter-string-display, block);
+                margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-bottom: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+            }
+        }
+
+        .EntryHint {
+            @include generate-style-block('DocWriterEntryHint') {
+                // @full
+                display: if(variable-exists(docWriter-string-display), $docWriter-string-display, block);
+                margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-bottom: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-top: if(variable-exists(docWriter-entry-hint-margin-top), $docWriter-entry-hint-margin-top, 15px);
+                font-style: if(variable-exists(docWriter-entry-hint-font-style), $docWriter-entry-hint-font-style, italic);
+            }
+        }
+
+        .EntryAdvice {
+            @include generate-style-block('DocWriterEntryAdvice') {
+                // @full
+                display: if(variable-exists(docWriter-string-display), $docWriter-string-display, block);
+                margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-bottom: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+            }
+        }
+
+        .ShowCharLimit {
+            @include generate-style-block('DocWriterShowCharLimit') {
+                // @full
+                display: if(variable-exists(docWriter-string-display), $docWriter-string-display, block);
+                margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-bottom: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                argin: side-values(if(variable-exists(docWriter-charsLeft-margin), $docWriter-charsLeft-margin, 3px));
+                color: if(variable-exists(docWriter-charsLeft-color), $docWriter-charsLeft-color, #c0c0c0);
+            }
+        }
+
+        .EntryLabel {
+            @include generate-style-block('DocWriterEntryLabel') {
+                // @full
+                display: if(variable-exists(docWriter-string-display), $docWriter-string-display, block);
+                margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                margin-bottom: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+            }
+        }
+
+        .EntryAdviceLink {
+            @include generate-style-block('DocWriterEntryAdviceLink') {
+                // @full
+                text-decoration: if(variable-exists(docWriter-entry-advice-link-text-decoration), $docWriter-entry-advice-link-text-decoration, underline);
+            }
+        }
+
+
+        .Closed {
+            @include generate-style-block('DocWriterClosed') {
+                // @full
+                display: none;
+            }
+        }
+
+        .EntryFieldContainer {
+            @include generate-style-block('DocWriterEntryFieldContainer') {
+                // @full
+                height: if(variable-exists(docWriter-field-container-height), $docWriter-field-container-height, 0);
+                transition: height if(variable-exists(docWriter-transition-duration), $docWriter-transition-duration, $elements-transition-duration);
+                overflow: if(variable-exists(docWriter-field-container-overflow), $docWriter-field-container-overflow, auto);
+                padding: side-values(if(variable-exists(docWriter-field-container-padding), $docWriter-field-container-padding, 0 10px));
+            }
+
+            textarea.EntryField {
+                @include generate-style-block('DocWriterEntryFieldTextarea') {
+                    // @full
+                    padding: side-values(if(variable-exists(docWriter-textarea-padding), $docWriter-textarea-padding, $basic-textarea-padding));
+                    margin-top: if(variable-exists(docWriter-string-margin-top), $docWriter-string-margin-top, 5px);
+                    font-family: if(variable-exists(docWriter-textarea-font-family), $docWriter-textarea-font-family, serif);
+                    font-size: if(variable-exists(docWriter-textarea-font-size), $docWriter-textarea-font-size, 20px);
+                    width: if(variable-exists(docWriter-textarea-width), $docWriter-textarea-width, 90%);
+                }
+            }
+        }
+    }
+
+    .Entry.Active {
+        @include generate-style-block('DocWriterEntryActive') {
+            // @full
+            cursor: initial;
+        }
+
+        .EntryFieldContainer {
+            @include generate-style-block('DocWriterEntryFieldContainerActive') {
+                // @full
+                height: if(variable-exists(docWriter-container-height), $docWriter-container-height, 170px);
+                padding: side-values(if(variable-exists(docWriter-container-padding), $docWriter-container-padding, 10px));
+            }
+        }
+    }
+
+    .DocWriterButtons {
+
+        .Button {
+            @include generate-style-block('DocWriterButton') {
+                // @full
+                margin-top: if(variable-exists(docWriter-buttons-padding-top), $docWriter-buttons-padding-top, 20px);
+                margin-#{$left}: if(variable-exitsts(docWriter-buttons-margin-right), $docWriter-buttons-margin-right, 5px);
+            }
+
+        }
+    }
+}
+
+.DocWriterPopup {
+
+    .PopupButtonsWrapper {
+        @include generate-style-block('DocWriterPopupButtonsWrapper') {
+            // @full
+            padding: side-values(if(variable-exists(docWriter-buttons-wrapper-padding), $docWriter-buttons-wrapper-padding, 10px));
+            margin: side-values(if(variable-exists(docWriter-buttons-wrapper-margin), $docWriter-buttons-wrapper-margin, 0));
+            text-align: if(variable-exists(right), $right, if-ltr(right, left));
+            background: if(variable-exists(docWriter-buttons-wrapper-background), $docWriter-buttons-wrapper-background, #F0F0F0);
+            border-top: if(variable-exists(docWriter-buttons-wrapper-border-top), $docWriter-buttons-wrapper-border-top, solid 1px #CCC);
+            border-radius: corner-values(if(variable-exists(docWriter-buttons-wrapper-border-radius), $docWriter-buttons-wrapper-border-radius, 0 0 5px 5px));
+            box-sizing: if(variable-exists(docWriter-buttons-wrapper-box-sizing), $docWriter-buttons-wrapper-box-sizing, border-box);
+        }
+    }
+}

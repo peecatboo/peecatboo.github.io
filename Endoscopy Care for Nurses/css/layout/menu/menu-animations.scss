@@ -1,0 +1,235 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+#MainMenuWrapper {
+    // Menu opens from the left side
+    &.FromLeft {
+        bottom: $menu-open-left-initial-bottom;
+        top: $menu-open-left-initial-top;
+        right: $menu-open-left-initial-right;
+        max-height: $menu-initial-max-height;
+        height: $menu-initial-height;
+        max-width: $menu-initial-max-width;
+        width: $left-right-menu-width;
+
+        &.Open {
+            left: $menu-open-left-initial-left;
+            visibility: visible;
+            transition: left 500ms ease-out, width 300ms;
+        }
+
+        &.Closed {
+            display: $menu-open-display;
+            left: -100%;
+            visibility: hidden;
+            transition: left 500ms ease-in, visibility 0ms 500ms;
+        }
+
+        @media #{$basic-screen-query-narrow} {
+            & {
+                width: $left-right-menu-width-narrow;
+
+                &.Closed {
+                    left: -$left-right-menu-width-narrow;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-normal} {
+            & {
+                width: $left-right-menu-width-normal;
+
+                &.Closed {
+                    left: -$left-right-menu-width-normal;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-wide} {
+            & {
+                width: $left-right-menu-width-wide;
+
+                &.Closed {
+                    left: -$left-right-menu-width-wide;
+                }
+            }
+        }
+    }
+
+    // Menu opens from the right side
+    &.FromRight {
+        bottom: $menu-open-right-initial-bottom;
+        top: $menu-open-right-initial-top;
+        left: $menu-open-right-initial-left;
+        max-height: $menu-initial-max-height;
+        height: $menu-initial-height;
+        max-width: $menu-initial-max-width;
+        width: $left-right-menu-width;
+
+        &.Open {
+            right: $menu-open-right-initial-right;
+            display: block;
+            visibility: visible;
+            transition: right 500ms ease-out, visibility 0ms 10ms, width 300ms;
+        }
+
+        &.Closed {
+            display: $menu-open-display;
+            right: -100%;
+            max-width: 0;
+            visibility: hidden;
+            transition: right 95ms ease-in, visibility 0ms 95ms, max-width 0ms 96ms;
+        }
+
+        @media #{$basic-screen-query-narrow} {
+            & {
+                width: $left-right-menu-width-narrow;
+
+                &.Closed {
+                    right: -$left-right-menu-width-narrow;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-normal} {
+            & {
+                width: $left-right-menu-width-normal;
+
+                &.Closed {
+                    right: -$left-right-menu-width-normal;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-wide} {
+            & {
+                width: $left-right-menu-width-wide;
+
+                &.Closed {
+                    right: -$left-right-menu-width-wide;
+                }
+            }
+        }
+    }
+
+    // Menu opens from the top side
+    &.FromTop {
+        left: $menu-open-top-initial-left;
+        right: $menu-open-top-initial-right;
+        bottom: $menu-open-top-initial-bottom;
+        max-width: $menu-initial-max-width;
+        width: $menu-initial-max-width;
+        max-height: $top-bottom-menu-max-height;
+        height: $top-bottom-menu-height;
+
+        &.Open {
+            top: 0;
+            visibility: visible;
+            transition: top 500ms ease-out, height 300ms;
+        }
+
+        &.Closed {
+            display: $menu-open-display;
+            top: -100%;
+            visibility: hidden;
+            transition: top 500ms ease-in, visibility 0ms 500ms;
+        }
+
+        @media #{$basic-screen-query-narrow} {
+            & {
+                height: $top-bottom-menu-height-narrow;
+
+                &.Closed {
+                    top: -$top-bottom-menu-height-narrow;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-normal} {
+            & {
+                height: $top-bottom-menu-height-normal;
+
+                &.Closed {
+                    top: -$top-bottom-menu-height-normal;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-wide} {
+            & {
+                height: $top-bottom-menu-height-wide;
+
+                &.Closed {
+                    top: -$top-bottom-menu-height-wide;
+                }
+            }
+        }
+    }
+
+    // Menu opens from the bottom side
+    &.FromBottom {
+        left: $menu-open-bottom-initial-left;
+        right: $menu-open-bottom-initial-right;
+        top: $menu-open-bottom-initial-top;
+        max-width: $menu-initial-max-width;
+        width: $menu-initial-max-width;
+        max-height: $top-bottom-menu-max-height;
+        height: $top-bottom-menu-height;
+
+        &.Open {
+            bottom: 0;
+            display: block;
+            visibility: visible;
+            max-width: 100%;
+            transition: bottom 500ms ease-out, visibility 0ms 10ms, max-width 0ms 10ms;
+        }
+
+        &.Closed {
+            display: $menu-open-display;
+            bottom: -100%;
+            visibility: hidden;
+            max-width: 0;
+            transition: bottom 95ms ease-in, visibility 0ms 95ms, max-width 0ms 96ms;
+        }
+
+        @media #{$basic-screen-query-narrow} {
+            & {
+                height: $top-bottom-menu-height-narrow;
+
+                &.Closed {
+                    bottom: -$top-bottom-menu-height-narrow;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-normal} {
+            & {
+                height: $top-bottom-menu-height-normal;
+
+                &.Closed {
+                    bottom: -$top-bottom-menu-height-normal;
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-wide} {
+            & {
+                height: $top-bottom-menu-height-wide;
+
+                &.Closed {
+                    bottom: -$top-bottom-menu-height-wide;
+                }
+            }
+        }
+    }
+}

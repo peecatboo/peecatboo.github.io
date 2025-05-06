@@ -1,0 +1,7 @@
+$resources-background-text-hover: #153d57;
+$resources-color-text-hover: #fff;
+
+  @include customize-style-block('ResourcesContainer') {
+        // @basic
+        color: #153d57;
+    }

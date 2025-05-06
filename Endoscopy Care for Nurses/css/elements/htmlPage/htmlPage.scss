@@ -1,0 +1,34 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.HtmlPageWrapper {
+    @include generate-style-block('HtmlPageWrapper') {}
+
+    .Title {
+        @include generate-style-block('HtmlPageTitle') {
+            padding: 10px 30px;
+        }
+    }
+
+    .HtmlPage {
+        @include generate-style-block('HtmlPage') {
+            // @full
+            display: block;
+            min-width: if(variable-exists(htmlpage-min-width), $htmlpage-min-width, 100%);
+            min-height: if(variable-exists(htmlpage-min-height), $htmlpage-min-height, 0);
+            width: if(variable-exists(htmlpage-width), $htmlpage-width, 100%);
+            height: if(variable-exists(htmlpage-height), $htmlpage-height, 100%);
+            border: if(variable-exists(htmlpage-border), $htmlpage-border, none);
+        }
+    }
+}

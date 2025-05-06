@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$layout-padding: $basic-padding;
+$layout-margin: $basic-margin;
+
+$layout-border-width: $basic-border-width;
+$layout-border-style: $basic-border-style;
+
+$layout-transition-duration: $basic-transition-duration;
+
+$layout-open-display: $basic-open-display;
+$layout-open-overflow: $basic-open-overflow;
+$layout-opening-display: $basic-opening-display;
+$layout-opening-overflow: $basic-opening-overflow;
+
+$layout-closed-display: $basic-closed-display;
+$layout-closed-overflow: $basic-closed-overflow;
+$layout-closing-display: $basic-closing-display;
+$layout-closing-overflow: $basic-closing-overflow;
+
+$layout-extended-content-max-width: 700px;
+$layout-extended-content-min-width: 200px;
+
+$layout-pagemain-display: inline-block;
+$layout-pagemain-overflow-x: hidden;
+$layout-pagemain-position: relative;
+$layout-pagemain-margin: 0;
+$layout-pagemain-width: 100%;
+// The following should most likely correspond with the left and right sidebar widths
+$layout-pagemain-width-narrow: 80%;
+$layout-pagemain-width-normal: 840px;
+$layout-pagemain-width-wide: 840px;
+$layout-pagemain-max-width: $layout-pagemain-width-wide;
+$layout-pagemain-box-shadow: 0 0 35px 2px #000;
+
+$layout-SkipToContentLink-padding: 10px;
+$layout-SkipToContentLink-position: absolute;
+$layout-SkipToContentLink-display: block;
+$layout-SkipToContentLink-top: -40px;
+$layout-SkipToContentLink-bottom: auto;
+$layout-SkipToContentLink-left: 0;
+$layout-SkipToContentLink-right: auto;
+$layout-SkipToContentLink-border: 1px solid;
+$layout-SkipToContentLink-border-width: 0;
+$layout-SkipToContentLink-border-radius: 0 0 5px 0;
+$layout-SkipToContentLink-background: $layout-color-branding1;
+$layout-SkipToContentLink-transition: top 0.5s ease-in-out;
+$layout-SkipToContentLink-z-index: 1;
+$layout-SkipToContentLink-top-focus: 0;
+$layout-SkipToContentLink-bottom-focus: auto;
+$layout-SkipToContentLink-left-focus: 0;
+$layout-SkipToContentLink-right-focus: auto;
+$layout-SkipToContentLink-background-focus: $layout-color-branding1;

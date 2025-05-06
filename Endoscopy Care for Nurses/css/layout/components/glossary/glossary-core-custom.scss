@@ -1,0 +1,67 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@include customize-style-block('GlossaryContainer') {
+    @media #{$basic-screen-query-narrow} {
+        .Index {
+            display: block;
+        }
+    }
+}
+
+@include customize-style-block('GlossaryContentsLetter') {
+    font-size: if(variable-exists(glossary-letter-font-size), $glossary-letter-font-size, 1.3em);
+    font-weight: bold;
+}
+
+@include customize-style-block('GlossaryLetterTermList') {
+    margin: 0;
+}
+
+@include customize-style-block('GlossaryLetterListItem') {
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    max-width: if(variable-exists(menu-component-open-min-width), $menu-component-open-min-width, 310px);
+    white-space: normal;
+    padding: 1em 1.5em;
+
+    .Title {
+        padding: 0;
+
+        &::after {
+            content: ">";
+            color: if(variable-exists(glossary-color-branding1), $glossary-color-branding1, $component-color-branding1);
+            float: right;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+}
+
+@include customize-style-block('GlossaryLetterListItemHover') {
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+@include customize-style-block('GlossaryDefinition') {
+    border-bottom: none;
+}
+
+@include customize-style-block('GlossaryDefinitionAudio') {
+    margin-top: 5px;
+}

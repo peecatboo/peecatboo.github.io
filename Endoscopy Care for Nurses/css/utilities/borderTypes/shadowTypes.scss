@@ -1,0 +1,61 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of classes for shadows
+ */
+
+/* shadow types */
+
+%drop-shadow-small {
+    .FigureImage {
+        box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.25);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%drop-shadow-middle {
+    .FigureImage {
+        box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, 0.25);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%drop-shadow-large {
+    .FigureImage {
+        box-shadow: 0px 6px 9px 5px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 6px 9px 5px rgba(0, 0, 0, 0.25);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+
+.drop-shadow-small {
+    @extend %drop-shadow-small;
+}
+
+.drop-shadow-middle {
+    @extend %drop-shadow-middle;
+}
+
+.drop-shadow-large {
+    @extend %drop-shadow-large;
+}

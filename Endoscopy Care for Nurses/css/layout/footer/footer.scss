@@ -1,0 +1,86 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+#PageFooter {
+    @include generate-style-block('PageFooter') {
+        // @full
+        position: if(variable-exists(footer-position), $footer-position, absolute);
+        width: if(variable-exists(footer-width), $footer-width, 100%);
+        height: if(variable-exists(footer-height), $footer-height, 60px);
+        top: if(variable-exists(footer-top), $footer-top, auto);
+        bottom: if(variable-exists(footer-bottom), $footer-bottom, 0px);
+        left: if(variable-exists(footer-left), $footer-left, auto);
+        right: if(variable-exists(footer-right), $footer-right, auto);
+        clear: if(variable-exists(footer-clear), $footer-clear, both);
+        padding: if(variable-exists(footer-padding), $footer-padding, 0);
+        margin: if(variable-exists(footer-margin), $footer-margin, 0);
+        color: if(variable-exists(footer-color-text), $footer-color-text, #535353);
+        background: if(variable-exists(footer-background), $footer-background, #FFF);
+        font-family: if(variable-exists(footer-font-body), $footer-font-body, $layout-font-body);
+        font-size: if(variable-exists(footer-font-size), $footer-font-size, 1em);
+        font-weight: if(variable-exists(footer-font-weight), $footer-font-weight, normal);
+        border-style: if(variable-exists(footer-border-style), $footer-border-style, solid);
+        border-width: if(variable-exists(footer-border-width), $footer-border-width, 0);
+        border-color: if(variable-exists(footer-color-border), $footer-color-border, #E3E3E3);
+        box-shadow: if(variable-exists(footer-box-shadow), $footer-box-shadow, (0 -2px 3px $layout-box-shadow-color));
+    }
+
+    .Button {
+        @include generate-style-block('PageFooterButton') {
+            // @full
+            min-width: if(variable-exists(footer-button-min-width), $footer-button-min-width, 100px);
+            margin: if(variable-exists(footer-button-margin), $footer-button-margin, 6px);
+            text-align: if(variable-exists(footer-button-text-align), $footer-button-text-align, center);
+            transition: if(variable-exists(footer-button-transition), $footer-button-transition, (opacity if(variable-exists(footer-transition-duration), $footer-transition-duration, $layout-transition-duration) background-color if(variable-exists(footer-transition-duration), $footer-transition-duration/2, $layout-transition-duration/2)));
+            font-family: if(variable-exists(footer-font-body), $footer-font-body, $layout-font-body);
+            font-size: if(variable-exists(footer-font-size), $footer-font-size, 1em);
+            font-weight: if(variable-exists(footer-font-weight), $footer-font-weight, normal);
+        }
+        .SVGIcon {
+            @include generate-style-block('PageFooterButtonSVGIcon') {
+                // @full
+                display: if(variable-exists(footer-button-icon-display), $footer-button-icon-display, inline-block);
+                vertical-align: if(variable-exists(footer-button-icon-vertical-align), $footer-button-icon-vertical-align, middle);
+                width: if(variable-exists(footer-button-icon-width), $footer-button-icon-width, 22px);
+                height: if(variable-exists(footer-button-icon-height), $footer-button-icon-height, 22px);
+                margin: if(variable-exists(footer-button-icon-margin), $footer-button-icon-margin, 0 4px);
+                fill: if(variable-exists(footer-button-icon-fill), $footer-button-icon-fill, #fff);
+            }
+        }
+        span {
+            @include generate-style-block('PageFooterButtonText') {
+                // @full
+                display: if(variable-exists(footer-button-text-display), $footer-button-text-display, inline-block);
+                vertical-align: if(variable-exists(footer-button-text-vertical-align), $footer-button-text-vertical-align, middle);
+            }
+        }
+        @media screen and (max-width: $footer-navigation-responsive-max-width) {
+            @include generate-style-block('PageFooterButtonMaxWidth)') {
+                // @full
+                min-width: if(variable-exists(footer-button-narrow-min-width), $footer-button-narrow-min-width, 0);
+            }
+            .SVGIcon {
+                @include generate-style-block('PageFooterButtonMaxWidthSVGIcon') {
+                    // @full
+                    display: if(variable-exists(footer-button-icon-narrow-display), $footer-button-icon-narrow-display, inline-block);
+                }
+            }
+            span {
+                @include generate-style-block('PageFooterButtonMaxWidthText') {
+                    // @full
+                    display: if(variable-exists(footer-button-text-narrow-display), $footer-button-text-narrow-display, none);
+                }
+            }
+        }
+    }
+}

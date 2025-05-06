@@ -1,0 +1,213 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.Procedure {
+    @include generate-style-block('Procedure') {}
+    .StepGroup {
+        @include generate-style-block('ProcedureStepGroup') {
+            // @full
+            margin: side-values(if(variable-exists(procedure-stepgroup-margin), $procedure-stepgroup-margin, 10px 0 20px));
+        }
+
+        .StepNumber{
+            @include generate-style-block('ProcedureStepNumber') {
+                // @full
+                display: none;
+            }
+        }
+
+        .ExpandIcon {
+            @include generate-style-block('ProcedureExpandIcon') {
+                // @full
+                display: none;
+            }
+        }
+
+        &[data-numbered=true] {
+            &, .StepUserAction {
+                @include generate-style-block('ProcedureNumberedStepUserAction') {
+                    // @full
+                    counter-reset: steps 0;
+                }
+            }
+
+            .StepNumber {
+                @include generate-style-block('ProcedureNumberedStepNumber') {
+                    // @full
+                    display: inline-block;
+                }
+
+                &:after {
+                    @include generate-style-block('ProcedureNumberedStepNumberAfter') {
+                        // @full
+                        counter-increment: steps;
+                        content: " " counters(steps, '.') ": ";
+                        display: inline-block;
+                        margin: side-values(if(variable-exists(procedure-step-number-after-margin), $procedure-step-number-after-margin, 0 3px 0 3px));
+                    }
+                }
+            }
+        }
+
+        &[data-animated=true] {
+            .StepHead {
+                @include generate-style-block('ProcedureAnimatedStepHead') {
+                    // @full
+                    cursor: if(variable-exists(procedure-step-head-animated-cursor), $procedure-step-head-animated-cursor, pointer);
+                }
+            }
+
+            .ExpandIcon {
+                @include generate-style-block('ProcedureAnimatedExpandIcon') {
+                    // @full
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .Step {
+        @include generate-style-block('ProcedureStep') {
+            // @full
+            overflow: auto;
+        }
+
+        &.Unexpandable {
+            @include generate-style-block('ProcedureUnexpandableStep') {
+                .ExpandIcon {
+                    display: none;
+                }
+            }
+        }
+
+        .Step {
+            @include generate-style-block('ProcedureAnimatedNestedStep') {
+                // @full
+                margin-#{$left}: if(variable-exists(procedure-substep-margin-left), $procedure-substep-margin-left, 20px);
+            }
+        }
+
+        .StepHead {
+            @include generate-style-block('ProcedureStepHead') {
+                // @full
+                background: if(variable-exists(procedure-stepHead-color-background), $procedure-stepHead-color-background, $elements-color-container-background-light);
+                color: if(variable-exists(procedure-stepHead-color), $procedure-stepHead-color, $elements-color-branding1);
+                font-weight: if(variable-exists(procedure-step-head-font-weight), $procedure-step-head-font-weight, bold);
+                cursor: default;
+                padding: side-values(if(variable-exists(procedure-step-head-padding), $procedure-step-head-padding, 4px 10px));
+                border-radius: corner-values(if(variable-exists(procedure-step-head-border-radius), $procedure-step-head-border-radius, 0));
+            }
+
+            > .ExpandIcon {
+                @include generate-style-block('ProcedureStepHeadExpandIcon') {
+                    // @full
+                    pointer-events: if(variable-exists(procedure-expand-icon-pointer-events), $procedure-expand-icon-pointer-events, none);
+                    transition: transform if(variable-exists(procedure-transition-duration), $procedure-transition-duration, $elements-transition-duration);
+                    fill: if(variable-exists(procedure-expand-icon-fill-color), $procedure-expand-icon-fill-color, $elements-color-branding1);
+                    vertical-align: if(variable-exists(procedure-expand-icon-vertical-align), $procedure-expand-icon-vertical-align, middle);
+                    transform: if(variable-exists(procedure-expand-icon-transform), $procedure-expand-icon-transform, if-ltr(rotate(0deg), rotate(180deg)));
+                }
+            }
+
+            .truncate {
+                @include generate-style-block('ProcedureStepHeadTruncate') {
+                    // @full
+                    width: 50%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            div {
+                @include generate-style-block('ProcedureStepHeadDiv') {
+                    // @full
+                    display: inline;
+                }
+            }
+        }
+
+        .StepUserAction {
+            @include generate-style-block('ProcedureStepUserAction') {
+                // @full
+                overflow: auto;
+                overflow-x: hidden;
+                transition: max-height if(variable-exists(procedure-transition-duration), $procedure-transition-duration, $elements-transition-duration);
+            }
+
+            & > div {
+                @include generate-style-block('ProcedureStepUserActionNestedDiv') {
+                    // @full
+                    margin: side-values(if(variable-exists(procedure-step-user-action-padding), $procedure-step-user-action-padding, $elements-padding));
+                    margin-#{$right}: 0;
+                }
+
+                &.FlashCardsComponent {
+                    width: auto;
+                }
+            }
+            &:last-child {
+                @include generate-style-block('ProcedureStepUserActionLastChild') {
+                    // @full
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &.Open {
+            > .StepUserAction {
+                @include generate-style-block('ProcedureStepOpenStepUserAction') {
+                    // @full
+                }
+
+                .StepUserAction {
+                    @include generate-style-block('ProcedureStepOpenNestedStepUserAction') {
+                        // @full
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            > .StepHead  > .ExpandIcon {
+                @include generate-style-block('ProcedureStepOpenStepHeadExpandIcon') {
+                    // @full
+                    transform: if(variable-exists(procedure-expand-icon-transform-active), $procedure-expand-icon-transform-active, rotate(90deg));
+                    fill: if(variable-exists(procedure-expand-icon-fill-color-active), $procedure-expand-icon-fill-color-active, $elements-color-branding1);
+                }
+            }
+        }
+
+        &.Closed {
+            & > .StepUserAction {
+                @include generate-style-block('ProcedureStepClosedStepUserAction') {
+                    // @full
+                }
+            }
+        }
+    }
+
+    .ParaBlock {
+        @include generate-style-block('ProcedureParaBlock') {
+            // @full
+            margin-top: if(variable-exists(procedure-step-user-action-padding), $procedure-step-user-action-padding, $elements-padding);
+        }
+    }
+}
+
+.ResourcesTable {
+    @include generate-style-block('ProcedureResourcesTable') {
+        // @full
+        width: 100%;
+    }
+}

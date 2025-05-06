@@ -1,0 +1,39 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$content-color-branding1: $layout-color-branding1;
+$content-color-branding2: $layout-color-branding2;
+
+$content-color-border: $layout-color-border;
+$content-color-page-background: $layout-color-page-background;
+$content-color-container-background-light: $layout-color-container-background-light;
+$content-color-container-background-dark: $layout-color-container-background-dark;
+
+$content-color-text-dark: $layout-color-text-dark;
+$content-color-text-lightened: $layout-color-text-lightened;
+$content-color-text-light: $layout-color-text-light;
+$content-color-text-links: $layout-color-text-links;
+$content-color-text-main: $content-color-text-dark;
+
+$content-color-correct: $layout-color-correct;
+$content-color-incorrect: $layout-color-incorrect;
+
+$content-box-shadow-color: $layout-box-shadow-color;
+$content-box-shadow-dimensions: $layout-box-shadow-dimensions;
+$content-box-shadow: $content-box-shadow-dimensions $content-box-shadow-color;
+
+$content-loader-foreground-color: $layout-color-branding1;
+$content-loader-background-color: fade-out($layout-color-branding1, 0.6);
+
+$content-color-pageinnerwrap-background: $content-color-page-background;
+$content-color-pagebody-background: $content-color-page-background;

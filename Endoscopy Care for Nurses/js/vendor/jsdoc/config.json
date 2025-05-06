@@ -1,0 +1,37 @@
+{
+    "opts": {
+        "template": "node_modules/ink-docstrap/template",
+        "destination": "../../docs/",
+        "recurse": true,
+        "readme": "../../README.md"
+    },
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": ["../../"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "node_modules/|docs|vendor|players"
+    },
+    "plugins": ["plugins/overloadHelper"],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        // Specific to the "docstrap" theme set
+        "theme"                 : "flatly",
+        "systemName"            : "Xyleme Web Publisher",
+        "footer"                : "version 5.11",
+        "copyright"             : "Copyright c 2019 Xyleme, Inc., 1881 9th Street, Suite 300, Boulder, Colorado 80302 USA. All rights reserved.",
+        "includeDate"           : "true",
+        "navType"               : "inline",
+        "linenums"              : "true",
+        "collapseSymbols"       : "false",
+        "inverseNav"            : "false",
+        "outputSourceFiles"     : "true" ,
+        "outputSourcePath"      : "true",
+        // "dateFormat"            : "{string}",
+        //  "syntaxTheme"           : "dark",
+        "sort"                  : "false"
+    }
+}

@@ -1,0 +1,62 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+.PageResourcesContainer {
+    @include generate-style-block('PageResourcesContainer') {
+        display: none;
+     }
+
+    .Supplements {
+        .Supplement {
+            @include generate-style-block('PageResourcesSupplement') {
+                // @basic
+                @if variable-exists(pageResources-color-list) {
+                    color: $pageResources-color-list;
+                }
+                @if variable-exists(pageResources-supplement-cursor) {
+                    cursor: $pageResources-supplement-cursor;
+                }
+                // @full
+                @if variable-exists(pageResources-list-padding) {
+                    padding: $pageResources-list-padding;
+                }
+            }
+        }
+
+        a {
+            @include generate-style-block('PageResourcesSupplementItemLink') {
+                @if variable-exists(pageResources-color-list) {
+                    color: $pageResources-color-list;
+                }
+                @if variable-exists(pageResources-list-padding) {
+                    padding: $pageResources-list-padding;
+                }
+                @if variable-exists(pageResources-list-padding) {
+                    margin-#{$left}: $pageResources-list-padding;
+                }
+            }
+
+            &:hover, &:active, &.Active {
+                @include generate-style-block('PageResourcesSupplementItemLinkActive') {
+                    @if variable-exists(pageResources-background-text-hover) {
+                        background: $pageResources-background-text-hover;
+                    }
+                    @if variable-exists(pageResources-color-text-hover) {
+                        color: $pageResources-color-text-hover;
+                    }
+                }
+            }
+        }
+    }
+}

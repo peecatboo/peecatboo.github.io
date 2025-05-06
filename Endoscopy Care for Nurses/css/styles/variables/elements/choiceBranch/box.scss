@@ -1,0 +1,51 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$choicebranch-padding: $questions-padding;
+$choicebranch-margin: $questions-margin;
+
+$choicebranch-border-width: $questions-border-width;
+$choicebranch-border-style: $questions-border-style;
+$choicebranch-border-radius: $questions-border-radius;
+$choicebranch-border: $choicebranch-border-width $choicebranch-border-style $choicebranch-color-border;
+
+$choicebranch-transition-duration: 0.3s;
+
+$choicebranch-options-list-style: none;
+$choicebranch-options-margin-left: 0;
+$choicebranch-options-padding-left: $choicebranch-padding;
+
+$choicebranch-option-wrapper-display: block;
+$choicebranch-option-wrapper-border: $choicebranch-border;
+$choicebranch-option-wrapper-background: $choicebranch-color-option-wrapper-background;
+$choicebranch-option-wrapper-margin: 0.1em 0;
+$choicebranch-option-wrapper-transitions: background-color $choicebranch-transition-duration, border-color $choicebranch-transition-duration;
+$choicebranch-option-wrapper-hover-background: $choicebranch-color-option-wrapper-background-hover;
+$choicebranch-option-wrapper-hover-border: $choicebranch-border-width $choicebranch-border-style darken($choicebranch-color-border, 10%);
+
+$choicebranch-option-input-wrapper-float: $left;
+$choicebranch-option-input-wrapper-padding: $choicebranch-padding;
+$choicebranch-option-input-wrapper-border-right: none;
+
+$choicebranch-option-distractor-wrapper-overflow: auto;
+$choicebranch-option-distractor-wrapper-padding: $choicebranch-padding;
+$choicebranch-option-distractor-wrapper-border: $choicebranch-border;
+$choicebranch-option-distractor-wrapper-border-width: 0;
+$choicebranch-option-distractor-wrapper-border-left-width: $choicebranch-border-width;
+
+$choicebranch-submit-margin: 10px 0;
+$choicebranch-submit-padding: 8px 20px;
+
+$choicebranch-reset-wrapper-float: $right;
+$choicebranch-reset-font-size: 1.2em;
+$choicebranch-reset-padding: 8px 20px;

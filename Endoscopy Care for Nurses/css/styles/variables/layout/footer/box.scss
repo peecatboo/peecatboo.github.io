@@ -1,0 +1,61 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$footer-position: absolute;
+$footer-width: 100%;
+$footer-height: 60px;
+$footer-top: auto;
+$footer-bottom: 0px;
+$footer-left: auto;
+$footer-right: auto;
+$footer-clear: both;
+
+$footer-padding: 0;
+$footer-margin: 0;
+
+$footer-border-width: 0;
+$footer-border-style: $layout-border-style;
+$footer-background: $footer-color-background;
+
+$footer-transition-duration: $layout-transition-duration;
+
+// $footer-open-display: $layout-open-display;
+// $footer-open-overflow: $layout-open-overflow;
+// $footer-opening-display: $layout-opening-display;
+// $footer-opening-overflow: $layout-opening-overflow;
+
+// $footer-closed-display: $layout-closed-display;
+// $footer-closed-overflow: $layout-closed-overflow;
+// $footer-closing-display: $layout-closing-display;
+// $footer-closing-overflow: $layout-closing-overflow;
+
+$footer-button-min-width: 100px;
+$footer-button-margin: 6px;
+$footer-button-text-align: center;
+$footer-button-transition: opacity $footer-transition-duration, background-color $footer-transition-duration/2;
+
+$footer-button-icon-display: inline-block;
+$footer-button-icon-width: 22px;
+$footer-button-icon-height: 22px;
+$footer-button-icon-vertical-align: middle;
+$footer-button-icon-margin: 0 4px;
+$footer-button-icon-fill: #fff;
+
+$footer-button-text-display: inline-block;
+$footer-button-text-vertical-align: middle;
+
+$footer-button-narrow-min-width: 0;
+$footer-button-icon-narrow-display: inline-block;
+$footer-button-text-narrow-display: none;
+
+$footer-navigation-responsive-max-width: 600px;

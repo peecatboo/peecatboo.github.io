@@ -1,0 +1,42 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$tabs-color-branding1: $elements-color-branding1;
+$tabs-color-branding2: $elements-color-branding2;
+
+$tabs-color-border: $elements-color-border;
+$tabs-color-page-background: $elements-color-page-background;
+$tabs-color-container-background-light: $elements-color-container-background-light;
+$tabs-color-container-background-dark: $elements-color-container-background-dark;
+
+$tabs-color-text-dark: $elements-color-text-dark;
+$tabs-color-text-lightened: $elements-color-text-lightened;
+$tabs-color-text-light: $elements-color-text-light;
+$tabs-color-text-links: $elements-color-text-links;
+
+$tabs-color-correct: $elements-color-correct;
+$tabs-color-incorrect: $elements-color-incorrect;
+$tabs-color-alsoCorrect: $elements-color-alsoCorrect;
+
+$tabs-box-shadow-color: $elements-box-shadow-color;
+$tabs-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$tabs-box-shadow: $tabs-box-shadow-dimensions $tabs-box-shadow-color;
+
+$tabs-overlay-color: $elements-overlay-color;
+
+$tabs-color-background: $tabs-color-border;
+$tabs-color-border-panel: $tabs-color-border;
+$tabs-color-border-navigation: none;
+$tabs-color-border-navigation-hover: $tabs-color-branding1;
+$tabs-color-border-navigation-active: $tabs-color-branding2;
+$tabs-color-text-navigation-item-hover: $tabs-color-branding1;

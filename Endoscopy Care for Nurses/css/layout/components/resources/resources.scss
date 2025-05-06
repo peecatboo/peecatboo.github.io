@@ -1,0 +1,388 @@
+/*!
+ * @license
+ * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+ * All rights reserved.
+ *
+ * This file and related documentation are protected by copyright and
+ * are distributed under licenses regarding their use, copying, distribution,
+ * and decompilation. No part of this product or related documentation may
+ * be reproduced or transmitted in any form or by any means, electronic or
+ * mechanical, for any purpose, without the express written permission of
+ * Xyleme, Inc.
+*/
+
+// @variables
+$resources-background-text-hover: #404040;
+$resources-color-text-hover: #fff;
+
+.ResourcesContainer {
+    @include generate-style-block('ResourcesContainer') {
+        // @basic
+        color: if(variable-exists(component-color-text-light), $component-color-text-light, #fff);
+        // @full
+        padding: side-values(1.5em);
+        white-space: normal;
+    }
+
+    a {
+        @include generate-style-block('ResourcesLink') {
+            // @basic
+            color: inherit;
+            // @full
+        }
+    }
+
+    &.Closed {
+        @include generate-style-block('ResourcesItemClosed') {
+            // @basic
+            // @full
+            display: none;
+        }
+    }
+
+    &.Open {
+        @include generate-style-block('ResourcesItemOpen') {
+            // @basic
+            // @full
+            display: block;
+        }
+    }
+
+    .Heading {
+        @include generate-style-block('ResourcesHeading') {
+            // @basic
+            font-weight: $layout-header-font-weight;
+            font-size: 2.5em;
+            // @full
+            clear: both;
+        }
+    }
+
+    .Index {
+        @include generate-style-block('ResourcesIndex') {
+            // @basic
+            // @full
+            margin-#{right}: -14px;
+            margin-top: -12px;
+            float: $right;
+        }
+    }
+
+    .Contents {
+        @include generate-style-block('ResourcesContents') {
+            // @basic
+            // @full
+            margin-top: 20px;
+        }
+
+        .Supplements {
+            .Supplement {
+                @include generate-style-block('ResourcesContentsSupplement') {
+                    // @basic
+                    // @full
+                    cursor: pointer;
+                }
+
+                a {
+                    @include generate-style-block('ResourcesContentsSupplementLink') {
+                        // @basic
+                        font-weight: bold;
+                        font-size: 16px;
+                        // @full
+                        margin: side-values(10px 0);
+                        display: block;
+                    }
+                }
+            }
+
+            .Resources {
+                &.Closed {
+                    @include generate-style-block('ResourcesContentsResourcesClosed') {
+                        // @basic
+                        // @full
+                        display: none;
+                    }
+                }
+
+                .Resource {
+                    @include generate-style-block('ResourcesResource') {
+                        // @basic
+                        // @full
+                        clear: both;
+                    }
+
+                    &.Active {
+                        @include generate-style-block('ResourcesResourceActive') {
+                            background: transparentize($resources-background-text-hover, 0.5);
+                            color: $resources-color-text-hover;
+                        }
+                    }
+
+                    .ResourcesItem {
+                        @include generate-style-block('ResourcesSupplementsItemHeader') {
+                            // @basic
+                            font-size: 12px;
+                            font-weight: normal;
+                            cursor: pointer;
+                            text-decoration: underline;
+                            // @full
+                            display: block;
+                            padding: side-values(15px);
+                        }
+
+
+                        &:hover, &:active {
+                            @include generate-style-block('ResourcesSupplementsItemHeaderHover') {
+                                // @basic
+                                text-decoration: none;
+                                background: $resources-background-text-hover;
+                                color: $resources-color-text-hover;
+                                // @full
+                            }
+                        }
+                    }
+
+                    .SupplementItem {
+                        @include generate-style-block('ResourcesSupplementItem') {
+                            // @basic
+                            // @full
+                            margin: side-values(if(variable-exists(resources-supplement-item-margin), $resources-supplement-item-margin, 10px 0));
+                        }
+
+                        &.Open {
+                            @include generate-style-block('ResourcesSupplementItemOpen') {
+                                // @basic
+                                // @full
+                                display: block;
+                            }
+                        }
+
+                        &.Closed {
+                            @include generate-style-block('ResourcesSupplementItemClosed') {
+                                // @basic
+                                // @full
+                                display: none;
+                            }
+                        }
+
+                        .FlashCardsComponent {
+                            &[data-size="3.5 x 5"], & {
+                                .FlashCards {
+                                    li {
+                                        @include generate-style-block('ResourcesFlashCardsItem3.5x5') {
+                                            // @basic
+                                            // @full
+                                            width: 100%;
+                                            max-width: 300px;
+                                            margin-left: -50%;
+                                        }
+                                    }
+                                }
+                            }
+                            &[data-size="4 x 6"] {
+                                .FlashCards {
+                                    li {
+                                        @include generate-style-block('ResourcesFlashCardsItem4x6') {
+                                            // @basic
+                                            // @full
+                                            width: 100%;
+                                            max-width: 300px;
+                                            margin-left: -50%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .FlashObject, .FlashXML {
+                            @include generate-style-block('ResourcesFlash') {
+                                // @basic
+                                // @full
+                                width: 100%;
+                                overflow-y: hidden;
+                                overflow-x: auto;
+                            }
+                        }
+
+                        .CategoriesContainer .CategoriesContentContainer .Panel .PanelItem .CategoryContentTitle {
+                            @include generate-style-block('ResourcesCategoryContentTitle') {
+                                // @basic
+                                // @full
+                                background: if(variable-exists(resources-supplements-faq-background), $resources-supplements-faq-background, rgba(236,240,241, .1));
+                            }
+                            .Title {
+                                @include generate-style-block('ResourcesCategoryContentTitleTitle') {
+                                    // @basic
+                                    // @full
+                                    color: inherit;
+                                }
+                            }
+                        }
+
+                        .CategoriesContainer .CategoriesTabs .CategoryItem {
+                            @include generate-style-block('ResourcesCategoryItem') {
+                                // @basic
+                                // @full
+                                color: inherit;
+                            }
+                            &:hover, .Active {
+                                @include generate-style-block('ResourcesCategoryItemActive') {
+                                    // @basic
+                                    // @full
+                                    color: inherit;
+                                }
+                            }
+                        }
+
+                        .CustomNote {
+                            @include generate-style-block('ResourcesCustomNote') {
+                                // @basic
+                                // @full
+                                color: inherit;
+                            }
+                        }
+
+                        .TabsComponent {
+                            .ResponsiveHeading {
+                                @include generate-style-block('ResourcesTabsResponsiveHeading') {
+                                    // @basic
+                                    // @full
+                                    display: block;
+                                }
+                            }
+                            > .TabsNavigation {
+                                &.Horizontal  {
+                                    @include generate-style-block('ResourcesTabsNavigation') {
+                                        // @basic
+                                        // @full
+                                        width: 100%;
+                                        overflow: auto;
+                                    }
+                                }
+                                > .TabsNavigationItem {
+                                    > .TabsPanelTitle {
+                                        @include generate-style-block('ResourcesTabsTitle') {
+                                            // @basic
+                                            // @full
+                                            display: none;
+                                        }
+                                    }
+                                    > .TabsPanelIndex {
+                                        @include generate-style-block('ResourcesTabsPanelIndex') {
+                                            // @basic
+                                            // @full
+                                            display: block;
+                                        }
+                                        &:before {
+                                            @include generate-style-block('ResourcesTabsPanelIndexBefore') {
+                                                // @basic
+                                                // @full
+                                                content: counter(tabsNum);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .CategoriesContainer .CategoriesContentContainer .Panel {
+                            @include generate-style-block('ResourcesPanel') {
+                                // @basic
+                                // @full
+                                padding: 0 0 0 5px;
+                            }
+                        }
+
+                        .CategoriesContainer, .CustomNote, .TableWrapper, .DocWriter, .TabsComponent, .List, .ProgramCode, .QuoteBlock  {
+                            @include generate-style-block('ResourcesMarginOverrides') {
+                                // @basic
+                                // @full
+                                margin-left: 0;
+                                margin-right: 0;
+                            }
+                        }
+
+                        .ParaBlockContent {
+                            @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+                                @include generate-style-block('ResourcesParablockNormalScreen') {
+                                    // @basic
+                                    // @full
+                                    margin-#{$right}: 0;
+                                }
+                            }
+                        }
+
+                        .MarginNoteWrapper {
+                            @include generate-style-block('ResourcesMarginNoteWrapper') {
+                                // @basic
+                                // @full
+                                width: 40px;
+                            }
+                            .MarginNote {
+                                > * {
+                                    @include generate-style-block('ResourcesMarginNoteContent') {
+                                        // @basic
+                                        // @full
+                                        display: none;
+                                    }
+                                }
+                                .MarginNoteIcon {
+                                    @include generate-style-block('ResourcesMarginNoteIcon') {
+                                        // @basic
+                                        // @full
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+
+                        .Equation {
+                            @include generate-style-block('ResourcesEquation') {
+                                // @basic
+                                // @full
+                                background: if(variable-exists(resources-supplements-equation-background), $resources-supplements-equation-background, #fff);
+                                display: if(variable-exists(resources-supplements-equation-display), $resources-supplements-equation-display, inline-block);
+                                padding: side-values(if(variable-exists(resources-supplements-equation-padding), $resources-supplements-equation-padding, 5px));
+                                margin: side-values(if(variable-exists(resources-supplements-equation-margin), $resources-supplements-equation-margin, 5px));
+                            }
+                        }
+
+                        .List {
+                            @include generate-style-block('ResourcesList') {
+                                // @basic
+                                // @full
+                                color: inherit;
+                            }
+                        }
+
+                        .Topic {
+                            @include generate-style-block('ResourcesTopic') {
+                                // @basic
+                                // @full
+                                padding: side-values(if(variable-exists(resources-supplements-topic-padding), $resources-supplements-topic-padding, 10px));
+                            }
+                        }
+
+                        .ParaBlock {
+                            @include generate-style-block('ResourcesParaBlock') {
+                                // @basic
+                                // @full
+                                padding: side-values(if(variable-exists(resources-supplements-parablock-padding), $resources-supplements-parablock-padding, 0 5px 0 0));
+                            }
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                @include generate-style-block('ResourcesSupplementsHeader') {
+                    // @basic
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    // @full
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}

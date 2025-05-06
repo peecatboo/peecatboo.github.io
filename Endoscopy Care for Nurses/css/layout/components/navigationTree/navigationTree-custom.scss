@@ -1,0 +1,67 @@
+
+@include customize-style-block('NavigationTreeNodeActiveLink') {
+    color: $basic-color-branding2;
+}
+
+@include customize-style-block('NavigationTreeNodeExpansionIconInvisible') {
+    display: none;
+}
+
+@include customize-style-block('NavigationTreeNodeExpansionIconInvisible') {
+    display: none;
+}
+
+$borderBetweenNavs: 1px solid rgba(255, 255, 255, 0.7);
+
+@include customize-style-block('NavigationTreeNodeCollapsable') {
+    border-top: $borderBetweenNavs;
+    &:last-child {
+        border-bottom: $borderBetweenNavs;
+    }
+
+    &.NavigationNode {
+        &:before {
+            display: none;
+        }
+    }
+
+    .SubTree {
+        border-top: $borderBetweenNavs;
+    }
+}
+
+@for $i from 1 through 20 {
+        .NavigationNode[data-level="#{$i}"] {
+            &:before {
+                    #{$left}: $i * if(variable-exists(navigationTree-item-padding-left), $navigationTree-item-padding-left, 25px * 1.5) - 2px !important;
+            }
+        }
+    }
+
+@include customize-style-block('NavigationTreeNodeExpansionIcon') {
+    fill: rgba(255, 255, 255, 0.8);
+    position: relative;
+    right: 2px;
+}
+
+
+
+
+@include customize-style-block('NavigationTreeNodeLinkHover') {
+    color: $basic-color-branding2;
+    background: none;
+}
+
+@include customize-style-block('NavigationTreeNodeMarker') {
+    border: 2px solid rgba(21, 61, 87, 0.95);
+}
+
+@include customize-style-block('NavigationTreeNodeActiveMarker') {
+    background: $basic-color-branding2 !important;
+}
+
+@include customize-style-block('NavigationTreeNodeLink') {
+    font-weight: normal !important;
+}
+
+

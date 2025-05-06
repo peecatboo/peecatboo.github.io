@@ -1,0 +1,264 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.ImageMapAssessmentInnerWrap {
+
+    .ImageMapAssessmentImageWrapper {
+        @include generate-style-block('ImageMapAssessmentImageWrapper') {
+            // @full
+            position: relative;
+            margin: 20px 0;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 1s;
+            overflow: auto;
+            //text-align: center; // center align Image
+        }
+
+        & > * {
+            @include generate-style-block('ImageMapAssessmentImageDirectChildren') {
+                // @full
+                transform-origin: $left top;
+                -webkit-transform-origin: $left top;
+            }
+        }
+
+        .ImageMapAssessmentImage {
+            @include generate-style-block('ImageMapAssessmentImage') {
+                // @full
+                border: solid 6px white;
+                box-shadow: 0 0 8px #aaa;
+                border-radius: 5px;
+            }
+        }
+
+        .ImageMapAssessmentSVG {
+            @include generate-style-block('ImageMapAssessmentSVG') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                fill: white;
+                fill-opacity: 0;
+
+                transform-origin: $left top;
+                -webkit-transform-origin: $left top;
+            }
+
+            .ImageMapAssessmentOption {
+                @include generate-style-block('ImageMapAssessmentSVGOption') {
+                    // @full
+                    transition: .5s;
+                    stroke-width: 1px;
+                    opacity: 0;
+                }
+            }
+
+            .ImageMapAssessmentOption.Outlinetransparent, .ImageMapAssessmentOption.Outline {
+                @include generate-style-block('ImageMapAssessmentSVGOptionTransparent') {}
+
+                &:hover {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionTransparentHover') {}
+                }
+
+                &.Selected {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionTransparentActive') {}
+                }
+
+                &.Visible {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionTransparentVisible') {}
+                }
+            }
+
+            .ImageMapAssessmentOption.Outlineyellow {
+                @include generate-style-block('ImageMapAssessmentSVGOptionYellow') {
+                    stroke: yellow;
+                }
+
+                &:hover {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionYellowHover') {}
+                }
+
+                &.Selected {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionYellowActive') {}
+                }
+
+                &.Visible {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionYellowVisible') {}
+                }
+            }
+
+            .ImageMapAssessmentOption.Outlinered {
+                @include generate-style-block('ImageMapAssessmentSVGOptionRed') {
+                    stroke: red;
+                }
+
+                &:hover {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionRedHover') {}
+                }
+
+                &.Selected {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionRedActive') {}
+                }
+
+                &.Visible {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionRedVisible') {}
+                }
+            }
+
+            .ImageMapAssessmentOption.Outlineblack {
+                @include generate-style-block('ImageMapAssessmentSVGOptionBlack') {
+                    stroke: black;
+                }
+
+                &:hover {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionBlackHover') {}
+                }
+
+                &.Selected {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionBlackActive') {}
+                }
+
+                &.Visible {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionBlackVisible') {}
+                }
+            }
+
+            .ImageMapAssessmentOption.Outlinewhite {
+                @include generate-style-block('ImageMapAssessmentSVGOptionWhite') {
+                    stroke: white;
+                }
+
+                &:hover {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionWhiteHover') {}
+                }
+
+                &.Selected {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionWhiteActive') {}
+                }
+
+                &.Visible {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionWhiteVisible') {}
+                }
+            }
+
+
+            .Visible {
+                @include generate-style-block('ImageMapAssessmentSVGOptionVisible') {
+                    // @full
+                    opacity: 1;
+                }
+            }
+            .Selected {
+                @include generate-style-block('ImageMapAssessmentSVGOptionSelected') {
+                    // @full
+                    stroke-width: 3px;
+                }
+            }
+
+            .Correct, .ImageMapAssessmentOption.Correct {
+                @include generate-style-block('ImageMapAssessmentSVGOptionCorrect') {
+                    // @full
+                    fill: lighten(if(variable-exists(imageMapAssessment-color-correct), $imageMapAssessment-color-correct, $questions-color-correct), if(variable-exists(imageMapAssessment-svg-feedback-fill-lightness), $imageMapAssessment-svg-feedback-fill-lightness, 25%));
+                    fill-opacity: if(variable-exists(imageMapAssessment-svg-feedback-fill-opacity), $imageMapAssessment-svg-feedback-fill-opacity, 0.9);
+                    stroke: if(variable-exists(imageMapAssessment-color-correct), $imageMapAssessment-color-correct, $questions-color-correct);
+                }
+
+                .FeedbackIconCorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionCorrectFeedbackIconCorrect') {
+                        // @full
+                        display: if(if(variable-exists(imageMapAssessment-show-feedback-icons), $imageMapAssessment-show-feedback-icons, true), block, none);
+                    }
+                }
+
+                .FeedbackIconIncorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionCorrectFeedbackIconIncorrect') {
+                        // @full
+                        display: none;
+                    }
+                }
+            }
+
+            .AlsoCorrect, .ImageMapAssessmentOption.AlsoCorrect {
+                @include generate-style-block('ImageMapAssessmentSVGOptionAlsoCorrect') {
+                    // @full
+                    fill: lighten(if(variable-exists(imageMapAssessment-color-alsoCorrect), $imageMapAssessment-color-alsoCorrect, $questions-color-alsoCorrect), if(variable-exists(imageMapAssessment-svg-feedback-fill-lightness), $imageMapAssessment-svg-feedback-fill-lightness, 25%));
+                    fill-opacity: if(variable-exists(imageMapAssessment-svg-feedback-fill-opacity), $imageMapAssessment-svg-feedback-fill-opacity, 0.9);
+                    stroke: if(variable-exists(imageMapAssessment-color-alsoCorrect), $imageMapAssessment-color-alsoCorrect, $questions-color-alsoCorrect);
+                }
+
+                .FeedbackIconCorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionAlsoCorrectFeedbackIconCorrect') {
+                        // @full
+                        display: if(if(variable-exists(imageMapAssessment-show-feedback-icons), $imageMapAssessment-show-feedback-icons, true), block, none);
+                    }
+                }
+
+                .FeedbackIconIncorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionAlsoCorrectFeedbackIconIncorrect') {
+                        // @full
+                        display: none;
+                    }
+                }
+            }
+
+            .Incorrect, .ImageMapAssessmentOption.Incorrect {
+                @include generate-style-block('ImageMapAssessmentSVGOptionIncorrect') {
+                    // @full
+                    fill: lighten(if(variable-exists(imageMapAssessment-color-incorrect), $imageMapAssessment-color-incorrect, $questions-color-incorrect), if(variable-exists(imageMapAssessment-svg-feedback-fill-lightness), $imageMapAssessment-svg-feedback-fill-lightness, 25%));
+                    fill-opacity: if(variable-exists(imageMapAssessment-svg-feedback-fill-opacity), $imageMapAssessment-svg-feedback-fill-opacity, 0.9);
+                    stroke: if(variable-exists(imageMapAssessment-color-incorrect), $imageMapAssessment-color-incorrect, $questions-color-incorrect);
+                }
+
+                .FeedbackIconCorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionIncorrectFeedbackIconCorrect') {
+                        // @full
+                        display: none;
+                    }
+                }
+
+                .FeedbackIconIncorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGOptionIncorrectFeedbackIconIncorrect') {
+                        // @full
+                        display: if(if(variable-exists(imageMapAssessment-show-feedback-icons), $imageMapAssessment-show-feedback-icons, true), block, none);
+                    }
+                }
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('ImageMapAssessmentSVGFeedbackIcon') {
+                // @full
+                display: none;
+                width: if(variable-exists(imageMapAssessment-feedbackicon-width), $imageMapAssessment-feedbackicon-width, 24px);
+                height: if(variable-exists(imageMapAssessment-feedbackicon-height), $imageMapAssessment-feedbackicon-height, 24px);
+                stroke: none;
+
+                &.FeedbackIconCorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGFeedbackIconCorrect') {
+                        // @full
+                        fill: if(variable-exists(imageMapAssessment-color-correct), $imageMapAssessment-color-correct, $questions-color-correct);
+                    }
+                }
+                &.FeedbackIconIncorrect {
+                    @include generate-style-block('ImageMapAssessmentSVGFeedbackIconIncorrect') {
+                        // @full
+                        fill: if(variable-exists(imageMapAssessment-color-incorrect), $imageMapAssessment-color-incorrect, $questions-color-incorrect);
+                    }
+                }
+            }
+        }
+    }
+}

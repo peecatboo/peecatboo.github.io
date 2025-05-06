@@ -1,0 +1,64 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$sequenceActivity-show-feedback-icons: $questions-show-feedback-icons;
+
+$sequenceActivity-padding: $questions-padding;
+$sequenceActivity-margin: $questions-margin;
+
+$sequenceActivity-border-width: $questions-border-width;
+$sequenceActivity-border-style: $questions-border-style;
+$sequenceActivity-border: $sequenceActivity-border-width $sequenceActivity-border-style $sequenceActivity-color-border;
+$sequenceActivity-transition-duration: $questions-transition-duration;
+
+$sequenceActivity-option-list-style: none;
+$sequenceActivity-option-list-padding-left: 0;
+$sequenceActivity-option-list-margin: $sequenceActivity-margin/2 0;
+$sequenceActivity-option-list-box-sizing: border-box;
+
+$sequenceActivity-option-padding: $sequenceActivity-padding;
+$sequenceActivity-option-background: $sequenceActivity-color-option-background;
+$sequenceActivity-option-border: $sequenceActivity-border-width $sequenceActivity-border-style $sequenceActivity-color-option-border;
+$sequenceActivity-option-background-incorrect: $sequenceActivity-color-option-background-incorrect;
+$sequenceActivity-option-border-incorrect: $sequenceActivity-border-width $sequenceActivity-border-style $sequenceActivity-color-option-border-incorrect;
+$sequenceActivity-option-background-correct: $sequenceActivity-color-option-background-correct;
+$sequenceActivity-option-border-correct: $sequenceActivity-border-width $sequenceActivity-border-style $sequenceActivity-color-option-border-correct;
+
+$sequenceActivity-handle-float: $left;
+$sequenceActivity-handle-width: 11mm;
+$sequenceActivity-handle-max-width: 25%;
+$sequenceActivity-handle-height: auto;
+$sequenceActivity-handle-min-height: 50px;
+// $sequenceActivity-handle-background: url('../img/dragHandle.png') center no-repeat;
+$sequenceActivity-handle-background: none;
+$sequenceActivity-handle-cursor: ns-resize;
+
+$sequenceActivity-selectbox-float: $left;
+$sequenceActivity-selectbox-width: 22%;
+$sequenceActivity-selectbox-height: 35px;
+
+$sequenceActivity-stem-float: $right;
+$sequenceActivity-stem-padding: 0 $sequenceActivity-padding;
+$sequenceActivity-stem-box-sizing: border-box;
+$sequenceActivity-stem-width: calc(100% - #{$sequenceActivity-selectbox-width});
+$sequenceActivity-stem-width-backup: 75%;
+
+$sequenceActivity-show-solution-margin-bottom: 10px;
+$sequenceActivity-show-solution-margin-left: 2px;
+$sequenceActivity-show-solution-btn-width: 120px;
+$sequenceActivity-show-solution-btn-margin-top: -50px;
+$sequenceActivity-show-solution-btn-float: $right;
+
+$sequenceActivity-responsefeedback-icon-hidden-display: none;
+$sequenceActivity-responsefeedback-icon-showing-display: inline-block;

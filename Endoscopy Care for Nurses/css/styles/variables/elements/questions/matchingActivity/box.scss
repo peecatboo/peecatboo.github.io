@@ -1,0 +1,88 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$matchingActivity-show-feedback-icons: $questions-show-feedback-icons;
+
+$matchingActivity-padding: $questions-padding;
+$matchingActivity-margin: $questions-margin;
+
+$matchingActivity-border-width: $questions-border-width;
+$matchingActivity-border-style: $questions-border-style;
+$matchingActivity-border: $matchingActivity-border-width $matchingActivity-border-style $matchingActivity-color-border;
+$matchingActivity-transition-duration: $questions-transition-duration;
+
+$matchingActivity-option-list-style: none;
+$matchingActivity-option-list-padding-left: 0;
+$matchingActivity-option-list-margin: 0 $matchingActivity-margin;
+$matchingActivity-option-list-width: calc(50% - (#{$matchingActivity-margin}*2) - 10px);
+$matchingActivity-option-list-width-backup: 40%;
+$matchingActivity-option-list-box-sizing: border-box;
+
+$matchingActivity-option-border-width: $matchingActivity-border-width;
+$matchingActivity-option-border-style: $matchingActivity-border-style;
+$matchingActivity-option-border: $matchingActivity-option-border-width $matchingActivity-option-border-style $matchingActivity-color-option-border;
+$matchingActivity-option-border-width-hover: $matchingActivity-border-width;
+$matchingActivity-option-border-style-hover: $matchingActivity-border-style;
+$matchingActivity-option-border-hover: $matchingActivity-option-border-width-hover $matchingActivity-option-border-style-hover $matchingActivity-color-option-border-hover;
+$matchingActivity-option-border-width-selected: $matchingActivity-border-width;
+$matchingActivity-option-border-style-selected: $matchingActivity-border-style;
+$matchingActivity-option-border-selected: $matchingActivity-option-border-width-selected $matchingActivity-option-border-style-selected $matchingActivity-color-option-border-selected;
+$matchingActivity-option-border-width-correct: $matchingActivity-border-width;
+$matchingActivity-option-border-style-correct: $matchingActivity-border-style;
+$matchingActivity-option-border-correct: $matchingActivity-option-border-width-correct $matchingActivity-option-border-style-correct $matchingActivity-color-option-border-correct;
+$matchingActivity-option-border-width-incorrect: $matchingActivity-border-width;
+$matchingActivity-option-border-style-incorrect: $matchingActivity-border-style;
+$matchingActivity-option-border-incorrect: $matchingActivity-option-border-width-incorrect $matchingActivity-option-border-style-incorrect $matchingActivity-color-option-border-incorrect;
+$matchingActivity-option-padding: 1em;
+$matchingActivity-option-margin: 0.5em 0;
+$matchingActivity-option-box-sizing: border-box;
+
+$matchingActivity-option-handle-wrapper-border-width: $matchingActivity-option-border-width;
+$matchingActivity-option-handle-wrapper-border-style: $matchingActivity-option-border-style;
+$matchingActivity-option-handle-wrapper-border: $matchingActivity-option-handle-wrapper-border-width $matchingActivity-option-handle-wrapper-border-style $matchingActivity-color-option-handle-wrapper-border;
+$matchingActivity-option-handle-wrapper-border-width-hover: $matchingActivity-option-border-width;
+$matchingActivity-option-handle-wrapper-border-style-hover: $matchingActivity-option-border-style;
+$matchingActivity-option-handle-wrapper-border-hover: $matchingActivity-option-handle-wrapper-border-width-hover $matchingActivity-option-handle-wrapper-border-style-hover $matchingActivity-color-option-handle-wrapper-border-hover;
+$matchingActivity-option-handle-wrapper-border-width-selected: $matchingActivity-option-border-width;
+$matchingActivity-option-handle-wrapper-border-style-selected: $matchingActivity-option-border-style;
+$matchingActivity-option-handle-wrapper-border-selected: $matchingActivity-option-handle-wrapper-border-width-selected $matchingActivity-option-handle-wrapper-border-style-selected $matchingActivity-color-option-handle-wrapper-border-selected;
+$matchingActivity-option-handle-wrapper-border-width-correct: $matchingActivity-option-border-width;
+$matchingActivity-option-handle-wrapper-border-style-correct: $matchingActivity-option-border-style;
+$matchingActivity-option-handle-wrapper-border-correct: $matchingActivity-option-handle-wrapper-border-width-correct $matchingActivity-option-handle-wrapper-border-style-correct $matchingActivity-color-option-handle-wrapper-border-correct;
+$matchingActivity-option-handle-wrapper-border-width-incorrect: $matchingActivity-option-border-width;
+$matchingActivity-option-handle-wrapper-border-style-incorrect: $matchingActivity-option-border-style;
+$matchingActivity-option-handle-wrapper-border-incorrect: $matchingActivity-option-handle-wrapper-border-width-incorrect $matchingActivity-option-handle-wrapper-border-style-incorrect $matchingActivity-color-option-handle-wrapper-border-incorrect;
+$matchingActivity-option-handle-wrapper-position: absolute;
+$matchingActivity-option-handle-wrapper-top: $matchingActivity-option-padding;
+$matchingActivity-option-handle-wrapper-width: 14px;
+$matchingActivity-option-handle-wrapper-height: 14px;
+$matchingActivity-option-handle-wrapper-border-radius: 6px;
+$matchingActivity-option-handle-wrapper-box-sizing: border-box;
+
+$matchingActivity-option-distractor-cursor: pointer;
+$matchingActivity-option-distractor-float: $left;
+$matchingActivity-option-distractor-zindex: 2;
+
+$matchingActivity-option-distractor-handle-right: -(($matchingActivity-option-handle-wrapper-width/2) + $matchingActivity-option-handle-wrapper-border-width);
+
+$matchingActivity-option-match-cursor: pointer;
+$matchingActivity-option-match-float: $right;
+$matchingActivity-option-match-zindex: 2;
+$matchingActivity-option-match-handle-left: -(($matchingActivity-option-handle-wrapper-width/2) + $matchingActivity-option-handle-wrapper-border-width);
+
+$matchingActivity-connector-stroke-width: 2px;
+$matchingActivity-connector-stroke-width-correct: $matchingActivity-connector-stroke-width;
+$matchingActivity-connector-stroke-width-incorrect: $matchingActivity-connector-stroke-width;
+
+$matchingActivity-feedback-icon-offset: -23px;

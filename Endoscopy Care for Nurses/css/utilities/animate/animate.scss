@@ -1,0 +1,211 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of common animation classes for animate.js module
+ */
+
+@mixin animationTiming () {
+    animation-timing-function: ease-out;
+}
+
+.slide {
+    @include generate-style-block('animate-slide') {}
+
+    @mixin slideFrom($direction, $initial-transform) {
+
+        @keyframes slide-from-#{$direction} {
+            0% {
+                transform: $initial-transform;
+                @include animationTiming();
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        &-from-#{$direction} {
+            animation-name: slide-from-#{$direction};
+            animation-direction: normal;
+        }
+    }
+
+    @mixin slideTo($direction, $target-transform) {
+
+        @keyframes slide-to-#{$direction} {
+            0% {
+                transform: translate(0, 0);
+                @include animationTiming();
+                opacity: 1;
+            }
+            100% {
+                transform: $target-transform;
+                opacity: 1;
+            }
+        }
+
+        &-to-#{$direction} {
+            animation-name: slide-to-#{$direction};
+            animation-direction: normal;
+        }
+    }
+
+
+    @include slideFrom('top', translateY(-100%));
+    @include slideFrom('bottom', translateY(100%));
+    @include slideFrom('left', translateX(-100%));
+    @include slideFrom('right', translateX(100%));
+
+    @include slideTo('top', translateY(-100%));
+    @include slideTo('bottom', translateY(100%));
+    @include slideTo('left', translateX(-100%));
+    @include slideTo('right', translateX(100%));
+}
+
+
+.fade {
+    @include generate-style-block('animate-fade') {
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        &-in {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: fade-in;
+        }
+
+        &-out {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: fade-out;
+        }
+    }
+}
+
+.fade-grow {
+    @include generate-style-block('animate-fade-grow') {
+        @keyframes fade-grow-in {
+            0% {
+                transform: scale3d(0.95, 0.95, 1);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale3d(1, 1, 1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-grow-out {
+            0% {
+                transform: scale3d(1, 1, 1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale3d(0.95, 0.95, 1);
+                opacity: 0.1;
+            }
+        }
+
+        &-in {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: fade-grow-in;
+        }
+
+        &-out {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: fade-grow-out;
+        }
+    }
+}
+
+.pop {
+    @include generate-style-block('animate-pop') {
+        &-in {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.splash {
+    @include generate-style-block('animate-splash') {
+        @keyframes splash-in {
+            0% {
+                transform: scale3d(0.85, 0.85, 1);
+                opacity: 0.1;
+            }
+            25% {
+                transform: scale3d(1.05, 1.05, 1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale3d(0.95, 0.95, 1);
+                opacity: 0.8;
+            }
+            75% {
+                transform: scale3d(1.03, 1.03, 1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale3d(1, 1, 1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes splash-out {
+            0% {
+                transform: scale3d(1, 1, 1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale3d(0.85, 0.85, 1);
+                opacity: 0.1;
+            }
+        }
+
+        &-in {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: splash-in;
+        }
+
+        &-out {
+            animation-direction: normal;
+            @include animationTiming();
+            animation-name: splash-out;
+        }
+    }
+}

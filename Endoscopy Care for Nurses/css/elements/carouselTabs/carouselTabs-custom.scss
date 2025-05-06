@@ -1,0 +1,87 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$slick-arrow-color: #00608F;
+.CarouselTabs .TabsPanels .slick-dots li.Completed button:before{color: #00608F !important;}
+
+.CarouselTabs {
+    .slick-prev, .slick-next {
+        width: 35px;
+        height: 35px;
+        &:before {
+            color: #00608F !important;
+            font-size: 35px;
+            //to align outline vertically
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+    .slick-prev{
+    left: -40px;
+  }
+
+
+
+.CarouselTabs .TabsPanels.slick-slider{
+
+box-shadow: 0px 3px 3px 3px $elements-box-shadow-color;
+
+}
+
+.noAdaptiveHeight {
+    .slick-slide {
+        height: auto;
+        img {
+            height: auto !important;
+        }
+      	padding: 1em;
+		margin: 0.5em;
+    }
+
+    .slick-track {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .slick-list {
+        height: auto !important;
+    }
+  
+  .slick-dots{
+
+	bottom:-43px;
+
+	}
+}
+.noAdaptiveHeight {
+    .slick-slide {
+        height: auto;
+        img {
+            height: auto !important;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .slick-list {
+        height: auto !important;
+    }
+}

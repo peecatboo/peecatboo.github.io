@@ -1,0 +1,227 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of borderTypes classes for images
+ */
+
+/* border types */
+
+%border-solid {
+    .FigureImage {
+        border: 2px solid $elements-color-border;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%border-dotted {
+    .FigureImage {
+        border: 2px dotted $elements-color-border;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%border-dashed {
+    .FigureImage {
+        border: 2px dashed $elements-color-border;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%circle-border {
+    .FigureImage {
+        border-radius: 50%;
+    }
+    .FigureInnerWrap {
+        border-radius: 50%;
+    }
+    .FigureInnerWrap:before {
+        border-radius: 50%;
+    }
+    .FigureOuterWrap:before {
+        border-radius: 50%;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%rounded-border {
+    .FigureImage {
+        border-radius: 15px;
+    }
+    .FigureInnerWrap {
+        border-radius: 15px;
+    }
+    .FigureInnerWrap:before {
+        border-radius: 15px;
+    }
+    .FigureOuterWrap:before {
+        border-radius: 15px;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%tear-drop-border {
+    .FigureImage {
+        border-radius: 60px 0;
+    }
+    .FigureInnerWrap {
+        border-radius: 60px 0;
+    }
+    .FigureInnerWrap:before {
+        border-radius: 60px 0;
+    }
+    .FigureOuterWrap:before {
+        border-radius: 60px 0;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+@keyframes rotateConic {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+%conic-animate-1color-border {
+    .FigureInnerWrap {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        padding: 3px;
+    }
+
+    .FigureInnerWrap:after {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: conic-gradient(transparent, $elements-color-border, transparent 30%);
+        animation: rotateConic 4s linear infinite;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%conic-animate-2color-border {
+    .FigureInnerWrap {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        padding: 3px;
+    }
+
+    .FigureInnerWrap:after {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: $elements-color-branding1;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: conic-gradient(transparent, $elements-color-border, transparent 30%);
+        animation: rotateConic 4s linear infinite;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+
+%conic-animate-4color-border {
+    .FigureInnerWrap {
+        overflow: hidden;
+        padding: 3px;
+        z-index: 2;
+    }
+
+    .FigureInnerWrap:before {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: #399953;
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+        animation: rotateConic 4s linear infinite;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+.border-solid {
+    @extend %border-solid;
+}
+
+.border-dotted {
+    @extend %border-dotted;
+}
+
+.border-dashed {
+    @extend %border-dashed;
+}
+
+.CircleBorder {
+    @extend %circle-border;
+}
+
+.RoundedBorder {
+    @extend %rounded-border;
+}
+
+.TearDrop {
+    @extend %tear-drop-border;
+}
+
+.conic-animate-1color-border {
+    @extend %conic-animate-1color-border;
+}
+
+.conic-animate-2color-border {
+    @extend %conic-animate-2color-border;
+}
+
+.conic-animate-4color-border {
+    @extend %conic-animate-4color-border;
+}

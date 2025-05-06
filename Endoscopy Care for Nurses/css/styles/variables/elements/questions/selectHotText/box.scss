@@ -1,0 +1,60 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$selecthottext-show-feedback-icons: $questions-show-feedback-icons;
+
+// Use the following variables to add your desired emphasis to response feedback
+$selecthottext-correct-feedback-emphasis-property-1: text-decoration;
+$selecthottext-correct-feedback-emphasis-value-1   : none;
+$selecthottext-correct-feedback-emphasis-property-2: font-weight;
+$selecthottext-correct-feedback-emphasis-value-2   : bold;
+
+$selecthottext-incorrect-feedback-emphasis-property: text-decoration;
+$selecthottext-incorrect-feedback-emphasis-value   : line-through;
+
+$selecthottext-alsocorrect-feedback-emphasis-property-1: text-decoration;
+$selecthottext-alsocorrect-feedback-emphasis-value-1   : none;
+$selecthottext-alsocorrect-feedback-emphasis-property-2: font-weight;
+$selecthottext-alsocorrect-feedback-emphasis-value-2   : italic;
+
+$selecthottext-padding: $questions-padding;
+$selecthottext-margin: $questions-margin;
+
+$selecthottexttext-line-height: 1.7em;
+
+$selecthottext-border-width: $questions-border-width;
+$selecthottext-border-style: $questions-border-style;
+$selecthottext-border-radius: $questions-border-radius;
+$selecthottext-border: $selecthottext-border-width $selecthottext-border-style $selecthottext-color-border;
+
+$selecthottext-transition-duration: 0.3s;
+
+$selecthottext-option-display: block;
+$selecthottext-option-cursor: pointer;
+$selecthottext-option-border: $selecthottext-border-width $selecthottext-border-style transparent;
+$selecthottext-option-border-radius: $selecthottext-border-radius;
+$selecthottext-option-background: $selecthottext-color-option-background;
+$selecthottext-option-transitions: background-color $selecthottext-transition-duration, border-color $selecthottext-transition-duration;
+$selecthottext-option-background-hover: $selecthottext-color-option-background-hover;
+$selecthottext-option-border-hover: $selecthottext-border-width $selecthottext-border-style transparent;
+$selecthottext-option-border-radius-hover: $selecthottext-border-radius;
+$selecthottext-option-background-correct: $selecthottext-color-option-background-correct;
+$selecthottext-option-border-correct: $selecthottext-border-width $selecthottext-border-style $selecthottext-color-correct;
+$selecthottext-option-border-radius-correct: $selecthottext-border-radius;
+$selecthottext-option-background-incorrect: $selecthottext-color-option-background-incorrect;
+$selecthottext-option-border-incorrect: $selecthottext-border-width $selecthottext-border-style $selecthottext-color-incorrect;
+$selecthottext-option-border-radius-incorrect: $selecthottext-border-radius;
+$selecthottext-option-background-alsocorrect: $selecthottext-color-option-background-alsocorrect;
+$selecthottext-option-border-alsocorrect: $selecthottext-border-width $selecthottext-border-style $selecthottext-color-alsoCorrect;
+$selecthottext-option-border-radius-alsocorrect: $selecthottext-border-radius;

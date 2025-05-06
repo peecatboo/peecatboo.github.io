@@ -1,0 +1,358 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.TabsComponent {
+    @extend .clearfix;
+
+    @include generate-style-block('TabsContainer') {
+        // @basic
+        // @full
+        margin: if(variable-exists(tabs-wrapper-margin), $tabs-wrapper-margin, $tabs-margin 0);
+    }
+
+    .ResponsiveHeading {
+        @include generate-style-block('TabsContainerResponsiveHeading') {
+            // @basic
+            font-size: if(variable-exists(tabs-responsive-heading-font-size), $tabs-responsive-heading-font-size, 1.6em);
+            font-family: if(variable-exists(tabs-responsive-heading-font-body), $tabs-responsive-heading-font-body, $elements-font-body);
+            font-weight: if(variable-exists(tabs-responsive-heading-font-weight), $tabs-responsive-heading-font-weight, normal);
+            font-style: if(variable-exists(tabs-responsive-heading-font-style), $tabs-responsive-heading-font-style, normal);
+            text-decoration: if(variable-exists(tabs-responsive-heading-text-decoration), $tabs-responsive-heading-text-decoration, none);
+            // @full
+            display: block;
+            margin: if(variable-exists(tabs-responsive-heading-margin), $tabs-responsive-heading-margin, 0 auto 20px);
+        }
+    }
+
+    > .TabsNavigation {
+        @include generate-style-block('TabsNavigation') {
+            // @basic
+            background: if(variable-exists(tabs-navigation-background), $tabs-navigation-background, $elements-color-border);
+            // @full
+            list-style: if(variable-exists(tabs-navigation-list-style), $tabs-navigation-list-style, none);
+            box-sizing: if(variable-exists(tabs-navigation-box-sizing), $tabs-navigation-box-sizing, border-box);
+            padding: if(variable-exists(tabs-navigation-padding), $tabs-navigation-padding, 0);
+            margin: if(variable-exists(tabs-navigation-margin), $tabs-navigation-margin, 0);
+            counter-reset: if(variable-exists(tabs-navigation-counter), $tabs-navigation-counter, tabsNum);
+        }
+
+        > .TabsNavigationItem {
+            @include generate-style-block('TabsNavigationItem') {
+                // @basic
+                cursor: if(variable-exists(tabs-navigation-item-cursor), $tabs-navigation-item-cursor, pointer);
+                // @full
+                box-sizing: if(variable-exists(tabs-navigation-item-box-sizing), $tabs-navigation-item-box-sizing, border-box);
+                padding: side-values(if(variable-exists(tabs-navigation-item-padding), $tabs-navigation-item-padding, $elements-padding/2 $elements-padding/2 $elements-padding/2 $elements-padding));
+                position: relative;
+                border: if(variable-exists(tabs-navigation-item-border), $tabs-navigation-item-border, 0 transparent solid);
+                word-break: if(variable-exists(tabs-navigation-item-word-break), $tabs-navigation-item-word-break, break-word);
+                max-width: if(variable-exists(tabs-navigation-item-max-width), $tabs-navigation-item-max-width, 250px);
+                overflow: if(variable-exists(tabs-navigation-item-overflow), $tabs-navigation-item-overflow, hidden);
+            }
+
+            &:before {
+                @include generate-style-block('TabsNavigationItemBefore') {
+                    // @basic
+                    // @full
+                    content: '\2714'; // checkmark
+                    visibility: hidden;
+                    position: absolute;
+                    top: if(variable-exists(tabs-nagation-completion-indicator-top), $tabs-nagation-completion-indicator-top, auto);
+                    #{$left}: if(variable-exists(tabs-nagation-completion-indicator-left), $tabs-nagation-completion-indicator-left, $elements-padding/5);
+                }
+            }
+
+            &:hover {
+                @include generate-style-block('TabsNavigationItemHover') {
+                    // @basic
+                    color: if(variable-exists(tabs-color-text-navigation-item-hover), $tabs-color-text-navigation-item-hover, $elements-color-branding1);
+                    // @full
+                }
+            }
+
+            &.Completed {
+                &:before {
+                    @include generate-style-block('TabsNavigationItemCompletedBefore') {
+                        // @basic
+                        // @full
+                        visibility: visible;
+                    }
+                }
+            }
+
+            > .TabsPanelIndex {
+                @include generate-style-block('TabsPanelIndex') {
+                    // @basic
+                    // @full
+                    display: if(variable-exists(tabs-navigation-item-index-display), $tabs-navigation-item-index-display, inline);
+                    counter-increment: if(variable-exists(tabs-navigation-counter), $tabs-navigation-counter, tabsNum);
+                }
+
+                &:before {
+                    @include generate-style-block('TabsPanelIndexBefore') {
+                        // @basic
+                        // @full
+                        content: if(variable-exists(tabs-navigation-item-index-before-content), $tabs-navigation-item-index-before-content, counter(#{$tabs-navigation-counter}) ' ');
+                    }
+                }
+            }
+
+            > .TabsPanelTitle {
+                @include generate-style-block('TabsPanelTitle') {
+                    // @basic
+                    // @full
+                    display: if(variable-exists(tabs-navigation-item-title-display), $tabs-navigation-item-title-display, none);
+                }
+            }
+        }
+    }
+
+    > .TabsPanels {
+        @include generate-style-block('TabsPanels') {
+            // @basic
+            // @full
+            border: if(variable-exists(tabs-panels-border), $tabs-panels-border, 0 $elements-color-border solid);
+            box-sizing: if(variable-exists(tabs-panels-box-sizing), $tabs-panels-box-sizing, border-box);
+        }
+
+        &.HiddenLoading {
+            > .TabsPanel {
+                @include generate-style-block('TabsHiddenLoading') {
+                    // @basic
+                    // @full
+                    overflow: hidden;
+                    height: 1px;
+                    padding: 0;
+                }
+            }
+            > .TabsPanel:first-child {
+                @include generate-style-block('TabsHiddenLoadingFirstPanel') {
+                    // @full
+                    height: auto;
+                }
+            }
+        }
+
+        > .TabsPanel {
+            &.TabsHiddenPanel {
+                @include generate-style-block('TabsHiddenPanel') {
+                    // @basic
+                    // @full
+                    overflow: hidden;
+                    height: 1px;
+                    padding: 0;
+                    clear: both;
+                    opacity: 0;
+                    // WPS-5918 take hidden panels out of document flow to solve "clear: both;" issues
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            &.TabsInvisiblePanel {
+                @include generate-style-block('TabsInvisiblePanel') {
+                    // @basic
+                    // @full
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    > .TabsNavigation.Horizontal {
+        @include generate-style-block('TabsNavigationHorizontal') {
+            // @basic
+            // @full
+            display: if(variable-exists(tabs-navigation-horizontal-display), $tabs-navigation-horizontal-display, flex);
+        }
+
+        &:after {
+            @include generate-style-block('TabsNavigationHorizontalAfter') {
+                // @basic
+                // @full
+                content: "";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+        }
+
+        > .TabsNavigationItem {
+            @include generate-style-block('TabsNavigationItemHorizontal') {
+                // @basic
+                // @full
+                flex: if(variable-exists(tabs-navigation-item-horizontal-flex), $tabs-navigation-item-horizontal-flex, 1);
+                display: if(variable-exists(tabs-navigation-item-horizontal-display), $tabs-navigation-item-horizontal-display, table-cell);
+                padding-#{$left}: if(variable-exists(tabs-navigation-item-horizontal-padding-left), $tabs-navigation-item-horizontal-padding-left, $elements-padding);
+                padding-#{$right}: if(variable-exists(tabs-navigation-item-horizontal-padding-right), $tabs-navigation-item-horizontal-padding-right, $elements-padding);
+                border-bottom-width: if(variable-exists(tabs-navigation-item-horizontal-border-bottom-width), $tabs-navigation-item-horizontal-border-bottom-width, $elements-border-width*2);
+            }
+
+            &:hover {
+                @include generate-style-block('TabsNavigationItemHorizontalHover') {
+                    // @basic
+                    border-bottom-color: if(variable-exists(tabs-color-border-navigation-hover), $tabs-color-border-navigation-hover, $elements-color-branding1);
+                    // @full
+                }
+            }
+        }
+
+        > .TabsNavigationItem.TabsActiveLink {
+            @include generate-style-block('TabsNavigationHorizontalActiveLink') {
+                // @basic
+                border-bottom-color: if(variable-exists(tabs-color-border-navigation-active), $tabs-color-border-navigation-active, $elements-color-branding2);
+                // @full
+            }
+        }
+    }
+
+    > .TabsPanels.Horizontal {
+        @include generate-style-block('TabsPanelsHorizontal') {
+            // @basic
+            // @full
+            border-top-width: if(variable-exists(tabs-panels-horizontal-border-top-width), $tabs-panels-horizontal-border-top-width, 0);
+            padding: if(variable-exists(tabs-panels-padding), $tabs-panels-padding, $elements-padding 0);
+        }
+    }
+
+    > .TabsNavigation.Vertical {
+        @include generate-style-block('TabsNavigationVertical') {
+            // @basic
+            // @full
+            width: if(variable-exists(tabs-navigation-vertical-width), $tabs-navigation-vertical-width, 20%);
+            float: if(variable-exists(tabs-navigation-vertical-float), $tabs-navigation-vertical-float, $left);
+        }
+
+        > .TabsNavigationItem {
+            @include generate-style-block('TabsNavigationItemVertical') {
+                // @basic
+                // @full
+                padding-top: if(variable-exists(tabs-navigation-item-vertical-padding-top), $tabs-navigation-item-vertical-padding-top, $elements-padding);
+                padding-bottom: if(variable-exists(tabs-navigation-item-vertical-padding-bottom), $tabs-navigation-item-vertical-padding-bottom, $elements-padding);
+                border-#{$right}-width: if(variable-exists(tabs-navigation-item-vertical-border-right-width), $tabs-navigation-item-vertical-border-right-width, $elements-border-width*2);
+            }
+
+            &:hover {
+                @include generate-style-block('TabsNavigationItemVerticalHover') {
+                    // @basic
+                    border-#{$right}-color: if(variable-exists(tabs-color-border-navigation-hover), $tabs-color-border-navigation-hover, $elements-color-branding1);
+                    // @full
+                }
+            }
+        }
+
+        > .TabsNavigationItem.TabsActiveLink {
+            @include generate-style-block('TabsNavigationVerticalActiveLink') {
+                // @basic
+                border-#{$right}-color: if(variable-exists(tabs-color-border-navigation-active), $tabs-color-border-navigation-active, $elements-color-branding2);
+                // @full
+            }
+        }
+    }
+
+    > .TabsPanels.Vertical {
+        @include generate-style-block('TabsPanelsVertical') {
+            // @basic
+            // @full
+            float: if(variable-exists(tabs-panels-vertical-float), $tabs-panels-vertical-float, $right);
+            width: if(variable-exists(tabs-panels-vertical-width), $tabs-panels-vertical-width, 80%);
+            padding: if(variable-exists(tabs-panels-vertical-padding), $tabs-panels-vertical-padding, 0 $elements-padding);
+        }
+    }
+
+    @media #{$basic-screen-query-narrow} {
+        .ResponsiveHeading {
+            @include generate-style-block('ResponsiveHeadingNarrowScreen') {
+                // @basic
+                // @full
+                display: block;
+            }
+        }
+    }
+
+    @media #{$basic-screen-query-normal} {
+        .ResponsiveHeading {
+            @include generate-style-block('ResponsiveHeadingNormalScreen') {
+                // @basic
+                // @full
+                display: none;
+            }
+        }
+
+        > .TabsNavigation {
+            > .TabsNavigationItem {
+                > .TabsPanelIndex {
+                    @include generate-style-block('TabsPanelIndexNormalScreen') {
+                        // @basic
+                        // @full
+                        display: if(variable-exists(tabs-navigation-item-index-display-normal), $tabs-navigation-item-index-display-normal, inline);
+                    }
+                }
+
+                > .TabsPanelTitle {
+                    @include generate-style-block('TabsPanelTitleNormalScreen') {
+                        // @basic
+                        // @full
+                        display: if(variable-exists(tabs-navigation-item-title-display-normal), $tabs-navigation-item-title-display-normal, inline);
+                    }
+                }
+            }
+            .TabsNavigationItem {
+                @include generate-style-block('TabsNavigationItemNormalScreen') {
+                    // @basic
+                    // @full
+                    border: if(variable-exists(tabs-navigation-item-border), $tabs-navigation-item-border, 0 transparent solid);
+                }
+            }
+        }
+    }
+
+    @media #{$basic-screen-query-wide} {
+        .ResponsiveHeading {
+            @include generate-style-block('ResponsiveHeadingWideScreen') {
+                // @basic
+                // @full
+                display: none;
+            }
+        }
+        > .TabsNavigation {
+            > .TabsNavigationItem {
+                > .TabsPanelIndex {
+                    @include generate-style-block('TabsPanelIndexWideScreen') {
+                        // @basic
+                        // @full
+                        display: if(variable-exists(tabs-navigation-item-index-display-wide), $tabs-navigation-item-index-display-wide, inline);
+                    }
+
+                    &:before {
+                        @include generate-style-block('TabsPanelIndexBeforeWideScreen') {
+                            // @basic
+                            // @full
+                            content: if(variable-exists(tabs-navigation-item-index-before-content-wide), $tabs-navigation-item-index-before-content-wide, counter(#{$tabs-navigation-counter}) ' | ');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .TabsInstructions {
+        @include generate-style-block('TabsInstructions') {
+            // @basic
+            // @full
+            margin: if(variable-exists(tabs-instructions-margin), $tabs-instructions-margin, $elements-margin/2 0);
+        }
+    }
+}

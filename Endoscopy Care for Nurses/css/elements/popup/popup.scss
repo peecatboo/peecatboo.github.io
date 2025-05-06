@@ -1,0 +1,214 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.modalBlur {
+    @include prefix(filter, $popup-modal-filter);
+}
+
+.PopupOverlay {
+    @include generate-style-block('PopupOverlay') {
+        // @full
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.3);
+        z-index: 299
+    }
+}
+
+.PopupWrapper {
+    @include generate-style-block('PopupWrapper') {
+        // @full
+        position: fixed;
+        max-width: 90%;
+        max-height: 90%;
+        height: auto;
+        top: -1000px;
+        padding: 0;
+        padding-top: if(variable-exists(popup-titlebar-height-mobile), $popup-titlebar-height-mobile, 48px);
+        line-height: normal;
+        color: if(variable-exists(content-color-text-main), $content-color-text-main, #535353);
+        background: if(variable-exists(popup-color-background), $popup-color-background, #fff);
+        box-shadow: if(variable-exists(popup-box-shadow), $popup-box-shadow, $elements-box-shadow-dimensions $elements-box-shadow-color);
+        border-radius: if(variable-exists(popup-border-radius), $popup-border-radius, 6px);
+        z-index: 300;
+    }
+
+    @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+        @include generate-style-block('PopupWrapperNormalScreen') {
+            // @full
+            padding-top: if(variable-exists(popup-titlebar-height), $popup-titlebar-height, 30px);
+        }
+    }
+
+    .PopupTitlebar {
+        @include generate-style-block('PopupTitlebar') {
+            // @full
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: if(variable-exists(popup-titlebar-height-mobile), $popup-titlebar-height-mobile, 48px);
+            line-height: if(variable-exists(popup-titlebar-height-mobile), $popup-titlebar-height-mobile, 48px);
+            text-align: center;
+            background: if(variable-exists(popup-titlebar-background), $popup-titlebar-background, $elements-color-branding1);
+            box-shadow: if(variable-exists(popup-titlebar-box-shadow), $popup-titlebar-box-shadow, 0 1px 4px #aaa);
+            border-radius: if(variable-exists(popup-titlebar-border-radius), $popup-titlebar-border-radius, 6px 6px 0 0);
+            color: if(variable-exists(popup-color-text-title), $popup-color-text-title, $elements-color-text-light);
+        }
+
+        @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+            @include generate-style-block('PopupTitlebarNormalScreen') {
+                // @full
+                height: if(variable-exists(popup-titlebar-height), $popup-titlebar-height, 30px);
+                line-height: if(variable-exists(popup-titlebar-height), $popup-titlebar-height, 30px);
+            }
+        }
+
+        .PopupTitlebarTitle {
+            @include generate-style-block('PopupTitlebarTitle') {
+                // @full
+                padding: 5px;
+                font-size: 1em;
+                font-weight: bold;
+            }
+        }
+
+        .PopupTitlebarClose {
+            @include generate-style-block('PopupTitlebarClose') {
+                // @full
+                position: absolute;
+                top: 0;
+                #{$right}: 0;
+                width: if(variable-exists(popup-titlebar-height-mobile), $popup-titlebar-height-mobile, 48px);
+                height: if(variable-exists(popup-titlebar-height-mobile), $popup-titlebar-height-mobile, 48px);
+                color: if(variable-exists(popup-color-text-light), $popup-color-text-light, $elements-color-text-light);
+                font-size: if(variable-exists(popup-closeIcon-font-size), $popup-closeIcon-font-size, 1.5em);
+                font-weight: bold;
+                display: inline-block;
+                cursor: pointer;
+            }
+            &:before {
+                @include generate-style-block('PopupTitlebarCloseBefore') {
+                    // @full
+                    content: "\00d7";
+                }
+            }
+            @media #{$basic-screen-query-normal} and #{$basic-screen-query-wide} {
+                @include generate-style-block('PopupTitlebarCloseNormalScreen') {
+                    // @full
+                    width: if(variable-exists(popup-titlebar-height), $popup-titlebar-height, 30px);
+                    height: if(variable-exists(popup-titlebar-height), $popup-titlebar-height, 30px);
+                }
+            }
+        }
+    }
+    .PopupContentWrapper {
+        @include generate-style-block('PopupContentWrapper') {
+            // @full
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .PopupContent {
+            @include generate-style-block('PopupContent') {
+                // @full
+                padding: 10px;
+            }
+        }
+    }
+
+    .PopupButtonsWrapper {
+        @include generate-style-block('PopupButtonsWrapper') {
+            // @full
+            position: relative;
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .PopupButtons {
+            @include generate-style-block('PopupButtons') {
+                // @full
+                display: inline-block;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            .PopupButton {
+                @include generate-style-block('PopupButton') {
+                    // @full
+                    padding: 5px 10px;
+                    color: #fff;
+                    text-shadow: 0 0 3px #000;
+                    cursor: pointer;
+                    background-color: if(variable-exists(basic-color-branding1), $basic-color-branding1, #34495E);
+                    font-family: inherit;
+                    border: solid 1px darken(if(variable-exists(basic-color-branding1), $basic-color-branding1, #34495E), 10%);
+                    border-radius: 3px;
+                    font-size: 1.2em;
+                }
+
+                &:hover {
+                    @include generate-style-block('PopupButtonHover') {
+                        // @full
+                        background-color: lighten(if(variable-exists(basic-color-branding1), $basic-color-branding1, #34495E), 10%);
+                    }
+                }
+
+                &:active {
+                    @include generate-style-block('PopupButtonActive') {
+                        // @full
+                        background-color: if(variable-exists(basic-color-branding2), $basic-color-branding2, #2C3E50);
+                        box-shadow: 0 0 3px #333 inset;
+                    }
+                }
+
+                &.Disabled {
+                    @include generate-style-block('PopupButtonDisabled') {
+                        // @full
+                        cursor: auto;
+                        opacity: 0.3;
+                    }
+                }
+
+                &:active.Disabled {
+                    @include generate-style-block('PopupButtonDisabledActive') {
+                        // @full
+                        background-color: if(variable-exists(basic-color-branding1), $basic-color-branding1, #34495E);
+                        opacity: 0.3;
+                    }
+                }
+
+                &.Hidden {
+                    @include generate-style-block('PopupButtonHidden') {
+                        // @full
+                        display: none;
+                    }
+                }
+
+                &:focus {
+                    @include generate-style-block('PopupButtonFocus') {
+                        // @full
+                        outline: auto 1px;
+                        outline: -webkit-focus-ring-color auto 1px;
+                    }
+                }
+            }
+        }
+    }
+}

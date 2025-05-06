@@ -1,0 +1,96 @@
+.ScrollFocusTabsComponent {
+    @include generate-style-block("ScrollFocusTabsComponent") {
+        overflow: auto;
+        max-width: 100%;
+        margin: if(variable-exists(scroll-focus-component-margin), $scroll-focus-component-margin, 0 auto);
+    }
+
+    & > h3 {
+        @include generate-style-block("ScrollFocusTabsComponentTitle") {
+        }
+    }
+
+    & > .TabsInstructions {
+        @include generate-style-block("ScrollFocusTabsComponentInstructions") {
+            margin: if(variable-exists(scroll-focus-instructions-margin), $scroll-focus-instructions-margin, $elements-margin/2 0);
+        }
+    }
+
+    & > .ScrollTabs {
+        @include generate-style-block("ScrollFocusTabsScrollTabs") {
+            overflow: auto;
+            margin: if(variable-exists(scroll-focus-tabs-margin), $scroll-focus-tabs-margin, 20px 0 30px);
+        }
+
+        &.HiddenLoading {
+            display: none;
+        }
+
+    }
+
+
+    .TabsPanel {
+        @include generate-style-block("ScrollFocusTabsPanel") {
+            width: 93%;
+            padding: 2%;
+            background-color: rgba(238, 238, 238, 0.25);
+            border: 3px solid $tabs-color-branding2;
+            border-radius: 8px;
+            float: left;
+            position: relative;
+            margin: if(variable-exists(scroll-focus-panel-margin), $scroll-focus-panel-margin, 0 0 20px);
+            overflow: hidden;
+            transition: opacity 0.6s ease-out 0.3s;
+        }
+
+        &:last-of-type {
+            @include generate-style-block("ScrollFocusTabsLastPanel") {
+                margin-bottom: 0;
+            }
+        }
+
+        h3, h4 {
+            @include generate-style-block("ScrollFocusTabsPanelTitle") {
+                margin: 0;
+                background: none;
+            }
+        }
+
+        .TabContent {
+            @include generate-style-block("ScrollFocusTabsPanelContent") {
+            }
+        }
+
+        &:after {
+            @include generate-style-block("ScrollFocusTabsPanelAfter") {
+                display: block;
+                content: " ";
+                clear: both;
+            }
+        }
+
+        /* animated state */
+        &.VisiblePanel {
+            @include generate-style-block("ScrollFocusTabsPanelVisible") {
+                opacity: 1;
+            }
+
+            .TabContent {
+                @include generate-style-block("ScrollFocusTabsPanelContentVisible") {
+                }
+            }
+        }
+
+        &.HiddenPanel {
+            @include generate-style-block("ScrollFocusTabsPanelHidden") {
+                opacity: 0.2;
+            }
+
+            .TabContent {
+                @include generate-style-block("ScrollFocusTabsPanelContentHidden") {
+                }
+            }
+        }
+
+    }
+}

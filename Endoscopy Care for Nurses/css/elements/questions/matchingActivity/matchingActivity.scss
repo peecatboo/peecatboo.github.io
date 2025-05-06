@@ -1,0 +1,716 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.MatchingActivity {
+    $showFeedbackIcons: if(variable-exists(matchingActivity-show-feedback-icons), $matchingActivity-show-feedback-icons, true);
+
+    @include generate-style-block('MatchingActivity') {
+        // @full
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .MatchingQuestionOptionsWrapper {
+        @extend .clearfix;
+        @include generate-style-block('MatchingQuestionOptionsWrapper') {
+            // @full
+            position: relative;
+        }
+
+        .MatchingQuestionSVG {
+            @include generate-style-block('MatchingQuestionSVG') {
+                // @full
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                #{$left}: 0;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .MatchingQuestionConnector {
+                @include generate-style-block('MatchingQuestionConnector') {
+                    // @full
+                    stroke: if(variable-exists(matchingActivity-color-connector-stroke), $matchingActivity-color-connector-stroke, $questions-color-alsoCorrect);
+                    stroke-width: if(variable-exists(matchingActivity-connector-stroke-width), $matchingActivity-connector-stroke-width, 2px);
+                }
+
+                &.Correct {
+                    @include generate-style-block('MatchingQuestionConnectorCorrect') {
+                        // @full
+                        stroke: if(variable-exists(matchingActivity-color-connector-stroke-correct), $matchingActivity-color-connector-stroke-correct, $questions-color-correct);
+                        stroke-width: if(variable-exists(matchingActivity-connector-stroke-width-correct), $matchingActivity-connector-stroke-width-correct, 2px);
+                    }
+                }
+
+                &.Incorrect {
+                    @include generate-style-block('MatchingQuestionConnectorIncorrect') {
+                        // @full
+                        stroke: if(variable-exists(matchingActivity-color-connector-stroke-incorrect), $matchingActivity-color-connector-stroke-incorrect, $questions-color-incorrect);
+                        stroke-width: if(variable-exists(matchingActivity-connector-stroke-width-incorrect), $matchingActivity-connector-stroke-width-incorrect, 2px);
+                    }
+                }
+            }
+        }
+
+        .MatchingOptions {
+            @include generate-style-block('MatchingQuestionOptions') {
+                // @full
+                list-style: if(variable-exists(matchingActivity-option-list-style), $matchingActivity-option-list-style, none);
+                padding-#{$left}: if(variable-exists(matchingActivity-option-list-padding-left), $matchingActivity-option-list-padding-left, 0);
+                margin: side-values(if(variable-exists(matchingActivity-option-list-margin), $matchingActivity-option-list-margin, 0 $questions-margin));
+                width: if(variable-exists(matchingActivity-option-list-width), $matchingActivity-option-list-width, calc(50% - (#{$questions-margin}*2)));
+                box-sizing: if(variable-exists(matchingActivity-option-list-box-sizing), $matchingActivity-option-list-box-sizing, border-box);
+                position: relative;
+            }
+        }
+
+        .MatchingOption {
+            @include generate-style-block('MatchingQuestionOption') {
+                // @full
+                border: if(variable-exists(matchingActivity-option-border), $matchingActivity-option-border, $questions-border-width $questions-border-style $questions-color-border);
+                background-color: if(variable-exists(matchingActivity-color-option-background), $matchingActivity-color-option-background, darken($questions-color-container-background-light, 5%));
+                padding: side-values(if(variable-exists(matchingActivity-option-padding), $matchingActivity-option-padding, 1em));
+                margin: side-values(if(variable-exists(matchingActivity-option-margin), $matchingActivity-option-margin, 0.5em 0));
+                box-sizing: if(variable-exists(matchingActivity-option-box-sizing), $matchingActivity-option-box-sizing, border-box);
+                position: relative;
+            }
+
+            &:hover {
+                @include generate-style-block('MatchingQuestionOptionHover') {
+                    // @full
+                    background-color: if(variable-exists(matchingActivity-color-option-background-hover), $matchingActivity-color-option-background-hover, lighten($questions-color-container-background-light, 5%));
+                    border: if(variable-exists(matchingActivity-option-border-hover), $matchingActivity-option-border-hover, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionOptionHoverHandleWrapper') {
+                        // @full
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border-hover), $matchingActivity-option-handle-wrapper-border-hover, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-hover), $matchingActivity-color-option-handle-wrapper-background-hover, lighten($questions-color-container-background-light, 5%));
+                    }
+                }
+            }
+
+            &.Selected {
+                @include generate-style-block('MatchingQuestionOptionSelected') {
+                    // @full
+                    background-color: if(variable-exists(matchingActivity-color-option-background-selected), $matchingActivity-color-option-background-selected, lighten($matchingActivity-color-container-background-light, 5%));
+                    border: if(variable-exists(matchingActivity-option-border-selected), $matchingActivity-option-border-selected, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionOptionSeletedHandleWrapper') {
+                        // @full
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border-selected), $matchingActivity-option-handle-wrapper-border-selected, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-selected), $matchingActivity-color-option-handle-wrapper-background-selected, $questions-color-alsoCorrect);
+                    }
+                }
+            }
+
+            &.Correct {
+                @include generate-style-block('MatchingQuestionOptionCorrect') {
+                    // @full
+                    background-color: if(variable-exists(matchingActivity-color-option-background-correct), $matchingActivity-color-option-background-correct, lighten($questions-color-correct, 60%));
+                    border: if(variable-exists(matchingActivity-option-border-correct), $matchingActivity-option-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionOptionCorrectHandleWrapper') {
+                        // @full
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border-correct), $matchingActivity-option-handle-wrapper-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-correct), $matchingActivity-color-option-handle-wrapper-background-correct, $questions-color-correct);
+                    }
+                }
+            }
+
+            &.Incorrect {
+                @include generate-style-block('MatchingQuestionOptionIncorrect') {
+                    // @full
+                    background-color: if(variable-exists(matchingActivity-color-option-background-incorrect), $matchingActivity-color-option-background-incorrect, lighten($questions-color-incorrect, 60%));
+                    border: if(variable-exists(matchingActivity-option-border-incorrect), $matchingActivity-option-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionOptionIncorrectHandleWrapper') {
+                        // @full
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border-incorrect), $matchingActivity-option-handle-wrapper-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-incorrect), $matchingActivity-color-option-handle-wrapper-background-incorrect, $questions-color-incorrect);
+                    }
+                }
+            }
+            &.Active {
+                @include generate-style-block('MatchingQuestionOptionActive') {
+                    // @full
+                    box-shadow: if(variable-exists(matchingActivity-option-box-shadow), $matchingActivity-option-box-shadow, $questions-box-shadow-dimensions $questions-box-shadow-color);
+                }
+            }
+
+            img {
+                @include generate-style-block('MatchingQuestionOptionImage') {
+                    // @full
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .MatchingQuestionHandleWrappers {
+            @include generate-style-block('MatchingQuestionHandleWrappers') {
+                // @full
+                position: if(variable-exists(matchingActivity-option-handle-wrapper-position), $matchingActivity-option-handle-wrapper-position, absolute);
+                top: if(variable-exists(matchingActivity-option-handle-wrapper-top), $matchingActivity-option-handle-wrapper-top, 1em);
+                width: if(variable-exists(matchingActivity-option-handle-wrapper-width), $matchingActivity-option-handle-wrapper-width, 14px);
+                height: if(variable-exists(matchingActivity-option-handle-wrapper-height), $matchingActivity-option-handle-wrapper-height, 14px);
+                border: if(variable-exists(matchingActivity-option-handle-wrapper-border), $matchingActivity-option-handle-wrapper-border, $questions-border-width $questions-border-style darken($questions-color-border, 20%));
+                border-radius: if(variable-exists(matchingActivity-option-handle-wrapper-border-radius), $matchingActivity-option-handle-wrapper-border-radius, 6px);
+                background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background), $matchingActivity-color-option-handle-wrapper-background, darken($questions-color-container-background-light, 5%));
+                box-sizing: if(variable-exists(matchingActivity-option-handle-wrapper-box-sizing), $matchingActivity-option-handle-wrapper-box-sizing, border-box);
+            }
+        }
+
+        .FeedbackIcon {
+            @include generate-style-block('MatchingQuestionFeedbackIcon') {
+                // @full
+                display: none;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        .MatchingQuestionDistractors {
+            @include generate-style-block('MatchingQuestionDistractors') {
+                // @full
+                list-style: if(variable-exists(matchingActivity-option-list-style), $matchingActivity-option-list-style, none);
+                padding-#{$left}: if(variable-exists(matchingActivity-option-list-padding-left), $matchingActivity-option-list-padding-left, 0);
+                box-sizing: if(variable-exists(matchingActivity-option-list-box-sizing), $matchingActivity-option-list-box-sizing, border-box);
+                position: relative;
+                cursor: if(variable-exists(matchingActivity-option-distractor-cursor), $matchingActivity-option-distractor-cursor, pointer);
+                z-index: if(variable-exists(matchingActivity-option-distractor-zindex), $matchingActivity-option-distractor-zindex, 2);
+                width: auto;
+                float: none;
+                margin: 0;
+                counter-reset: distractorIndex;
+            }
+
+            .MatchingQuestionDistractorWrapper {
+                @include generate-style-block('MatchingQuestionDistractorWrapper') {
+                    // @full
+                    border: if(variable-exists(matchingActivity-option-border), $matchingActivity-option-border, $questions-border-width $questions-border-style $questions-color-border);
+                    background-color: if(variable-exists(matchingActivity-color-option-background), $matchingActivity-color-option-background, darken($questions-color-container-background-light, 5%));
+                    margin: side-values(if(variable-exists(matchingActivity-option-margin), $matchingActivity-option-margin, 0.5em 0));
+                    box-sizing: if(variable-exists(matchingActivity-option-box-sizing), $matchingActivity-option-box-sizing, border-box);
+                    position: relative;
+                    counter-increment: distractorIndex;
+                }
+
+                .MatchingQuestionDistractorInnerWrapper {
+                    @include generate-style-block('MatchingQuestionDistractorInnerWrapper') {
+                        padding: 1em;
+                    }
+
+                    &:before {
+                        @include generate-style-block('MatchingQuestionDistractorCounter') {
+                            content: counter(distractorIndex);
+                            display: block;
+                            font-size: 2em;
+                            padding-right: 10px;
+                            float: left;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                &:hover {
+                    @include generate-style-block('MatchingQuestionDistractorHover') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-hover), $matchingActivity-color-option-background-hover, lighten($questions-color-container-background-light, 5%));
+                        border: if(variable-exists(matchingActivity-option-border-hover), $matchingActivity-option-border-hover, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                    }
+
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionDistractorHoverHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-hover), $matchingActivity-option-handle-wrapper-border-hover, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-hover), $matchingActivity-color-option-handle-wrapper-background-hover, lighten($questions-color-container-background-light, 5%));
+                        }
+                    }
+                }
+
+                &.Selected {
+                    @include generate-style-block('MatchingQuestionDistractorSelected') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-selected), $matchingActivity-color-option-background-selected, lighten($matchingActivity-color-container-background-light, 5%));
+                        border: if(variable-exists(matchingActivity-option-border-selected), $matchingActivity-option-border-selected, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                    }
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionDistractorSelectedHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-selected), $matchingActivity-option-handle-wrapper-border-selected, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-selected), $matchingActivity-color-option-handle-wrapper-background-selected, $questions-color-alsoCorrect);
+                        }
+                    }
+                }
+                &.Correct {
+                    @include generate-style-block('MatchingQuestionDistractorCorrect') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-correct), $matchingActivity-color-option-background-correct, lighten($questions-color-correct, 60%));
+                        border: if(variable-exists(matchingActivity-option-border-correct), $matchingActivity-option-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                    }
+
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionDistractorCorrectHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-correct), $matchingActivity-option-handle-wrapper-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-correct), $matchingActivity-color-option-handle-wrapper-background-correct, $questions-color-correct);
+                        }
+                    }
+
+                    @if $showFeedbackIcons == true {
+                        .FeedbackIcon.Correct {
+                            @include generate-style-block('MatchingQuestionDistractorFeedbackIconCorrectIcon') {
+                                // @full
+                                display: inline-block;
+                                fill: if(variable-exists(matchingActivity-color-responsefeedback-icon-correct-fill), $matchingActivity-color-responsefeedback-icon-correct-fill, $questions-color-correct);
+                            }
+                        }
+                    }
+                }
+
+                &.Incorrect {
+                    @include generate-style-block('MatchingQuestionDistractorIncorrect') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-incorrect), $matchingActivity-color-option-background-incorrect, lighten($questions-color-incorrect, 60%));
+                        border: if(variable-exists(matchingActivity-option-border-incorrect), $matchingActivity-option-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                    }
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionDistractorIncorrectHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-incorrect), $matchingActivity-option-handle-wrapper-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-incorrect), $matchingActivity-color-option-handle-wrapper-background-incorrect, $questions-color-incorrect);
+                        }
+                    }
+                    @if $showFeedbackIcons == true {
+                        .FeedbackIcon.Incorrect {
+                            @include generate-style-block('MatchingQuestionDistractorFeedbackIconIncorrectIcon') {
+                                // @full
+                                display: inline-block;
+                                fill: if(variable-exists(matchingActivity-color-responsefeedback-icon-incorrect-fill), $matchingActivity-color-responsefeedback-icon-incorrect-fill, $questions-color-incorrect);
+                            }
+                        }
+                    }
+                }
+
+                &.Active {
+                    @include generate-style-block('MatchingQuestionDistractorActive') {
+                        // @full
+                        box-shadow: if(variable-exists(matchingActivity-option-box-shadow), $matchingActivity-option-box-shadow, $questions-box-shadow-dimensions $questions-box-shadow-color);
+                    }
+                }
+
+                img {
+                    @include generate-style-block('MatchingQuestionDistractorImage') {
+                        // @full
+                        max-width: 100%;
+                    }
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionDistractorHandleWrapper') {
+                        // @full
+                        display: none;
+                        position: if(variable-exists(matchingActivity-option-handle-wrapper-position), $matchingActivity-option-handle-wrapper-position, absolute);
+                        top: if(variable-exists(matchingActivity-option-handle-wrapper-top), $matchingActivity-option-handle-wrapper-top, 1em);
+                        width: if(variable-exists(matchingActivity-option-handle-wrapper-width), $matchingActivity-option-handle-wrapper-width, 14px);
+                        height: if(variable-exists(matchingActivity-option-handle-wrapper-height), $matchingActivity-option-handle-wrapper-height, 14px);
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border), $matchingActivity-option-handle-wrapper-border, $questions-border-width $questions-border-style darken($questions-color-border, 20%));
+                        border-radius: if(variable-exists(matchingActivity-option-handle-wrapper-border-radius), $matchingActivity-option-handle-wrapper-border-radius, 6px);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background), $matchingActivity-color-option-handle-wrapper-background, darken($questions-color-container-background-light, 5%));
+                        box-sizing: if(variable-exists(matchingActivity-option-handle-wrapper-box-sizing), $matchingActivity-option-handle-wrapper-box-sizing, border-box);
+                        #{$right}: if(variable-exists(matchingActivity-option-distractor-handle-right), $matchingActivity-option-distractor-handle-right, -(7px + $questions-border-width));
+                    }
+                }
+                @if $showFeedbackIcons == true {
+                    .FeedbackIcon {
+                        @include generate-style-block('MatchingQuestionDistractorFeedbackIcon') {
+                            // @full
+                            #{$left}: if(variable-exists(matchingActivity-feedback-icon-offset), $matchingActivity-feedback-icon-offset, -23px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .MatchingQuestionMatches {
+            @include generate-style-block('MatchingQuestionMatches') {
+                // @full
+                list-style: if(variable-exists(matchingActivity-option-list-style), $matchingActivity-option-list-style, none);
+                padding-#{$left}: if(variable-exists(matchingActivity-option-list-padding-left), $matchingActivity-option-list-padding-left, 0);
+                margin: side-values(if(variable-exists(matchingActivity-option-list-margin), $matchingActivity-option-list-margin, 0 $questions-margin));
+                width: if(variable-exists(matchingActivity-option-list-width), $matchingActivity-option-list-width, calc(50% - (#{$questions-margin}*2)));
+                box-sizing: if(variable-exists(matchingActivity-option-list-box-sizing), $matchingActivity-option-list-box-sizing, border-box);
+                position: relative;
+                cursor: if(variable-exists(matchingActivity-option-match-cursor), $matchingActivity-option-match-cursor, pointer);
+                float: if(variable-exists(matchingActivity-option-match-float), $matchingActivity-option-match-float, $right);
+                z-index: if(variable-exists(matchingActivity-option-match-zindex), $matchingActivity-option-match-zindex, 2);
+                display: none;
+            }
+
+            &.MatchesResponsive {
+                @include generate-style-block('MatchingQuestionResponsiveMatchesWrapper') {
+                    display: block;
+                    float: none;
+                    width: auto;
+                    margin: 0;
+                    padding-top: 2em;
+                }
+            }
+
+            .MatchingQuestionMatchWrapper {
+                @include generate-style-block('MatchingQuestionMatchWrapper') {
+                    // @full
+                    border: if(variable-exists(matchingActivity-option-border), $matchingActivity-option-border, $questions-border-width $questions-border-style $questions-color-border);
+                    background-color: if(variable-exists(matchingActivity-color-option-background), $matchingActivity-color-option-background, darken($questions-color-container-background-light, 5%));
+                    padding: side-values(if(variable-exists(matchingActivity-option-padding), $matchingActivity-option-padding, 1em));
+                    margin: side-values(if(variable-exists(matchingActivity-option-margin), $matchingActivity-option-margin, 0.5em 0));
+                    box-sizing: if(variable-exists(matchingActivity-option-box-sizing), $matchingActivity-option-box-sizing, border-box);
+                    position: relative;
+                }
+
+                &:hover {
+                    @include generate-style-block('MatchingQuestionMatchHover') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-hover), $matchingActivity-color-option-background-hover, lighten($questions-color-container-background-light, 5%));
+                        border: if(variable-exists(matchingActivity-option-border-hover), $matchingActivity-option-border-hover, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                    }
+
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionMatchHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-hover), $matchingActivity-option-handle-wrapper-border-hover, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-hover), $matchingActivity-color-option-handle-wrapper-background-hover, lighten($questions-color-container-background-light, 5%));
+                        }
+                    }
+                }
+                &.Selected {
+                    @include generate-style-block('MatchingQuestionMatchSelected') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-selected), $matchingActivity-color-option-background-selected, lighten($matchingActivity-color-container-background-light, 5%));
+                        border: if(variable-exists(matchingActivity-option-border-selected), $matchingActivity-option-border-selected, $questions-border-width $questions-border-style lighten(darken($questions-color-border, 20%), 10%));
+                    }
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionMatchSelectedHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-selected), $matchingActivity-option-handle-wrapper-border-selected, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-selected), $matchingActivity-color-option-handle-wrapper-background-selected, $questions-color-alsoCorrect);
+                        }
+                    }
+                }
+
+                &.Correct {
+                    @include generate-style-block('MatchingQuestionMatchCorrect') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-correct), $matchingActivity-color-option-background-correct, lighten($questions-color-correct, 60%));
+                        border: if(variable-exists(matchingActivity-option-border-correct), $matchingActivity-option-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                    }
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionMatchCorrectHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-correct), $matchingActivity-option-handle-wrapper-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-correct), $matchingActivity-color-option-handle-wrapper-background-correct, $questions-color-correct);
+                        }
+                    }
+                    @if $showFeedbackIcons == true {
+                        .FeedbackIcon.Correct {
+                            @include generate-style-block('MatchingQuestionMatchFeedbackIconCorrectIcon') {
+                                // @full
+                                display: inline-block;
+                                fill: if(variable-exists(matchingActivity-color-responsefeedback-icon-correct-fill), $matchingActivity-color-responsefeedback-icon-correct-fill, $questions-color-correct);
+                            }
+                        }
+                    }
+                }
+                &.Incorrect {
+                    @include generate-style-block('MatchingQuestionMatchIncorrect') {
+                        // @full
+                        background-color: if(variable-exists(matchingActivity-color-option-background-incorrect), $matchingActivity-color-option-background-incorrect, lighten($questions-color-incorrect, 60%));
+                        border: if(variable-exists(matchingActivity-option-border-incorrect), $matchingActivity-option-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                    }
+
+                    .MatchingQuestionHandleWrapper {
+                        @include generate-style-block('MatchingQuestionMatchIncorrectHandleWrapper') {
+                            // @full
+                            border: if(variable-exists(matchingActivity-option-handle-wrapper-border-incorrect), $matchingActivity-option-handle-wrapper-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                            background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background-incorrect), $matchingActivity-color-option-handle-wrapper-background-incorrect, $questions-color-incorrect);
+                        }
+                    }
+                    @if $showFeedbackIcons == true {
+                        .FeedbackIcon.Incorrect {
+                            @include generate-style-block('MatchingQuestionMatchIncorrectFeedbackIconIncorrectIcon') {
+                                // @full
+                                display: inline-block;
+                                fill: if(variable-exists(matchingActivity-color-responsefeedback-icon-incorrect-fill), $matchingActivity-color-responsefeedback-icon-incorrect-fill, $questions-color-incorrect);
+                            }
+                        }
+                    }
+                }
+                &.Active {
+                    @include generate-style-block('MatchingQuestionMatchActive') {
+                        // @full
+                        box-shadow: if(variable-exists(matchingActivity-option-box-shadow), $matchingActivity-option-box-shadow, $questions-box-shadow-dimensions $questions-box-shadow-color);
+                    }
+                }
+                img {
+                    @include generate-style-block('MatchingQuestionMatchImage') {
+                        // @full
+                        max-width: 100%;
+                    }
+                }
+
+                .MatchingQuestionHandleWrapper {
+                    @include generate-style-block('MatchingQuestionHandleWrapper') {
+                        // @full
+                        display: none;
+                        position: if(variable-exists(matchingActivity-option-handle-wrapper-position), $matchingActivity-option-handle-wrapper-position, absolute);
+                        top: if(variable-exists(matchingActivity-option-handle-wrapper-top), $matchingActivity-option-handle-wrapper-top, 1em);
+                        width: if(variable-exists(matchingActivity-option-handle-wrapper-width), $matchingActivity-option-handle-wrapper-width, 14px);
+                        height: if(variable-exists(matchingActivity-option-handle-wrapper-height), $matchingActivity-option-handle-wrapper-height, 14px);
+                        border: if(variable-exists(matchingActivity-option-handle-wrapper-border), $matchingActivity-option-handle-wrapper-border, $questions-border-width $questions-border-style darken($questions-color-border, 20%));
+                        border-radius: if(variable-exists(matchingActivity-option-handle-wrapper-border-radius), $matchingActivity-option-handle-wrapper-border-radius, 6px);
+                        background-color: if(variable-exists(matchingActivity-color-option-handle-wrapper-background), $matchingActivity-color-option-handle-wrapper-background, darken($questions-color-container-background-light, 5%));
+                        box-sizing: if(variable-exists(matchingActivity-option-handle-wrapper-box-sizing), $matchingActivity-option-handle-wrapper-box-sizing, border-box);
+                        #{$left}: if(variable-exists(matchingActivity-option-distractor-handle-left), $matchingActivity-option-distractor-handle-left, -(7px + $questions-border-width))
+                    }
+                }
+
+                @if $showFeedbackIcons == true {
+                    .FeedbackIcon {
+                        @include generate-style-block('MatchingQuestionMatchFeedbackIcon') {
+                            // @full
+                            #{$right}: if(variable-exists(matchingActivity-feedback-icon-offset), $matchingActivity-feedback-icon-offset, -28px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .MatchingQuestionMatchesResponsive {
+            @include generate-style-block('MatchingQuestionMatchesResponsive') {
+                list-style: none;
+                padding-left: 0;
+                padding: 1em;
+                box-sizing: border-box;
+                position: relative;
+                cursor: pointer;
+                z-index: 2;
+            }
+
+            .MatchingQuestionMatchWrapperResponsive {
+                @include generate-style-block('MatchingQuestionMatchWrapperResponsive') {
+                    border: 2px solid #b0b0b0;
+                    background-color: #dde4e6;
+                    margin: 0.5em 0;
+                    box-sizing: border-box;
+                    position: relative;
+                }
+
+                &:hover {
+                    @include generate-style-block('MatchingQuestionMatchWrapperResponsiveHover') {
+                        background-color: #fbfcfc;
+                        border: 2px solid #cacaca;
+                    }
+                }
+
+                .MatchingQuestionsMatchWrapperLabel {
+                    @include generate-style-block('MatchingQuestionsMatchWrapperLabel') {
+                        width: 100%;
+                        padding: 1em;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    .MatchingQuestionMatchCheckbox {
+                        @include generate-style-block('MatchingQuestionsMatchCheckbox') {
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .MatchingQuestionMatchStem {
+                    @include generate-style-block('MatchingQuestionMatchStem') {
+                        flex: 1;
+                        padding-left: 1em;
+                    }
+                }
+            }
+        }
+
+        @media #{$basic-screen-query-narrow} {
+            .sticky-wrapper {
+                @include generate-style-block('MatchingQuestionsStickyWrapperNarrow') {
+                    visibility: hidden;
+                    height: 0 !important;
+                    display: none;
+                }
+            }
+
+            .MatchingQuestionDistractors {
+                @include generate-style-block('MatchingQuestionDistractorsNarrow') {
+                    margin: side-values(if(variable-exists(matchingActivity-option-list-margin), $matchingActivity-option-list-margin, 0 $questions-margin));
+                    width: if(variable-exists(matchingActivity-option-list-width), $matchingActivity-option-list-width, calc(50% - (#{$questions-margin}*2)));
+                    float: if(variable-exists(matchingActivity-option-distractor-float), $matchingActivity-option-distractor-float, $left);
+                }
+
+                .MatchingQuestionDistractorWrapper {
+                    .MatchingQuestionDistractorInnerWrapper {
+                        &:before {
+                            display: none;
+                        }
+                    }
+
+                    .MatchingQuestionHandleWrapper {
+                        display: block;
+                    }
+                }
+
+                .MatchingQuestionMatchesResponsive {
+                    display: none;
+                }
+            }
+
+            .MatchingQuestionMatches {
+                display: block;
+
+                .MatchingQuestionMatchWrapper {
+                    .MatchingQuestionHandleWrapper {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MatchingQuestionsDistractorsBin {
+    @include generate-style-block('MatchingQuestionsDistractorsBin') {
+        height: auto;
+        overflow: hidden;
+        background: rgba(172, 188, 193, 0.8);
+        border: 2px solid #868686;
+        z-index: 3;
+        box-sizing: border-box;
+        box-shadow: 0px 3px 2px #cacaca;
+    }
+
+    .MatchingQuestionBinIndicesWrapper {
+        @include generate-style-block('MatchingQuestionBinIndicesWrapper') {
+            padding: 1em;
+        }
+
+        .MatchingQuestionsDistractorsBinIndex {
+            @include generate-style-block('MatchingQuestionsDistractorsBinIndex') {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.3em;
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+                text-align: center;
+                font-weight: bold;
+                background: #8fa6ad;
+                border-radius: 50%;
+                margin: 0.5em;
+                color: #fff;
+            }
+
+            &:before {
+                @include generate-style-block('MatchingQuestionsDistractorsBinIndexCheck') {
+                    content: '\2714';
+                    color: #008000;
+                    visibility: hidden;
+                    display: none;
+                }
+            }
+
+            &.Answered {
+                @include generate-style-block('MatchingQuestionsDistractorsBinIndexAnswered') {
+                    color: transparent;
+                    background: rgba(143, 166, 173, 0.502);
+                }
+
+                &:before {
+                    @include generate-style-block('MatchingQuestionsDistractorsBinIndexAnsweredCheck') {
+                        visibility: visible;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    .BinIndicesToggleButton {
+        @include generate-style-block('MatchingQuestionsBinIndicesToggleButton') {
+            width: 100%;
+            height: 36px;
+            background: rgba(173, 187, 191, 0.6);
+            border: none;
+            border-bottom: 1px dashed #000;
+            text-align: center;
+            outline: none;
+            transition: 0.3s background;
+            cursor: pointer;
+        }
+
+        &:hover {
+            @include generate-style-block('MatchingQuestionsBinIndicesToggleButtonHover') {
+                opacity: 0.8;
+                background: #7b8f94;
+            }
+        }
+
+        span {
+            @include generate-style-block('MatchingQuestionsBinIndicesToggleButtonCaret') {
+                display: inline-block;
+                transform: rotate(-90deg);
+                transform-origin: center center;
+                transition: 0.2s transform;
+                font-weight: bold;
+                font-size: 1.5em;
+                font-family: monospace;
+            }
+        }
+    }
+
+    &.Closed {
+        @include generate-style-block('MatchingQuestionsBinIndicesOpen') {
+            height: 36px;
+        }
+
+        .BinIndicesToggleButton span {
+            @include generate-style-block('MatchingQuestionsBinIndicesOpenCaret') {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .MatchingQuestionSubmitWrapper {
+        .ShowSolutionButton {
+            @include generate-style-block('MatchingQuestionShowSolutionButton') {
+                // @full
+                padding: 8px 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

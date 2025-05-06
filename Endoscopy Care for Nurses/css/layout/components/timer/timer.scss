@@ -1,0 +1,92 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+.TimerLink {
+
+    .TimerContainer {
+
+        width: $content-pagebody-width;
+        margin: $content-pagebody-margin;
+
+        padding: 10px;
+        border-bottom: solid 1px rgba(0,0,0,.2);
+
+        @media #{$basic-screen-query-narrow} {
+            width: $content-pagebody-width-narrow;
+            margin: $content-pagebody-margin-narrow;
+        }
+
+        @media #{$basic-screen-query-normal} {
+            width: $content-pagebody-width-normal;
+            margin: $content-pagebody-margin-normal;
+        }
+
+        @media #{$basic-screen-query-wide} {
+            width: $content-pagebody-width-wide;
+            margin: $content-pagebody-margin-wide;
+        }
+    }
+
+    .TimerProgress {
+        width: 100%;
+        height: 16px;
+        margin: 12px auto 8px;
+
+        .TimerProgressBar, .TimerProgressValue {
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        .TimerProgressBar {
+            width: 100%;
+            background: #eaeaea;
+        }
+
+        .TimerProgressValue {
+            width: 0%;
+            transition: width 1000ms linear, background 1000ms;
+            background: #67a2d7;
+        }
+
+        &.State1 {
+            .TimerProgressValue {
+                background: #67a2d7;
+            }
+        }
+
+        &.State2 {
+            .TimerProgressValue {
+                background: #f5c478;
+            }
+        }
+
+        &.State3 {
+            .TimerProgressValue {
+                background: #e47b77;
+            }
+        }
+    }
+
+    .TimerRemainingTime {
+        text-align: right;
+
+        .TimerRemainingTimeLabel {
+            &:after {
+                content: ' ';
+            }
+        }
+
+        .TimerRemainingTimeValue {
+            font-weight: bold;
+        }
+    }
+}

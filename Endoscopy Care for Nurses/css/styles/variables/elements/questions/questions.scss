@@ -1,0 +1,54 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// inherit variables
+@import 'colors.scss';
+@import 'colors-core-custom.scss';
+@import 'colors-custom.scss';
+@import 'fonts.scss';
+@import 'fonts-core-custom.scss';
+@import 'fonts-custom.scss';
+@import 'box.scss';
+@import 'box-core-custom.scss';
+@import 'box-custom.scss';
+
+@import 'multipleChoice/multipleChoice.scss';
+@import 'multipleChoice/multipleChoice-core-custom.scss';
+@import 'multipleChoice/multipleChoice-custom.scss';
+@import 'imageMapAssessment/imageMapAssessment.scss';
+@import 'imageMapAssessment/imageMapAssessment-core-custom.scss';
+@import 'imageMapAssessment/imageMapAssessment-custom.scss';
+@import 'matrix/matrix.scss';
+@import 'matrix/matrix-core-custom.scss';
+@import 'matrix/matrix-custom.scss';
+@import 'dragDrop/dragDrop.scss';
+@import 'dragDrop/dragDrop-core-custom.scss';
+@import 'dragDrop/dragDrop-custom.scss';
+@import 'matchingActivity/matchingActivity.scss';
+@import 'matchingActivity/matchingActivity-core-custom.scss';
+@import 'matchingActivity/matchingActivity-custom.scss';
+@import 'fillInBlank/fillInBlank.scss';
+@import 'fillInBlank/fillInBlank-core-custom.scss';
+@import 'fillInBlank/fillInBlank-custom.scss';
+@import 'binDrop/binDrop.scss';
+@import 'binDrop/binDrop-core-custom.scss';
+@import 'binDrop/binDrop-custom.scss';
+@import 'sequenceActivity/sequenceActivity.scss';
+@import 'sequenceActivity/sequenceActivity-core-custom.scss';
+@import 'sequenceActivity/sequenceActivity-custom.scss';
+@import 'selectHotText/selectHotText.scss';
+@import 'selectHotText/selectHotText-core-custom.scss';
+@import 'selectHotText/selectHotText-custom.scss';
+@import 'scoreCard/scoreCard.scss';
+@import 'scoreCard/scoreCard-core-custom.scss';
+@import 'scoreCard/scoreCard-custom.scss';

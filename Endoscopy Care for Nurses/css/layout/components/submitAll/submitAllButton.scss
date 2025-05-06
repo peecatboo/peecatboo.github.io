@@ -1,0 +1,90 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.SubmitAllButtonLink {
+    @include generate-style-block('SubmitAllButtonLink') {
+        // @full
+        float: $left;
+        color: if(variable-exists('SubmitAllButton-color-text'), $SubmitAllButton-color-text, #FFF)
+    }
+
+    // submit button should be hidden always
+    // including initial state (without state classes)
+    // except when its .Visible
+    // kinda hack
+    &:not(.Visible) {
+        @include generate-style-block('SubmitAllButtonNotVisible') {
+            // @full
+            display: none;
+        }
+    }
+
+    &:hover {
+        @include generate-style-block('SubmitAllButtonHover') {
+            // @full
+            color: if(variable-exists('SubmitAllButton-color-text-hover'), $SubmitAllButton-color-text-hover, #FFF)
+        }
+    }
+
+    .SubmitAllConfirmationDialog {
+        @include generate-style-block('SubmitAllButtonConfirmationDialog') {
+            // @full
+            display: none;
+        }
+    }
+}
+.SubmitAllConfirmationDialog {
+    @include generate-style-block('SubmitAllConfirmationDialog') {
+        // @full
+        max-width: if(variable-exists(sectionStatus-max-dialog-width), $sectionStatus-max-dialog-width, 600px);
+    }
+    .SectionStatusContainer {
+        .QuestionList {
+            @include generate-style-block('SubmitAllSectionStatusContainerQuestionList') {
+                // @full
+                color: if(variable-exists(sectionStatus-color-text-dark), $sectionStatus-color-text-dark, $component-color-text-dark);
+            }
+            .QuestionItem {
+                @include generate-style-block('SubmitAllSectionStatusContainerQuestionItem') {
+                    // @full
+                    outline: 1px solid if(variable-exists(sectionStatus-item-hover-color-background), $sectionStatus-item-hover-color-background, darken($component-color-text-dark, 75%));
+                    padding: 1px;
+                }
+                &:hover {
+                    @include generate-style-block('SubmitAllSectionStatusContainerQuestionItemHover') {
+                        // @full
+                        color: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, $component-color-text-light);
+                    }
+                    .QuestionFlag {
+                        .SVGIcon {
+                            @include generate-style-block('SubmitAllSectionStatusContainerQuestionItemHoverQuestionFlagSVGIcon') {
+                                // @full
+                                fill: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, $component-color-text-light);
+                                stroke: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, $component-color-text-light);
+                            }
+                        }
+                    }
+                }
+                .QuestionFlag {
+                    .SVGIcon {
+                        @include generate-style-block('SubmitAllSectionStatusContainerQuestionItemQuestionFlagSVGIcon') {
+                            // @full
+                            fill: if(variable-exists(sectionStatus-color-text-dark), $sectionStatus-color-text-dark, $component-color-text-dark);
+                            stroke: if(variable-exists(sectionStatus-color-text-dark), $sectionStatus-color-text-dark, $component-color-text-dark);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

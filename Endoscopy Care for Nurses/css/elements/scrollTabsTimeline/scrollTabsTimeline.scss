@@ -1,0 +1,260 @@
+.VerticalTimelineComponent {
+    @include generate-style-block("VerticalTimelineComponent") {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    & > h3 {
+        @include generate-style-block("VerticalTimelineComponentTitle") {
+        }
+    }
+
+    & > .TabsInstructions {
+        @include generate-style-block("VerticalTimelineComponentInstructions") {
+            margin: if(variable-exists(timelinetabs-instructions-margin), $timelinetabs-instructions-margin, $elements-margin/2 0);
+        }
+    }
+
+    .HiddenLoading {
+        display: none;
+    }
+
+    .RevealToCurrent {
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+
+        .Progress {
+            @include generate-style-block("VerticalTimelineProgress") {
+                #{$left}: 0;
+                #{$right}: 0;
+                margin-#{$left}: auto;
+                margin-#{$right}: auto;
+            }
+        }
+    
+        .VerticalBar {
+            @include generate-style-block("VerticalTimelineVerticalBar") {
+                position: absolute;
+                width: $vertical-bar-width;
+                top: 0;
+                bottom: 0;
+                background-color: #ccc;
+                box-shadow: inset 0px 0px 7px -2px #000;
+            }
+        }
+    
+        .ProgressBar {
+            @include generate-style-block("VerticalTimelineProgressBar") {
+                background-color: $basic-color-branding2;
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                top: 0;
+                height: 0;
+            }
+        }
+    
+        .TabsPanel {
+            @include generate-style-block("VerticalTimelineTabsPanel") {
+                position: relative;
+                width: 100%;
+                min-height: 200px;
+                margin-bottom: 50px;
+            }
+    
+            &:after {
+                @include generate-style-block("VerticalTimelineTabsPanelAfter") {
+                    display: block;
+                    content: " ";
+                    clear: both;
+                }
+            }
+    
+            /* animated state */
+            &.VisiblePanel {
+                .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsPanelContentAnimated"
+                    ) {
+                        opacity: 1;
+                        margin-#{$left}: 0%;
+                    }
+                }
+                .TabImage {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsPanelImageAnimated"
+                    ) {
+                        opacity: 1;
+                    }
+                }
+            }
+    
+            .TabContent {
+                @include generate-style-block("VerticalTimelineTabContent") {
+                    width: 40%;
+                    padding: 2%;
+                    background-color: rgba(238, 238, 238, 0.25);
+                    border-radius: 8px;
+                    border-bottom: solid 3px $basic-color-branding2;
+                    float: $left;
+                    opacity: 0;
+                    position: relative;
+                    margin-#{$left}: -40%;
+                }
+                h4 {
+                    @include generate-style-block(
+                        "VerticalTimelineTabContentHeader"
+                    ) {
+                        width: 100%;
+                        font-size: 20px;
+                        font-weight: normal;
+                        margin-bottom: 10px;
+                        background-color: transparent;
+                    }
+                }
+                .Audio {
+                    @include generate-style-block("VerticalTimelineTabContentAudio") {}
+                }
+            }
+    
+            &:nth-of-type(2n + 2) {
+                .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsEvenPanelContent"
+                    ) {
+                        float: $right;
+                        margin-#{$right}: -40%;
+                    }
+                }
+                /* animated state */
+                &.VisiblePanel .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsEvenPanelContentAnimated"
+                    ) {
+                        margin-#{$right}: 0%;
+                    }
+                }
+            }
+    
+            .TabImage {
+                @include generate-style-block("VerticalTimelineTabImage") {
+                    opacity: 0;
+                    width: 40%;
+                    padding: 2%;
+                    float: $left;
+                }
+    
+                img {
+                    @include generate-style-block("VerticalTimelineTabImageImg") {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            &:nth-of-type(2n + 1) .TabImage {
+                @include generate-style-block("VerticalTimelineTabsOddPanelImage") {
+                    float: $right;
+                }
+            }
+    
+            .TabIcon {
+                @include generate-style-block("VerticalTimelineTabIcon") {
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $basic-color-branding1;
+                    border: solid 3px $basic-color-branding2;
+                    box-shadow: 0px 0px 19px -9px #000;
+                    position: absolute;
+                    top: 0;
+                    text-align: center;
+                    line-height: 80px;
+                    font-size: 40px;
+                    color: #fff;
+                }
+            }
+        }
+    
+        /* animation properties */
+        .ProgressBar,
+        .TabContent,
+        .TabImage {
+            @include generate-style-block("VerticalTimelineAnimations") {
+                -webkit-transition: all 500ms ease;
+                -moz-transition: all 500ms ease;
+                -o-transition: all 500ms ease;
+                -ms-transition: all 500ms ease;
+                transition: all 500ms ease;
+            }
+        }
+    
+        /* mobile support */
+        @media (max-width: 600px) { // The standard breakpoints are not optimal for Timeline; a non-standard 600px is used.
+            .VerticalBar {
+                @include generate-style-block("VerticalTimelineVerticalBarNarrow") {
+                    #{$left}: auto;
+                    #{$right}: calc(#{$tab-icon-size}/2 - #{$vertical-bar-shift});
+                }
+            }
+    
+            .TabsPanel {
+                .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsPanelContentNarrow"
+                    ) {
+                        width: 80%;
+                        float: none;
+                    }
+                }
+    
+                &:nth-of-type(2n + 1) .TabContent, &:nth-of-type(2n + 2) .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsOddEvenPanelContentNarrow"
+                    ) {
+                        float: none;
+                        margin-#{$left}: -80%;
+                        margin-#{$right}: auto;
+                    }
+                }
+    
+                &.VisiblePanel:nth-of-type(2n + 1) .TabContent, &.VisiblePanel:nth-of-type(2n + 2) .TabContent {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsOddEvenPanelContentNarrowAnimated"
+                    ) {
+                        float: none;
+                        margin-#{$left}: 0;
+                        margin-#{$right}: auto;
+                    }
+                }
+    
+                .TabImage {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsPanelImageNarrow"
+                    ) {
+                        width: 80%;
+                    }
+                }
+    
+                &:nth-of-type(2n + 1) .TabImage, &:nth-of-type(2n + 2) .TabImage {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsOddPanelImageNarrow"
+                    ) {
+                        float: $left;
+                    }
+                }
+    
+                .TabIcon {
+                    @include generate-style-block(
+                        "VerticalTimelineTabsPanelIconNarrow"
+                    ) {
+                        #{$left}: auto;
+                        #{$right}: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,280 @@
+ ///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.FigureTitle {
+    @include generate-style-block('FigureTitle') {
+        // @full
+        display: none;
+    }
+}
+
+.Figure {
+    @include generate-style-block('Figure') {
+        // @full
+        position: relative;
+        overflow: hidden;
+        margin: $elements-margin;
+        max-width: 100%;
+    }
+
+    .FigureInnerWrap {
+        @include generate-style-block('FigureInnerWrap') {
+            display: inline-flex;
+            position: relative;
+        }
+    }
+
+    .FigureOuterWrap {
+        @include generate-style-block('FigureOuterWrap') {
+            display: inline-flex;
+        }
+    }
+
+    img {
+        @include generate-style-block('FigureImage') {
+            // @full
+            max-width: 100%;
+        }
+    }
+
+    &.ImageBehavior-Popup {
+      @include generate-style-block('FigurePopupImageBehavior') {
+        overflow: hidden;
+      }
+
+        .FigureAltImage {
+          @include generate-style-block('FigurePopupImageBehaviorFigureAltImage') {
+            transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+          }
+
+            &:hover {
+              @include generate-style-block('FigurePopupImageBehaviorFigureAltImageHover') {
+                cursor: zoom-in;
+                transform: scale(1.03);
+              }
+                & + .AltImageOverlayObjects {
+                    .OverlayObjects {
+                        @include generate-style-block('FigurePopupImageBehaviorFigureAltImageHoverOverlayObjects') {
+                            transform: scale(1.03);
+                        }
+                    }
+                }
+            }
+        }
+        .OverlayObjects {
+            @include generate-style-block('FigurePopupImageBehaviorOverlayObjects') {
+                transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+        }
+    }
+
+    &.Wrap {
+        @include generate-style-block('FigureWrap') {
+            // @full
+            text-align: if(variable-exists(figure-wrap-text-align), $figure-wrap-text-align, $left);
+        }
+    }
+
+    .FigureInnerWrap {
+        @include generate-style-block('FigureInnerWrap') {
+            // @full
+            max-width: 100%;
+            margin: auto;
+        }
+    }
+
+    &.Wrapleft {
+        @include generate-style-block('FigureWrapleft') {
+            // @full
+            // WPS-6029 Ensure that Figure box model is above surrounding text contaier
+            // so that click interactions still function (i.e. open popup)
+            z-index: 1;
+        }
+    }
+
+    &.Wrapright {
+        @include generate-style-block('FigureWrapright') {
+            // @full
+            // WPS-6029 Ensure that Figure box model is above surrounding text contaier
+            // so that click interactions still function (i.e. open popup)
+            z-index: 1;
+        }
+    }
+
+    .Caption {
+        @include generate-style-block('FigureCaption') {
+            // @full
+            font-style: italic;
+        }
+    }
+
+    .OverlayObjects {
+        @include generate-style-block('FigureOverlayObjects') {
+            // @full
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            // WPS-6032 Pass events through the overlays
+            pointer-events: none;
+        }
+
+        svg {
+            // some default values for svg elements to inherit
+            // do not add styles directly through css, they may override inline
+            @include generate-style-block('FigureSVG') {
+                // @full
+                position:absolute;
+                top: 0;
+                left: 0;
+                fill: none;
+            }
+        }
+
+        .OverlayTextWrapper {
+            @include generate-style-block('FigureOverlayTextWrapper') {
+                // @full
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .OverlayText{
+                @include generate-style-block('FigureOverlayText') {
+                    // @full
+                    display: table;
+                    position: absolute;
+                    margin: 2px; // overcome svg borders
+                    box-sizing: border-box; //remain the same size
+                }
+
+                .OverlayTextContent {
+                    @include generate-style-block('FigureOverlayTextContent') {
+                        // @full
+                        display: table-cell;
+                        vertical-align: middle;
+                        word-break: break-word;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    .PopupContentHidden {
+        @include generate-style-block('FigurePopupContentHidden') {
+            // @full
+            visibility: hidden;
+            z-index: -1000;
+            height: 0px;
+        }
+    }
+
+    .PopupContentVisible {
+        @include generate-style-block('FigurePopupContentVisible') {
+            // @full
+            visibility: visible;
+            z-index: 1;
+            position: relative;
+        }
+    }
+}
+
+.FigureFullScreenPreview {
+    @include generate-style-block('FigureFullScreenPreview') {
+        // @full
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 1px;
+        left: 0;
+        z-index: 2000; // overlap skin
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    img {
+        @include generate-style-block('FigureFullScreenImage') {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .OverlayObjects {
+        @include generate-style-block('FigureFullScreenPreviewOverlayObjects') {
+            position: absolute;
+            transform-origin: 0 0;
+        }
+
+        svg {
+            // some default values for svg elements to inherit
+            // do not add styles directly through css, they may override inline
+            @include generate-style-block('FigureFullScrenPreviewSVG') {
+                // @full
+                position:absolute;
+                top: 0;
+                left: 0;
+                fill: none;
+            }
+        }
+    }
+
+    .OverlayTextWrapper {
+        @include generate-style-block('FigureFullScreenPreviewOverlayTextWrapper') {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .OverlayText {
+        @include generate-style-block('FigureFullScreenPreviewOverlayText') {
+            display: table;
+            position: absolute;
+            margin: 2px;
+            box-sizing: border-box;
+        }
+        .OverlayTextContent {
+            @include generate-style-block('FigureFullScreenPreviewOverlayTextContent') {
+                // @full
+                display: table-cell;
+                vertical-align: middle;
+                word-break: break-word;
+                white-space: normal;
+            }
+        }
+    }
+
+    .close {
+        @include generate-style-block('FigureFullScreenPreviewClose') {
+            // @full
+            position: absolute;
+            top: 0;
+            #{$right}: 10px;
+            color: #FFF;
+            font-size: 4em;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        &:before {
+            @include generate-style-block('FigureFullScreenPreviewCloseBefore') {
+                // @full
+                content: '\00d7';
+            }
+        }
+    }
+}

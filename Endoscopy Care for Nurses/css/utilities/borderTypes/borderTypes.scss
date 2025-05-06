@@ -1,0 +1,39 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of borderTypes classes for images
+ */
+
+@import "vignetteBordersTypes.scss";
+@import 'vignetteBordersTypes-core-custom.scss';
+@import 'vignetteBordersTypes-custom.scss';
+@import "imageBordersTypes.scss";
+@import 'imageBordersTypes-core-custom.scss';
+@import 'imageBordersTypes-custom.scss';
+@import "reflectionTypes.scss";
+@import 'reflectionTypes-core-custom.scss';
+@import 'reflectionTypes-custom.scss';
+@import "shadowTypes.scss";
+@import 'shadowTypes-core-custom.scss';
+@import 'shadowTypes-custom.scss';
+@import "colorFilterTypes.scss";
+@import 'colorFilterTypes-core-custom.scss';
+@import 'colorFilterTypes-custom.scss';
+@import "imageEffectsTypes.scss";
+@import 'imageEffectsTypes-core-custom.scss';
+@import 'imageEffectsTypes-custom.scss';
+@import "hoverImageTypes.scss";
+@import 'hoverImageTypes-core-custom.scss';
+@import 'hoverImageTypes-custom.scss';
+
+

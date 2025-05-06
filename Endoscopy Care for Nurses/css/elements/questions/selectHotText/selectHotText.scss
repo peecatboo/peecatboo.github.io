@@ -1,0 +1,143 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+.SelectHotText {
+    @include generate-style-block('SelectHotText') {}
+    .SelectHotTextText {
+        @include generate-style-block('SelectHotTextText') {
+            // @full
+            font-family: if(variable-exists(selecthottext-font-body), $selecthottext-font-body, $questions-font-body);
+            font-size: if(variable-exists(selecthottext-font-size), $selecthottext-font-size, 1em);
+            font-weight: if(variable-exists(selecthottext-font-weight), $selecthottext-font-weight, $questions-font-weight);
+            line-height: if(variable-exists(selecthottexttext-line-height), $selecthottexttext-line-height, 1.7em);
+        }
+    }
+    .SelectHotTextQuestionOption {
+        @include generate-style-block('SelectHotTextQuestionOption') {
+            // @full
+            cursor: if(variable-exists(selecthottext-option-cursor), $selecthottext-option-cursor, pointer);
+            background: if(variable-exists(selecthottext-option-background), $selecthottext-option-background, transparent);
+            font-family: if(variable-exists(selecthottext-option-font-body), $selecthottext-option-font-body, $questions-font-body);
+            font-size: if(variable-exists(selecthottext-option-font-size), $selecthottext-option-font-size, 1em);
+            font-weight: if(variable-exists(selecthottext-option-font-weight), $selecthottext-option-font-weight, $questions-font-weight);
+            text-decoration: if(variable-exists(selecthottext-option-text-decoration), $selecthottext-option-text-decoration, underline);
+            color: if(variable-exists(selecthottext-color-option-text), $selecthottext-color-option-text, $questions-color-text-links);
+            border: if(variable-exists(selecthottext-option-border), $selecthottext-option-border, $questions-border-width $questions-border-style transparent);
+            border-radius: if(variable-exists(selecthottext-border-radius), $selecthottext-border-radius, $questions-border-radius);
+            transition: if(variable-exists(selecthottext-option-transitions), $selecthottext-option-transitions, "background-color 300ms, border-color 300ms");
+        }
+        &:hover, &.Selected {
+            @include generate-style-block('SelectHotTextQuestionOptionSelected') {
+                // @full
+                background: if(variable-exists(selecthottext-option-background-hover), $selecthottext-option-background-hover, yellow);
+                font-family: if(variable-exists(selecthottext-option-font-body-hover), $selecthottext-option-font-body-hover, $questions-font-body);
+                font-size: if(variable-exists(selecthottext-option-font-size-hover), $selecthottext-option-font-size-hover, 1em);
+                font-weight: if(variable-exists(selecthottext-option-font-weight-hover), $selecthottext-option-font-weight-hover, $questions-font-weight);
+                text-decoration: if(variable-exists(selecthottext-option-text-decoration-hover), $selecthottext-option-text-decoration-hover, underline);
+                color: if(variable-exists(selecthottext-color-option-text-hover), $selecthottext-color-option-text-hover, black);
+                border: if(variable-exists(selecthottext-option-border-hover), $selecthottext-option-border-hover, $questions-border-width $questions-border-style transparent);
+                border-radius: if(variable-exists(selecthottext-option-border-radius-hover), $selecthottext-option-border-radius-hover, $questions-border-radius);
+            }
+        }
+        &.Correct, &.Selected.Correct {
+            @if $selecthottext-show-feedback-icons == true {
+                @include generate-style-block('SelectHotTextQuestionOptionFeedbackCorrectIcon') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-correct), $selecthottext-option-background-correct, lighten($questions-color-correct, 45%));
+                    font-family: if(variable-exists(selecthottext-option-font-body-correct), $selecthottext-option-font-body-correct, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-correct), $selecthottext-option-font-size-correct, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-correct), $selecthottext-option-font-weight-correct, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-correct), $selecthottext-option-text-decoration-correct, none);
+                    color: if(variable-exists(selecthottext-color-option-text-correct), $selecthottext-color-option-text-correct, $questions-color-correct);
+                    border: if(variable-exists(selecthottext-option-border-correct), $selecthottext-option-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-correct), $selecthottext-option-border-radius-correct, $questions-border-radius);
+                }
+                #{if(variable-exists(selecthottext-correct-feedback-emphasis-property-1), $selecthottext-correct-feedback-emphasis-property-1, text-decoration)}: if(variable-exists(selecthottext-correct-feedback-emphasis-value-1), $selecthottext-correct-feedback-emphasis-value-1, none);
+                #{if(variable-exists(selecthottext-correct-feedback-emphasis-property-2), $selecthottext-correct-feedback-emphasis-property-2, font-weight)}: if(variable-exists(selecthottext-correct-feedback-emphasis-value-2), selecthottext-correct-feedback-emphasis-value-2, bold);
+            }
+            @else {
+                @include generate-style-block('SelectHotTextQuestionOptionCorrect') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-correct), $selecthottext-option-background-correct, lighten($questions-color-correct, 45%));
+                    font-family: if(variable-exists(selecthottext-option-font-body-correct), $selecthottext-option-font-body-correct, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-correct), $selecthottext-option-font-size-correct, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-correct), $selecthottext-option-font-weight-correct, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-correct), $selecthottext-option-text-decoration-correct, none);
+                    color: if(variable-exists(selecthottext-color-option-text-correct), $selecthottext-color-option-text-correct, $questions-color-correct);
+                    border: if(variable-exists(selecthottext-option-border-correct), $selecthottext-option-border-correct, $questions-border-width $questions-border-style $questions-color-correct);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-correct), $selecthottext-option-border-radius-correct, $questions-border-radius);
+                }
+            }
+        }
+        &.Incorrect, &.Selected.Incorrect {
+            @if $selecthottext-show-feedback-icons == true {
+                @include generate-style-block('SelectHotTextQuestionOptionFeedbackIncorrectIcon') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-incorrect), $selecthottext-option-background-incorrect, lighten($questions-color-incorrect, 40%));
+                    font-family: if(variable-exists(selecthottext-option-font-body-incorrect), $selecthottext-option-font-body-incorrect, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-incorrect), $selecthottext-option-font-size-incorrect, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-incorrect), $selecthottext-option-font-weight-incorrect, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-incorrect), $selecthottext-option-text-decoration-incorrect, none);
+                    color: if(variable-exists(selecthottext-color-option-text-incorrect), $selecthottext-color-option-text-incorrect, $questions-color-incorrect);
+                    border: if(variable-exists(selecthottext-option-border-incorrect), $selecthottext-option-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-incorrect), $selecthottext-option-border-radius-incorrect, $questions-border-radius);
+                }
+                #{if(variable-exists(selecthottext-incorrect-feedback-emphasis-property), $selecthottext-incorrect-feedback-emphasis-property, text-decoration)}: if(variable-exists(selecthottext-incorrect-feedback-emphasis-value), selecthottext-incorrect-feedback-emphasis-value, line-through);
+            }
+            @else {
+                @include generate-style-block('SelectHotTextQuestionOptionIncorrect') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-incorrect), $selecthottext-option-background-incorrect, lighten($questions-color-incorrect, 40%));
+                    font-family: if(variable-exists(selecthottext-option-font-body-incorrect), $selecthottext-option-font-body-incorrect, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-incorrect), $selecthottext-option-font-size-incorrect, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-incorrect), $selecthottext-option-font-weight-incorrect, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-incorrect), $selecthottext-option-text-decoration-incorrect, none);
+                    color: if(variable-exists(selecthottext-color-option-text-incorrect), $selecthottext-color-option-text-incorrect, $questions-color-incorrect);
+                    border: if(variable-exists(selecthottext-option-border-incorrect), $selecthottext-option-border-incorrect, $questions-border-width $questions-border-style $questions-color-incorrect);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-incorrect), $selecthottext-option-border-radius-incorrect, $questions-border-radius);
+                }
+            }
+        }
+        &.AlsoCorrect {
+            @if $selecthottext-show-feedback-icons == true {
+                @include generate-style-block('SelectHotTextQuestionOptionFeedbackAlsoCorrectIcon') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-alsocorrect), $selecthottext-option-background-alsocorrect, $questions-color-alsoCorrect);
+                    font-family: if(variable-exists(selecthottext-option-font-body-alsocorrect), $selecthottext-option-font-body-alsocorrect, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-alsocorrect), $selecthottext-option-font-size-alsocorrect, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-alsocorrect), $selecthottext-option-font-weight-alsocorrect, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-alsocorrect), $selecthottext-option-text-decoration-alsocorrect, none);
+                    color: if(variable-exists(selecthottext-color-option-text-alsocorrect), $selecthottext-color-option-text-alsocorrect, $questions-color-alsoCorrect);
+                    border: if(variable-exists(selecthottext-option-border-alsocorrect), $selecthottext-option-border-alsocorrect, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-alsocorrect), $selecthottext-option-border-radius-alsocorrect, $questions-border-radius);
+                }
+                #{if(variable-exists(selecthottext-alsocorrect-feedback-emphasis-property-1), $selecthottext-alsocorrect-feedback-emphasis-property-2, text-decoration)}: if(variable-exists(selecthottext-alsocorrect-feedback-emphasis-value-1), selecthottext-alsocorrect-feedback-emphasis-value-1, none);
+                #{if(variable-exists(selecthottext-alsocorrect-feedback-emphasis-property-2), $selecthottext-alsocorrect-feedback-emphasis-property-2, font-weight)}: if(variable-exists(selecthottext-alsocorrect-feedback-emphasis-value-2), selecthottext-alsocorrect-feedback-emphasis-value-2, italic);
+            }
+            @else {
+                @include generate-style-block('SelectHotTextQuestionOptionAlsoCorrect') {
+                    // @full
+                    background: if(variable-exists(selecthottext-option-background-alsocorrect), $selecthottext-option-background-alsocorrect, $questions-color-alsoCorrect);
+                    font-family: if(variable-exists(selecthottext-option-font-body-alsocorrect), $selecthottext-option-font-body-alsocorrect, $questions-font-body);
+                    font-size: if(variable-exists(selecthottext-option-font-size-alsocorrect), $selecthottext-option-font-size-alsocorrect, 1em);
+                    font-weight: if(variable-exists(selecthottext-option-font-weight-alsocorrect), $selecthottext-option-font-weight-alsocorrect, $questions-font-weight);
+                    text-decoration: if(variable-exists(selecthottext-option-text-decoration-alsocorrect), $selecthottext-option-text-decoration-alsocorrect, none);
+                    color: if(variable-exists(selecthottext-color-option-text-alsocorrect), $selecthottext-color-option-text-alsocorrect, $questions-color-alsoCorrect);
+                    border: if(variable-exists(selecthottext-option-border-alsocorrect), $selecthottext-option-border-alsocorrect, $questions-border-width $questions-border-style $questions-color-alsoCorrect);
+                    border-radius: if(variable-exists(selecthottext-option-border-radius-alsocorrect), $selecthottext-option-border-radius-alsocorrect, $questions-border-radius);
+                }
+            }
+        }
+    }
+}

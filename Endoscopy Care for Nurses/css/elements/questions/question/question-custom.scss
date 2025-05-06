@@ -1,0 +1,129 @@
+@include customize-style-block('Question') {
+        // @full
+        margin: $questions-margin auto;
+        text-align: left;
+}
+
+@include customize-style-block('QuestionStemRichText') {
+    font-size: .85em;
+    line-height: 1.15em;
+    font-weight: 250;
+}
+
+.QuestionInnerWrap {
+   
+   @include customize-style-block('QuestionInnerWrapper') {
+        // @full
+        box-sizing: border-box;
+        padding: .20em;
+        border-width: $questions-innerwrap-border-width;
+        border-style: $questions-innerwrap-border-style;
+        border-color: $questions-innerwrap-color-border;
+        border-radius: $questions-innerwrap-border-radius;
+        background-color: $questions-color-container-background-light;
+        position: $questions-position;
+        text-align: $left;
+    }
+  
+.QuestionStem {
+        h3 {
+            
+          margin-block-start: 5px;
+          div {
+
+                &.Instructions {
+					font-style: $questions-question-instructions-font-style;
+                    color: $basic-color-branding2;
+                    font-size: 1.5em;
+                    margin-top: none;
+                }
+            }
+        }
+    }
+}
+
+.QuestionInnerWrap .IncorrectNotice{
+  color: #000;
+}
+
+@donotinclude customize-style-block('QuestionAttemptCounter') {
+            // @full
+            display: inline-block;
+            margin: 0 $questions-margin;
+        }
+
+
+@include customize-style-block('QuestionPositiveFeedback') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-correct;
+            border-radius: $questions-border-radius;
+  			color: #000;
+            /*color: darken($questions-color-correct, 15%);*/
+  			/*color: #000;*/
+            background-color: #fff;
+  			/*background-color: transparentize($questions-color-correct, .9)*/;
+            font-size: 1.2em;
+            fill: $questions-color-responsefeedback-icon-correct-fill;
+  			
+		}
+
+
+@include customize-style-block('QuestionNegativeFeedback') {
+            // @full
+            display: none;
+            background: $questions-color-page-background;
+            padding: 10px;
+            margin: 10px 0;
+            border-width: $questions-border-width;
+            border-style: $questions-border-style;
+            border-color: $questions-color-incorrect;
+            border-radius: $questions-border-radius;
+  			color: #000;
+  			/*color: #000;*/
+            /*color: darken($questions-color-incorrect, 15%);*/
+            background-color: #fff;
+  			/*background-color: *transparentize($questions-color-incorrect, .9)*/;
+            font-size: 1.2em;
+            fill: $questions-color-responsefeedback-icon-incorrect-fill;
+  			
+        }
+
+@include customize-style-block('QuestionSubmitWrapper') {
+  
+.Button{
+  border: 2px solid #25456B;
+  color: #00608F;
+  .SVGIcon{
+    fill: #00608F;
+  }
+}
+  
+ .Button.Disabled{
+    opacity: 0.8
+ }
+  .Button:hover{
+  background: #00608F;
+  color: #fff;
+  .SVGIcon{
+  fill: #fff;
+  }
+}
+
+.Button .QuestionSubmit .SVGIcon{
+  background: #00608F;
+}
+
+.MultipleChoiceInnerWrap .MultipleChoiceQuestionOptions .MultipleChoiceQuestionOptionWrapper.Enabled.Selected{
+  background: #00608F;
+  border: 2px solid #00608F;
+  color: #fff;
+
+}
+
+}

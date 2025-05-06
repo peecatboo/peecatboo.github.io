@@ -1,0 +1,139 @@
+/*
+Copyright c 2015 Xyleme, Inc., 1881 9th Street, Suite 300, Boulder, Colorado 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+*/
+
+@include customize-style-block('PageBody') {
+    line-height: 1.5em;
+}
+
+@include customize-style-block('Body') {
+    .Title {
+        line-height: 1.25em;
+        text-align: center;
+    }
+    .SubTitle {
+      text-align:center;
+    }
+}
+
+@include customize-style-block('PageBody') {
+    .OneImagePage > .TopImage .TopImagePageTitle {
+        line-height: 1.25em;
+        text-align: center;
+      	font-size: $basic-banner-font-size;
+        font-weight: $basic-banner-font-weight;
+        font-family: $basic-banner-font-body; 
+      
+      .TopImageTitlesContainer {
+            background: if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.3));
+            padding: 2em 1.5em 1.5em;
+            background:              linear-gradient(to bottom, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.5)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.9)));
+            background-image :  -moz-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.5)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.9)));
+            background-image : -webkit-gradient(linear, 0% 0%, 0% 100%, from(if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.5))), to(if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.9))));
+            background-image : -webkit-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.5)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.9)));
+            background-image : -ms-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0.5)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.9)));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#00000000, endColorstr=#80000000);
+        
+      .Page>.Topic>.Title {
+        Background: none;
+        Color: #6ba539;
+      }
+    }
+  }    
+}
+
+@include customize-style-block('PageBodyParaBlock') {
+    .Title {
+        text-align: initial;
+    }
+}
+
+h1 {
+    font-size: 1.20em;
+}
+
+h3 {
+    font-size: 1.20em;
+}
+
+.TitledBlock {
+    .Title {
+        font-size: 1.50em;
+      	font-weight: Bold;
+    }
+    h1 {
+        font-size: 1.30em;
+      	font-weight: Bold;
+    }
+}
+
+.QuestionBlock {
+    .Title {
+        font-size: 1.20em;
+    }
+    h1 {
+        font-size: 1.20em;
+        font-weight: Bold;
+    }
+}
+
+@media #{$basic-screen-query-narrow} {
+  h1 {
+      font-size: 2.375em;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+
+  
+  .TitledBlock {
+      .Title {
+          font-size: 1.30em;
+          font-weight: bold;
+      }
+      h1 {
+          font-size: 1.30em;
+          font-weight: bold;      
+      }
+  }
+  
+  .QuestionBlock {
+    .Title {
+      font-size: 1.20em;
+      font-weight: bold; 
+    }
+    h1 {
+      font-size: 1.20em;
+      font-weight: bold; 
+    }
+  }
+}
+
+.Wrapleft, .WrapLeft {
+    margin-right: 20px !important;
+}
+
+.Wrapright, .WrapRight {
+    margin-left: 20px !important;
+}
+
+.TopImagePageDocumentTitle {
+    display: none !important;
+}
+
+.PageDocumentTitle {
+    display: none !important;
+}
+
+.Title:empty {
+    display: none !important;
+}

@@ -1,0 +1,153 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.Movie {
+    @include generate-style-block('Movie') {
+        // @full
+        width: 100%;
+        margin: 10px 0;
+    }
+    &.Wrapright {
+        @include generate-style-block('MovieWrapRight') {
+            margin-#{$left}: 10px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &.Wrapleft {
+        @include generate-style-block('MovieWrapLeft') {
+            margin-#{$right}: 10px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &.Fullscreen {
+        @include generate-style-block('MovieFullscreen') {
+            z-index: 110; // must be greater then z-index of Header and Footer
+        }
+    }
+    .Instructions {
+        @include generate-style-block('MovieInstructions') {
+            // @basic
+            font-style: italic;
+            // @full
+            padding: 5px 0;
+        }
+    }
+    .Title {
+        @include generate-style-block('MovieTitle') {
+            // @full
+        }
+    }
+
+    // Required to make MEJS responsive
+    > video {
+        @include generate-style-block('MovieVideoTag') {
+            // @full
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .mejs-container:not(.mejs-container-fullscreen) {
+        @include generate-style-block('MovieMejsContainer') {
+            width: 100% !important;
+            height: auto !important;
+            padding-top: 57%;
+        }
+    }
+    .mejs-overlay {
+        @include generate-style-block('MovieMejsOverlay') {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    .mejs-poster {
+        @include generate-style-block('MovieMejsOverlay') {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    .mejs-mediaelement video {
+        @include generate-style-block('MovieMejsMediaelementVideo') {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}
+.Audio {
+    @include generate-style-block('Audio') {
+        // @full
+        min-height: 30px;
+        display: inline-block;
+    }
+    .Title {
+        @include generate-style-block('AudioTitle') {
+            // @full
+        }
+    }
+    .AudioCaption {
+
+        // set padding to the height of the player
+        @include generate-style-block('AudioCaption') {
+            // @full
+            padding-top: 30px;
+        }
+    }
+
+    // Required to make MEJS responsive
+    > audio {
+        @include generate-style-block('AudioTag') {
+            // @full
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.me-cannotplay {
+    @include generate-style-block('MejsMediaelementError') {
+        color: white;
+        margin: 5px;
+    }
+}
+
+// Required to make embeds responsive
+.EmbedMovie {
+    @include generate-style-block('EmbedMovie') {
+        // @full
+        position: relative;
+        max-width: 100%;
+        clear: both;
+    }
+    .Instructions {
+        @include generate-style-block('MovieInstructions') {
+            // @basic
+            font-style: italic;
+            // @full
+            padding: 5px 0;
+        }
+    }
+    > iframe {
+        @include generate-style-block('EmbedMovieIframe') {
+            // @full
+            max-width: 100%;
+        }
+    }
+}

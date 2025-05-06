@@ -1,0 +1,52 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+a {
+    color: $basic-color-link;
+    font-family: $basic-link-font-body;
+    font-size: $basic-link-font-size;
+    font-weight: $basic-link-font-weight;
+    text-decoration: $basic-link-font-decoration;
+
+    &:hover {
+        color: $basic-color-link-hover;
+        font-family: $basic-link-font-body-hover;
+        font-size: $basic-link-font-size-hover;
+        font-weight: $basic-link-font-weight-hover;
+        text-decoration: $basic-link-font-decoration-hover;
+    }
+
+    &:active {
+        color: $basic-color-link-active;
+        font-family: $basic-link-font-body-active;
+        font-size: $basic-link-font-size-active;
+        font-weight: $basic-link-font-weight-active;
+        text-decoration: $basic-link-font-decoration-active;
+    }
+
+    &:visited {
+        color: $basic-color-link-visited;
+        font-family: $basic-link-font-body-visited;
+        font-size: $basic-link-font-size-visited;
+        font-weight: $basic-link-font-weight-visited;
+        text-decoration: $basic-link-font-decoration-visited;
+    }
+
+    &.Visited {
+        color: $basic-color-link-visited;
+        font-family: $basic-link-font-body-visited;
+        font-size: $basic-link-font-size-visited;
+        font-weight: $basic-link-font-weight-visited;
+        text-decoration: $basic-link-font-decoration-visited;
+    }
+}

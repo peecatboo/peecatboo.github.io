@@ -1,0 +1,87 @@
+@include customize-style-block('TableNormalScreen') {
+	table-layout: fixed;
+}
+
+@include customize-style-block('TableCellContentNormalScreen') {
+	.RichText {
+      margin: 0 !important;
+    }
+  
+	.List .ListItems {
+       margin: 0 !important;
+    }
+}
+
+.Table .TableCell .TableCellContent .List{
+  padding-left: -1.42em;
+}
+
+@include customize-style-block('TableCellContent') {
+  
+    .RichText {
+      margin: 0;
+
+    }
+}
+
+@include customize-style-block('TableCellNormalScreen') {
+    padding: 0 15px;
+  
+    .RichText {
+      margin: 0;
+
+    }
+}
+
+@include customize-style-block('Table') {
+  
+  
+	&.ReLime {
+      
+      .TableRow {
+        
+        &.TableHeaderRow {
+        	color: #000000;
+            background: #C7E09B;
+        }
+        
+        &.TableFooterRow {
+        	color: #000000;
+            background: #C7E09B;
+          
+            .TableCell {
+              color: inherit;
+            }
+        }
+        
+      }
+      
+    }
+  
+  	&.ReBlue {
+      
+      .TableRow {
+        
+        &.TableHeaderRow {
+        	color: #FFFFFF;
+            background: #075669;
+        }
+        
+        &.TableFooterRow {
+        	color: #FFFFFF;
+            background: #075669;
+          
+            .TableCell {
+              color: inherit;
+            }
+        }
+        
+      }
+      
+    }
+}
+
+@include customize-style-block('TableEmbeddedHeaderColumn') {
+  @extend .TableRow, .TableHeaderRow;
+  display: if(variable-exists(table-mobile-elements-display), $table-mobile-elements-display, block)!important;
+}

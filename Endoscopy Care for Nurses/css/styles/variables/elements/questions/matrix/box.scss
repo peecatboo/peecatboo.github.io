@@ -1,0 +1,44 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+$matrix-show-feedback-icons: $questions-show-feedback-icons;
+$matrix-feedback-icon-float: $left;
+
+$matrix-padding: $questions-padding;
+$matrix-margin: $questions-margin;
+
+$matrix-border-width: $questions-border-width;
+$matrix-border-style: $questions-border-style;
+
+$matrix-transition-duration: $questions-transition-duration;
+
+$matrix-option-border: $matrix-border-width $matrix-border-style $matrix-color-border;
+
+$matrix-option-distractor-border: none;
+
+$matrix-option-label-width: 100%;
+$matrix-option-label-height: 100%;
+$matrix-option-cursor: pointer;
+$matrix-option-vertical-align: middle;
+
+$matrix-mobile-element-display: block;
+$matrix-mobile-option-wrapper-padding: 10px;
+$matrix-mobile-header-padding: 0 0 0 5px;
+$matrix-mobile-element-clear: both;
+$matrix-mobile-option-label-padding: 0;
+$matrix-mobile-table-display: inline;
+$matrix-mobile-table-border: none;
+$matrix-mobile-table-background: none;
+$matrix-mobile-header-display: inline-block;
+$matrix-mobile-table-header-display: none;

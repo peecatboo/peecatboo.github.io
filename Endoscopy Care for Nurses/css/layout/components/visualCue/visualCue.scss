@@ -1,0 +1,201 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.VisualCueLink {
+    @include generate-style-block('VisualCueLink') {
+        // @full
+        position: if(variable-exists(visualCue-position), $visualCue-position, absolute);
+        top: if(variable-exists(visualCue-top), $visualCue-top, -31px);
+        width: if(variable-exists(visualCue-width), $visualCue-width, 24px);
+        height: if(variable-exists(visualCue-height), $visualCue-height, 24px);
+        background-color: if(variable-exists(visualCue-background-color), $visualCue-background-color, #34495E);
+        fill: if(variable-exists(visualCue-icon-fill-color), $visualCue-icon-fill-color, #fff);
+        border-radius: corner-values(if(variable-exists(visualCue-border-radius), $visualCue-border-radius, 3px));
+        float: if(variable-exists(visualCue-float), $visualCue-float, none);
+        margin: side-values(if(variable-exists(visualCue-margin), $visualCue-margin, 0));
+        #{$right}: if(variable-exists(visualCue-right), $visualCue-right, 23px);
+    }
+
+    // Support for extended presentation modes
+    @if variable-exists(visualCue-presentation-mode) {
+
+        // Arrow pointing up that animates up and down
+        @if $visualCue-presentation-mode == 'arrow-up' {
+            background-color: transparent;
+
+            .VisualCueIcon {
+                visibility: hidden;
+            }
+
+            > .VisualCueTitle {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 2px solid $basic-color-branding1;
+                border-bottom: 2px solid $basic-color-branding1;
+                transform: rotate(135deg);
+                animation: vcBounce 2s infinite;
+                box-sizing: border-box;
+            }
+
+            @keyframes vcBounce {
+                0% {
+                    transform: rotate(135deg) translate(0, 0);
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: rotate(135deg) translate(-20px, 20px);
+                    opacity: 0;
+                }
+            }
+
+        // Arrow pointing up that animates up and down
+        } @else if $visualCue-presentation-mode == 'arrow-down' {
+            background-color: transparent;
+            border-radius: 0;
+            border-bottom: 2px solid $basic-color-branding1;
+
+            .VisualCueIcon {
+                visibility: hidden;
+            }
+
+            > .VisualCueTitle {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 2px solid $basic-color-branding1;
+                border-bottom: 2px solid $basic-color-branding1;
+                transform: rotate(-45deg);
+                animation: vcBounce 2s infinite;
+                box-sizing: border-box;
+            }
+
+            @keyframes vcBounce {
+                0% {
+                transform: rotate(-45deg) translate(20px, -20px);
+                opacity: 0;
+                }
+                50% {
+                opacity: 1;
+                }
+                100% {
+                transform: rotate(-45deg) translate(5px, -6px);
+                opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.Hidden {
+        @include generate-style-block('VisualCueLinkHidden') {
+            // @full
+            display : none;
+        }
+    }
+    &.Visible {
+        @include generate-style-block('VisualCueLinkVisible') {
+            // @full
+            display : block;
+        }
+    }
+}
+
+.VisualCueLinkSpinner {
+    @if $visualCue-presentation-mode == 'arrow-up' or $visualCue-presentation-mode == 'arrow-down' {
+        @include generate-style-block('VisualCueLinkSpinner') {
+            // @full
+            position: if(variable-exists(visualCue-position), $visualCue-position, absolute);
+            top: if(variable-exists(visualCue-top), $visualCue-top, -31px);
+            width: if(variable-exists(visualCue-width), $visualCue-width, 24px);
+            height: if(variable-exists(visualCue-height), $visualCue-height, 24px);
+            background-color: transparent;
+            fill: if(variable-exists(visualCue-icon-fill-color), $visualCue-icon-fill-color, #fff);
+            border-radius: corner-values(if(variable-exists(visualCue-border-radius), $visualCue-border-radius, 3px));
+            float: if(variable-exists(visualCue-float), $visualCue-float, none);
+            margin: side-values(if(variable-exists(visualCue-margin), $visualCue-margin, 0));
+            #{$right}: if(variable-exists(visualCue-right), $visualCue-right, 23px);
+            padding: 3px;
+            box-sizing: border-box;
+            transform: scale(1.5) translateY(-50%);
+            display: none;
+        }
+        > .VisualCueSpinner {
+            @include generate-style-block('VisualCueSpinner') {
+                // @full
+                width: 100%;
+                height: 100%;
+                fill: if(variable-exists(basic-color-branding1), $basic-color-branding1, #fff);
+                border-top: $layout-border-style 3px $basic-color-branding1;
+                border-right: $layout-border-style 3px fade-out($basic-color-branding1, 0.6);
+                border-bottom: $layout-border-style 3px fade-out($basic-color-branding1, 0.6);
+                border-left: $layout-border-style 3px fade-out($basic-color-branding1, 0.6);
+                border-radius: if(variable-exists(content-loader-border-radius), $content-loader-border-radius, 100%);
+                animation: rotation .6s infinite linear;
+                -webkit-animation: rotation .6s infinite linear;
+                -moz-animation: rotation .6s infinite linear;
+                -ms-animation: rotation .6s infinite linear;
+                box-sizing: border-box;
+            }
+        }
+    } @else {
+        @include generate-style-block('VisualCueLinkSpinner') {
+            // @full
+            position: if(variable-exists(visualCue-position), $visualCue-position, absolute);
+            top: if(variable-exists(visualCue-top), $visualCue-top, -31px);
+            width: if(variable-exists(visualCue-width), $visualCue-width, 24px);
+            height: if(variable-exists(visualCue-height), $visualCue-height, 24px);
+            background-color: if(variable-exists(visualCue-background-color), $visualCue-background-color, #34495E);
+            fill: if(variable-exists(visualCue-icon-fill-color), $visualCue-icon-fill-color, #fff);
+            border-radius: corner-values(if(variable-exists(visualCue-border-radius), $visualCue-border-radius, 3px));
+            float: if(variable-exists(visualCue-float), $visualCue-float, none);
+            margin: side-values(if(variable-exists(visualCue-margin), $visualCue-margin, 0));
+            #{$right}: if(variable-exists(visualCue-right), $visualCue-right, 23px);
+            padding: 3px;
+            box-sizing: border-box;
+            display: none;
+        }
+        > .VisualCueSpinner {
+            @include generate-style-block('VisualCueSpinner') {
+                // @full
+                width: 100%;
+                height: 100%;
+                fill: if(variable-exists(visualCue-icon-fill-color), $visualCue-icon-fill-color, #fff);
+                border-top: $layout-border-style 3px $visualCue-icon-fill-color;
+                border-right: $layout-border-style 3px fade-out($visualCue-icon-fill-color, 0.6);
+                border-bottom: $layout-border-style 3px fade-out($visualCue-icon-fill-color, 0.6);
+                border-left: $layout-border-style 3px fade-out($visualCue-icon-fill-color, 0.6);
+                border-radius: if(variable-exists(content-loader-border-radius), $content-loader-border-radius, 100%);
+                animation: rotation .6s infinite linear;
+                -webkit-animation: rotation .6s infinite linear;
+                -moz-animation: rotation .6s infinite linear;
+                -ms-animation: rotation .6s infinite linear;
+                box-sizing: border-box;
+            }
+        }
+    }
+    &.Visible {
+        @include generate-style-block('VisualCueLinkSpinnerVisible') {
+            // @full
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$customNote-padding: $elements-padding;
+$customNote-margin: $elements-margin;
+$customNote-overflow: auto;
+
+$customNote-background: $customNote-color-background;
+
+// If the following is set to "both" then all Custom Notes will always be on their
+// own "new line", no matter what width they are given.
+// If the following is set to "none" then all Custom Notes should flow with text
+// flow, but there may be problems with "wrapped" elements like Figures above the
+// Custom Note bleeding into the Custom Note's display area.
+$customNote-clear: $left;
+
+$customNote-border-width: $elements-border-width;
+$customNote-border-style: $elements-border-style;
+$customNote-border: $customNote-border-width $customNote-border-style $customNote-color-border;
+$customNote-transition-duration: $elements-transition-duration;
+
+$customNote-text-width: auto;
+$customNote-text-padding: 0 $customNote-padding;
+$customNote-text-float: none;
+// inline-block needed to allow for padding between icon and text.
+$customNote-text-display: block;
+$customNote-text-box-sizing: border-box;
+
+$customNote-icon-width: auto;
+$customNote-icon-padding: side-values(0 $customNote-padding 0 0);
+$customNote-icon-float: $left;
+$customNote-icon-box-sizing: border-box;

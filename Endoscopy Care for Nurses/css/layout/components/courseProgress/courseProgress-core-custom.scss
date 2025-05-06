@@ -1,0 +1,45 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@include customize-style-block('CourseProgressLink') {
+    background-color: if(variable-exists(header-courseProgress-background-color), $header-courseProgress-background-color, rgba(17,17,17,0.35));
+    float: if(variable-exists(header-courseProgress-float), $header-courseProgress-float, $right);
+    width: if(variable-exists(header-courseProgress-width), $header-courseProgress-width, auto);
+    min-width: if(variable-exists(header-courseProgress-min-width), $header-courseProgress-min-width, 64px);
+    height: if(variable-exists(header-courseProgress-height), $header-courseProgress-height, 11mm);
+    padding-top: if(variable-exists(header-courseProgress-valign), $header-courseProgress-valign, (11mm / 2) - 8px);
+    color: if(variable-exists(header-courseProgress-color-text), $header-courseProgress-color-text, $layout-color-text-lightened);
+    font-size: if(variable-exists(header-courseProgress-font-size), $header-courseProgress-font-size, 0.8em);
+    margin: side-values(0 auto);
+
+    &:hover {
+        font-size: if(variable-exists(header-courseProgress-font-size), $header-courseProgress-font-size, 0.8em);
+        color: if(variable-exists(header-courseProgress-color-text), $header-courseProgress-color-text, $layout-color-text-lightened);
+        font-family: inherit;
+    }
+
+    .CourseProgressCurrent {
+        color: if(variable-exists(courseProgress-color-text-lightened), $courseProgress-color-text-lightened, $component-color-text-light);
+        margin: side-values(0 5px);
+    }
+
+    .CourseProgressDelimeter {
+        color: if(variable-exists(courseProgress-color-text-lightened), $courseProgress-color-text-lightened, $component-color-text-light);
+    }
+}
+
+@include customize-style-block('CourseProgressListItemCompleted') {
+    background: if(variable-exists(courseProgress-marker-background-completed), $courseProgress-marker-background-completed, $layout-color-text-lightened);
+    border-color: transparent;
+}

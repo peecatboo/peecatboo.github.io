@@ -1,0 +1,24 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// a pattern used to fill all cards background
+$flashcards-background-image-cards: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAAHFJREFUKFN1jlEKgCAQRKVI6qOO0Edkdv/7uTaLY2jmA2GYeWZGRPYYozUdsA3qaJgR3J9M6cDZcmG/MvKI7nylTClT0rxyrlEphHBB8sgL6xZ+yUO+9RLrGgwTn1tUyr/BOcGheq6Rm6Kg2npSJsniHmldnskmGbHtAAAAAElFTkSuQmCC);
+
+// image to display arrow on top of "next" button
+// "back" button is 180deg rotated "next"
+$flashcards-background-image-navigationButtons-next: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAAAl0lEQVQ4T82SMQqDMBhGMwuF4jFELDh7B3fPU3STQm/TrQdxdfEICukTvoBglLQg9sEbkv/7vyUx/4W1NsdUx+9h+Y4jtnjRdTgsNejosdIoDBaWBY43ZorsQ9BXMDPhE2NF/RDYKnAMWCi+huFhBfPLPPCqqB8CvoIXJorsQ3BZ0GGpURgsuI9UY6TrcFi64e9f+QSM+QBh4xPx1L77sgAAAABJRU5ErkJggg==);
+
+// image to display arrow on top of "last" button
+// "first" button is 180deg rotated "last"
+$flashcards-background-image-navigationButtons-last:
+url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAAAs0lEQVQ4T82SMQoCMRBFUwuCeAwRBbH0DjZWnke0E8FerDyEncewELGxEbyAkvgCP4sDbnC30QevyPzZz7Ib91+EEAbY1fEj5MPSHYIZPnCJTY0NzI+409FCsMDEFaeKCpidcaujheC9IHHAnlZqFUSeuMY2XnCjRywEZQWJG96x8hskahfEP7PCFlb+BnvsaCXufF1wwrGiAmbZgnSR5tjQ2MA8W9DH7FX23k9wpOPPce4F60xlNXgXADAAAAAASUVORK5CYII=);

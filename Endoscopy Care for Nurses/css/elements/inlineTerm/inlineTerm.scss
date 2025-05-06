@@ -1,0 +1,29 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.InLineTerm {
+    @include generate-style-block('InLineTerm') {
+        // @full
+        font-family: if(variable-exists(inlineterm-font-body), $inlineterm-font-body, $elements-font-body);
+        font-size: if(variable-exists(inlineterm-font-size), $inlineterm-font-size, 1em);
+        font-weight: if(variable-exists(inlineterm-font-weight), $inlineterm-font-weight, $elements-font-weight);
+        text-decoration: if(variable-exists(inlineterm-text-decoration), $inlineterm-text-decoration, underline);
+        color: if(variable-exists(inlineterm-color-text-links), $inlineterm-color-text-links, $elements-color-text-links);
+    }
+    .InLineTermDefinition {
+        @include generate-style-block('InLineTermDefinition') {
+            // @full
+            display: if(variable-exists(inlineterm-inline-definition-display), $inlineterm-inline-definition-display, inline-block);
+        }
+    }
+}

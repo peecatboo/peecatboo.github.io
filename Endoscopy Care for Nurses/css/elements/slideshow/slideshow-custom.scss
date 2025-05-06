@@ -1,0 +1,7 @@
+@include customize-style-block('Slideshow') {
+    margin: 0 auto 1em auto;
+}
+
+@include customize-style-block('SlideshowPagination') {
+    top: -30px;
+}

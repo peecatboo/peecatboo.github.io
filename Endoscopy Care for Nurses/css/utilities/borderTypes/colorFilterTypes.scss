@@ -1,0 +1,305 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of classes for color filters
+ */
+
+/* color filter types */
+
+%figure-image-wrapper-before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    mix-blend-mode: color-burn;
+}
+
+
+%color-filter-1977 {
+    .FigureInnerWrap {
+        webkit-filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);
+        filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-brooklyn {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.25) contrast(1.25) brightness(1.25) hue-rotate(5deg);
+        filter: sepia(.25) contrast(1.25) brightness(1.25) hue-rotate(5deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: rgba(127,187,227,.2);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-crema {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.5) contrast(1.25) brightness(1.15) saturate(.9) hue-rotate(-2deg);
+        filter: sepia(.5) contrast(1.25) brightness(1.15) saturate(.9) hue-rotate(-2deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: rgba(125,105,24,.2);
+    }
+
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-earlybird {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.25) contrast(1.25) brightness(1.15) saturate(.9) hue-rotate(-5deg);
+        filter: sepia(.25) contrast(1.25) brightness(1.15) saturate(.9) hue-rotate(-5deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: radial-gradient(circle closest-corner,transparent 0,rgba(125,105,24,.2) 100%);
+        background: -o-radial-gradient(circle closest-corner,transparent 0,rgba(125,105,24,.2) 100%);
+        background: -moz-radial-gradient(circle closest-corner,transparent 0,rgba(125,105,24,.2) 100%);
+        background: -webkit-radial-gradient(circle closest-corner,transparent 0,rgba(125,105,24,.2) 100%);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-hefe {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.4) contrast(1.5) brightness(1.2) saturate(1.4) hue-rotate(-10deg);
+        filter: sepia(.4) contrast(1.5) brightness(1.2) saturate(1.4) hue-rotate(-10deg)
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: radial-gradient(circle closest-corner,transparent 0,rgba(0,0,0,.25) 100%);
+        background: -o-radial-gradient(circle closest-corner,transparent 0,rgba(0,0,0,.25) 100%);
+        background: -moz-radial-gradient(circle closest-corner,transparent 0,rgba(0,0,0,.25) 100%);
+        background: -webkit-radial-gradient(circle closest-corner,transparent 0,rgba(0,0,0,.25) 100%);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-hudson {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.25) contrast(1.2) brightness(1.2) saturate(1.05) hue-rotate(-15deg);
+        filter: sepia(.25) contrast(1.2) brightness(1.2) saturate(1.05) hue-rotate(-15deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: radial-gradient(circle closest-corner,transparent 25%,rgba(25,62,167,.25) 100%);
+        background: -o-radial-gradient(circle closest-corner,transparent 25%,rgba(25,62,167,.25) 100%);
+        background: -moz-radial-gradient(circle closest-corner,transparent 25%,rgba(25,62,167,.25) 100%);
+        background: -webkit-radial-gradient(circle closest-corner,transparent 25%,rgba(25,62,167,.25) 100%);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-kelvin {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.15) contrast(1.5) brightness(1.1) hue-rotate(-10deg);
+        filter: sepia(.15) contrast(1.5) brightness(1.1) hue-rotate(-10deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: radial-gradient(circle closest-corner,rgba(128,78,15,.25) 0,rgba(128,78,15,.5) 100%);
+        background: -o-radial-gradient(circle closest-corner,rgba(128,78,15,.25) 0,rgba(128,78,15,.5) 100%);
+        background: -moz-radial-gradient(circle closest-corner,rgba(128,78,15,.25) 0,rgba(128,78,15,.5) 100%);
+        background: -webkit-radial-gradient(circle closest-corner,rgba(128,78,15,.25) 0,rgba(128,78,15,.5) 100%);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-juno {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.35) contrast(1.15) brightness(1.15) saturate(1.8);
+        filter: sepia(.35) contrast(1.15) brightness(1.15) saturate(1.8);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: rgba(127,187,227,.2);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-lofi {
+    .FigureInnerWrap {
+        -webkit-filter: saturate(1.1) contrast(1.5);
+        filter: saturate(1.1) contrast(1.5);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-walden {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.35) contrast(.8) brightness(1.25) saturate(1.4);
+        filter: sepia(.35) contrast(.8) brightness(1.25) saturate(1.4);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: rgba(229,240,128,.5);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-willow {
+    .FigureInnerWrap {
+        -webkit-filter: brightness(1.2) contrast(.85) saturate(.05) sepia(.2);
+        filter: brightness(1.2) contrast(.85) saturate(.05) sepia(.2);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+%color-filter-x-pro-2 {
+    .FigureInnerWrap {
+        -webkit-filter: sepia(.45) contrast(1.25) brightness(1.75) saturate(1.3) hue-rotate(-5deg);
+        filter: sepia(.45) contrast(1.25) brightness(1.75) saturate(1.3) hue-rotate(-5deg);
+    }
+    .FigureInnerWrap:before {
+        @extend %figure-image-wrapper-before;
+        background: radial-gradient(circle closest-corner,rgba(0,91,154,.35) 0,rgba(0,0,0,.65) 100%);
+        background: -o-radial-gradient(circle closest-corner,rgba(0,91,154,.35) 0,rgba(0,0,0,.65) 100%);
+        background: -moz-radial-gradient(circle closest-corner,rgba(0,91,154,.35) 0,rgba(0,0,0,.65) 100%);
+        background: -webkit-radial-gradient(circle closest-corner,rgba(0,91,154,.35) 0,rgba(0,0,0,.65) 100%);
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-old {
+    .FigureImage {
+        filter: contrast(1.2) sepia(0.2) hue-rotate(5deg);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-black-and-white {
+    .FigureImage {
+        filter: grayscale(1);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%color-filter-vivid {
+    .FigureImage {
+        filter: saturate(1.8) contrast(1.1);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+
+.Old {
+    @extend %color-filter-old;
+}
+
+.BW {
+    @extend %color-filter-black-and-white;
+}
+
+.Vivid {
+    @extend %color-filter-vivid;
+}
+
+.color-filter-1977 {
+    @extend %color-filter-1977;
+}
+
+.color-filter-brooklyn {
+    @extend %color-filter-brooklyn;
+}
+
+.color-filter-crema {
+    @extend %color-filter-crema;
+}
+
+.color-filter-earlybird {
+    @extend %color-filter-earlybird;
+}
+
+.color-filter-hefe {
+    @extend %color-filter-hefe;
+}
+
+.color-filter-hudson {
+    @extend %color-filter-hudson;
+}
+
+.color-filter-kelvin {
+    @extend %color-filter-kelvin;
+}
+
+.color-filter-juno {
+    @extend %color-filter-juno;
+}
+
+.color-filter-lofi {
+    @extend %color-filter-lofi;
+}
+
+.color-filter-walden {
+    @extend %color-filter-walden;
+}
+
+.color-filter-willow {
+    @extend %color-filter-willow;
+}
+
+.color-filter-x-pro-2 {
+    @extend %color-filter-x-pro-2;
+}

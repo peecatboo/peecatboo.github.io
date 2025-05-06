@@ -1,0 +1,46 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// inherit variables
+@import 'colors.scss';
+@import 'colors-core-custom.scss';
+@import 'colors-custom.scss';
+@import 'fonts.scss';
+@import 'fonts-core-custom.scss';
+@import 'fonts-custom.scss';
+@import 'box.scss';
+@import 'box-core-custom.scss';
+@import 'box-custom.scss';
+
+// Load skin regions and components
+@import 'header/header.scss';
+@import 'header/header-core-custom.scss';
+@import 'header/header-custom.scss';
+@import 'menu/menu.scss';
+@import 'menu/menu-core-custom.scss';
+@import 'menu/menu-custom.scss';
+@import 'footer/footer.scss';
+@import 'footer/footer-core-custom.scss';
+@import 'footer/footer-custom.scss';
+@import 'content/content.scss';
+@import 'content/content-core-custom.scss';
+@import 'content/content-custom.scss';
+@import 'components/components.scss';
+@import 'components/components-core-custom.scss';
+@import 'components/components-custom.scss';
+@import 'sidebarLeft/sidebarLeft.scss';
+@import 'sidebarLeft/sidebarLeft-core-custom.scss';
+@import 'sidebarLeft/sidebarLeft-custom.scss';
+@import 'sidebarRight/sidebarRight.scss';
+@import 'sidebarRight/sidebarRight-core-custom.scss';
+@import 'sidebarRight/sidebarRight-custom.scss';

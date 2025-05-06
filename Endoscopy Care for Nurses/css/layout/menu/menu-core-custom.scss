@@ -1,0 +1,217 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@include customize-style-block('MainMenuRegions') {
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+@include customize-style-block('MainMenuTopRegion') {
+    background: if(variable-exists(menu-topmatter-background), $menu-topmatter-background, transparent $menu-topmatter-background-image no-repeat center center);
+    background-size: if(variable-exists(menu-topmatter-background-size), $menu-topmatter-background-size, auto 60%);
+
+    .MenuIcon {
+        position: relative;
+        display: if(variable-exists(menu-topmatter-icon-display), $menu-topmatter-icon-display, block);
+        float: if(variable-exists(menu-topmatter-icon-float), $menu-topmatter-icon-float, if-ltr(left, right));
+        background: if(variable-exists(menu-topmatter-icon-hover-background), $menu-topmatter-icon-hover-background, rgba(39,39,39,1));
+        width: if(variable-exists(menu-topmatter-height), $menu-topmatter-height, 64px);
+        height: if(variable-exists(menu-topmatter-height), $menu-topmatter-height, 64px);
+        text-indent: if(variable-exists(menu-topmatter-icon-text-indent), $menu-topmatter-icon-text-indent, 120%);
+        white-space: if(variable-exists(menu-topmatter-icon-white-space), $menu-topmatter-icon-white-space, nowrap);
+        overflow: if(variable-exists(menu-topmatter-icon-overflow), $menu-topmatter-icon-overflow, hidden);
+        border: if(variable-exists(menu-topmatter-icon-border), $menu-topmatter-icon-border, none);
+
+        .SVGIcon {
+            position: absolute;
+            width: 55%;
+            height: 55%;
+            top: 50%;
+            left: 50%;
+            fill: white;
+            margin-left: -27.5%;
+            margin-top: -27.5%;
+        }
+
+        &:hover .SVGIcon {
+            fill: if(variable-exists(menu-color-branding1), $menu-color-branding1, #34495E);
+        }
+
+        &:hover {
+            background: if(variable-exists(menu-topmatter-icon-hover-background), $menu-topmatter-icon-hover-background, rgba(39,39,39,1));
+        }
+    }
+
+    .Title {
+        color: if(variable-exists(menu-color-topmatter-title), $menu-color-topmatter-title, #fff);
+        margin: if(variable-exists(menu-topmatter-title-margin), $menu-topmatter-title-margin, 0 $menu-margin 0 0);
+        height: if(variable-exists(menu-topmatter-title-height), $menu-topmatter-title-height, 64px);
+        line-height: if(variable-exists(menu-topmatter-title-line-height), $menu-topmatter-title-line-height, 2.4em);
+        overflow: if(variable-exists(menu-topmatter-title-overflow), $menu-topmatter-title-overflow, hidden);
+        text-overflow: if(variable-exists(menu-topmatter-title-text-overflow), $menu-topmatter-title-text-overflow, inherit);
+        text-shadow: if(variable-exists(menu-topmatter-title-text-shadow), $menu-topmatter-title-text-shadow, 0 0 5px $menu-color-topmatter-title-text-shadow);
+        padding: if(variable-exists(menu-topmatter-title-padding), $menu-topmatter-title-padding, inherit inherit inherit 5px);
+    }
+
+    .ExitButtonLink {
+        position: if(variable-exists(menu-exit-button-position), $menu-exit-button-position, relative);
+        float: $right;
+        padding: if(variable-exists(menu-exit-button-padding), $menu-exit-button-padding, 0);
+        border: if(variable-exists(menu-exit-button-border), $menu-exit-button-border, none);
+        background: if(variable-exists(menu-topmatter-icon-hover-background), $menu-topmatter-icon-hover-background, rgba(39,39,39,1));
+        text-indent: if(variable-exists(menu-exit-button-text-indent), $menu-exit-button-text-indent, 120%);
+        overflow: if(variable-exists(menu-exit-button-overflow), $menu-exit-button-overflow, hidden);
+        width: if(variable-exists(menu-topmatter-height), $menu-topmatter-height, 64px);
+        height: if(variable-exists(menu-topmatter-height), $menu-topmatter-height, 64px);
+
+        .SVGIcon {
+            display: block;
+            position: absolute;
+            width: 55%;
+            height: 55%;
+            top: 50%;
+            left: 50%;
+            fill: white;
+            margin-left: -27.5%;
+            margin-top: -27.5%;
+        }
+
+        &:hover .SVGIcon {
+            fill: if(variable-exists(menu-color-branding1), $menu-color-branding1, #34495E);
+        }
+
+        &:hover {
+            background: if(variable-exists(menu-topmatter-icon-hover-background), $menu-topmatter-icon-hover-background, rgba(39,39,39,1));
+        }
+    }
+}
+
+@include customize-style-block('MainMenuWrapper') {
+    // Special Notebook styles
+    .NotebookPopupContentContainer {
+        padding: if(variable-exists(menu-padding), $menu-padding, 1.5em) 0;
+
+        .NotebookInnerWrap {
+            width: if(variable-exists(menu-notebook-wrap-width), $menu-notebook-wrap-width, 75%);
+            margin: if(variable-exists(menu-notebook-wrap-margin), $menu-notebook-wrap-margin, 0 auto);
+
+            > .NotebookTitle {
+                text-transform: if(variable-exists(menu-notebook-title-text-transform), $menu-notebook-title-text-transform, uppercase);
+                color: if(variable-exists(menu-notebook-title-color), $menu-notebook-title-color, white);
+                margin: if(variable-exists(menu-notebook-title-margin), $menu-notebook-title-margin, 0.2em 0);
+            }
+            .NotebookText {
+                min-height: if(variable-exists(menu-notebook-text-min-height), $menu-notebook-text-min-height, 250px);
+            }
+        }
+    }
+}
+
+@include customize-style-block('MainMenuComponentLink') {
+    float: if(variable-exists(menu-componentlinks-item-float), $menu-componentlinks-item-float, none);
+    max-width: if(variable-exists(menu-componentlinks-item-max-width), $menu-componentlinks-item-max-width, 90%);
+    text-transform: if(variable-exists(menu-componentlinks-text-transform), $menu-componentlinks-text-transform, uppercase);
+    line-height: if(variable-exists(menu-componentlinks-item-line-height), $menu-componentlinks-item-line-height, 38px);
+    margin: if(variable-exists(menu-componentlinks-item-margin), $menu-componentlinks-item-margin, 3px);
+    white-space: if(variable-exists(menu-componentlinks-item-word-wrap), $menu-componentlinks-item-word-wrap, nowrap);
+    border: if(variable-exists(menu-componentlinks-item-border), $menu-componentlinks-item-border, none);
+    border-radius: if(variable-exists(menu-componentlinks-item-border-radius), $menu-componentlinks-item-border-radius, 5px);
+}
+
+@include customize-style-block('MainMenuComponentLinkIcon') {
+    width: if(variable-exists(menu-componentlinks-item-icon-width), $menu-componentlinks-item-icon-width, 16px);
+    height: if(variable-exists(menu-componentlinks-item-icon-height), $menu-componentlinks-item-icon-height, 16px);
+}
+
+@include customize-style-block('MainMenuComponentLinkTitle') {
+    max-width: $menu-componentlinks-item-title-max-width;
+}
+
+@include customize-style-block('MainMenuMiddleRegion') {
+    padding-top: if(variable-exists(menu-middle-padding-top), $menu-middle-padding-top, 10px);
+    box-sizing: if(variable-exists(menu-middle-box-sizing), $menu-middle-box-sizing, padding-box);
+    white-space: if(variable-exists(menu-componentlinks-white-space), $menu-componentlinks-white-space, normal);
+    text-align: if(variable-exists(menu-componentlinks-text-align), $menu-componentlinks-text-align, center);
+
+    a:active, .Active a {
+        background-color: if(variable-exists(menu-color-componentlinks-item-link-background-hover), $menu-color-componentlinks-item-link-background-hover, white);
+        color: if(variable-exists(menu-color-componentlinks-item-link-text-hover), $menu-color-componentlinks-item-link-text-hover, black);
+    }
+
+    &.Accordion {
+        li {
+            width: if(variable-exists(menu-accordion-li-width), $menu-accordion-li-width, 100%);
+            margin: if(variable-exists(menu-accordion-li-margin), $menu-accordion-li-margin, 0);
+            border-radius: if(variable-exists(menu-accordion-li-border-radius), $menu-accordion-li-border-radius, 0);
+            border-bottom: if(variable-exists(menu-accordion-li-border-bottom), $menu-accordion-li-border-bottom, solid 1px #494949);
+            text-align: $left;
+            padding-left: if(variable-exists(menu-accordion-li-padding-left), $menu-accordion-li-padding-left, 10px);
+
+            svg {
+                margin: if(variable-exists(menu-accordion-li-svg-margin), $menu-accordion-li-svg-margin, 0 10px);
+            }
+        }
+    }
+}
+
+@include customize-style-block('MainMenuMiddleRegionList') {
+    @extend .clearfix;
+    text-align: if(variable-exists(menu-componentlinks-text-align), $menu-componentlinks-text-align, center);
+}
+
+@include customize-style-block('MainMenuMiddleRegionAnchor') {
+    display: if(variable-exists(menu-componentlinks-item-link-display), $menu-componentlinks-item-link-display, inline-block);
+    background: if(variable-exists(menu-componentlinks-item-link-background), $menu-componentlinks-item-link-background, rgba(95, 103, 110, 0.5));
+    width: if(variable-exists(menu-componentlinks-item-link-width), $menu-componentlinks-item-link-width, 93px);
+    text-align: if(variable-exists(menu-componentlinks-item-link-text-align), $menu-componentlinks-item-link-text-align, center);
+    padding: if(variable-exists(menu-componentlinks-item-link-padding), $menu-componentlinks-item-link-padding, 10px 0);
+    box-sizing: if(variable-exists(menu-componentlinks-item-link-box-sizing), $menu-componentlinks-item-link-box-sizing, border-box);
+}
+
+#MainMenu {
+    color: if(variable-exists(menu-color-list), $menu-color-list, #fff);
+    padding: if(variable-exists(menu-list-padding), $menu-list-padding, 0);
+
+    .NavigationTreeItem {
+        font-weight: if(variable-exists(menu-navigation-item-font-weight), $menu-navigation-item-font-weight, normal);
+    }
+
+    .NavigationNode.Active > .NavigationTreeItem {
+        font-weight: if(variable-exists(menu-navigation-item-font-weight-active), $menu-navigation-item-font-weight-active, normal);
+    }
+}
+
+#MainMenuExtendedContent {
+    &.Open {
+        display: if(variable-exists(menu-component-open-display), $menu-component-open-display, block);
+        min-width: if(variable-exists(menu-component-open-min-width), $menu-component-open-min-width, 310px);
+    }
+
+    &.Opening {
+        display: if(variable-exists(menu-component-open-display), $menu-component-open-display, block);
+        min-width: if(variable-exists(menu-component-open-min-width), $menu-component-open-min-width, 310px);
+    }
+
+    &.Closed, &.Closing {
+        display: if(variable-exists(menu-component-closed-display), $menu-component-closed-display, none);
+    }
+
+    .Content {
+        white-space: normal;
+    }
+}

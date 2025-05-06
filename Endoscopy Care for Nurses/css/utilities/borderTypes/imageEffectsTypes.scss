@@ -1,0 +1,82 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of effect classes for images
+ */
+
+/* Snapshot types */
+
+%snapshot-image {
+        .FigureOuterWrap {
+                padding: 10px 10px 35px 10px;
+                background: #fff;
+                border: 1px solid #fff;
+                box-shadow: $elements-box-shadow;
+                display: inline-block;
+        }
+        & > .FigureInnerWrap:before {
+                height: calc( 100% - 45px );
+                left: 10px;
+                top: 10px;
+                width: calc( 100% - 20px );
+        }
+        .Caption {
+                text-align: center;
+        }
+}
+
+    .Wrapleft {
+        &.Snapshot {
+                transform: rotate(-10deg) scale(0.8);
+        }
+    }
+
+    .Wrapright {
+        &.Snapshot {
+                transform: rotate(10deg) scale(0.8);
+        }
+    }
+
+
+%postage-stamp {
+    .FigureOuterWrap {
+        padding: 10px;
+        margin-top: 10px;
+        background: white;
+        position: relative;
+        text-align:center;
+        -webkit-filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+        background: radial-gradient(
+                transparent 0px,
+                transparent 4px,
+                white 4px,
+                white
+        );
+        background-size: 20px 20px;
+        background-position: -10px -10px;
+    }
+    & > .FigureInnerWrap:before {
+
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+.Snapshot {
+    @extend %snapshot-image;
+}
+
+.postage-stamp {
+    @extend %postage-stamp;
+}

@@ -1,0 +1,249 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@include customize-style-block('PageOuterWrap') {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+@include customize-style-block('PageInnerWrap') {
+    display: $layout-pagemain-display;
+    position: $layout-pagemain-position;
+    vertical-align: if(variable-exists(content-pageinnerwrap-vertical-align), $content-pageinnerwrap-vertical-align, middle);
+    float: if(variable-exists(content-pageinnerwrap-float), $content-pageinnerwrap-float, none);
+    min-height: if(variable-exists(content-pageinnerwrap-min-height), $content-pageinnerwrap-min-height, 100%);
+    width: $layout-pagemain-width;
+    max-width: $layout-pagemain-max-width;
+    margin: $layout-pagemain-margin;
+    text-align: $layout-pagemain-text-align;
+    background-color: if(variable-exists(content-pageinnerwrap-background), $content-pageinnerwrap-background, #FFF);
+    overflow: hidden;
+    overflow-x: $layout-pagemain-overflow-x;
+    box-shadow: $layout-pagemain-box-shadow;
+    z-index: if(variable-exists(content-pageinnerwrap-zindex), $content-pageinnerwrap-zindex, 4);
+    @media #{$basic-screen-query-narrow} {
+        & {
+            width: $layout-pagemain-width-narrow;
+        }
+    }
+    @media #{$basic-screen-query-normal} {
+        & {
+            width: $layout-pagemain-width-normal;
+        }
+    }
+    @media #{$basic-screen-query-wide} {
+        & {
+            width: $layout-pagemain-width-wide;
+        }
+    }
+}
+@include customize-style-block('Body') {
+    background: if(variable-exists(content-pageinnerwrap-background), $content-pageinnerwrap-background, #FFF);
+    .UpperPadding {
+        // margin-top: 75px !important;
+        //padding-left: 40px !important;
+        //padding-right: 40px !important;
+    }
+    .Page .Topic.UpperPadding, .Topic .Topic.UpperPadding {
+         padding-top: 1.5em !important;
+    }
+    div, aside, section {
+        scrollbar-face-color: #838383;
+        scrollbar-shadow-color: #838383;
+        scrollbar-highlight-color:#838383;
+        scrollbar-darkshadow-color: #838383;
+        scrollbar-track-color: if(variable-exists(content-color-pageinnerwrap-background), $content-color-pageinnerwrap-background, #FFF);
+        scrollbar-arrow-color: transparent;
+
+        &::-webkit-scrollbar {
+            width: 9px;
+            height: 9px;
+        }
+        &::-webkit-scrollbar-button:start:decrement, #doc::-webkit-scrollbar-button:end:increment {
+            display: block;
+            height: 0;
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-track-piece {
+            background-color: transparent;
+            -webkit-border-radius: 0;
+            -webkit-border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb:vertical {
+            height: 50px;
+            background-color: #838383;
+            -webkit-border-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb:horizontal {
+            width: 50px;
+            background-color: #838383;
+            -webkit-border-radius: 8px;
+        }
+    }
+}
+@include customize-style-block('PageBody') {
+    height: if(variable-exists(content-pagebody-height), $content-pagebody-height, 100%);
+    min-height: if(variable-exists(content-pagebody-min-height), $content-pagebody-min-height, 100%);
+    width: if(variable-exists(content-pagebody-width), $content-pagebody-width, 100%);
+    overflow: if(variable-exists(content-pagebody-overflow), $content-pagebody-overflow, auto);
+    line-height: if(variable-exists(content-line-height), $content-line-height, normal);
+    box-sizing: if(variable-exists(content-pagebody-box-sizing), $content-pagebody-box-sizing, content-box ); // IE9 scrollbar position fix
+    position: if(variable-exists(content-pagebody-position), $content-pagebody-position, absolute);
+    > :first-of-type {
+        margin-top: if(variable-exists(content-pagebody-first-margin-top), $content-pagebody-first-margin-top, 50px);
+        padding-top: if(variable-exists(content-pagebody-first-padding-top), $content-pagebody-first-padding-top, 0);
+    }
+    > div {
+        padding: if(variable-exists(content-pagebody-div-padding), $content-pagebody-div-padding, 1.5em);
+    }
+    > .Title:first-of-type {
+        padding: if(variable-exists(content-pagebody-first-title-padding), $content-pagebody-first-title-padding, 0 .7em);
+    }
+    > .SubTitle:first-of-type {
+        padding: if(variable-exists(content-pagebody-first-title-padding), $content-pagebody-first-title-padding, 0 .7em);
+    }
+    .Lesson {
+        padding: if(variable-exists(content-lesson-padding), $content-lesson-padding, 0 1.5em);
+    }
+    .ParaBlock {
+        line-height: if(variable-exists(content-parablock-line-height), $content-parablock-line-height, $elements-text-line-height);
+        & > .RichText {
+            margin-bottom: if(variable-exists(content-richtext-margin-bottom), $content-richtext-margin-bottom, 40px);
+        }
+    }
+    .OneImagePage, .TwoImagePage, .SingleImagePage, .ZoomImagePage {
+        margin-top: if(variable-exists(content-top-image-margin-top), $content-top-image-margin-top, 0);
+        padding: if(variable-exists(content-top-image-padding), $content-top-image-padding, 0);
+    }
+    .OneImagePageContent, .TwoImagePageContent, .SingleImagePageContent, .ZoomImagePageContent {
+        padding: if(variable-exists(content-top-image-content-padding), $content-top-image-content-padding, 1.5em);
+
+        .CategoriesContainer .Figure {
+            display: if(variable-exists(content-parablock-categories-figure-display), $content-parablock-categories-figure-display, block);
+        }
+    }
+    .OneImagePageContent > .Title {
+        display: if(variable-exists(content-parablock-figure-display), $content-parablock-figure-display, none);
+    }
+    .OneImagePage > .TopImage {
+        // @full
+        overflow-x: if(variable-exists(content-top-image-overflow-x), $content-top-image-overflow-x, none);
+        max-width: if(variable-exists(content-top-image-max-width), $content-top-image-max-width, auto);
+        background-size: if(variable-exists(content-top-image-background-size), $content-top-image-background-size, cover!important);
+        padding-top: if(variable-exists(content-top-image-padding-top), $content-top-image-padding-top, 350px);
+        .TopImageTitlesContainer {
+            background: if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0));
+            padding: 2em 1.5em 1.5em;
+            background:              linear-gradient(to bottom, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.7)));
+            background-image :  -moz-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.7)));
+            background-image : -webkit-gradient(linear, 0% 0%, 0% 100%, from(if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0))), to(if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.7))));
+            background-image : -webkit-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.7)));
+            background-image : -ms-linear-gradient(top, if(variable-exists(background-stop-1), $background-stop-1, rgba(0,0,0,0)), if(variable-exists(background-stop-2), $background-stop-2, rgba(0,0,0,0.7)));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#00000000, endColorstr=#70000000);
+        }
+        .TopImagePageTitle {
+            font-size: if(variable-exists(content-top-image-page-title-font-size), $content-top-image-page-title-font-size, 2.8em);
+            font-weight: if(variable-exists(content-top-image-page-title-font-weight), $content-top-image-page-title-font-weight, normal);
+            color: white;
+            margin-bottom: if(variable-exists(content-top-image-page-title-margin-bottom), $content-top-image-page-title-margin-bottom, 5px);
+        }
+        .TopImagePageSubTitle {
+            &:before {
+                display: none;
+                content: "____";
+                margin-bottom: 1em;
+            }
+            font-size: if(variable-exists(content-top-image-page-subtitle-font-size), $content-top-image-page-subtitle-font-size, 2em);
+            font-weight: if(variable-exists(content-top-image-page-subtitle-font-weight), $content-top-image-page-subtitle-font-weight, normal);
+            color: if(variable-exists(text-color), $text-color, white);
+            margin-bottom: if(variable-exists(content-top-image-page-subtitle-margin-bottom), $content-top-image-page-subtitle-margin-bottom, 5px);
+        }
+        > img {
+            visibility: if(variable-exists(content-top-image-img-visibility), $content-top-image-img-visibility, hidden);
+        }
+        .TopImagePageDocumentTitle {
+            &:before {
+                display: none;
+                content: "____";
+                margin-bottom: 1em;
+            }
+            font-size: if(variable-exists(content-top-image-page-documenttitle-font-size), $content-top-image-page-documenttitle-font-size, 1.4em);
+            font-weight: if(variable-exists(content-top-image-page-documenttitle-font-weight), $content-top-image-page-documenttitle-font-weight, normal);
+            color: if(variable-exists(text-color), $text-color, white);
+            display: if(variable-exists(content-top-image-page-documenttitle-display), $content-top-image-page-documenttitle-display, none);
+            visibility: if(variable-exists(content-top-image-page-documenttitle-visibility), $content-top-image-page-documenttitle-visibility, hidden);
+        }
+    }
+    .Topic.SingleImagePage, .Page.SingleImagePage {
+        .TopImage {
+            display:  if(variable-exists(content-top-single-image-display), $content-top-single-image-display, block);
+            width: if(variable-exists(content-top-single-image-width), $content-top-single-image-width, 100%);
+            height: if(variable-exists(content-top-single-image-height), $content-top-single-image-height, 350px);
+            background-position: if(variable-exists(content-top-single-image-background-position), $content-top-single-image-background-position, center center);
+            background-repeat: if(variable-exists(content-top-single-image-background-repeat), $content-top-single-image-background-repeat, no-repeat);
+            background-size: if(variable-exists(content-top-single-image-background-size), $content-top-single-image-background-size, cover);
+        }
+    }
+    .Topic.TwoImagePage, .Page.TwoImagePage {
+        .TopImage:first-child {
+            margin-right: if(variable-exists(content-top-two-image-margin-right), $content-top-two-image-margin-right, 0);
+            margin-bottom: if(variable-exists(content-top-two-image-margin-bottom), $content-top-two-image-margin-bottom, 0.5em);
+        }
+        .TopImage {
+            width: if(variable-exists(content-top-single-image-width), $content-top-single-image-width, 100%);
+            display: if(variable-exists(content-top-single-image-display), $content-top-single-image-display, block);
+        }
+        @media #{$basic-screen-query-narrow} {
+            .TopImage:first-child {
+                margin-right: if(variable-exists(content-top-two-image-narrow-margin-right), $content-top-two-image-narrow-margin-right, 1%);
+                margin-bottom: if(variable-exists(content-top-two-image-narrow-margin-bottom), $content-top-two-image-narrow-margin-bottom, 0);
+            }
+            .TopImage {
+                width: if(variable-exists(content-top-two-image-narrow-width), $content-top-two-image-narrow-width, 49.5%);
+                display: if(variable-exists(content-top-two-image-narrow-display), $content-top-two-image-narrow-display, inline-block);
+            }
+        }
+    }
+    .Topic.ZoomImagePage, .Page.ZoomImagePage {
+        .Figure {
+            margin: if(variable-exists(content-zoom-image-figure-margin), $content-zoom-image-figure-margin, 0);
+        }
+        .FigureAltImage {
+            width: if(variable-exists(content-top-single-image-width), $content-top-single-image-width, 100%);
+            border: if(variable-exists(content-zoom-image-top-image-border), $content-zoom-image-top-image-border, none);
+        }
+    }
+    .PageDocumentTitle {
+        font-size: if(variable-exists(content-page-documenttitle-font-size), $content-page-documenttitle-font-size, 1.2em);
+        display: if(variable-exists(content-page-documenttitle-display), $content-page-documenttitle-display, none);
+        visibility: if(variable-exists(content-page-documenttitle-visibility), $content-page-documenttitle-visibility, hidden);
+    }
+}
+
+.SubTitle {
+    margin: if(variable-exists(content-subtitle-margin), $content-subtitle-margin, 0);
+    padding: if(variable-exists(content-subtitle-padding), $content-subtitle-padding, 5px 0);
+}
+
+#CourseTitle {
+    display: if(variable-exists(content-courseTitle-display), $content-courseTitle-display, none);
+}
+
+@include customize-style-block('Spinner') {
+    z-index: if(variable-exists(content-loader-zindex), $content-loader-zindex, 3);
+    border: solid 6px if(variable-exists(content-loader-background-color), $content-loader-background-color, fade-out($layout-color-branding1, 0.6));
+    border-top: solid 6px if(variable-exists(content-loader-foreground-color), $content-loader-foreground-color, #34495E);
+}

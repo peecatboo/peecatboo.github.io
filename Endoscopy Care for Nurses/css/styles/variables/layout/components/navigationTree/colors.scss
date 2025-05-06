@@ -1,0 +1,41 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$navigationTree-color-branding1: $component-color-branding1;
+$navigationTree-color-branding2: $component-color-branding2;
+
+$navigationTree-color-text-dark: $component-color-text-dark;
+$navigationTree-color-text-lightened: $component-color-text-lightened;
+$navigationTree-color-text-light: $component-color-text-light;
+$navigationTree-color-text-links: $component-color-text-links;
+
+$navigationTree-box-shadow-color: $component-box-shadow-color;
+$navigationTree-box-shadow-dimensions: $component-box-shadow-dimensions;
+$navigationTree-box-shadow: $navigationTree-box-shadow-dimensions $navigationTree-box-shadow-color;
+
+$navigationTree-color-correct: $component-color-correct;
+$navigationTree-color-incorrect: $component-color-incorrect;
+
+$navigationTree-marker-border-color: $component-color-text-light;
+
+$navigationTree-marker-border-color-satisfied: $navigationTree-color-correct;
+$navigationTree-marker-background-color-satisfied: $navigationTree-color-correct;
+$navigationTree-marker-border-color-notsatisfied: $navigationTree-color-incorrect;
+$navigationTree-marker-background-color-notsatisfied: $navigationTree-color-incorrect;
+$navigationTree-marker-border-color-completed: rgba(255,255,255,1);
+$navigationTree-marker-background-color-completed: rgba(255,255,255,1);
+$navigationTree-marker-background-progress-incompleted: rgba(255,255,255,0.5);
+
+$navigationTree-item-hover-color-background: darken($navigationTree-color-text-light, 75%);
+
+$navigationTreeItem-expand-icon-fill-color: $navigationTree-color-text-links;

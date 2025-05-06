@@ -1,0 +1,52 @@
+/*
+Copyright c 2015 Xyleme, Inc., 1881 9th Street, Suite 300, Boulder, Colorado 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+*/
+// these colors are often used as skin colors, used to style skin header, buttons, etc.
+// by default there are gradients,
+// to make them solid use the same value for both variables
+$basic-color-branding1: #287339;
+$basic-color-branding2: #00608F;
+
+$basic-color-text-dark: #272727; // common text
+$basic-color-text-links: #153D57;
+$basic-color-text-lightened: lighten($basic-color-text-dark, 75%) !default; // for "disabled" text
+$basic-color-text-light: #fff !default; // text on dark background
+
+$basic-color-container-background-dark: #287339;
+$basic-color-container-background-light: #ffffff;
+$basic-color-border: #E2E2E2;
+$basic-color-h1: $basic-color-branding2;
+
+$basic-color-h2: $basic-color-branding2;
+
+$basic-color-h3: #1C4923;
+
+$basic-color-h4: $basic-color-branding2;
+
+$basic-color-h5: $basic-color-branding2;
+
+$basic-color-h6: $basic-color-branding2;
+
+$basic-color-link: $basic-color-branding1;
+
+$basic-color-link-hover: $basic-color-branding1;
+
+$basic-color-link-active: $basic-color-branding1;
+
+$basic-color-link-visited: $basic-color-branding2;
+
+$basic-box-shadow-color: fade-out($basic-color-container-background-dark, 0.80);
+
+$basic-overlay-color: #EAF6F9;
+
+$basic-color-correct: #3D9B46 !default; // color for correct feedback, etc.
+$basic-color-incorrect: #9A3921 !default; // color for correct feedback, etc.
+$basic-color-alsoCorrect: #54B957  !default;

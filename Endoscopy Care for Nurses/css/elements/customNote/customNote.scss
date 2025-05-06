@@ -1,0 +1,82 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+.CustomNote {
+    @include generate-style-block('CustomNote') {
+        // @full
+        clear: if(variable-exists(customNote-clear), $customNote-clear, $left);
+        font-family: if(variable-exists(customNote-font-body), $customNote-font-body, $elements-font-body);
+        font-size: if(variable-exists(customNote-font-size), $customNote-font-size, $elements-font-size);
+        font-weight: if(variable-exists(customNote-font-weight), $customNote-font-weight, $elements-font-weight);
+        box-shadow: if(variable-exists(customNote-box-shadow), $customNote-box-shadow, $elements-box-shadow-dimensions $elements-box-shadow-color);
+        padding: if(variable-exists(customNote-padding), $customNote-padding, $elements-padding);
+        margin: if(variable-exists(customNote-margin), $customNote-margin, $elements-margin);
+        background: if(variable-exists(customNote-background), $customNote-background, fade-out($customNote-color-branding1, 0.9));
+        border: if(variable-exists(customNote-border), $customNote-border, $elements-border-width $elements-border-style $elements-color-border);
+        color: if(variable-exists(customNote-color-text), $customNote-color-text, $elements-color-text-dark);
+        overflow: if(variable-exists(customNote-overflow), $customNote-overflow, auto);
+    }
+
+    .Content {
+        @include generate-style-block('CustomNoteContent') {
+            // @full
+            width: if(variable-exists(customNote-text-width), $customNote-text-width, auto);
+            padding: if(variable-exists(customNote-text-padding), $customNote-text-padding, 0 $elements-padding);
+            float: if(variable-exists(customNote-text-float), $customNote-text-float, none);
+            display: if(variable-exists(customNote-text-display), $customNote-text-display, block);
+            box-sizing: if(variable-exists(customNote-text-box-sizing), $customNote-text-box-sizing, border-box);
+        }
+    }
+
+    &[data-popup="true"] {
+        @include generate-style-block('CustomNotePopup') {
+            // @full
+            background: none;
+            border: none;
+            box-shadow: none;
+            overflow: none;
+        }
+
+        .Content {
+            @include generate-style-block('CustomNotePopupContent') {
+                // @full
+                display: none;
+            }
+        }
+
+        .Icon {
+            @include generate-style-block('CustomNotePopupIcon') {
+                // @full
+                cursor: pointer;
+            }
+        }
+    }
+
+    .Icon {
+        @include generate-style-block('CustomNoteIcon') {
+            // @full
+            width: if(variable-exists(customNote-icon-width), $customNote-icon-width, auto);
+            padding: if(variable-exists(customNote-icon-padding), $customNote-icon-padding, side-values(0 $elements-padding 0 0));
+            float: if(variable-exists(customNote-icon-float), $customNote-icon-float, $left);
+            box-sizing: if(variable-exists(customNote-icon-box-sizing), $customNote-icon-box-sizing, border-box);
+        }
+
+        > img {
+            @include generate-style-block('CustomNoteIconImage') {
+                // @full
+                max-width: 100%;
+            }
+        }
+    }
+}

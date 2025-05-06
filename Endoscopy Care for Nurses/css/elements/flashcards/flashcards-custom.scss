@@ -1,0 +1,28 @@
+@include customize-style-block('FlashCardsCardText') {
+                    // @full
+                    display: block;
+                    font-size: 20pt;
+                    margin: 20px auto;
+}
+
+@include customize-style-block('FlashCardsCardBackText') {
+    font-size: 1.3em;
+}
+
+@include customize-style-block('FlashCardsNavigationButton') {
+	background-color: $basic-color-branding2;
+  
+    &:hover {
+      background-color: $basic-color-branding1;
+      border-color: $basic-color-branding2;
+    }
+}
+
+@include customize-style-block('FlashCardsNavigationButtonLast') {
+    display: none;          
+}
+
+@include customize-style-block('FlashCardsNavigationButtonFirst') {
+     display: none;          
+}
+

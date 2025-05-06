@@ -1,0 +1,33 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$navigationTree-padding                         : 26px;
+$navigationTree-item-padding-left               : 25px;
+
+$navigationTree-marker-width                    : 10px;
+
+$navigationTree-height-result                   : $menu-topmatter-height + $menu-componentlinks-item-height;
+$navigationTree-max-height                      : calc(100% - #{$navigationTree-height-result});
+
+$navigationTree-marker-height                   : $navigationTree-marker-width;
+
+$navigationTree-marker-border-width             : 1px;
+$navigationTree-marker-border-style             : solid;
+$navigationTree-marker-border                   : $navigationTree-marker-border-width $navigationTree-marker-border-style $navigationTree-marker-border-color;
+
+$navigationTree-marker-border-width-active      : 1px;
+$navigationTree-marker-left-active              : 0;
+$navigationTree-marker-background-active        : rgba(245,176,55,1);
+
+
+$navigationTree-item-padding                    : $navigationTree-padding/2 $navigationTree-padding/2 12px ($navigationTree-padding + 7px);

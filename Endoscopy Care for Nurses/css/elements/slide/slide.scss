@@ -1,0 +1,94 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.Slide {
+    @include generate-style-block('XmlSlide') {
+        // @full
+        width: if(variable-exists(slide-width), $slide-width, 100%);
+        border-style : if(variable-exists(slide-border-style), $slide-border-style, solid);
+        border-width: if(variable-exists(slide-border-width), $slide-border-width, 1px);
+        border-color: if(variable-exists(slide-border-color), $slide-border-color, $elements-color-branding1);
+        background-image: if(variable-exists(slide-header-background-image), $slide-header-background-image, url(../img/xyleme-logo.svg));
+        background-position: if(variable-exists(slide-header-background-position), $slide-header-background-position, 0 0);
+        background-repeat: if(variable-exists(slide-header-background-repeat), $slide-header-background-repeat, no-repeat);
+        background-size: if(variable-exists(slide-header-background-size), $slide-header-background-size, 200px auto);
+        box-sizing: border-box;
+    }
+    > * {
+        @include generate-style-block('XmlSlideChildren') {
+            // @full
+            box-sizing: border-box;
+        }
+    }
+    &.TitleSlide {
+        .SlideHeader {
+            @include generate-style-block('XmlTitleSlideHeader') {
+                // @full
+                text-align: if(variable-exists(slide-title-slide-text-align), $slide-title-slide-text-align, center);
+            }
+        }
+    }
+    &.BodySlide {
+        .SlideHeader {
+            @include generate-style-block('XmlBodySlideHeader') {
+                // @full
+                text-align: if(variable-exists(slide-body-slide-text-align), $slide-body-slide-text-align, $left);
+            }
+        }
+    }
+    .SlideHeader {
+        @include generate-style-block('XmlSlideHeader') {
+            // @full
+            padding: side-values(if(variable-exists(slide-header-padding), $slide-header-padding, 0 10px));
+            margin: side-values(if(variable-exists(slide-header-margin), $slide-header-margin, 60px 0 15px));
+        }
+    }
+    .SlideBody {
+        @include generate-style-block('XmlSlideBody') {
+            // @full
+            padding: side-values(if(variable-exists(slide-body-padding), $slide-body-padding, 8px));
+            min-height: if(variable-exists(slide-body-min-height), $slide-body-min-height, 200px);
+        }
+        &:after {
+            @include generate-style-block('XmlSlideBodyAfter') {
+                // @full
+                content: "";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+        }
+    }
+    .SlideNote {
+        @include generate-style-block('XmlSlideNote') {
+            // @full
+            padding: side-values(if(variable-exists(slide-body-padding), $slide-body-padding, 8px));
+        }
+    }
+    .SlideFooter {
+        @include generate-style-block('XmlSlideFooter') {
+            // @full
+            width: if(variable-exists(slide-footer-width), $slide-footer-width, 100%);
+            padding: side-values(if(variable-exists(slide-footer-padding), $slide-footer-padding, 10px 5px));
+            color: if(variable-exists(slide-footer-color), $slide-footer-color, $elements-color-text-light);
+            text-align: if(variable-exists(slide-footer-text-align), $slide-footer-text-align, center);
+            font-size: if(variable-exists(slide-footer-font-size), $slide-footer-font-size, 80%);
+            background-color: if(variable-exists(slide-footer-background-color), $slide-footer-background-color, $elements-color-branding1);
+            background-image: if(variable-exists(slide-footer-background-image), $slide-footer-background-image, url(../img/logo.png));
+            background-position: if(variable-exists(slide-footer-background-position), $slide-footer-background-position, 100% center);
+            background-repeat: if(variable-exists(slide-footer-background-repeat), $slide-footer-background-repeat, no-repeat);
+            background-size: if(variable-exists(slide-footer-background-size), $slide-footer-background-size, auto 50%);
+        }
+    }
+}

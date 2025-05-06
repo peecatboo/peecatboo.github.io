@@ -1,0 +1,31 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$popup-color-branding1: $elements-color-branding1;
+$popup-color-branding2: $elements-color-branding2;
+
+$popup-color-text-dark: $elements-color-text-dark;
+$popup-color-text-lightened: $elements-color-text-lightened;
+$popup-color-text-light: $elements-color-text-light;
+$popup-color-text-links: $elements-color-text-links;
+$popup-color-text-title: $popup-color-text-light;
+
+$popup-color-correct: $elements-color-correct;
+$popup-color-incorrect: $elements-color-incorrect;
+
+$popup-color-background: #fff;
+
+$popup-box-shadow-color: $elements-box-shadow-color;
+$popup-box-shadow-dimensions: $elements-box-shadow-dimensions;
+$popup-box-shadow: $popup-box-shadow-dimensions $popup-box-shadow-color;
+$popup-titlebar-box-shadow: 0 1px 4px #aaa;

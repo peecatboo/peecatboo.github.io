@@ -1,0 +1,94 @@
+@include customize-style-block('ListItems') {
+  padding-#{$left}: if-rtl(2em, 1.5em);
+  // this creates a separate context for the ul element
+  // so not only text is aligned in consideration with floating elements but also markers
+  overflow: hidden;
+  max-width: 99%;
+}
+
+@include customize-style-block('ListItem') {
+    left: -1.42em;
+    margin-right: 2em;
+    padding-left: 0em;
+  	list-style-position: outside;
+}
+
+.Figure.Wrapleft + .List .ListItems.Numeric {
+  padding-left: 4.1em !important;
+}
+
+.List .ListItems.Numeric{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.UppercaseAlpha{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.LowercaseAlpha{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.mDash{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.nDash{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.Checkmark{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.Arrow{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.UppercaseRoman{
+  padding-left: 4.1em;
+}
+
+.List .ListItems.LowercaseRoman{
+  padding-left: 4.1em;
+}
+
+.Figure.Wrapright + .List .ListItems > .ListItem {
+    left: -1.42em;
+    margin-right: 2em;
+    padding-left: 0em;
+}
+
+@include customize-style-block('ListDisk') {
+  padding-left: -2em;
+}
+
+.List .ListItems.NoBullet{
+  padding-left: 3em;
+}
+
+.List .ListItems>.ListItem{
+  left: -1.42em;
+  /*margin-right: 2em;*/
+  width: 100%;
+  list-style-position: outside;
+}
+  
+
+// Educational Objectives
+.EducationalObjective ul {
+  padding-left: 0em !important;
+  list-style-position: initial;
+  max-width: 99%;
+  margin: 0.5em 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+.EducationalObjective ul > .EnablingObjective {
+    left: -1.42em;
+    margin-right: 2em;
+    padding-left: 0em;
+    position: relative;
+    position: relative;
+}

@@ -1,0 +1,112 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.SectionStatusContainer {
+    @include generate-style-block('SectionStatusContainer') {
+        // @full
+        overflow: auto;
+        position: relative;
+    }
+    .SectionStatus {
+        @include generate-style-block('SectionStatus') {
+            // @full
+            text-align: $left;
+        }
+        .QuestionList { // <table>
+            @include generate-style-block('SectionStatusQuestionList') {
+                // @full
+                width: 100%;
+                border-collapse: collapse;
+                padding: 0;
+                color: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, #fff);
+            }
+            .QuestionItem { // <tr>
+                @include generate-style-block('SectionStatusQuestionListQuestionItem') {
+                    // @full
+                    cursor: if(variable-exists(sectionStatus-item-cursor), $sectionStatus-item-cursor, pointer);
+                    white-space: nowrap;
+                }
+                > * {
+                    @include generate-style-block('SectionStatusQuestionListQuestionItemDirectChildren') {
+                        // @full
+                        padding: if(variable-exists(sectionStatus-item-padding), $sectionStatus-item-padding, 10px 15px);
+                        text-overflow: ellipsis;
+                    }
+                }
+                &:hover {
+                    @include generate-style-block('SectionStatusQuestionListQuestionItemHover') {
+                        // @full
+                        background-color: if(variable-exists(sectionStatus-item-hover-color-background), $sectionStatus-item-hover-color-background, darken($sectionStatus-color-text-light, 75%));
+                    }
+                }
+                &.Disabled {
+                    @include generate-style-block('SectionStatusQuestionListDisabled') {
+                        // @full
+                        cursor: not-allowed;
+                    }
+                }
+                .QuestionTitle {
+                    @include generate-style-block('SectionStatusQuestionListQuestionTitle') {
+                        // @full
+                        white-space: normal;
+                    }
+                }
+                .QuestionStatus {
+                    &.NotAttempted {
+                        @include generate-style-block('SectionStatusQuestionListQuestionStatusNotAttempted') {}
+                    }
+                    &.Attempted {
+                        @include generate-style-block('SectionStatusQuestionListQuestionStatusAttempted') {}
+                    }
+                    &.Skipped {
+                        @include generate-style-block('SectionStatusQuestionListQuestionStatusSkipped') {}
+                    }
+                }
+                .QuestionFlag {
+                    @include generate-style-block('SectionStatusQuestionListQuestionFlag') {
+                        // @full
+                        width: 16px;
+                        height: 16px;
+                    }
+                    .SVGIcon {
+                        @include generate-style-block('SectionStatusQuestionListQuestionFlagSVGIcon') {
+                            // @full
+                            width: 16px;
+                            height: 16px;
+                            display: none;
+                            vertical-align: middle;
+                            fill: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, #fff);
+                            stroke: if(variable-exists(sectionStatus-color-text-light), $sectionStatus-color-text-light, #fff);
+                        }
+                    }
+                    &.Flagged {
+                        .SVGIcon.Flagged {
+                            @include generate-style-block('SectionStatusQuestionListQuestionFlagSVGIconFlagged') {
+                                // @full
+                                display: block;
+                            }
+                        }
+                    }
+                    &.NotFlagged {
+                        .SVGIcon.NotFlagged {
+                            @include generate-style-block('SectionStatusQuestionListQuestionFlagSVGIconNotFlagged') {
+                                // @full
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

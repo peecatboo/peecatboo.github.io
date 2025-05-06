@@ -1,0 +1,46 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of classes for reflection
+ */
+
+/* reflection types */
+
+%reflection-horizontal {
+    .FigureImage {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+%reflection-vertical {
+    .FigureImage {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+.reflection-horizontal {
+    @extend %reflection-horizontal;
+}
+
+.reflection-vertical {
+    @extend %reflection-vertical;
+}

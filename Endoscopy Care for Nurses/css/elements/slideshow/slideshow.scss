@@ -1,0 +1,376 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$slide-background-color: #444;
+
+.Slideshow {
+    @include generate-style-block('Slideshow') {
+        // @full
+        outline: none;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0 auto;
+        transition: opacity 400ms;
+        opacity: 0;
+    }
+    .SlideshowHeader {
+        @include generate-style-block('SlideshowHeader') {
+            // @full
+            display: none;
+        }
+    }
+    .SlideshowNavigationButtons {
+        .SlideshowNavigationButton {
+            @include generate-style-block('SlideshowNavigationButton') {
+                // @full
+                position: absolute;
+                top: 45%;
+                width: 40px;
+                height: 60px;
+                background: none;
+                border: none;
+                outline: none;
+                background-size: cover;
+                background-position: -5px center;
+                padding: 0;
+                opacity: .2;
+                cursor: pointer;
+                background-color: rgba(255,255,255,.7);
+                z-index: 3;
+                transition: opacity 200ms;
+                transform: translateY(-50%);
+            }
+            &.Disabled {
+                @include generate-style-block('SlideshowNavigationButtonDisabled') {
+                    // @full
+                    display: none;
+                }
+            }
+        }
+        .SlideshowNavigationButtonNext {
+            @include generate-style-block('SlideshowNavigationButtonNext') {
+                // @full
+                #{$right}: 0;
+                background-image: url(../img/#{$right}-arrow.png);
+                border-top-#{$left}-radius: 8px;
+                border-bottom-#{$left}-radius: 8px;
+            }
+        }
+        .SlideshowNavigationButtonPrev {
+            @include generate-style-block('SlideshowNavigationButtonPrev') {
+                // @full
+                #{$left}: 0;
+                background-image: url(../img/#{$left}-arrow.png);
+                border-top-#{$right}-radius: 8px;
+                border-bottom-#{$right}-radius: 8px;
+            }
+        }
+    }
+    &:hover {
+        .SlideshowNavigationButton {
+            @include generate-style-block('SlideshowHoverNavigationButton') {
+                // @full
+                opacity: .6;
+                box-shadow: 0 0 4px rgba(0,0,0,.5);
+            }
+            &:hover {
+                @include generate-style-block('SlideshowNavigationButtonHover') {
+                    // @full
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.SlideAnimation {
+        .SlideshowSlides {
+            @include generate-style-block('SlideshowSlidesSlideAnimation') {
+                // @full
+                transform: translateX(0)
+            }
+
+            $translateX: if-ltr(100%, -100%);
+
+            &.SlideLeft, &.SlideRight {
+                @include generate-style-block('SlideshowSlideLeftRightSlideAnimation') {
+                    // @full
+                    transition: all 400ms ease-out;
+                }
+            }
+
+            &.SlideLeft {
+                @include generate-style-block('SlideshowSlideLeftSlideAnimation') {
+                    // @full
+                    transform: translateX(-$translateX);
+                }
+            }
+            &.SlideRight {
+                @include generate-style-block('SlideshowSlideRightSlideAnimation') {
+                    // @full
+                    transform: translateX($translateX);
+                }
+            }
+            .ActiveSlide {
+                @include generate-style-block('SlideshowActiveSlideSlideAnimation') {
+                    // @full
+                    visibility: visible;
+                    display: table;
+                    table-layout: fixed;
+                }
+            }
+            .NextSlide {
+                @include generate-style-block('SlideshowNextSlideSlideAnimation') {
+                    // @full
+                    #{$left}: 100%;
+                }
+            }
+            .PrevSlide {
+                @include generate-style-block('SlideshowPrevSlideSlideAnimation') {
+                    // @full
+                    #{$left}: -100%;
+                }
+            }
+        }
+    }
+    &.FadeAnimation {
+        .SlideshowSlides {
+            .SlideshowSlide {
+                @include generate-style-block('SlideshowSlideFadeAnimation') {
+                    // @full
+                    opacity: 0;
+                    visibility: visible;
+                    display: inline-block;
+                    z-index: 1;
+                    transition: opacity 400ms;
+                }
+                &.ActiveSlide {
+                    @include generate-style-block('SlideshowActiveSlideFadeAnimation') {
+                        // @full
+                        opacity: 1;
+                        z-index: 2;
+                        display: table;
+                        table-layout: fixed;
+                    }
+                }
+                &.CurrentSlide {
+                    @include generate-style-block('SlideshowCurrentSlideFadeAnimation') {
+                        // @full
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+    .SlideshowSlides {
+        @include generate-style-block('SlideshowSlides') {
+            // @full
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: if(variable-exists(slide-background-color), $slide-background-color, #444);
+        }
+        .SlideshowSlide {
+            @include generate-style-block('SlideshowSlide') {
+                // @full
+                position: absolute;
+                visibility: hidden;
+                display: table;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                box-sizing: border-box;
+                background-color: if(variable-exists(slide-background-color), $slide-background-color, #444);
+            }
+            .Figure {
+                @include generate-style-block('SlideshowSlideFigure') {
+                    // @full
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    text-align: center;
+                    display: table-cell;
+                    vertical-align: middle;
+                    float: none !important; //override inline styles
+                }
+                img {
+                    @include generate-style-block('SlideshowSlideFigureImage') {
+                        // @full
+                        width: 100%;
+                    }
+                }
+                .Title, .Caption {
+                    @include generate-style-block('SlideshowSlideFigureTitleCaption') {
+                        // @full
+                        display: none;
+                    }
+                }
+            }
+            .Title, .Caption {
+                @include generate-style-block('SlideshowSlideTitleCaption') {
+                    // @full
+                    display: none;
+                }
+            }
+        }
+    }
+    .SlideshowFooter {
+        @include generate-style-block('SlideshowFooter') {
+            // @full
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: if(variable-exists(slide-background-color), $slide-background-color, #444);
+            user-select: none;
+            z-index: 10;
+        }
+        .SlideshowPagination {
+            @include generate-style-block('SlideshowPagination') {
+                // @full
+                position: absolute;
+                width: 100%;
+                top: -15px;
+                text-align: center;
+            }
+            ul {
+                @include generate-style-block('SlideshowPaginationList') {
+                    // @full
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+            .PaginationIcon {
+                @include generate-style-block('SlideshowPaginationIcon') {
+                    // @full
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 1px;
+                    border: solid 2px #eee;
+                    border-radius: 100%;
+                    background: rgba(255,255,255,.2);
+                    cursor: pointer;
+                    transition: background 400ms;
+                }
+                &.ActivePaginationIcon {
+                    @include generate-style-block('SlideshowActivePaginationIcon') {
+                        // @full
+                        background: #fff;
+                        box-shadow: 0 0 8px #777;
+                    }
+                }
+            }
+        }
+        .SlideshowThumbnails {
+            @include generate-style-block('SlideshowThumbnails') {
+                // @full
+                position: relative;
+                height: 100%;
+                width: 100%;
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+            ul {
+                @include generate-style-block('SlideshowThumbnailsList') {
+                    // @full
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                li {
+                    @include generate-style-block('SlideshowThumbnailsListItem') {
+                        // @full
+                        position: relative;
+                        display: inline-block;
+                        height: 75px;
+                        margin: 6px 4px;
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        box-shadow: 0 0 4px #111;
+                    }
+                    &.ActiveThumbnail {
+                        @include generate-style-block('SlideshowThumbnailsActive') {
+                            // @full
+                            box-shadow: 0 0 10px #000;
+                        }
+                        &:after {
+                            @include generate-style-block('SlideshowThumbnailsActiveAfter') {
+                                // @full
+                                background: none;
+                            }
+                        }
+                    }
+                    &:after {
+                        @include generate-style-block('SlideshowThumbnailsAfter') {
+                            // @full
+                            content : "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background: #000;
+                            opacity: .6;
+                            transition: background 400ms;
+                            box-shadow: 0 0 2px;
+                        }
+                    }
+                    img {
+                        @include generate-style-block('SlideshowThumbnailsImage') {
+                            // @full
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.ShowTitle {
+        .SlideshowSlide .Figure .Title {
+            @include generate-style-block('SlideshowSlideShowTitle') {
+                // @full
+                display: block;
+                position: absolute;
+                top: 0;
+                color: #FFF;
+                width: 100%;
+                white-space: normal;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    &.ShowCaption {
+        .SlideshowSlide .Figure .Caption {
+            @include generate-style-block('SlideshowSlideShowCaption') {
+                // @full
+                display: block;
+                position: absolute;
+                bottom: 0;
+                color: #FFF;
+                width: 100%;
+                white-space: normal;
+                padding: 10px 10px 20px;
+                background: rgba(0, 0, 0, 0.3);
+                text-align: $left;
+            }
+        }
+    }
+}

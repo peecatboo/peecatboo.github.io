@@ -1,0 +1,66 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans/opensans_regular/OpenSans-Regular.eot');
+    src: url('fonts/OpenSans/opensans_regular/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular.woff') format('woff'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans/opensans_italic/OpenSans-Italic.eot');
+    src: url('fonts/OpenSans/opensans_italic/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic.woff') format('woff'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans/opensans_bold/OpenSans-Bold.eot');
+    src: url('fonts/OpenSans/opensans_bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold.woff') format('woff'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold.svg#open_sansregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans/opensans_light/OpenSans-Light.eot');
+    src: url('fonts/OpenSans/opensans_light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light.woff') format('woff'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light.svg#open_sansregular') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'slick';
+    src: url('fonts/slick/slick.eot');
+    src: url('fonts/slick/slick.eot?#iefix') format('embedded-opentype'),
+         url('fonts/slick/slick.woff') format('woff'),
+         url('fonts/slick/slick.ttf') format('truetype'),
+         url('fonts/slick/slick.svg#open_sansregular') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+// additional typefaces are located in assets/css/fonts/OpenSans
+// such as bold+italic, extrabold, extrabold+italic, light+italic, semibold, semibold+italic
+// include them as font-face if needed

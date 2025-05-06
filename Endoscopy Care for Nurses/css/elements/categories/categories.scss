@@ -1,0 +1,232 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.CategoriesContainer {
+    @include generate-style-block('CategoriesContainer') {
+        // @full
+        margin: side-values(if(variable-exists(categories-element-margin), $categories-element-margin, 16px 0 16px 0));
+        clear: both;
+    }
+
+    .CategoriesTabs {
+        @include generate-style-block('CategoriesTabs') {
+            // @full
+            list-style-type: none;
+            padding: side-values(if(variable-exists(categories-tabs-padding), $categories-tabs-padding, 0));
+            margin: side-values(if(variable-exists(categories-tabs-margin), $categories-tabs-margin, 0));
+            float: if(variable-exists(categories-tabs-float), $categories-tabs-float, if-ltr(left, right));
+            width: if(variable-exists(categories-tabs-width), $categories-tabs-width, 150px);
+        }
+
+        > .CategoryItem .Title {
+            @include generate-style-block('CategoriesItemTitle') {
+                // @full
+                padding: 0;
+            }
+        }
+        > .CategoryItem {
+            @include generate-style-block('CategoriesCategoryItem') {
+                // @full
+                background-color: if(variable-exists(categories-color-background), $categories-color-background, $elements-color-border);
+                cursor: pointer;
+                box-sizing: border-box;
+                padding: side-values(if(variable-exists(categories-item-padding), $categories-item-padding, $elements-padding / 2));
+                overflow: hidden;
+                text-overflow: ellipsis;
+                border-#{right}-width: if(variable-exists(categories-border-width), $categories-border-width, $elements-border-width);
+                border-#{right}-color: if(variable-exists(categories-color-background), $categories-color-background, $elements-color-border);
+                border-#{right}-style: solid;
+
+            }
+
+            &:before {
+                @include generate-style-block('CategoriesCategoryItemBefore') {
+                    // @full
+                    content: "\2714"; // checkmark
+                    visibility: hidden;
+                    margin-right: 3px;
+                }
+            }
+
+            &.Completed {
+                @include generate-style-block('CategoriesCategoryItemCompleted') {}
+
+                &:before {
+                    @include generate-style-block('CategoriesCategoryItemCompletedBefore') {
+                        // @full
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &.Active {
+                @include generate-style-block('CategoriesCategoryItemActive') {
+                    // @full
+                    color: if(variable-exists(categories-color-text-navigationItem-hover), $categories-color-text-navigationItem-hover, $elements-color-branding1);
+                    border-#{$right}-width: if(variable-exists(categories-border-width), $categories-border-width, $elements-border-width);
+                    border-#{$right}-color: if(variable-exists(categories-color-border-navigation-hover), $categories-color-border-navigation-hover, $elements-color-branding1);
+                    border-#{$right}-style: solid;
+                }
+            }
+
+            &:hover {
+                @include generate-style-block('CategoriesCategoryItemHover') {
+                    // @full
+                    color: if(variable-exists(categories-color-text-navigationItem-hover), $categories-color-text-navigationItem-hover, $elements-color-branding1);
+                    border-#{$right}-width: if(variable-exists(categories-border-width), $categories-border-width, $elements-border-width);
+                    border-#{$right}-color: if(variable-exists(categories-color-border-navigation-hover), $categories-color-border-navigation-hover, $elements-color-branding1);
+                    border-#{$right}-style: solid;
+                }
+            }
+        }
+    }
+
+    .CategoriesContentContainer {
+        @include generate-style-block('CategoriesContentContainer') {
+            // @full
+            border: 0 solid;
+            border-color: if(variable-exists(categories-color-border-panel), $categories-color-border-panel, $elements-color-border);
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: side-values(if(variable-exists(categories-content-container-padding), $categories-content-container-padding, 0));
+            margin-#{$left}: if(variable-exists(categories-tabs-width), $categories-tabs-width, 150px);
+        }
+
+        &:after {
+            @include generate-style-block('CategoriesContentContainerAfter') {
+                // @full
+                clear: both;
+            }
+        }
+
+        &.HiddenLoading {
+                .Panel {
+                    @include generate-style-block('CategoriesPanelHiddenLoading') {
+                        // @full
+                        visibility: hidden;
+                        height: 1px;
+                        overflow: hidden;
+                    }
+                }
+
+                .Panel:first-child {
+                    @include generate-style-block('CategoriesPanelHiddenLoadingFirstPanel') {
+                        // @full
+                        visibility: visible;
+                        height: auto;
+                    }
+                }
+            }
+
+        .Panel {
+            @include generate-style-block('CategoriesPanel') {
+                // @full
+                float: none;
+                //display: none;
+                list-style: none;
+                margin: side-values(if(variable-exists(categories-panel-margin), $categories-panel-margin, 0));
+                padding: side-values(if(variable-exists(categories-panel-padding), $categories-panel-padding, 0 20px 0 20px));
+                visibility: hidden;
+                height: 1px;
+                overflow: hidden;
+            }
+
+            .PanelItem {
+                @include generate-style-block('CategoriesPanelItem') {
+                    // @full
+                    width: 100%;
+                }
+
+                .CategoryContentTitle {
+                    @include generate-style-block('CategoriesPanelItemContentTitle') {
+                        // @full
+                        display: block;
+                        background: if(variable-exists(categories-panel-heading-background-color), $categories-panel-heading-background-color, $elements-color-container-background-light);
+                        color: if(variable-exists(categories-panel-heading-color), $categories-panel-heading-color, $elements-color-branding1);
+                        font-weight: bold;
+                        border-radius: corner-values(if(variable-exists(categories-panel-heading-radius), $categories-panel-heading-radius, 0));
+                        padding: side-values(if(variable-exists(categories-panel-heading-padding), $categories-panel-heading-padding, 0 4px));
+                        cursor: pointer;
+                    }
+                }
+
+                .ExpandIcon {
+                    @include generate-style-block('CategoriesPanelItemExpandIcon') {
+                        // @full
+                        pointer-events: if(variable-exists(categories-expand-icon-pointer-events), $categories-expand-icon-pointer-events, none);
+                        transition: transform if(variable-exists(categories-transition-duration), $categories-transition-duration, $elements-transition-duration);
+                        fill: if(variable-exists(categories-expand-icon-fill-color), $categories-expand-icon-fill-color, $elements-color-branding1);
+                        vertical-align: if(variable-exists(categories-expand-icon-vertical-align), $categories-expand-icon-vertical-align, middle);
+                        transform: if-ltr(rotate(0deg), rotate(180deg));
+                    }
+                }
+
+                .CategoryContentContent {
+                    @include generate-style-block('CategoriesPanelItemContent') {
+                        // @full
+                        display: block;
+                        overflow: auto;
+                        max-height: 0;
+                        padding: side-values(if(variable-exists(categories-panel-content-padding), $categories-panel-content-padding, 0 4px));
+                        transition: max-height if(variable-exists(categories-transition-duration), $categories-transition-duration, $elements-transition-duration);
+                    }
+                }
+
+                &.Active {
+                    @include generate-style-block('CategoriesPanelItemActive') {}
+
+                    .CategoryContentContent {
+                        @include generate-style-block('CategoriesPanelItemActiveContent') {
+                            // @full
+                            max-height: if(variable-exists(categories-panel-content-max-height), $categories-panel-content-max-height, 500px);
+                        }
+                    }
+
+                    .ExpandIcon {
+                        @include generate-style-block('CategoriesPanelItemActiveExpandIcon') {
+                            // @full
+                            fill: if(variable-exists(categories-expand-icon-fill-color-active), $categories-expand-icon-fill-color-active, $elements-color-branding1);
+                            transform: if(variable-exists(categories-expand-icon-transform-active), $categories-expand-icon-transform-active, rotate(90deg))
+                        }
+                    }
+                }
+            }
+
+            &.Active {
+                @include generate-style-block('CategoriesPanelActive') {
+                    // @full
+                    visibility: visible;
+                    height: auto;
+                    overflow: auto;
+                }
+            }
+
+            .CategoryContentContent, .Content {
+                @include generate-style-block('CategoriesPanelContent') {
+                    // @full
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .Clearfix {
+        @include generate-style-block('CategoriesClearfix') {
+            // @full
+            clear: both;
+            height: 1px;
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+}

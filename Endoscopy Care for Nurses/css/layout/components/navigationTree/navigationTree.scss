@@ -1,0 +1,713 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.NavigationTree {
+
+    &.AutoNumbered {
+        @include generate-style-block('NavigationTreeAutonumbering') {
+            $navigation-tree-autonumbering-delimiter       : '.' !default;
+            $navigation-tree-autonumbering-numbered-element: '.NavigationNode .NavigationTreeItem .NavigationItemNumber' !default;
+            $navigation-tree-autonumbering-nested-parent   : '.SubTree' !default;
+            @include auto-numbering(
+                $navigation-tree-autonumbering-delimiter,
+                $navigation-tree-autonumbering-numbered-element,
+                $navigation-tree-autonumbering-nested-parent,
+                navigationCounter
+            );
+        }
+
+        .NavigationNode .NavigationItemNumber {
+            @include generate-style-block('NavigationTreeItemNumberVisible') {
+                display: block;
+            }
+        }
+    }
+
+    @for $i from 1 through 20 {
+        &.ShowIndentationMargin .NavigationNode[data-level="#{$i}"] {
+            & > .NavigationTreeItem {
+                    padding-#{$left}: $i * if(variable-exists(navigationTree-item-padding-left), $navigationTree-item-padding-left, 25px * 1.5);
+            }
+        }
+    }
+
+    @include generate-style-block('NavigationTree') {
+        // @full
+        padding: 0;
+        margin: 0;
+        font-size: if(variable-exists(navigationTree-font-size), $navigationTree-font-size, 1.0em);
+        color: if(variable-exists(navigationTree-color-text-light), $navigationTree-color-text-light, $component-color-text-light);
+        list-style: if(variable-exists(navigationTree-list-style), $navigationTree-list-style, none);
+    }
+
+    &.HorizontalTree {
+        @include generate-style-block('NavigationTreeHorizontal') {
+            display: flex;
+            flex-flow: row nowrap;
+            align-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &.HorizontalTree .NavigationNode.Container {
+        @include generate-style-block('NavigationTreeNodeContainerHorizonal') {
+            display: flex;
+            flex-flow: row nowrap;
+            align-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &.HorizontalTree .SubTree {
+        @include generate-style-block('NavigationTreeSubTreeHorizontal') {
+            // @full
+            display: flex;
+            flex-flow: row nowrap;
+            align-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &.HorizontalTree .NavigationNode {
+        &.Collapsable.Active {
+            .NavigationExpansionIcon {
+                @include generate-style-block('NavigationTreeNodeHorizontalCollapsableActiveExpansionIcon') {
+                    // @full
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        &.Collapsable.Expanded {
+            .NavigationExpansionIcon {
+                @include generate-style-block('NavigationTreeNodeHorizontalCollapsableExpandedExpansionIcon') {
+                    // @full
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        &.Collapsable.Collapsed {
+            .NavigationExpansionIcon {
+                @include generate-style-block('NavigationTreeNodeHorizontalCollapsableCollapsedExpansionIcon') {
+                    // @full
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+        &.Collapsable.Active.Collapsed {
+            .NavigationExpansionIcon {
+                @include generate-style-block('NavigationTreeNodeHorizontalCollapsableActiveCollapsedExpansionIcon') {
+                    // @full
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+    }
+
+    &.HorizontalTree .NavigationNode .NavgationTreeItemLabel {
+        @include generate-style-block('NavigationTreeItemLabelVisible') {
+            white-space: nowrap;
+        }
+    }
+
+    .SubTree {
+        @include generate-style-block('NavigationTreeSubTree') {
+            // @full
+            padding: side-values(if(variable-exists(navigationTree-sub-menu-padding), $navigationTree-sub-menu-padding, 0));
+            list-style: if(variable-exists(navigationTree-sub-menu-list-style), $navigationTree-sub-menu-list-style, none);
+        }
+    }
+
+    &.ShowStatuses .NavigationNode .NavigationTreeItem:before {
+        @include generate-style-block('NavigationTreeNodeMarkerVisible') {
+            display: inline-block;
+        }
+    }
+
+    &.ShowThumbnails .NavigationNode.LeafNode .NavigationThumbnail {
+        @include generate-style-block('NavigationTreeItemThumbnailsVisible') {
+            display: inline-block;
+        }
+    }
+
+    &.ShowThumbnails.LargeThumbnails .NavigationNode.LeafNode .NavigationThumbnail {
+        @include generate-style-block('NavigationTreeItemLargeThumbnails') {
+            width: 200px;
+            height: 200px;
+        }
+
+        .PageThumbnailOuter {
+            @include generate-style-block('NavigationTreeItemLargeThumbnailsOuter') {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .PageThumbnailInner {
+            @include generate-style-block('NavigationTreeItemLargeThumbnailsInner') {
+                width: 500px;
+                height: 500px;
+                transform: scale(0.4);
+            }
+
+            > #PageBody, .PageBody {
+                @include generate-style-block('NavigationTreeItemLargeThumbnailsInnerPageWrapper') {
+                    width: 500px;
+                }
+            }
+        }
+    }
+
+    &.ShowThumbnailStatuses .NavigationNode.LeafNode .NavigationThumbnail {
+        @include generate-style-block('NavigationTreeItemThumbnailStatusVisible') {
+            &:after {
+                width: 100%;
+                height: 100%;
+            }
+            border-width: 3px;
+            flex-shrink: 0;
+        }
+    }
+
+    &.ShowLabels .NavigationNode .NavgationTreeItemLabel {
+        @include generate-style-block('NavigationTreeItemLabelVisible') {
+            display: inline-block;
+        }
+    }
+
+    &.ShowContainerLabels .NavigationNode.Container > .NavigationTreeItem > .NavgationTreeItemLabel {
+        @include generate-style-block('NavigationTreeItemContainerLabelVisible') {
+            display: inline-block;
+        }
+    }
+
+    &.ShowIndentationGuides .NavigationNode.Container {
+        @include generate-style-block('NavigationTreeNodeIndentationGuidesVisible') {
+            border-#{$left}-width: 1px;
+            margin-#{$left}: 7px;
+        }
+    }
+
+    &.ShowIndentationGuides.HorizontalTree .NavigationNode.Container {
+        @include generate-style-block('NavigationTreeNodeHorizonalIndentationGuidesVisible') {
+            border-top-width: 1px;
+            border-#{$left}-width: 0;
+            padding-top: 7px;
+        }
+    }
+
+    .NavigationNode {
+        @include generate-style-block('NavigationTreeNode') {
+            // @extend .clearfix;
+        }
+
+        .NavigationItemNumber {
+            @include generate-style-block('NavigationTreeItemNumber') {
+                display: none;
+            }
+        }
+
+        .NavigationThumbnail {
+            @include generate-style-block('NavigationTreeItemThumbnails') {
+                display: none;
+                width: 125px;
+                height: 125px;
+                position: relative;
+                border: 0 solid transparent;
+                border-radius: 5px;
+                background-color: white;
+                margin: 0 10px;
+                opacity: 0.7;
+                transition: opacity 500ms;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+
+            &:after {
+                @include generate-style-block('NavigationTreeItemThumbnailStatus') {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    content: "";
+                }
+            }
+
+            .NavigationThumbnailIcon {
+                @include generate-style-block('NavigationTreeItemThumbnailsIcon') {
+                    margin: 0 auto;
+                    position: relative;
+                    top: 50%;
+                    #{$left}: 50%;
+                    transform: translate(-50%, -50%);
+                    fill: #535353;
+                    width: 11mm;
+                    height: 11mm;
+                }
+            }
+        }
+
+        .NavgationTreeItemLabel {
+            margin: 0 10px;
+            display: none;
+        }
+
+        &.Container > .NavigationTreeItem > .NavgationTreeItemLabel {
+            display: none;
+        }
+
+        .NavigationTreeItem {
+
+            &:before {
+                @include generate-style-block('NavigationTreeNodeMarker') {
+                    // @full
+                    position: if(variable-exists(navigationTree-marker-position), $navigationTree-marker-position, absolute);
+                    margin: if(variable-exists(navigationTree-marker-margin), $navigationTree-marker-margin, 0);
+                    width: if(variable-exists(navigationTree-marker-width), $navigationTree-marker-width, 7px);
+                    height: if(variable-exists(navigationTree-marker-height), $navigationTree-marker-height, 7px);
+                    #{$left}: if(variable-exists(navigationTree-marker-left), $navigationTree-marker-left, 15px);
+                    top: 50%;
+                    content: if(variable-exists(navigationTree-marker-content), $navigationTree-marker-content, '');
+                    background: if(variable-exists(navigationTree-marker-background), $navigationTree-marker-background, rgba(255,255,255,0));
+                    border: if(variable-exists(navigationTree-marker-border), $navigationTree-marker-border, 2px solid $component-color-text-light);
+                    border-radius: if(variable-exists(navigationTree-marker-border-radius), $navigationTree-marker-border-radius, 100%);
+                    display: if(variable-exists(navigationTree-marker-display), $navigationTree-marker-display, none);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        &.Progress {
+
+            @include generate-style-block('NavigationTreeNodeProgress') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeProgressLink') {}
+
+                &:before {
+                    @include generate-style-block('NavigationTreeNodeProgressMarker') {
+                        // @full
+                        background: if(variable-exists(navigationTree-marker-background-progress), $navigationTree-marker-background-progress, rgba(255,255,255,0.5));
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusProgress') {
+                        &:after {
+                            background-color: transparent;
+                        }
+                        opacity: 1;
+                        border-color: rgba(255,255,255,0.5);
+                    }
+                }
+            }
+
+
+        }
+
+        &.Active {
+
+            @include generate-style-block('NavigationTreeNodeActive') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeActiveLink') {
+                    // @full
+                    font-weight: if(variable-exists(navigationTree-node-item-font-weight-active), $navigationTree-node-item-font-weight-active, bold);
+                }
+
+                &:before {
+                    @include generate-style-block('NavigationTreeNodeActiveMarker') {
+                        // @full
+                        border-width: if(variable-exists(navigationTree-marker-border-width-active), $navigationTree-marker-border-width-active, 4px);
+                        background: if(variable-exists(navigationTree-marker-background-active), $navigationTree-marker-background-active, rgba(255,255,255,0.5));
+                    }
+                }
+            }
+
+            .NavigationThumbnail {
+                @include generate-style-block('NavigationTreeItemThumbnailActive') {
+                    &:after {
+                        background-color: rgba(255,255,255,0.5);
+                    }
+                }
+            }
+        }
+
+        &.Container {
+            @include generate-style-block('NavigationTreeNodeContainer') {
+                border: 0 solid darken(white, 70%);
+            }
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeContainerLink') {}
+
+                &:before {
+                    @include generate-style-block('NavigationTreeNodeContainerMarker') {
+                        // @full
+                        width: if(variable-exists(navigationTree-marker-width-container), $navigationTree-marker-width-container, 11px);
+                        height: if(variable-exists(navigationTree-marker-height-container), $navigationTree-marker-height-container, 11px);
+                    }
+                }
+            }
+
+        }
+
+        // TODO
+        &.Collapsable {
+            @include generate-style-block('NavigationTreeNodeCollapsable') {}
+
+            &.Active {
+                @include generate-style-block('NavigationTreeNodeCollapsableActive') {}
+
+                > .NavigationTreeItem {
+                    @include generate-style-block('NavigationTreeNodeCollapsableActiveLink') {}
+
+                    > .NavigationExpansionIcon {
+                        @include generate-style-block('NavigationTreeNodeCollapsableActiveExpansionIcon') {
+                            // @full
+                            transform: if(variable-exists(navigationTreeItem-expand-icon-expanded-transform), $navigationTreeItem-expand-icon-expanded-transform, rotate(90deg));
+                        }
+                    }
+                }
+
+                > ul {
+                    @include generate-style-block('NavigationTreeNodeCollapsableActiveSubList') {
+                        // @full
+                    }
+                }
+            }
+
+            &.Expanded {
+                @include generate-style-block('NavigationTreeNodeCollapsableExpanded') {}
+
+                > .NavigationTreeItem {
+
+                    @include generate-style-block('NavigationTreeNodeCollapsableExpandedLink') {}
+
+                    > .NavigationExpansionIcon {
+                        @include generate-style-block('NavigationTreeNodeCollapsableExpandedExpansionIcon') {
+                            // @full
+                            transform: if(variable-exists(navigationTreeItem-expand-icon-expanded-transform), $navigationTreeItem-expand-icon-expanded-transform, rotate(90deg));
+                        }
+                    }
+                }
+
+                > ul {
+                    @include generate-style-block('NavigationTreeNodeCollapsableExpandedSubList') {
+                        // @full
+                    }
+                }
+            }
+
+            &.Collapsed {
+
+                @include generate-style-block('NavigationTreeNodeCollapsableCollapsed') {}
+
+                > .NavigationTreeItem {
+
+                    @include generate-style-block('NavigationTreeNodeCollapsableCollapsedLink') {}
+
+                    > .NavigationExpansionIcon {
+                        @include generate-style-block('NavigationTreeNodeCollapsableCollapsedExpansionIcon') {
+                            // @full
+                            transform: if(variable-exists(navigationTreeItem-expand-icon-collapsed-transform), $navigationTreeItem-expand-icon-collapsed-transform, rotate(0deg));
+                        }
+                    }
+                }
+
+                > ul {
+                    @include generate-style-block('NavigationTreeNodeCollapsableCollapsedSubList') {
+                    // @full
+                        display: none;
+                    }
+                }
+            }
+
+            &.Active.Collapsed {
+
+                @include generate-style-block('NavigationTreeNodeCollapsableActiveAndCollapsed') {}
+
+                > .NavigationTreeItem {
+
+                    @include generate-style-block('NavigationTreeNodeCollapsableActiveAndCollapsedLink') {}
+
+                    > .NavigationExpansionIcon {
+                        @include generate-style-block('NavigationTreeNodeCollapsableActiveAndCollapsedExpansionIcon') {
+                            // @full
+                            transform: if(variable-exists(navigationTreeItem-expand-icon-collapsed-transform), $navigationTreeItem-expand-icon-collapsed-transform, rotate(0deg));
+                        }
+                    }
+                }
+
+                > ul {
+                    @include generate-style-block('NavigationTreeNodeCollapsableActiveAndCollapsedSubList') {
+                        // @full
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.Enabled {
+            @include generate-style-block('NavigationTreeNodeEnabled') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeEnabledLink') {
+                    // @full
+                    opacity: if(variable-exists(navigationTree-item-opacity-enabled), $navigationTree-item-opacity-enabled, 1);
+                }
+
+                &:before {
+                    @include generate-style-block('NavigationTreeNodeEnabledMarker') {}
+                }
+            }
+
+        }
+
+        &.Disabled {
+
+            @include generate-style-block('NavigationTreeNodeDisabled') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('> NavigationTreeNodeDisabledLink') {
+                    // @full
+                    opacity: if(variable-exists(navigationTree-item-opacity-disabled), $navigationTree-item-opacity-disabled, .7);
+                }
+
+                &:before {
+                    @include generate-style-block('NavigationTreeNodeDisabledMarker') {}
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusDisabled') {
+                        &:after {
+                            background-color: rgba(255,255,255,0.2);
+                        }
+                        opacity: 0.4;
+                    }
+                }
+            }
+
+        }
+
+        &.Open {
+
+            @include generate-style-block('NavigationTreeNodeOpen') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeOpenLink') {
+                    // @full
+                    display: if(variable-exists(navigationTree-item-display-open), $navigationTree-item-display-open, flex);
+                }
+
+            }
+        }
+
+        &.Closed {
+
+            @include generate-style-block('NavigationTreeNodeClosed') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeClosedLink') {
+                    // @full
+                    display: if(variable-exists(navigationTree-item-display-closed), $navigationTree-item-display-closed, none);
+                }
+
+            }
+        }
+
+        &.Completed {
+
+            @include generate-style-block('NavigationTreeNodeCompleted') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeCompletedLink') {}
+
+                &:before{
+                    @include generate-style-block('NavigationTreeNodeCompletedMarker') {
+                        // @full
+                        border-color: if(variable-exists(navigationTree-marker-border-color-completed), $navigationTree-marker-border-color-completed, rgba(255,255,255,1));
+                        background-color: if(variable-exists(navigationTree-marker-background-color-completed), $navigationTree-marker-background-color-completed, rgba(255,255,255,1));
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusCompleted') {
+                        border-color: rgba(255,255,255,1);
+                    }
+                }
+            }
+        }
+
+        &.Incompleted {
+
+            @include generate-style-block('NavigationTreeNodeIncompleted') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeIncompletedLink') {}
+
+                &:before{
+                    @include generate-style-block('NavigationTreeNodeIncompletedMarker') {
+                        // @full
+                        background: if(variable-exists(navigationTree-marker-background-incompleted), $navigationTree-marker-background-incompleted, none);
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusIncompleted') {
+                        border-color: rgba(255,255,255,0.5);
+                    }
+                }
+            }
+        }
+
+        &.Progress.Incompleted {
+
+            @include generate-style-block('NavigationTreeNodeIncompletedAndProgress') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeIncompletedAndProgressLink') {}
+
+                &:before{
+                    @include generate-style-block('NavigationTreeNodeIncompletedAndProgressMarker') {
+                        // @full
+                        background: if(variable-exists(navigationTree-marker-background-progress-incompleted), $navigationTree-marker-background-progress-incompleted, rgba(255,255,255,0.5));
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusProgressIncompleted') {
+                        &:after {
+                            background-color: rgba(255,255,255,0.3);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.Completed.Satisfied {
+
+            @include generate-style-block('NavigationTreeNodeCompletedAndSatisfied') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeCompletedAndSatisfiedLink') {}
+
+                &:before{
+                    @include generate-style-block('NavigationTreeNodeCompletedAndSatisfiedMarker') {
+                        // @full
+                        border-color: if(variable-exists(navigationTree-marker-border-color-satisfied), $navigationTree-marker-border-color-satisfied, $component-color-correct);
+                        background-color: if(variable-exists(navigationTree-marker-background-color-satisfied), $navigationTree-marker-background-color-satisfied, $component-color-correct);
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusCompletedSatisfied') {
+                        &:after {
+                            background-color: transparentize($component-color-correct, 0.7);
+                        }
+                        border-color: $component-color-correct;
+                    }
+                }
+            }
+        }
+
+        &.Completed.NotSatisfied {
+
+            @include generate-style-block('NavigationTreeNodeCompletedAndNotSatisfied') {}
+
+            > .NavigationTreeItem {
+                @include generate-style-block('NavigationTreeNodeCompletedAndNotSatisfiedLink') {}
+
+                &:before{
+                    @include generate-style-block('NavigationTreeNodeCompletedAndNotSatisfiedMarker') {
+                        // @full
+                        border-color: if(variable-exists(navigationTree-marker-border-color-notsatisfied), $navigationTree-marker-border-color-notsatisfied, $component-color-incorrect);
+                        background-color: if(variable-exists(navigationTree-marker-background-color-notsatisfied), $navigationTree-marker-background-color-notsatisfied, $component-color-incorrect);
+                    }
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailStatusCompletedNotSatisfied') {
+                        &:after {
+                            background-color: transparentize($component-color-incorrect, 0.7);
+                        }
+                        border-color: $component-color-incorrect;
+                    }
+                }
+            }
+        }
+
+        .NavigationTreeItem {
+            @include generate-style-block('NavigationTreeNodeLink') {
+                // @full
+                -webkit-font-smoothing: subpixel-antialiased;
+                -moz-osx-font-smoothing: auto;
+                position: relative;
+                display: if(variable-exists(navigationTree-item-display), $navigationTree-item-display, flex);
+                flex-flow: row;
+                align-items: center;
+                margin: side-values(if(variable-exists(navigationTree-item-margin), $navigationTree-item-margin, 0));
+                padding: side-values(if(variable-exists(navigationTree-item-padding), $navigationTree-item-padding, (25px / 2) (25px / 2) (25px / 2) (25px*1.5)));
+                cursor: if(variable-exists(navigationTree-item-cursor), $navigationTree-item-cursor, pointer);
+                white-space: normal;
+                transition: background-color 0.3s;
+                line-height: if(variable-exists(navigationTree-item-line-height), $navigationTree-item-line-height, 24px);
+                color: if(variable-exists(navigationTree-color-text-light), $navigationTree-color-text-light, $component-color-text-light);
+                text-decoration: if(variable-exists(navigationTree-item-text-decoration), $navigationTree-item-text-decoration, none);
+                overflow: auto;
+            }
+
+            &:hover {
+                @include generate-style-block('NavigationTreeNodeLinkHover') {
+                    // @full
+                    background: if(variable-exists(navigationTree-item-hover-background), $navigationTree-item-hover-background, darken($navigationTree-color-text-light, 75%));
+                }
+
+                .NavigationThumbnail {
+                    @include generate-style-block('NavigationTreeItemThumbnailHover') {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .NavigationExpansionIcon {
+                @include generate-style-block('NavigationTreeNodeExpansionIcon') {
+                    // @full
+                    flex-shrink: 0;
+                    float: $left;
+                    fill: if(variable-exists(navigationTreeItem-expand-icon-fill-color), $navigationTreeItem-expand-icon-fill-color, $component-color-text-links);
+                    vertical-align: if(variable-exists(navigationTreeItem-expand-icon-vertical-align), $navigationTreeItem-expand-icon-vertical-align, middle);
+                }
+            }
+
+            .NavigationExpansionIcon.Invisible {
+                @include generate-style-block('NavigationTreeNodeExpansionIconInvisible') {
+                    // @full
+                    visibility: if(variable-exists(navigationTreeItem-expand-icon-invisible-visibility), $navigationTreeItem-expand-icon-invisible-visibility, hidden);
+                    display: none;
+                }
+            }
+
+            .NavigationExpansionIcon.Closed {
+                @include generate-style-block('NavigationTreeNodeExpansionIconClosed') {
+                    // @full
+                    display: if(variable-exists(navigationTree-marker-display-closed), $navigationTree-marker-display-closed, none);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+
+.FigureTitle {
+    @include generate-style-block('FigureTitle') {
+        // @full
+        display: inline-block;
+      	font-size: 1.2em;
+    }
+}
+
+.Figure {
+    @include generate-style-block('Figure') {
+        // @full
+        position: relative;
+        overflow: hidden;
+        margin: $elements-margin;
+        max-width: 100%;
+    }
+
+    img {
+        @include generate-style-block('FigureImage') {
+            // @full
+            max-width: 100%;
+        }
+    }
+
+    &.ImageBehavior-Popup {
+      @include generate-style-block('FigurePopupImageBehavior') {
+        overflow: hidden;
+      }
+
+        .FigureAltImage {
+          @include generate-style-block('FigurePopupImageBehaviorFigureAltImage') {
+            transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+          }
+
+            &:hover {
+              @include generate-style-block('FigurePopupImageBehaviorFigureAltImageHover') {
+                cursor: zoom-in;
+                transform: scale(1.03);
+              }
+            }
+        }
+    }
+
+    &.Wrap {
+        @include generate-style-block('FigureWrap') {
+            // @full
+            text-align: if(variable-exists(figure-wrap-text-align), $figure-wrap-text-align, $left);
+        }
+    }
+
+    .FigureInnerWrap {
+        @include generate-style-block('FigureInnerWrap') {
+            // @full
+            max-width: 100%;
+            margin: auto;
+        }
+    }
+
+    &.Wrapleft {
+        @include generate-style-block('FigureWrapleft') {
+            // @full
+            // WPS-6029 Ensure that Figure box model is above surrounding text contaier
+            // so that click interactions still function (i.e. open popup)
+            z-index: 1;
+        }
+    }
+
+    &.Wrapright {
+        @include generate-style-block('FigureWrapright') {
+            // @full
+            // WPS-6029 Ensure that Figure box model is above surrounding text contaier
+            // so that click interactions still function (i.e. open popup)
+            z-index: 1;
+        }
+    }
+  
+      .Caption {
+        @include generate-style-block('FigureCaption') {
+            // @full
+            font-style: italic;
+          	margin: 0 auto;
+          	text-align: left;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// Inherit variables
+@import 'colors.scss';
+@import 'colors-core-custom.scss';
+@import 'colors-custom.scss';
+@import 'fonts.scss';
+@import 'fonts-core-custom.scss';
+@import 'fonts-custom.scss';
+@import 'box.scss';
+@import 'box-core-custom.scss';
+@import 'box-custom.scss';
+
+// Load Components
+@import 'glossary/glossary.scss';
+@import 'glossary/glossary-core-custom.scss';
+@import 'glossary/glossary-custom.scss';
+@import 'courseResources/courseResources.scss';
+@import 'courseResources/courseResources-core-custom.scss';
+@import 'courseResources/courseResources-custom.scss';
+@import 'pageResources/pageResources.scss';
+@import 'pageResources/pageResources-core-custom.scss';
+@import 'pageResources/pageResources-custom.scss';
+@import 'navigationTree/navigationTree.scss';
+@import 'navigationTree/navigationTree-core-custom.scss';
+@import 'navigationTree/navigationTree-custom.scss';
+@import 'courseProgress/courseProgress.scss';
+@import 'courseProgress/courseProgress-core-custom.scss';
+@import 'courseProgress/courseProgress-custom.scss';
+@import 'sectionStatus/sectionStatus.scss';
+@import 'sectionStatus/sectionStatus-core-custom.scss';
+@import 'sectionStatus/sectionStatus-custom.scss';
+@import 'calculator/calculator.scss';
+@import 'calculator/calculator-core-custom.scss';
+@import 'calculator/calculator-custom.scss';
+@import 'breadcrumb/breadcrumb.scss';
+@import 'breadcrumb/breadcrumb-core-custom.scss';
+@import 'breadcrumb/breadcrumb-custom.scss';
+@import 'visualCue/visualCue.scss';
+@import 'visualCue/visualCue-core-custom.scss';
+@import 'visualCue/visualCue-custom.scss';
+@import 'exitButton/exitButton.scss';
+@import 'exitButton/exitButton-core-custom.scss';
+@import 'exitButton/exitButton-custom.scss';
+@import 'submitAllButton/submitAllButton.scss';
+@import 'submitAllButton/submitAllButton-core-custom.scss';
+@import 'submitAllButton/submitAllButton-custom.scss';

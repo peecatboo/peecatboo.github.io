@@ -1,0 +1,47 @@
+@include customize-style-block('MatchingQuestionsStickyWrapperNarrow') {
+  visibility: visible;
+  height: auto;
+  display: inline;
+}
+
+@include customize-style-block('MatchingQuestionDistractorsNarrow') {
+  width: auto;
+  float: none;
+  margin: 0;
+  
+  .MatchingQuestionDistractorWrapper {
+    .MatchingQuestionDistractorInnerWrapper {
+      &:before {
+        display: inline;
+      }
+    }
+
+    .MatchingQuestionHandleWrapper {
+      display: none;
+    }
+  }
+
+  .MatchingQuestionMatchesResponsive {
+    display: inline;
+  }
+}
+
+@media #{$basic-screen-query-narrow} {
+  .MatchingQuestionMatches {
+    display: none !important;
+
+    .MatchingQuestionMatchWrapper {
+      .MatchingQuestionHandleWrapper {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.MatchingActivity .MatchingQuestionOptionsWrapper .MatchingQuestionDistractors .MatchingQuestionDistractorWrapper .MatchingQuestionDistractorInnerWrapper{
+background-color: #fff;
+}
+
+.MatchingActivity .MatchingQuestionOptionsWrapper .MatchingQuestionMatches .MatchingQuestionMatchWrapper.Correct{
+  background-color: #fff;
+}

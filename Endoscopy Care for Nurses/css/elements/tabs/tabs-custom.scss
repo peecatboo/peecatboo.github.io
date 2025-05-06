@@ -1,0 +1,123 @@
+@include customize-style-block('TabsPanelsVertical') {
+    .TabsPanel {
+        padding: 0 0 0 1em;
+        .Figure {
+            margin: 0;
+        }
+        .Figure.Wrapright {
+            margin: 0 0 0 .5em;
+        }
+        .Figure.Wrapleftt {
+            margin: 0 .5em 0 0;
+        }
+    }
+}
+
+.TabsComponent>.TabsNavigation>.TabsNavigationItem>.TabsPanelIndex:before {
+    content: "";
+    padding: 1e-42px;
+}
+
+
+@include customize-style-block('TabsNavigation') {
+  padding: 0x 0px 0px 0px;
+}
+
+@include customize-style-block('TabsNavigationItem') {
+  color: $basic-color-branding2;
+  max-width: 400px;
+  
+  &.TabsActiveLink {
+  color: $basic-color-branding1;
+  }
+    .TabsPanelTitle {
+      text-decoration: none;
+      color: $basic-color-branding1;
+    }
+
+    .TabsPanelIndex {
+      color: $basic-color-branding1;
+    }
+}
+
+@include customize-style-block('TabsPanelIndex') {
+  color: $basic-color-branding2;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+@include customize-style-block('TabsPanelTitle') {
+  color: $basic-color-branding2;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1em;
+
+}
+
+
+
+
+@include customize-style-block('TabsContainer') {
+    &.Links3 {
+        > .TabsNavigation.Horizontal {
+            > .TabsNavigationItem {
+              > .TabsPanelTitle {
+                font-size: 1em;
+              }
+            }
+        }
+    }
+
+    &.Links4 {
+        > .TabsNavigation.Horizontal {
+            > .TabsNavigationItem {             
+               > .TabsPanelTitle {
+                font-size: 1em;
+               }
+            }
+        }
+    }
+
+    &.Links5 {
+        > .TabsNavigation.Horizontal {
+            > .TabsNavigationItem {
+               > .TabsPanelTitle {
+                font-size: 1em;
+               }
+            }
+        }
+    }
+}
+
+
+@include customize-style-block('TabsNavigationVertical') {
+  padding: 0px 0px 0px 0px;
+}
+
+@include customize-style-block('TabsNavigationItemVertical') {
+  border-#{$right}-width: 0px;
+  border-#{$left}-width: if(variable-exists(tabs-navigation-item-vertical-border-right-width), $tabs-navigation-item-vertical-border-right-width, $elements-border-width*2);
+}
+
+@include customize-style-block('TabsNavigationItemVerticalHover') {
+  border-#{$left}-color: if(variable-exists(tabs-color-border-navigation-hover), $tabs-color-border-navigation-hover, $elements-color-branding1);
+}
+
+@include customize-style-block('TabsNavigationVerticalActiveLink') {
+  border-#{$left}-color: if(variable-exists(tabs-color-border-navigation-hover), $tabs-color-border-navigation-hover, $elements-color-branding1);
+}
+
+//Carousel Tab  ///////////////////////////
+.CarouselTabsComponent {
+//  width: 95% !important;
+  margin: 0 auto;
+  padding: 5px 40px;
+  background: #EFF2F3;
+  border-radius: 25px;
+  .ResponsiveHeading {
+    background-color: inherit;
+  }
+}
+
+///////////////////////////////////////////

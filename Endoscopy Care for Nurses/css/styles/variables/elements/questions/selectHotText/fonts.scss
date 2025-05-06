@@ -1,0 +1,47 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$selecthottext-font-body: $questions-font-body;
+$selecthottext-font-size: 1.0em;
+$selecthottext-font-weight: $questions-font-weight;
+
+$selecthottext-header-font-body: $selecthottext-font-body;
+$selecthottext-header-font-size: $questions-header-font-size;
+$selecthottext-header-font-weight: $questions-header-font-weight;
+
+$selecthottext-option-font-body: $selecthottext-font-body;
+$selecthottext-option-font-size: $selecthottext-font-size;
+$selecthottext-option-font-weight: $selecthottext-font-weight;
+$selecthottext-option-text-decoration: underline;
+$selecthottext-option-font-body-hover: $selecthottext-font-body;
+$selecthottext-option-font-size-hover: $selecthottext-font-size;
+$selecthottext-option-font-weight-hover: $selecthottext-font-weight;
+$selecthottext-option-text-decoration-hover: underline;
+$selecthottext-option-font-body-correct: $selecthottext-font-body;
+$selecthottext-option-font-size-correct: $selecthottext-font-size;
+$selecthottext-option-font-weight-correct: $selecthottext-font-weight;
+$selecthottext-option-text-decoration-correct: none;
+$selecthottext-option-font-body-incorrect: $selecthottext-font-body;
+$selecthottext-option-font-size-incorrect: $selecthottext-font-size;
+$selecthottext-option-font-weight-incorrect: $selecthottext-font-weight;
+$selecthottext-option-text-decoration-incorrect: none;
+$selecthottext-option-font-body-alsocorrect: $selecthottext-font-body;
+$selecthottext-option-font-size-alsocorrect: $selecthottext-font-size;
+$selecthottext-option-font-weight-alsocorrect: $selecthottext-font-weight;
+$selecthottext-option-text-decoration-alsocorrect: none;
+
+$selecthottext-option-text-decoration-correct: none;
+$selecthottext-option-text-decoration-incorrect: line-through;
+$selecthottext-option-text-decoration-alsocorrect: none;
+$selecthottext-option-font-style-alsocorrect: italic;
+$selecthottext-option-font-weight-correct: bold;

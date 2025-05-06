@@ -1,0 +1,176 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+@mixin list-marker($content, $delimiter : false) {
+    $right-indent : '\a0\a0';
+
+    > .ListItem:before{ content: $content $right-indent; }
+
+    @if $delimiter == true {
+        &.Dot             > .ListItem:before { content: $content '.'  $right-indent; }
+        &.Bracket         > .ListItem:before { content: $content ')' $right-indent; }
+        &.DoubleBracket   > .ListItem:before { content: '('  $content ')' $right-indent; }
+        &.Comma           > .ListItem:before { content: $content ',' $right-indent; }
+    }
+}
+
+.List {
+    @include generate-style-block('List') {
+        // @full
+        color: if(variable-exists(list-color-text-main), $list-color-text-main, $elements-color-text-dark);
+        font-family: if(variable-exists(list-font-body), $list-font-body, $elements-font-body);
+        font-size: if(variable-exists(list-font-size), $list-font-size, 1em);
+        font-weight: if(variable-exists(list-font-weight), $list-font-weight, $elements-font-weight);
+    }
+
+    .ListPreamble {
+        @include generate-style-block('ListPreamble') {
+            // @full
+            margin-top: 10px;
+        }
+    }
+
+    .ListItems {
+        @include generate-style-block('ListItems') {
+            // @full
+            list-style-type: none;
+            counter-reset: list;
+            list-style-position: inside;
+            margin: if(variable-exists(list-item-vertical-spacing), $list-item-vertical-spacing, 0.5em) 0;
+            padding-#{$left}: if-rtl(4em, 3em);
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        > .ListItem {
+
+            @include generate-style-block('ListItem') {
+                // @full
+                position: relative;
+                margin-bottom: if(variable-exists(list-item-vertical-spacing), $list-item-vertical-spacing, 0.5em);
+                padding-#{$left}: if-rtl(0em, 1em);
+            }
+
+            .Icon {
+                @include generate-style-block('ListItemIcon') {
+                    // @full
+                    display: inline-block;
+                    margin-#{$left}: 10px;
+                    vertical-align: middle;
+                }
+            }
+
+            &:before {
+                @include generate-style-block('ListItemBefore') {
+                    // @full
+                    counter-increment: list;
+                    margin-#{$left}: -3em;
+                    width: 3em;
+                    display: inline-block;
+                    text-align: $right;
+                }
+            }
+
+            .RichText:first-child {
+                @include generate-style-block('ListItemRichText') {
+                    // @full
+                    display: if(variable-exists(list-item-content-display), $list-item-content-display, inline);
+                }
+            }
+
+            &.Hidden {
+                @include generate-style-block('ListItemHidden') {
+                    // @full
+                    opacity: 0;
+                }
+            }
+
+            &.Visible {
+                @include generate-style-block('ListItemVisible') {
+                    // @full
+                    opacity: 1;
+                    transition: opacity .8s;
+                }
+            }
+
+            &.Fade {
+                @include generate-style-block('ListItemFade') {
+                    // @full
+                    opacity: .2;
+                }
+            }
+        }
+
+        &.Bullet {
+            @include generate-style-block('ListBullet') {
+                // @full
+                list-style-type: disc;
+                padding-#{$left}: if(variable-exists(list-item-left-spacing), $list-item-left-spacing, 4em);
+            }
+
+            .ListItem {
+                @include generate-style-block('ListBulletItem') {
+                    // @full
+                    padding-#{$left}: 0;
+                }
+            }
+        }
+
+        &.Disk {
+            @include generate-style-block('ListDisk') {
+                // @full
+                list-style-type: circle;
+                padding-#{$left}: if(variable-exists(list-item-left-spacing), $list-item-left-spacing, 4em);
+            }
+
+            .ListItem {
+                @include generate-style-block('ListDiskItem') {
+                    // @full
+                    padding-#{$left}: 0;
+                }
+            }
+        }
+
+
+
+        &.Checkmark      { @include list-marker("\2714"); }
+
+        &.Arrow          {
+            @if $dir == rtl {
+                @include list-marker("\21D0");
+            } @else {
+                @include list-marker("\21D2");
+            }
+        }
+
+        &.nDash          { @include list-marker("\2013"); }
+
+        &.mDash          { @include list-marker("\2014"); }
+
+        &.Numeric        { @include list-marker(counter(list), true); }
+
+        &.UppercaseAlpha { @include list-marker(counter(list, upper-alpha), true); }
+
+        &.LowercaseAlpha { @include list-marker(counter(list, lower-alpha), true); }
+
+        &.UppercaseRoman { @include list-marker(counter(list, upper-roman), true); }
+
+        &.LowercaseRoman { @include list-marker(counter(list, lower-roman), true); }
+
+        &.Square         { @include list-marker("\25fc"); }
+
+        &.EmptySquare    { @include list-marker("\25fb"); }
+
+        &.Cross          { @include list-marker("\2716"); }
+    }
+}

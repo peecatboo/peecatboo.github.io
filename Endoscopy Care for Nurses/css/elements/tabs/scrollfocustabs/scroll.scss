@@ -1,0 +1,111 @@
+.ScrollFocusTabsComponent {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.scroll {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.scroll-center {
+	left:0;
+    right:0;
+    margin-left:0;
+    margin-right:auto;
+}
+
+.scroll-state {
+	position: relative;
+	min-height: 200px;
+	margin: 25px auto;
+    filter: blur(1px);
+}
+
+.scroll-state::after {
+	display:block;
+	content: ' ';
+	clear:both;
+}
+
+.scroll-content {
+	width: 100%;
+	padding: 2%;
+	background-color: rgba(238, 238, 238, 0.25);
+    border: 3px solid $basic-color-branding1;
+    border-radius: 8px;
+	float:left;
+	opacity:0.2;
+	position:relative;
+    margin: 0 auto;
+}
+
+.scroll-content h4, .scroll-content h3{
+  font-weight: normal;
+  margin: 0;
+  background: none;
+}
+
+
+/*
+animations
+*/
+.accent-content {
+	opacity: 1;
+    filter: none;
+}
+
+.accent-content .scroll-content {
+	opacity: 1;
+}
+
+.ProgressIndicatorCircle {
+  //Remove Progress for now
+  display: none !important;
+  //////////////////////////
+  height: 28px;
+  width: 28px;
+  position: fixed;
+  top: 120px;
+  transform: rotate(-90deg);
+  //margin-left: -30px;
+  .SVGIcon {
+    height: 100%;
+    width: 100%;
+    .progress-chart-background {
+      stroke: yellow;
+    }
+    .progress-chart {
+      stroke: red;
+    }
+  }
+}/* mobile support */
+
+@media (max-width: 600px) {
+
+	.scroll-content {
+		float:none;
+	}
+	.scroll-state:nth-child(2n+2) .scroll-content {
+		float:none;
+	}
+
+	.scroll-image {
+		width:90%;
+	}
+
+	.scroll-state:nth-child(2n+1) .scroll-image {
+		float:none;
+	}
+
+	.animate .scroll-content {
+		margin-left: 2%;
+	}
+
+	.scroll-icon {
+		left: auto;
+		right: 0;
+	}
+
+}

@@ -1,0 +1,32 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.PageResourcesButtonContainer {
+    .PageResourcesButton {
+        @include generate-style-block('PageResourcesButton') {
+            // @full
+            margin: side-values(if(variable-exists(pageResources-button-margin), $pageResources-button-margin, 20px 0 0));
+            float: if(variable-exists(pageResources-button-float), $pageResources-button-float, $right);
+        }
+    }
+
+    // persist height
+    &:after {
+        @include generate-style-block('PageResourcesButtonContainerAfter') {
+            // @full
+            content: ' ';
+            display: table;
+            clear: both;
+        }
+    }
+}

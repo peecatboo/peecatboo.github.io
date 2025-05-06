@@ -1,0 +1,21 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+$sectionStatus-item-padding: 10px 15px;
+$sectionStatus-item-cursor: pointer;
+$sectionStatus-item-children-padding: 0 10px;
+
+$sectionStatus-flagged-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAGnRFWHRTb2Z0d2FyZQBQYWludC5ORVQgdjMuNS4xMUfzQjcAAACzSURBVDhPpZOxDcIwFERdUlAgmpSswAKU1DAJMzABO1BlKERLAUIsgGPejy+y3ET+4kknJWe9UxIpwUgpdeRFWvmQbpQNbrZj3c6dLKS7ByLZSc1QeAYu0gqUrQM3spRWoGwZ+JL60Sc4mB2I0V47PclaSg0HswPDMOgqXaXUcOD5iAdpBUrPwIOspGYoPANGLzVD4R0wNtKrgZ4cG7KXmqGYBs6qfCD+PWC/85ucVDUSwg9NRY3keVwIuQAAAABJRU5ErkJggg==);
+$sectionStatus-not-flagged-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAGnRFWHRTb2Z0d2FyZQBQYWludC5ORVQgdjMuNS4xMUfzQjcAAADcSURBVDhPpZM9DgFBGEA3GgqFaDYqvcoFlGpal9C4gBO4A8124hIShV4hWoWf6FTk82bnm2wmYnY2XvIKb/b7MjYkBhFJ8YqxPDDNhw186OdZ5ICbgHs0nLCh496CuaYvOKvhFt840GwhxCyY2UdkoamAGFxA7+ETj9jUXED8uYBmrr7DF/pXd3AQWlDHG16wrdmHg7KvMLHHstTkw0HMS1zbR2SkqYAYs6CD5gd0xpZmC8EtyHAccIWGTEctBLegCl0dr3QD51BHLYTSdxCEwb8XmL/zHaeaIkmSDygT07/CjbgYAAAAAElFTkSuQmCC);
+
+$sectionStatus-max-dialog-width: 600px;

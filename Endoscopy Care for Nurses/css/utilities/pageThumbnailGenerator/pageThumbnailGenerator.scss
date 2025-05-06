@@ -1,0 +1,81 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+.PageThumbnailOuter {
+    @include generate-style-block('PageThumbnailOuter') {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 125px;
+        height: 125px;
+        text-align: initial;
+        overflow: hidden;
+    }
+}
+
+.PageThumbnailInner {
+    @include generate-style-block('PageThumbnailInner') {
+        position: relative;
+        display: inline-block;
+        visibility: visible;
+        white-space: normal;
+        top: 0;
+        left: 0;
+        width: 625px;
+        height: 625px;
+        transform-origin: if($dir == rtl, top right, top left);
+        transform: scale(0.2);
+        pointer-events: none !important;
+        user-select: none;
+    }
+
+    > #PageBody, .PageBody {
+        @include generate-style-block('PageThumbnailInnerPageWrapper') {
+            width: 625px;
+            margin: 0;
+        }
+    }
+
+    .ThumbnailStub {
+        @include generate-style-block('PageThumbnailElementStub') {
+            background-color: $basic-color-border;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 9rem;
+        }
+
+        &:before {
+            @include generate-style-block('PageThumbnailElementStubSymbol') {
+                content: '\00a7';
+                color: $basic-color-text-dark;
+            }
+        }
+
+        &[data-placeholder-source=".Question"]:before {
+            @include generate-style-block('PageThumbnailQuestionStubSymbol') {
+                content: '?';
+            }
+        }
+
+        &[data-placeholder-source=".Movievideo"]:before,
+        &[data-placeholder-source=".Movieiframe"]:before,
+        &[data-placeholder-source=".Movieobject"]:before,
+        &[data-placeholder-source=".Movieembed"]:before {
+            @include generate-style-block('PageThumbnailMovieStubSymbol') {
+                content: '\0394';
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

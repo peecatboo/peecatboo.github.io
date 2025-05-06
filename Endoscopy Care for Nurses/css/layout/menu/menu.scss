@@ -1,0 +1,375 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+#MainMenuWrapper {
+
+    @include generate-style-block('MainMenuWrapper') {
+        // @full
+        background-color: if(variable-exists(menu-color-background), $menu-color-background, $layout-overlay-color);
+        box-shadow: if(variable-exists(menu-box-shadow), $menu-box-shadow, $layout-box-shadow-dimensions  $layout-box-shadow-color);
+        position: if(variable-exists(menu-initial-position), $menu-initial-position, absolute);
+        box-sizing: if(variable-exists(menu-box-sizing), $menu-box-sizing, border-box);
+        display: if(variable-exists(menu-inital-display), $menu-inital-display, none);
+        overflow: if(variable-exists(menu-initial-overflow), $menu-initial-overflow, hidden);
+        white-space: if(variable-exists(menu-initial-white-space), $menu-initial-white-space, nowrap);
+        text-overflow: if(variable-exists(menu-initial-text-overflow), $menu-initial-text-overflow, ellipsis);
+    }
+
+    &.Open {
+        @include generate-style-block('MainMenuOpen') {
+            // @full
+            display: if(variable-exists(menu-open-display), $menu-open-display, $layout-open-display);
+        }
+    }
+
+
+    // Scrollbars
+    //
+    // AS IS
+    //
+    &, & * {
+        // Scrollbar styles (IE & webkit only)
+        scrollbar-face-color: #838383;
+        scrollbar-shadow-color: #838383;
+        scrollbar-highlight-color:#838383;
+        scrollbar-3dlight-color: #838383;
+        scrollbar-darkshadow-color: #838383;
+        scrollbar-track-color: $menu-color-background;
+        scrollbar-arrow-color: $menu-color-background;
+
+        &::-webkit-scrollbar {
+            width: 9px;
+            height: 9px;
+        }
+
+        &::-webkit-scrollbar-button:start:decrement, #doc::-webkit-scrollbar-button:end:increment {
+            display: block;
+            height: 0;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-track-piece {
+            background-color: $menu-color-background;
+            -webkit-border-radius: 0;
+            -webkit-border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb:vertical {
+            height: 50px;
+            background-color: #838383;
+            -webkit-border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb:horizontal {
+            width: 50px;
+            background-color: #838383;
+            -webkit-border-radius: 8px;
+        }
+    }
+
+
+    // NOTE: .MenuComponentLink is a stub or "noop" as it does not refer to a
+    //       class which is in the HTML, but is instead an extension point
+    //       for the .DropDownIcon class, since .ComponentLink is also declared
+    //       in "component.scss" and we do not want to extend those styles.
+    .ComponentLink, .Middle .ComponentLink, .MenuComponentLink {
+        @include generate-style-block('MainMenuComponentLink') {
+            // @full
+            font-size: if(variable-exists(menu-componentlinks-item-font-size), $menu-componentlinks-item-font-size, 12px);
+            width: if(variable-exists(menu-componentlinks-item-width), $menu-componentlinks-item-width, 93px);
+            height: if(variable-exists(menu-componentlinks-item-height), $menu-componentlinks-item-height, 36px);
+            color: if(variable-exists(menu-color-componentlinks-item-text), $menu-color-componentlinks-item-text, white);
+            fill: if(variable-exists(menu-color-componentlinks-item-text), $menu-color-componentlinks-item-text, white);
+            display: if(variable-exists(menu-componentlinks-item-display), $menu-componentlinks-item-display, inline-block);
+            float: $left;
+            vertical-align: middle;
+            background: if(variable-exists(menu-componentlinks-item-background), $menu-componentlinks-item-background, rgba(95, 103, 110, 0.5));
+            text-align: if(variable-exists(menu-componentLinks-item-text-align), $menu-componentLinks-item-text-align, center);
+            padding: if(variable-exists(menu-componentlinks-item-padding), $menu-componentlinks-item-padding, 10px 0);
+            box-sizing: if(variable-exists(menu-componentlinks-item-box-sizing), $menu-componentlinks-item-box-sizing, border-box);
+            transition: if(variable-exists(menu-componentlinks-item-transition), $menu-componentlinks-item-transition, "background-color $layout-transition-duration, color $layout-transition-duration");
+            cursor: if(variable-exists(menu-componentlinks-item-cursor), $menu-componentlinks-item-cursor, pointer);
+            overflow: if(variable-exists(menu-componentlinks-item-overflow), $menu-componentlinks-item-overflow, hidden);
+            text-overflow: if(variable-exists(menu-componentlinks-item-text-overflow), $menu-componentlinks-item-text-overflow, ellipsis);
+            word-wrap: if(variable-exists(menu-componentlinks-item-word-wrap), $menu-componentlinks-item-word-wrap, nowrap);
+        }
+
+        &:active, &.Active, &:hover {
+            @include generate-style-block('MainMenuComponentLinkActive') {
+                // @full
+                background: if(variable-exists(menu-componentlinks-item-background-hover), $menu-componentlinks-item-background-hover, white);
+                color: if(variable-exists(menu-color-componentlinks-item-text-hover), $menu-color-componentlinks-item-text-hover, black);
+                fill: if(variable-exists(menu-color-componentlinks-item-text-hover), $menu-color-componentlinks-item-text-hover, black);
+            }
+        }
+
+        &.Visible {
+            @include generate-style-block('MainMenuComponentLinkVisible') {}
+        }
+
+        &.Hidden {
+            @include generate-style-block('MainMenuComponentLinkHidden') {
+                // @full
+                display: none;
+            }
+        }
+
+        .ComponentLinkIcon {
+            @include generate-style-block('MainMenuComponentLinkIcon') {
+                // @full
+                width: 18px;
+                height: 18px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &.Visible {
+                @include generate-style-block('MainMenuComponentLinkIconVisible') {
+                    // @full
+                    display: inline-block;
+                }
+            }
+            &.Hidden {
+                @include generate-style-block('MainMenuComponentLinkIconHidden') {
+                    // @full
+                    display: none;
+                }
+            }
+
+            .IconHidden {
+                @include generate-style-block('MainMenuComponentLinkIconSVGHidden') {
+                    // @full
+                    display: none;
+                }
+            }
+        }
+
+        .ComponentLinkTitle {
+            @include generate-style-block('MainMenuComponentLinkTitle') {
+                // @full
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &.Visible {
+                @include generate-style-block('MainMenuComponentLinkTitleVisible') {
+                    // @full
+                    display: inline-block;
+                }
+            }
+            &.Hidden {
+                @include generate-style-block('MainMenuComponentLinkTitleHidden') {
+                    // @full
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .ComponentContent {
+        @include generate-style-block('MainMenuComponentContent') {
+            // @full
+            max-height: 100%;
+            width: 100%;
+        }
+
+        &.Visible {
+            @include generate-style-block('MainMenuComponentContentVisible') {
+                // @full
+                display: if(variable-exists(menu-component-open-display), $menu-component-open-display, block);
+                min-width: if(variable-exists(menu-component-open-min-width), $menu-component-open-min-width, 310px);
+            }
+        }
+
+        &.Hidden {
+            @include generate-style-block('MainMenuComponentContentHidden') {
+                // @full
+                display: if(variable-exists(menu-component-closed-display), $menu-component-closed-display, none);
+            }
+        }
+
+        &.Enabled {
+            @include generate-style-block('MainMenuComponentContentEnabled') {
+                // @full
+                display: if(variable-exists(menu-component-enabled-display), $menu-component-enabled-display, inherit);
+            }
+        }
+
+        &.Disabled {
+            @include generate-style-block('MainMenuComponentContentDisabled') {
+                // @full
+                display: if(variable-exists(menu-component-disabled-display), $menu-component-disabled-display, none);
+            }
+        }
+    }
+
+    .Before, .Top, .Middle, .Bottom, .After {
+        @include generate-style-block('MainMenuRegions') {
+            // @full
+            position: relative;
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+    }
+
+    .Top {
+        @include generate-style-block('MainMenuTopRegion') {}
+    }
+
+    .Middle {
+        @include generate-style-block('MainMenuMiddleRegion') {}
+
+        & > div {
+            @include generate-style-block('MainMenuMiddleRegionNestedBlocks') {
+                // @full
+                // float: left;
+                display: inline-block;
+            }
+        }
+
+        ul {
+            @include generate-style-block('MainMenuMiddleRegionList') {
+                // @full
+                padding-left: if(variable-exists(menu-componentlinks-padding-left), $menu-componentlinks-padding-left, 0);
+                margin: if(variable-exists(menu-componentlinks-margin), $menu-componentlinks-margin, 0);
+                font-size: if(variable-exists(menu-componentlinks-font-size), $menu-componentlinks-font-size, 0);
+            }
+        }
+
+        .DropDownIcon {
+            @extend .MenuComponentLink;
+            @include generate-style-block('MainMenuDropDownIcon') {
+                // @full
+                overflow: if(variable-exists(menu-componentlinks-dropdownicon-overflow-hover), $menu-componentlinks-dropdownicon-overflow-hover, visible);
+                position: if(variable-exists(menu-componentlinks-dropdownicon-position), $menu-componentlinks-dropdownicon-position, relative);
+                z-index: if(variable-exists(menu-componentlinks-dropdownicon-z-index), $menu-componentlinks-dropdownicon-z-index, 102);
+            }
+
+            &:before {
+                @include generate-style-block('MainMenuDropDownIconBefore') {
+                    // @full
+                    content: if(variable-exists(menu-componentlinks-dropdownicon-before-content), $menu-componentlinks-dropdownicon-before-content, '|||');
+                    position: if(variable-exists(menu-componentlinks-dropdownicon-before-position), $menu-componentlinks-dropdownicon-before-position, absolute);
+                    top: if(variable-exists(menu-componentlinks-dropdownicon-before-top), $menu-componentlinks-dropdownicon-before-top, 0);
+                    bottom: if(variable-exists(menu-componentlinks-dropdownicon-before-bottom), $menu-componentlinks-dropdownicon-before-bottom, 0);
+                    left: if(variable-exists(menu-componentlinks-dropdownicon-before-left), $menu-componentlinks-dropdownicon-before-left, 0);
+                    right: if(variable-exists(menu-componentlinks-dropdownicon-before-right), $menu-componentlinks-dropdownicon-before-right, 0);
+                    height: if(variable-exists(menu-componentlinks-dropdownicon-before-height), $menu-componentlinks-dropdownicon-before-height, 50%);
+                    margin: if(variable-exists(menu-componentlinks-dropdownicon-before-margin), $menu-componentlinks-dropdownicon-before-margin, auto);
+                    font-size: if(variable-exists(menu-componentlinks-dropdownicon-before-font-size), $menu-componentlinks-dropdownicon-before-font-size, 1em);
+                    font-weight: if(variable-exists(menu-componentlinks-dropdownicon-before-font-weight), $menu-componentlinks-dropdownicon-before-font-weight, normal);
+                    // line-height: if(variable-exists(menu-componentlinks-dropdownicon-before-line-height), $menu-componentlinks-dropdownicon-before-line-height, 0.7em);
+                    transform: rotate(0deg);
+                }
+            }
+
+            > .MenuComponentLinkExtensions {
+                @include generate-style-block('MainMenuComponentLinkExtensions') {
+                    // @full
+                    display: if(variable-exists(menu-componentlinks-dropdownicon-links-display), $menu-componentlinks-dropdownicon-links-display, none);
+                    position: if(variable-exists(menu-componentlinks-dropdownicon-links-position), $menu-componentlinks-dropdownicon-links-position, absolute);
+                    top: if(variable-exists(menu-componentlinks-dropdownicon-links-top), $menu-componentlinks-dropdownicon-links-top, 100%);
+                    bottom: if(variable-exists(menu-componentlinks-dropdownicon-links-bottom), $menu-componentlinks-dropdownicon-links-bottom, auto);
+                    #{$left}: if(variable-exists(menu-componentlinks-dropdownicon-links-left), $menu-componentlinks-dropdownicon-links-left, auto);
+                    #{$right}: if(variable-exists(menu-componentlinks-dropdownicon-links-right), $menu-componentlinks-dropdownicon-links-right, 0px);
+                    z-index: if(variable-exists(menu-componentlinks-dropdownicon-links-zindex), $menu-componentlinks-dropdownicon-links-zindex, 2);
+                }
+
+                > .ComponentLink {
+                    @include generate-style-block('MainMenuComponentLinkExtensionsLink') {
+                        // @full
+                        padding: if(variable-exists(menu-componentlinks-dropdown-links-padding), $menu-componentlinks-dropdown-links-padding, 10px);
+                        background: if(variable-exists(menu-color-componentlinks-dropdown-links-background), $menu-color-componentlinks-dropdown-links-background, #FFF);
+                        color: if(variable-exists(menu-color-componentlinks-dropdown-links-text), $menu-color-componentlinks-dropdown-links-text, black);
+                        fill: if(variable-exists(menu-color-componentlinks-dropdown-links-text), $menu-color-componentlinks-dropdown-links-text, black);
+                        float: none;
+                        margin: 0 auto;
+                    }
+                }
+                > .ComponentLink:hover {
+                    @include generate-style-block('MainMenuComponentLinkExtensionsLinkHover') {
+                        // @full
+                        background: if(variable-exists(menu-color-componentlinks-dropdown-links-background-hover), $menu-color-componentlinks-dropdown-links-background-hover, black);
+                        color: if(variable-exists(menu-color-componentlinks-dropdown-links-text-hover), $menu-color-componentlinks-dropdown-links-text-hover, white);
+                        fill: if(variable-exists(menu-color-componentlinks-dropdown-links-text-hover), $menu-color-componentlinks-dropdown-links-text-hover, white);
+                    }
+
+                    a {
+                        @include generate-style-block('MainMenuComponentLinkExtensionsLinkHoverAnchor') {
+                            // @full
+                            background: transparent;
+                            color: if(variable-exists(menu-color-componentlinks-dropdown-links-text-hover), $menu-color-componentlinks-dropdown-links-text-hover, white);
+                            fill: if(variable-exists(menu-color-componentlinks-dropdown-links-text-hover), $menu-color-componentlinks-dropdown-links-text-hover, white);
+                        }
+                    }
+                }
+            }
+
+            &:hover, &:focus, &:focus-within {
+                @include generate-style-block('MainMenuDropDownIconHover') {
+                    // @full
+                    overflow: if(variable-exists(menu-componentlinks-dropdownicon-overflow-hover), $menu-componentlinks-dropdownicon-overflow-hover, visible);
+                }
+
+                .MenuComponentLinkExtensions {
+                    @include generate-style-block('MainMenuDropDownIconHoverComponentLinkExtensions') {
+                        // @full
+                        display: if(variable-exists(menu-componentlinks-dropdownicon-hover-links-display), $menu-componentlinks-dropdownicon-hover-links-display, block);
+                    }
+                    .ComponentLink {
+                        @include generate-style-block('MainMenuDropDownIconHoverComponentLinkExtensionsLink') {
+                            // @full
+                            display: if(variable-exists(menu-componentlinks-dropdownicon-hover-links-link-display), $menu-componentlinks-dropdownicon-hover-links-link-display, block);
+                        }
+
+                        .ComponentLinkTitle {
+                            @include generate-style-block('MainMenuDropDownIconHoverComponentLinkExtensionsLinkTitle') {
+                                // @full
+                                display: inline-block;
+                            }
+                        }
+                        .ComponentLinkIcon {
+                            @include generate-style-block('MainMenuDropDownIconHoverComponentLinkExtensionsLinkIcon') {
+                                // @full
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        a {
+            @include generate-style-block('MainMenuMiddleRegionAnchor') {
+                // @full
+                color: if(variable-exists(menu-color-componentlinks-item-text), $menu-color-componentlinks-item-text, white);
+                text-overflow: if(variable-exists(menu-componentlinks-item-text-overflow), $menu-componentlinks-item-text-overflow, ellipsis);
+                word-wrap: if(variable-exists(menu-componentlinks-item-word-wrap), $menu-componentlinks-item-word-wrap, nowrap);
+                background: transparent;
+                transition: if(variable-exists(menu-componentlinks-item-link-transition), $menu-componentlinks-item-link-transition, "background-color $menu-transition-duration, color $menu-transition-duration");
+            }
+        }
+
+    }
+
+    .Bottom {
+        @include generate-style-block('MainMenuBottomRegion') {
+            // @full
+            overflow: auto;
+            white-space: normal;
+            color: if(variable-exists(menu-color-text-light), $menu-color-text-light, $layout-color-text-light);
+        }
+    }
+}

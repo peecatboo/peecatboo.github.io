@@ -1,0 +1,209 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+// Predefined Media Queries-----------------------------------------------------
+// Default screen size is "mobile", i.e. a smartphone in portrait mode.
+// XPE uses a "mobile-first" approach to responsive design, meaning all CSS is
+// based on the smallest screen-size and is enhanced on larger screens following
+// the responsive breakpoints listed in the following variables:
+// -----------------------------------------------------------------------------
+// The following is used to define a "narrow" screen width, i.e. a smartphone in
+// landscape mode or a standard tablet in portrait mode.
+$basic-screen-query-narrow: "(min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)";
+// The following is used to define a "normal" screen width, i.e. a table in landscape
+// mode or a smaller PC monitor (a netbook, for example).
+$basic-screen-query-normal: "(min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)";
+// The following is used for wide screens that have a width greater than or equal
+// to the value of the $basic-screen-query-wide-value, which is declared above.
+$basic-screen-query-wide  : "(min-width: #{$basic-screen-query-wide-value})";
+// -----------------------------------------------------------------------------
+
+// @DEPRECIATED do not use these variables, they will be removed----------------
+$narrowScreenQuery: $basic-screen-query-narrow;
+$normalScreenQuery: $basic-screen-query-normal;
+$wideScreenQuery: $basic-screen-query-wide;
+// -----------------------------------------------------------------------------
+
+// Add our media query contents to proxy DOM objects to be accessed by JavaScript
+#Xyleme-narrow-screen-query {
+    font-family: "/" + unquote($basic-screen-query-narrow) + "/";
+    display: none;
+    width: 1px;
+    height: 1px;
+}
+
+#Xyleme-normal-screen-query{
+    font-family: "/" + unquote($basic-screen-query-normal) + "/";
+    display: none;
+    width: 1px;
+    height: 1px;
+}
+
+#Xyleme-wide-screen-query {
+    font-family: "/" + unquote($basic-screen-query-wide) + "/";
+    display: none;
+    width: 1px;
+    height: 1px;
+}
+
+@media #{$basic-screen-query-narrow} {
+  #Xyleme-narrow-screen-query {
+    display: inline;
+  }
+
+  #Xyleme-normal-screen-query {
+    display: none;
+  }
+
+  #Xyleme-wide-screen-query {
+    display: none;
+  }
+}
+
+@media #{$basic-screen-query-normal} {
+  #Xyleme-narrow-screen-query {
+    display: none;
+  }
+
+  #Xyleme-normal-screen-query {
+    display: inline;
+  }
+
+  #Xyleme-wide-screen-query {
+    display: none;
+  }
+}
+
+@media #{$basic-screen-query-wide} {
+  #Xyleme-narrow-screen-query {
+    display: none;
+  }
+
+  #Xyleme-normal-screen-query {
+    display: none;
+  }
+
+  #Xyleme-wide-screen-query {
+    display: inline;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+// Font smoothing
+// Antialiased font smoothing works best for light text on a dark background.
+// Apply to single elements instead of globally to body.
+// Note this only applies to webkit-based desktop browsers and Firefox 25 (and later) on the Mac.
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+.antialiased {
+    @include font-smoothing();
+}
+
+// Following two Wrap classes should stay in absolute values regardless of language direction
+// They correspond to authored 'wrap' attribute of different elements (EmbedMovie, Flash, FlasXML, ImageMap, MediaObject, Movie)
+// with value set to 'left' or 'right'
+
+.Wrapleft, .WrapLeft {
+  float: left;
+}
+
+.Wrapright, .WrapRight {
+  float: right;
+}
+
+.AccessiblyHidden, .RSElement {
+    visibility: visible;
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.Button {
+    padding: 5px 10px;
+    color: #fff;
+    fill: #fff;
+    text-shadow: 0 0 3px #000;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: $basic-color-branding1;
+    font-family: inherit;
+
+    border: solid 1px darken($basic-color-branding1, 10%);
+    @include prefix(border-radius, 3px);
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .SVGIcon {
+        width: 18px;
+        height: 18px;
+        @if $dir == rtl {
+            margin-left: 4px;
+        } @else {
+            margin-right: 4px;
+        }
+    }
+
+    &:hover {
+        background-color: lighten($basic-color-branding1, 10%);
+    }
+
+    &:active {
+        background-color: $basic-color-branding2;
+        @include prefix(box-shadow, 0 0 3px #333 inset);
+    }
+
+    &.Disabled {
+      cursor: auto;
+      opacity: 0.3;
+    }
+
+    &:active.Disabled {
+      background-color: $basic-color-branding1;
+      opacity: 0.3;
+    }
+
+    &.Hidden {
+      display: none;
+    }
+
+}
+
+.FragmentSkinComponentWrapper {
+    display: none;
+    pointer-events: none;
+}

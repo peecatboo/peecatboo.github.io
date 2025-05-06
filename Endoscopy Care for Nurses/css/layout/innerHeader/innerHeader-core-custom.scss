@@ -1,0 +1,94 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+
+
+@include customize-style-block('InnerHeader') {
+    position: if(variable-exists(header-position), $header-position, absolute);
+    top: if(variable-exists(header-top), $header-top, 0px);
+    bottom: if(variable-exists(header-bottom), $header-bottom, auto);
+    left: if(variable-exists(header-left), $header-left, auto);
+    right: if(variable-exists(header-right), $header-right, auto);
+    width: if(variable-exists(header-width), $header-width, 100%);
+    height: if(variable-exists(header-height), $header-height, 64px);
+    z-index: 120;
+    background: if(variable-exists(header-background-main-color), $header-background-main-color, transparent);
+    background: linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+    background-image: -moz-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(if(variable-exists(header-background-color1), $header-background-color1, #34495E)), to(if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%))));
+    background-image: -webkit-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+    background-image: -ms-linear-gradient(top, if(variable-exists(header-background-color1), $header-background-color1, #34495E), if(variable-exists(header-background-color2), $header-background-color2, darken($header-color-branding1, 10%)));
+    box-shadow: if(variable-exists(header-box-shadow), $header-box-shadow, none);
+    transition: height 1s;
+    color: if(variable-exists(header-color-text), $header-color-text, #fff);
+    font-family: if(variable-exists(header-font-body), $header-font-body, $layout-font-body);
+    font-size: if(variable-exists(header-font-size), $header-font-size, 1.0em);
+    font-weight: if(variable-exists(header-font-weight), $header-font-weight, normal);
+
+    &.row {
+        width: if(variable-exists(header-width), $header-width, 100%);
+        height: if(variable-exists(header-height), $header-height, 64px);
+    }
+
+    .MenuIcon {
+        position: relative;
+        display: if(variable-exists(header-menu-icon-display), $header-menu-icon-display, block);
+        float: if(variable-exists(header-menu-icon-float), $header-menu-icon-float, if-ltr(left, right));
+        background: if(variable-exists(header-menu-icon-background), $header-menu-icon-background, rgba(17,17,17,0.35));
+        width: if(variable-exists(header-menu-icon-width), $header-menu-icon-width, 64px);
+        height: if(variable-exists(header-menu-icon-height), $header-menu-icon-height, 64px);
+        text-indent: if(variable-exists(header-menu-icon-text-indent), $header-menu-icon-text-indent, 120%);
+        white-space: if(variable-exists(header-menu-icon-white-space), $header-menu-icon-white-space, nowrap);
+        overflow: if(variable-exists(header-menu-icon-overflow), $header-menu-icon-overflow, hidden);
+        border: if(variable-exists(header-menu-icon-border), $header-menu-icon-border, none);
+
+        .SVGIcon {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            fill: white;
+            margin-left: -35%;
+            margin-top: -35%;
+        }
+    }
+    // WPS-4643 Updates Timer styles in in InnerHeader for modern
+    .TimerLink {
+        width: 80%;
+        margin: 0 auto;
+        color: $layout-color-text-dark;
+
+        .TimerContainer {
+          padding: 9px 0 0;
+          border-bottom: none;
+          background-color: transparentize($content-pageinnerwrap-background, 0.1);
+          @media #{$basic-screen-query-wide} {
+              width: auto;
+          }
+        }
+
+        .TimerProgress {
+          margin: 0 auto;
+        }
+
+        .TimerRemainingTime {
+            padding: 8px 0;
+            text-align: center;
+            border-bottom: solid 1px rgba(0,0,0,.2);
+
+            @media #{$basic-screen-query-wide} {
+              text-align: right;
+            }
+        }
+    }
+}

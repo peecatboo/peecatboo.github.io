@@ -1,0 +1,284 @@
+///*!
+// * @license
+// * Copyright c 2019 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+// * All rights reserved.
+// *
+// * This file and related documentation are protected by copyright and
+// * are distributed under licenses regarding their use, copying, distribution,
+// * and decompilation. No part of this product or related documentation may
+// * be reproduced or transmitted in any form or by any means, electronic or
+// * mechanical, for any purpose, without the express written permission of
+// * Xyleme, Inc.
+//*/
+/*
+    Collection of hover effects classes for images
+ */
+
+
+/* Ripple Out */
+
+@-webkit-keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+
+@keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+
+%ripple-out-hover {
+    .FigureOuterWrap {
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        margin: 10px 10px 0px 10px;
+    }
+    .FigureOuterWrap:before {
+        content: '';
+        position: absolute;
+        border: $elements-color-border solid 6px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+    }
+    .FigureOuterWrap:hover:before, .FigureOuterWrap:focus:before, .FigureOuterWrap:active:before {
+        -webkit-animation-name: hvr-ripple-out;
+        animation-name: hvr-ripple-out;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+/* Grow */
+
+%grow-hover {
+    .FigureOuterWrap {
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        -webkit-transition-duration: 0.6s;
+        transition-duration: 0.6s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        margin-top: 10px;
+    }
+    .FigureOuterWrap:hover, .FigureOuterWrap:focus, .FigureOuterWrap:active {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+/* Bob */
+
+@-webkit-keyframes hvr-bob {
+    0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+    50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@keyframes hvr-bob {
+    0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+    50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@-webkit-keyframes hvr-bob-float {
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@keyframes hvr-bob-float {
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+
+%bob-hover {
+    .FigureOuterWrap {
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        margin-top: 10px;
+    }
+    .FigureOuterWrap:hover, .FigureOuterWrap:focus, .FigureOuterWrap:active {
+        -webkit-animation-name: hvr-bob-float, hvr-bob;
+        animation-name: hvr-bob-float, hvr-bob;
+        -webkit-animation-duration: .3s, 1.5s;
+        animation-duration: .3s, 1.5s;
+        -webkit-animation-delay: 0s, .3s;
+        animation-delay: 0s, .3s;
+        -webkit-animation-timing-function: ease-out, ease-in-out;
+        animation-timing-function: ease-out, ease-in-out;
+        -webkit-animation-iteration-count: 1, infinite;
+        animation-iteration-count: 1, infinite;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-direction: normal, alternate;
+        animation-direction: normal, alternate;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+/* Buzz Out */
+
+@-webkit-keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+@keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+
+%buzz-out-hover {
+    .FigureOuterWrap {
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        margin-top: 5px;
+    }
+    .FigureOuterWrap:hover, .FigureOuterWrap:focus, .FigureOuterWrap:active {
+        -webkit-animation-name: hvr-buzz-out;
+        animation-name: hvr-buzz-out;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
+    .Caption {
+        text-align: center;
+    }
+}
+
+
+
+.ripple-out-hover {
+    @extend %ripple-out-hover;
+}
+
+.grow-hover {
+    @extend %grow-hover;
+}
+
+.bob-hover {
+    @extend %bob-hover;
+}
+
+.buzz-out-hover {
+    @extend %buzz-out-hover;
+}

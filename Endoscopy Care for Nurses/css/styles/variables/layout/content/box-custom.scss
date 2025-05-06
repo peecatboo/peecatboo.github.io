@@ -1,0 +1,113 @@
+ /*!
+ * @license
+ * Copyright c 2018 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+ * All rights reserved.
+ *
+ * This file and related documentation are protected by copyright and
+ * are distributed under licenses regarding their use, copying, distribution,
+ * and decompilation. No part of this product or related documentation may
+ * be reproduced or transmitted in any form or by any means, electronic or
+ * mechanical, for any purpose, without the express written permission of
+ * Xyleme, Inc.
+*/
+
+$content-pageinnerwrap-top: auto;
+$content-pageinnerwrap-bottom: auto;
+$content-pageinnerwrap-left: auto;
+$content-pageinnerwrap-right: auto;
+$content-pageinnerwrap-oveflow: auto;
+
+$content-pageouterwrap-top: 0;
+$content-pageouterwrap-oveflow: auto;
+$content-pageouterwrap-width: 100%;
+$content-pageouterwrap-height-fallback: 100%;
+$content-pageouterwrap-height-calc: 100%;
+$content-pageouterwrap-background: $content-color-pageinnerwrap-background;
+$content-pageinnerwrap-vertical-align: middle;
+$content-pageinnerwrap-float: none;
+$content-pageinnerwrap-min-height: $content-pageouterwrap-height-calc;
+$content-pageinnerwrap-zindex: 4;
+$content-pageinnerwrap-background: #FFF;
+
+$content-pagebody-height: 100%;
+$content-pagebody-margin: 0;
+$content-pagebody-margin-narrow: 0;
+$content-pagebody-width-wide: 0;
+$content-pagebody-margin-wide: 0;
+$content-pagebody-min-height: $content-pagebody-height;
+$content-pagebody-width: 100%;
+$content-pagebody-overflow: auto;
+$content-pagebody-box-sizing: content-box; // IE9 scrollbar position fix
+$content-pagebody-position: absolute;
+$content-pagebody-padding: 0;
+
+$content-pagebody-first-margin-top: 50px;
+$content-pagebody-first-padding-top: 0;
+$content-pagebody-div-padding: 1.25em;
+$content-pagebody-first-title-padding: 0 .5em;
+
+$content-parablock-line-height: $elements-text-line-height;
+$content-richtext-margin-bottom: 5px;
+
+$content-top-image-margin-top: 0;
+$content-top-image-padding: 0;
+$content-top-image-content-padding: 1.20em;
+$content-parablock-figure-display: none;
+$content-parablock-categories-figure-display: block;
+$content-parablock-figure-display: none;
+$content-top-image-overflow-x: none;
+$content-top-image-max-width: auto;
+$content-top-image-background-size: cover!important;
+$content-top-image-padding-top: 50px;
+$content-top-image-text-color: white;
+$content-top-image-page-title-font-size: 1.75em;
+$content-top-image-page-title-font-weight: normal;
+$content-top-image-page-title-margin-bottom: 5px;
+$content-top-image-page-title-font-weight: 200;
+$content-top-image-page-subtitle-font-size: 1.25em;
+$content-top-image-page-subtitle-font-weight: normal;
+$content-top-image-page-subtitle-margin-bottom: 5px;
+$content-top-image-page-subtitle-font-weight: 200;
+$content-top-image-page-documenttitle-font-size: 1.4em;
+$content-top-image-page-documenttitle-font-weight: normal;
+$content-top-image-page-documenttitle-font-weight: 200;
+$content-top-image-page-documenttitle-display: none;
+$content-top-image-page-documenttitle-visibility: hidden;
+$content-top-image-img-visibility: hidden;
+$content-top-single-image-display: block;
+$content-top-single-image-width: 100%;
+$content-top-single-image-height: 200px;
+$content-top-single-image-background-position: center center;
+$content-top-single-image-background-repeat: no-repeat;
+$content-top-single-image-background-size: cover;
+$content-top-two-image-margin-right: 0;
+$content-top-two-image-margin-bottom: 0.5em;
+$content-top-two-image-narrow-margin-right: 1%;
+$content-top-two-image-narrow-margin-bottom: 0;
+$content-top-two-image-narrow-width: 49.5%;
+$content-top-two-image-narrow-display: inline-block;
+$content-zoom-image-figure-margin: 0;
+$content-zoom-image-top-image-border: none;
+$content-page-documenttitle-font-size: 1.25em;
+$content-page-documenttitle-display: none;
+$content-page-documenttitle-visibility: hidden;
+
+$content-lesson-padding: 0 1.25em;
+
+$content-title-margin: 0;
+$content-title-padding: 5px 0;
+
+$content-subtitle-margin: 0;
+$content-subtitle-padding: 5px 0;
+
+$content-courseTitle-display: none;
+
+$content-spanner-height: 60px;
+$content-spanner-width: 60px;
+$content-spanner-position: absolute;
+$content-spanner-top: 45%;
+$content-spanner-left: 45%;
+$content-spanner-zindex: 3;
+$content-spanner-border-radius: 100%;
+
+$content-pagebody-margin-normal: 0;

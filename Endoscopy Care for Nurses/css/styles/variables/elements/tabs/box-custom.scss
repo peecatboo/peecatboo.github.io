@@ -1,0 +1,13 @@
+$tabs-navigation-vertical-width: 25%;
+
+$tabs-panels-vertical-width: 75%;
+
+$tabs-panels-vertical-padding: 0;
+
+$tabs-navigation-background: #e1f1f5;
+
+$tabs-navigation-item-index-display-normal: inline;
+
+$tabs-navigation-item-border: 2px white solid;
+$tabs-navigation-item-index-before-content: counter(#{$tabs-navigation-counter}) '. ' ;
+$tabs-navigation-item-index-before-content-wide: counter(#{$tabs-navigation-counter}) '. '  ;
