@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,140%20--%3E%2000:00:01,290%0D%0AI\u0027m%20Jack%20and%20I\u0027ll%20be%20taking%20over%20%0D%0A%0D%0A2%0D%0A00:00:01,290%20--%3E%2000:00:02,580%0D%0Afor%20Clarissa.%20I\u0027ll%20be%20your%20nurse%20%0D%0A%0D%0A3%0D%0A00:00:02,580%20--%3E%2000:00:03,520%0D%0Afor%20the%20rest%20of%20the%20day.%0D%0A%0D%0A"}')

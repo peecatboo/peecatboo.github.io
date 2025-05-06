@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,140%20--%3E%2000:00:00,810%0D%0ACould%20you%20give%20me%20an%20order%20for%20%0D%0A%0D%0A2%0D%0A00:00:00,810%20--%3E%2000:00:02,090%0D%0ATylenol?%20I\u0027ll%20administer%20it%20%0D%0A%0D%0A3%0D%0A00:00:02,090%20--%3E%2000:00:03,070%0D%0Aafter%20the%20blood%20culture.%0D%0A%0D%0A"}')

@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,200%0D%0AWhat%20is%20Mr.%20Rivera%20at%20risk%20for?%20%0D%0A%0D%0A2%0D%0A00:00:02,980%20--%3E%2000:00:06,550%0D%0AHypovolemia,%20anaphylaxis,%20fluid%20%0D%0A%0D%0A3%0D%0A00:00:06,550%20--%3E%2000:00:08,650%0D%0Aoverload,%20septic%20shock.%0D%0A%0D%0A"}')

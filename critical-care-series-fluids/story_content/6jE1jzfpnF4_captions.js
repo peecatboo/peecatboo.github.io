@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,300%20--%3E%2000:00:01,310%0D%0AAre%20there%20any%20pending%20orders?%0D%0A%0D%0A"}')

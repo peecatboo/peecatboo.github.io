@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,140%20--%3E%2000:00:01,470%0D%0AWhat%20is%20the%20order%20for%20IV%20fluids?%0D%0A%0D%0A"}')

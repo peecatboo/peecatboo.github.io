@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,070%20--%3E%2000:00:02,150%0D%0AYeah.%20Let\u0027s%20send%20an%20ABG%20now.%20I\u0027m%20%0D%0A%0D%0A2%0D%0A00:00:02,160%20--%3E%2000:00:03,970%0D%0Aplacing%20the%20order.%20I%20will%20stay%20%0D%0A%0D%0A3%0D%0A00:00:03,970%20--%3E%2000:00:04,920%0D%0Ahere%20if%20you%20need%20me.%0D%0A%0D%0A"}')

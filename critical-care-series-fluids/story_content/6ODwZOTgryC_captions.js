@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,360%0D%0AMr.%20Miller%20shakes%20his%20head.%20He%20%0D%0A%0D%0A2%0D%0A00:00:02,360%20--%3E%2000:00:03,240%0D%0Aappears%20uncomfortable.%0D%0A%0D%0A"}')

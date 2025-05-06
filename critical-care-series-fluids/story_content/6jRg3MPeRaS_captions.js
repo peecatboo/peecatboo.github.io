@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:03,860%0D%0ACardiovascular,%20RRR,%20S1,%20%0D%0A%0D%0A2%0D%0A00:00:03,900%20--%3E%2000:00:05,920%0D%0AS2,%20sinus%20tachycardia.%0D%0A%0D%0A"}')

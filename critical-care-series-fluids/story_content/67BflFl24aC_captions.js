@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,060%20--%3E%2000:00:01,440%0D%0ADo%20you%20think%20he%20still%20needs%20the%20%0D%0A%0D%0A2%0D%0A00:00:01,515%20--%3E%2000:00:01,840%0D%0Arestraints?%0D%0A%0D%0A"}')

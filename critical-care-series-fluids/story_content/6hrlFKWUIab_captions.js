@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,020%20--%3E%2000:00:03,340%0D%0AExtremities,%20cool%20and%20dry.%20Poor%20%0D%0A%0D%0A2%0D%0A00:00:03,350%20--%3E%2000:00:04,110%0D%0Askin%20turgor.%0D%0A%0D%0A"}')

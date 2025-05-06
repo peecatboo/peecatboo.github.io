@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:01,300%20--%3E%2000:00:02,100%0D%0APulmonary,%20clear%20bilaterally.%0D%0A%0D%0A"}')

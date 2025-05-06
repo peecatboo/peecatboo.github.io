@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:01,770%0D%0AAnaphylaxis%20is%20marked%20by%20%0D%0A%0D%0A2%0D%0A00:00:01,780%20--%3E%2000:00:03,920%0D%0Ahypotension,%20which%20does%20not%20fit%20%0D%0A%0D%0A3%0D%0A00:00:03,920%20--%3E%2000:00:05,640%0D%0AMr.%20Rivera\u0027s%20clinical%20scenario.%0D%0A%0D%0A"}')

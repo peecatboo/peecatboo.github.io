@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,080%20--%3E%2000:00:01,640%0D%0AYou%20are%20in%20the%20hospital.%20We%20need%20%0D%0A%0D%0A2%0D%0A00:00:01,640%20--%3E%2000:00:02,690%0D%0Ato%20take%20care%20of%20your%20symptoms%20%0D%0A%0D%0A3%0D%0A00:00:02,690%20--%3E%2000:00:03,990%0D%0Abefore%20we%20can%20send%20you%20home.%0D%0A%0D%0A"}')

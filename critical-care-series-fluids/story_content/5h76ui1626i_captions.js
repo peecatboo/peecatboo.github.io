@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,470%20--%3E%2000:00:01,650%0D%0AFluid%20administration%20will%20%0D%0A%0D%0A2%0D%0A00:00:01,650%20--%3E%2000:00:03,880%0D%0Aincrease%20cardiac%20workload%20and%20it%20%0D%0A%0D%0A3%0D%0A00:00:03,880%20--%3E%2000:00:05,870%0D%0Ais%20contraindicated%20in%20this%20case.%0D%0A%0D%0A"}')

@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,040%20--%3E%2000:00:02,800%0D%0ANumber%20three.%20Abdomen%20is%20soft,%20%0D%0A%0D%0A2%0D%0A00:00:02,890%20--%3E%2000:00:04,670%0D%0Anon-tender,%20non-distended.%0D%0A%0D%0A"}')

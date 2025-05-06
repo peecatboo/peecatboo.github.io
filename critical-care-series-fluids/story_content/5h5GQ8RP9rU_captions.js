@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,160%20--%3E%2000:00:01,540%0D%0AThe%20presence%20of%20nitrites%20in%20%0D%0A%0D%0A2%0D%0A00:00:01,540%20--%3E%2000:00:03,570%0D%0Aurine%20is%20indicative%20of%20bacterial%20%0D%0A%0D%0A3%0D%0A00:00:03,645%20--%3E%2000:00:03,970%0D%0Ainfection.%0D%0A%0D%0A"}')

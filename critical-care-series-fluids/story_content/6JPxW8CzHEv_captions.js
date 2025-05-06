@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,860%0D%0AHEENT,%20dry%20mucous%20%0D%0A%0D%0A2%0D%0A00:00:02,860%20--%3E%2000:00:04,920%0D%0Amembranes,%20profound%20diaphoresis.%0D%0A%0D%0A"}')

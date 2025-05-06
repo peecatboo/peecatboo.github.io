@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,030%20--%3E%2000:00:02,460%0D%0ACritical%20care%20series.%20Fluids,%20%0D%0A%0D%0A2%0D%0A00:00:02,530%20--%3E%2000:00:04,100%0D%0Aelectrolytes,%20and%20homeostasis.%0D%0A%0D%0A"}')

@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,070%0D%0ACalcium%20gluconate%20administration%20%0D%0A%0D%0A2%0D%0A00:00:02,120%20--%3E%2000:00:03,470%0D%0Acounteracts%20the%20effect%20of%20%0D%0A%0D%0A3%0D%0A00:00:03,470%20--%3E%2000:00:04,480%0D%0Amagnesium%20intoxication.%0D%0A%0D%0A"}')

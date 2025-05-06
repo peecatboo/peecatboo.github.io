@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,430%20--%3E%2000:00:02,070%0D%0AFluid%20retention%20and%20edema%20are%20%0D%0A%0D%0A2%0D%0A00:00:02,070%20--%3E%2000:00:03,820%0D%0Anot%20symptoms%20associated%20with%20%0D%0A%0D%0A3%0D%0A00:00:03,820%20--%3E%2000:00:04,820%0D%0Aalcohol%20withdrawal.%0D%0A%0D%0A"}')

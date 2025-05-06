@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,730%0D%0AMr.%20Rivera\u0027s%20A/G%20ratio%20is%20within%20%0D%0A%0D%0A2%0D%0A00:00:02,730%20--%3E%2000:00:03,470%0D%0Anormal%20parameters.%0D%0A%0D%0A"}')

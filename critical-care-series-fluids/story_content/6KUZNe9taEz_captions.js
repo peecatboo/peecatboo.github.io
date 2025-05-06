@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,230%0D%0ASeizures%20and%20tachycardia%20do%20not%20%0D%0A%0D%0A2%0D%0A00:00:02,230%20--%3E%2000:00:04,260%0D%0Aresult%20in%20insensible%20fluid%20loss.%0D%0A%0D%0A"}')

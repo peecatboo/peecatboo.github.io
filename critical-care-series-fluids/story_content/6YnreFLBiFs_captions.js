@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,540%20--%3E%2000:00:02,120%0D%0ASection%20three.%20Mr.%20Rivera.%0D%0A%0D%0A"}')

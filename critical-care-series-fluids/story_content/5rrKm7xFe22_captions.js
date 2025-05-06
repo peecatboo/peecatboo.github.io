@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:01,740%0D%0AGlucose%20in%20urine%20indicates%20a%20%0D%0A%0D%0A2%0D%0A00:00:01,740%20--%3E%2000:00:03,960%0D%0Ahyperglycemic%20state%20or%20kidney%20%0D%0A%0D%0A3%0D%0A00:00:04,035%20--%3E%2000:00:04,360%0D%0Ainjury.%0D%0A%0D%0A"}')

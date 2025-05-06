@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,510%20--%3E%2000:00:01,490%0D%0ASection%20four.%20Conclusion.%0D%0A%0D%0A"}')

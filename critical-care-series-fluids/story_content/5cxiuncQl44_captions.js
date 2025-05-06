@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,040%20--%3E%2000:00:01,630%0D%0ALiver%20ultrasound%20is%20not%20%0D%0A%0D%0A2%0D%0A00:00:01,630%20--%3E%2000:00:03,550%0D%0Aindicated%20at%20this%20point%20as%20it\u0027s%20%0D%0A%0D%0A3%0D%0A00:00:03,550%20--%3E%2000:00:04,510%0D%0Amildly%20elevated.%0D%0A%0D%0A"}')

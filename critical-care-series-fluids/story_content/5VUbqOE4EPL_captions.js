@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,300%20--%3E%2000:00:02,900%0D%0APatient:%20Not%20so%20good.%20I%20feel%20%0D%0A%0D%0A2%0D%0A00:00:02,900%20--%3E%2000:00:05,100%0D%0Alike%20I\u0027m%20gasping%20for%20air.%0D%0A%0D%0A"}')

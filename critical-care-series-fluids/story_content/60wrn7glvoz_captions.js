@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,030%20--%3E%2000:00:00,910%0D%0AClinical%20reference.%0D%0A%0D%0A"}')

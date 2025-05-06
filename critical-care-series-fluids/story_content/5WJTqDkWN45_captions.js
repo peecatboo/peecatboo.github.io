@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,130%20--%3E%2000:00:02,780%0D%0AGU.%2030%20milliliters%20in%20drainage%20%0D%0A%0D%0A2%0D%0A00:00:02,855%20--%3E%2000:00:03,180%0D%0Abag.%0D%0A%0D%0A"}')

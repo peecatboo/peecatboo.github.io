@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:02,330%0D%0AMr.%20Rivera%20vomits%20a%20second%20time,%20%0D%0A%0D%0A2%0D%0A00:00:02,600%20--%3E%2000:00:04,090%0D%0Aand%20Jack%20cleans%20him%20up.%0D%0A%0D%0A"}')

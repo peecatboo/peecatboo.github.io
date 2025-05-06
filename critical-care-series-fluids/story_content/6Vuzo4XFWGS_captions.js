@@ -1,0 +1,1 @@
+window.globalProvideData('caption', '{"data":"1%0D%0A00:00:00,010%20--%3E%2000:00:01,760%0D%0AHow\u0027s%20his%20urinary%20output?%0D%0A%0D%0A"}')
