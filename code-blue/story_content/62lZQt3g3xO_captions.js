@@ -1,0 +1,1 @@
+window.globalLoadJsAsset('story_content/62lZQt3g3xO_captions.js', {"captions":[{"langCode":"en-US","data":"WEBVTT%0D%0A%0D%0ANOTE%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%203.108.36037.0%0D%0A%0D%0A00:00:00.000%20--%3E%2000:00:02.918%0D%0ALet%E2%80%99s%20cardiovert%20the%20patient%20at%20100%20joules.%0D%0A%0D%0A"}]})

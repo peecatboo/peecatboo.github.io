@@ -1,0 +1,5 @@
+
+(function() {
+    const data = {"transcripts":[{"name":"captions","cues":[{"start":96,"text":"Oh no! Did you miss any of the critical steps of cardioversion? "},{"start":3968,"text":"Inappropriate cardioversion therapy can result in life-threatening complications. "},{"start":8768,"text":"Mr. Smith went into cardiac arrest."},{"start":11872,"text":". Let's review the appropriate steps for cardioversion therapy."},{"start":15552,"text":"Some common mistakes are forgetting to press the sync button"},{"start":18496,"text":"button or not ensuring everyone is clear."},{"start":21184,"text":"Failing to press the sync button causes the defibrillator to give a shock at ANY part of the cardiac cycle, "},{"start":27232,"text":"potentially causing the patient to go into ventricular fibrillation,"},{"start":30880,"text":"or VF. "},{"start":32320,"text":"Not ensuring everyone is clear can cause harm to your code team members."},{"start":36909,"text":"Let's review the appropriate steps for cardioversion therapy. "}]}]};
+    window.globalLoadJsAsset('story_content/5jMqcSPG2xq_transcripts.js', JSON.stringify(data));
+})();

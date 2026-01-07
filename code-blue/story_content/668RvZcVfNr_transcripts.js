@@ -1,0 +1,5 @@
+
+(function() {
+    const data = {"transcripts":[{"name":"captions","cues":[{"start":64,"text":"Yes! When pinpointing the hand placement for CPR in adults, you should kneel next to Jane"},{"start":6016,"text":"and use your fingers to locate the end of the breastbone. "},{"start":9344,"text":"Then place two fingers at the tip of the breastbone. "},{"start":12384,"text":"Then place the heel of the other hand right above your fingers."},{"start":16224,"text":"You should stack your other hand on top of the one you just put in position. "},{"start":20192,"text":"Lace the fingers of both hands together. "},{"start":22848,"text":"Finally, always straighten your arms, "},{"start":25312,"text":"lock your elbows,"},{"start":26556,"text":"and center your shoulders directly over your hands."}]}]};
+    window.globalLoadJsAsset('story_content/668RvZcVfNr_transcripts.js', JSON.stringify(data));
+})();

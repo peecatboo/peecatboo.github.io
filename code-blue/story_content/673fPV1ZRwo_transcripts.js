@@ -1,0 +1,5 @@
+
+(function() {
+    const data = {"transcripts":[{"name":"captions","cues":[{"start":96,"text":"Improper hand placement can cause harm to Jane, "},{"start":3008,"text":"such as inadequate CPR and an increased risk of rib fractures. "},{"start":7936,"text":"When locating the hand placement for CPR on Jane, "},{"start":11296,"text":"you should kneel next to them and use your fingers to locate the end of Jane’s breastbone. "},{"start":16256,"text":"Then place two fingers at the tip of the breastbone. "},{"start":19328,"text":"Then place the heel of the other hand right above your fingers. "},{"start":23232,"text":"You should stack your other hand on top of the one you just put in position. "},{"start":27488,"text":"Lace the fingers of both hands together. "},{"start":30272,"text":"Finally, always straighten your arms, "},{"start":32704,"text":"lock your elbows,"},{"start":34006,"text":"and center your shoulders directly over your hands."}]}]};
+    window.globalLoadJsAsset('story_content/673fPV1ZRwo_transcripts.js', JSON.stringify(data));
+})();

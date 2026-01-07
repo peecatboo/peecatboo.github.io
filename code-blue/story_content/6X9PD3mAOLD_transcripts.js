@@ -1,0 +1,5 @@
+
+(function() {
+    const data = {"transcripts":[{"name":"captions","cues":[{"start":96,"text":"If you stay clear, Jane will not get additional CPR. "},{"start":3936,"text":"Fewer pauses in chest compressions will increase Jane’s survival outcome. "},{"start":8128,"text":"You can continue CPR while the AED is charging. "},{"start":12000,"text":"It is essential to pay attention to the AED prompts and buttons."},{"start":16256,"text":"Studies have shown that CPR in clinical practice is often performed with long pauses to chest compressions, "},{"start":22656,"text":"and it is associated with poor survival outcomes. "},{"start":26560,"text":"Providing CPR therapy "},{"start":28419,"text":"while the AED is charging decreases additional pauses."}]}]};
+    window.globalLoadJsAsset('story_content/6X9PD3mAOLD_transcripts.js', JSON.stringify(data));
+})();

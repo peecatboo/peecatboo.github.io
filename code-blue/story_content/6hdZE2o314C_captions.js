@@ -1,0 +1,1 @@
+window.globalLoadJsAsset('story_content/6hdZE2o314C_captions.js', {"captions":[{"langCode":"en-US","data":"WEBVTT%0D%0A%0D%0ANOTE%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%203.108.36037.0%0D%0A%0D%0A00:00:00.096%20--%3E%2000:00:03.168%0D%0AStep%201:%20Set%20the%20defibrillator%20to%20Defib%20mode.%0D%0A%0D%0A"}]})

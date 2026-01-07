@@ -1,0 +1,1 @@
+window.globalLoadJsAsset('story_content/6NUOtBqTwu1_captions.js', {"captions":[{"langCode":"en-US","data":"WEBVTT%0D%0A%0D%0ANOTE%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%203.108.36037.0%0D%0A%0D%0A00:00:00.125%20--%3E%2000:00:02.765%0D%0AI%20can%E2%80%99t%20stay!%20This%20is%20too%20painful%20to%20watch!%0D%0A%0D%0A"}]})

@@ -1,0 +1,1 @@
+window.globalLoadJsAsset('story_content/6L6L42Ovfz8_captions.js', {"captions":[{"langCode":"en-US","data":"WEBVTT%0D%0A%0D%0ANOTE%0D%0AKind:%20captions%0D%0ASource:%20Articulate%20Closed%20Captions%20Editor%0D%0ASource%20Version:%203.108.36037.0%0D%0A%0D%0A00:00:00.224%20--%3E%2000:00:01.792%0D%0AWhat%20is%20going%20on%20with%20my%20husband?!%0D%0A%0D%0A"}]})

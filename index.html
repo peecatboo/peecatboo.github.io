@@ -1,217 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yusi Xu | E-Learning Portfolio</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-  <header>
-    <h1>Yusi Xu</h1>
-    <p>Instructional Designer | E-Learning Developer | PhD Candidate</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yusi Xu | Instructional Designer & E-Learning Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYded2qDzjDyb39MiyQH6026RX1caMa7Ic36WPS18fc6acnoSpvs9eIQExUsKeuWYLznOTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Courses</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Courses</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section id="about">
-      <div class="about-container">
-        <h2><i class="fas fa-user-tie"></i> About Me</h2>
-        <p>
-          I'm an experienced <strong>Instructional Designer & eLearning Developer</strong> with over <strong>eight years</strong> of expertise in creating interactive, learner-centered training solutions. My work combines solid instructional design foundations—ADDIE, SAM, and Kirkpatrick's models—with technical proficiency in a wide range of authoring tools, including <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, <strong>Xyleme</strong>, <strong>Camtasia</strong>, and the <strong>Adobe Creative Cloud Suite</strong>.
-        </p>
-        <p>
-          I specialize in building SCORM-compliant modules for <strong>LMS integration</strong>, transforming complex concepts into engaging digital learning experiences. Whether collaborating with cross-functional teams or developing courses independently, I bring both <strong>creative design thinking</strong> and <strong>technical precision</strong> to every project.
-        </p>
-        <p>
-          Passionate about improving learning outcomes through thoughtful design, I invite you to explore my portfolio and see how I turn instructional goals into impactful eLearning.
-        </p>
+    <header>
+      <div class="header-content">
+        <h1>YUSI <span class="last-name">XU</span></h1>
+        <p class="subtitle">INSTRUCTIONAL DESIGNER | E-LEARNING DEVELOPER</p>
       </div>
-    </section>
+    </header>
 
-    <section id="projects">
-      <h2><i class="fas fa-laptop-code"></i> Featured Courses</h2>
-      
-      <div class="course-category">
-        <h3><i class="fas fa-rocket"></i> Rapid Development Courses (Xyleme)</h3>
-        <div class="course-grid">
-          <article class="course-card">
-            <div class="course-image">
-              <img src="endoscopy-care-for-nurses/media/_RE-ORG/ACU/_NAR/ECN/GettyImages-1341304418.jpg" alt="Endoscopy Care for Nurses Preview">
-              <div class="course-overlay">
+    <main>
+      <section id="about">
+        <div class="about-container">
+          <h2><i class="fas fa-user-tie"></i> ABOUT ME</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I'm an experienced <strong>Instructional Designer & eLearning Developer</strong> with over <strong>eight years</strong> of expertise in creating interactive, learner-centered training solutions. My work combines solid instructional design foundations—ADDIE, SAM, and Kirkpatrick's models—with technical proficiency in a wide range of authoring tools, including <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, <strong>Xyleme</strong>, <strong>Camtasia</strong>, and the <strong>Adobe Creative Cloud Suite</strong>.
+              </p>
+              <p>
+                I specialize in building SCORM-compliant modules for <strong>LMS integration</strong>, transforming complex concepts into engaging digital learning experiences. Whether collaborating with cross-functional teams or developing courses independently, I bring both <strong>creative design thinking</strong> and <strong>technical precision</strong> to every project.
+              </p>
+              <p>
+                Passionate about improving learning outcomes through thoughtful design, I invite you to explore my portfolio and see how I turn instructional goals into impactful eLearning.
+              </p>
+            </div>
+            <div class="about-image">
+              <img src="img/profile.jpg" alt="Yusi Xu">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2><i class="fas fa-laptop-code"></i> Featured Courses</h2>
+        
+        <div class="course-category">
+          <h3><i class="fas fa-gamepad"></i> Interactive Simulations (Storyline 360)</h3>
+          <div class="course-grid">
+            <article class="course-card">
+              <a href="code-blue/story.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="code-blue/cover.jpg" alt="Code Blue Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="code-blue/story.html" target="_blank" class="course-title-link">
+                  <h3>Code Blue: Simulated Cardiac Arrest</h3>
+                </a>
+                <p>An immersive simulation training for cardiac arrest scenarios, featuring real-time decision making, emergency protocols, and life-saving interventions in a high-pressure clinical environment.</p>
+                <a href="code-blue/story.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <a href="perioperative-series/story.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="perioperative-series/cover.jpg" alt="Perioperative Series Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="perioperative-series/story.html" target="_blank" class="course-title-link">
+                  <h3>Perioperative Series: Surgical Safety</h3>
+                </a>
+                <p>A comprehensive training series focused on staff safety and surgical protocols within the perioperative environment. Includes risk management, procedural checklists, and patient safety standards.</p>
+                <a href="perioperative-series/story.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <a href="critical-care-series-fluids/story.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="critical-care-series-fluids/mobile/poster_6UOzGV8XFTD_video_61XXs427Gmu_22_96_1280x720.jpg" alt="Critical Care Series Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="critical-care-series-fluids/story.html" target="_blank" class="course-title-link">
+                  <h3>Critical Care Series: Fluids, Electrolytes, and Homeostasis</h3>
+                </a>
+                <p><strong>Award-winning course recognized as "Course of the Year"</strong> with an exceptional <strong>NPS score of 80+</strong>. Features comprehensive critical care training with <strong>interactive simulations</strong>, <strong>real-time feedback</strong>, and <strong>evidence-based clinical scenarios</strong>.</p>
+                <a href="critical-care-series-fluids/story.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <a href="proper-application-of-elastic-stockings/story.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="proper-application-of-elastic-stockings/mobile/6B9SBUmKj7O_90_RG.jpg" alt="Elastic Stockings Application Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="proper-application-of-elastic-stockings/story.html" target="_blank" class="course-title-link">
+                  <h3>Proper Application of Elastic Stockings</h3>
+                </a>
+                <p>Interactive training on correct elastic stockings application techniques, featuring <strong>ElevenLabs AI voiceover</strong> for natural narration. Includes step-by-step demonstrations, common mistakes to avoid, and practical assessment tools.</p>
+                <a href="proper-application-of-elastic-stockings/story.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="course-category">
+          <h3><i class="fas fa-mobile-alt"></i> Mobile-Friendly Courses (Rise 360)</h3>
+          <div class="course-grid">
+            <article class="course-card">
+              <a href="patient-education/index.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="patient-education/assets/BLiGd1bV4bP0nuFJ.jpg" alt="Patient Education Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="patient-education/index.html" target="_blank" class="course-title-link">
+                  <h3>Patient Education: Using the Teach-Back Method</h3>
+                </a>
+                <p>Interactive course on effective patient education techniques, focusing on the teach-back method. Includes practical scenarios, communication strategies, and assessment tools for healthcare professionals.</p>
+                <a href="patient-education/index.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <a href="management-of-chronic/index.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="management-of-chronic/assets/AdobeStock_316583182.jpg" alt="Chronic Hypertension Management Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="management-of-chronic/index.html" target="_blank" class="course-title-link">
+                  <h3>Management of Chronic Hypertension</h3>
+                </a>
+                <p>Comprehensive course on managing chronic hypertension in pregnancy, including risk assessment, treatment protocols, and monitoring strategies. Features case studies, clinical guidelines, and interactive decision-making scenarios.</p>
+                <a href="management-of-chronic/index.html" target="_blank" class="view-demo">View Demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="course-category">
+          <h3><i class="fas fa-rocket"></i> Rapid Development Courses (Xyleme)</h3>
+          <div class="course-grid">
+            <article class="course-card">
+              <a href="endoscopy-care-for-nurses/index.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="endoscopy-care-for-nurses/media/_RE-ORG/ACU/_NAR/ECN/GettyImages-1341304418.jpg" alt="Endoscopy Care for Nurses Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="endoscopy-care-for-nurses/index.html" target="_blank" class="course-title-link">
+                  <h3>Endoscopy Care for Nurses</h3>
+                </a>
+                <p>Comprehensive endoscopy care training for nurses, featuring interactive modules, procedure guidelines, and real-time tracking. SCORM/xAPI ready for LMS integration.</p>
                 <a href="endoscopy-care-for-nurses/index.html" target="_blank" class="view-demo">View Demo</a>
               </div>
-            </div>
-            <div class="course-content">
-              <h3>Endoscopy Care for Nurses</h3>
-              <p>Comprehensive endoscopy care training for nurses, featuring interactive modules, procedure guidelines, and real-time tracking. SCORM/xAPI ready for LMS integration.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="course-card">
-            <div class="course-image">
-              <img src="pharmacology-of-antiemetics\media\_RE-ORG\ACU\_NAR\POAEM\nausea-1449544100-g.jpg" alt="Pharmacology of Antiemetics Preview">
-              <div class="course-overlay">
-                <a href="pharmacology-of-antiemetics\index.html" target="_blank" class="view-demo">View Demo</a>
+            <article class="course-card">
+              <a href="pharmacology-of-antiemetics/index.html" target="_blank" class="course-link">
+                <div class="course-image">
+                  <img src="pharmacology-of-antiemetics/media/_RE-ORG/ACU/_NAR/POAEM/nausea-1449544100-g.jpg" alt="Pharmacology of Antiemetics Preview">
+                  <div class="course-overlay">
+                    <span class="view-demo-text">VIEW DEMO <i class="fas fa-external-link-alt"></i></span>
+                  </div>
+                </div>
+              </a>
+              <div class="course-content">
+                <a href="pharmacology-of-antiemetics/index.html" target="_blank" class="course-title-link">
+                  <h3>Pharmacology of Antiemetics</h3>
+                </a>
+                <p>Comprehensive training on antiemetic medications, their mechanisms of action, and clinical applications. Features interactive drug information, case studies, and assessment tools.</p>
+                <a href="pharmacology-of-antiemetics/index.html" target="_blank" class="view-demo">View Demo</a>
               </div>
-            </div>
-            <div class="course-content">
-              <h3>Pharmacology of Antiemetics</h3>
-              <p>Comprehensive training on antiemetic medications, their mechanisms of action, and clinical applications. Features interactive drug information, case studies, and assessment tools.</p>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="course-category">
-        <h3><i class="fas fa-gamepad"></i> Interactive Simulations (Storyline 360)</h3>
-        <div class="course-grid">
-          <article class="course-card">
-            <div class="course-image">
-              <img src="critical-care-series-fluids\mobile\poster_6UOzGV8XFTD_video_61XXs427Gmu_22_96_1280x720.jpg" alt="Critical Care Series Preview">
-              <div class="course-overlay">
-                <a href="critical-care-series-fluids\story.html" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Critical Care Series: Fluids, Electrolytes, and Homeostasis</h3>
-              <p><strong>Award-winning course recognized as "Course of the Year"</strong> with an exceptional <strong>NPS score of 80+</strong>. Features comprehensive critical care training with <strong>interactive simulations</strong>, <strong>real-time feedback</strong>, and <strong>evidence-based clinical scenarios</strong>.</p>
-            </div>
-          </article>
+      <section id="skills">
+        <h2><i class="fas fa-lightbulb"></i> Skills & Tools</h2>
 
-          <article class="course-card">
-            <div class="course-image">
-              <img src="proper-application-of-elastic-stockings\mobile\6B9SBUmKj7O_90_RG.jpg" alt="Elastic Stockings Application Preview">
-              <div class="course-overlay">
-                <a href="proper-application-of-elastic-stockings\story.html" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Proper Application of Elastic Stockings</h3>
-              <p>Interactive training on correct elastic stockings application techniques, featuring <strong>ElevenLabs AI voiceover</strong> for natural narration. Includes step-by-step demonstrations, common mistakes to avoid, and practical assessment tools.</p>
-            </div>
-          </article>
+        <div class="skills-container">
+          <div class="skills-category">
+            <h3><i class="fas fa-pen-fancy"></i> Authoring & Design Tools</h3>
+            <ul>
+              <li>Articulate Storyline 360 & Rise</li>
+              <li>Xyleme LCMS</li>
+              <li>Camtasia</li>
+              <li>Adobe Creative Cloud Suite</li>
+              <li>Canvas, Blackboard, Moodle</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <h3><i class="fas fa-graduation-cap"></i> Instructional Design</h3>
+            <ul>
+              <li>ADDIE, SAM Models</li>
+              <li>Kirkpatrick's Four Levels</li>
+              <li>Curriculum & Module Design</li>
+              <li>Assessment & Evaluation Strategy</li>
+              <li>Adult Learning Theory</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <h3><i class="fas fa-microchip"></i> Technical</h3>
+            <ul>
+              <li>SCORM Packaging</li>
+              <li>xAPI / Experience API</li>
+              <li>Java / JavaScript</li>
+              <li>HTML / CSS Basics</li>
+              <li>eLearning Publishing & QA Testing</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <h3><i class="fas fa-robot"></i> AI-Assisted Learning Design</h3>
+            <ul>
+              <li>ElevenLabs</li>
+              <li>ChatGPT prompt assisted learning design</li>
+              <li>Midjourney for learning visuals</li>
+              <li>AI-powered content personalization</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <h3><i class="fas fa-chart-bar"></i> Data & Analysis</h3>
+            <ul>
+              <li>Linear Regression, ANOVA</li>
+              <li>SAS, SPSS, JMP</li>
+              <li>Design of Experiments</li>
+              <li>Data visualization</li>
+            </ul>
+          </div>
+
+          <div class="skills-category">
+            <h3><i class="fas fa-comments"></i> Languages</h3>
+            <ul>
+              <li>English (Fluent)</li>
+              <li>Mandarin (Native)</li>
+              <li>Cantonese (Fluent)</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="course-category">
-        <h3><i class="fas fa-mobile-alt"></i> Mobile-Friendly Courses (Rise 360)</h3>
-        <div class="course-grid">
-          <article class="course-card">
-            <div class="course-image">
-              <img src="patient-education\assets\BLiGd1bV4bP0nuFJ.jpg" alt="Patient Education Preview">
-              <div class="course-overlay">
-                <a href="patient-education\index.html" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Patient Education: Using the Teach-Back Method</h3>
-              <p>Interactive course on effective patient education techniques, focusing on the teach-back method. Includes practical scenarios, communication strategies, and assessment tools for healthcare professionals.</p>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <div class="course-image">
-              <img src="management-of-chronic\assets\AdobeStock_316583182.jpg" alt="Chronic Hypertension Management Preview">
-              <div class="course-overlay">
-                <a href="management-of-chronic\index.html" target="_blank" class="view-demo">View Demo</a>
-              </div>
-            </div>
-            <div class="course-content">
-              <h3>Management of Chronic Hypertension</h3>
-              <p>Comprehensive course on managing chronic hypertension in pregnancy, including risk assessment, treatment protocols, and monitoring strategies. Features case studies, clinical guidelines, and interactive decision-making scenarios.</p>
-            </div>
-          </article>
+      <section id="contact">
+        <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <div class="contact-links">
+          <p>Email: <a href="mailto:yusixu@outlook.com">yusixu@outlook.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/yusixu/" target="_blank">My LinkedIn</a></p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="skills">
-      <h2><i class="fas fa-lightbulb"></i> Skills & Tools</h2>
-
-      <div class="skills-container">
-        <div class="skills-category">
-          <h3><i class="fas fa-pen-fancy"></i> Authoring & Design Tools</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> Articulate Storyline 360 & Rise</li>
-            <li><i class="fas fa-circle-check"></i> Xyleme LCMS</li>
-            <li><i class="fas fa-circle-check"></i> Camtasia</li>
-            <li><i class="fas fa-circle-check"></i> Adobe Creative Cloud Suite</li>
-            <li><i class="fas fa-circle-check"></i> Canvas, Blackboard, Moodle</li>
-          </ul>
-        </div>
-
-        <div class="skills-category">
-          <h3><i class="fas fa-graduation-cap"></i> Instructional Design</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> ADDIE, SAM Models</li>
-            <li><i class="fas fa-circle-check"></i> Kirkpatrick's Four Levels</li>
-            <li><i class="fas fa-circle-check"></i> Curriculum & Module Design</li>
-            <li><i class="fas fa-circle-check"></i> Assessment & Evaluation Strategy</li>
-            <li><i class="fas fa-circle-check"></i> Adult Learning Theory</li>
-          </ul>
-        </div>
-
-        <div class="skills-category">
-          <h3><i class="fas fa-microchip"></i> Technical</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> SCORM Packaging</li>
-            <li><i class="fas fa-circle-check"></i> xAPI / Experience API</li>
-            <li><i class="fas fa-circle-check"></i> Java / JavaScript</li>
-            <li><i class="fas fa-circle-check"></i> HTML / CSS Basics</li>
-            <li><i class="fas fa-circle-check"></i> eLearning Publishing & QA Testing</li>
-          </ul>
-        </div>
-
-        <div class="skills-category">
-          <h3><i class="fas fa-robot"></i> AI-Assisted Learning Design</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> ElevenLabs</li>
-            <li><i class="fas fa-circle-check"></i> ChatGPT prompt assisted learning design</li>
-            <li><i class="fas fa-circle-check"></i> Midjourney for learning visuals</li>
-            <li><i class="fas fa-circle-check"></i> AI-powered content personalization</li>
-          </ul>
-        </div>
-
-        <div class="skills-category">
-          <h3><i class="fas fa-chart-bar"></i> Data & Analysis</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> Linear Regression, ANOVA</li>
-            <li><i class="fas fa-circle-check"></i> SAS, SPSS, JMP</li>
-            <li><i class="fas fa-circle-check"></i> Design of Experiments</li>
-            <li><i class="fas fa-circle-check"></i> Data visualization</li>
-          </ul>
-        </div>
-
-        <div class="skills-category">
-          <h3><i class="fas fa-comments"></i> Languages</h3>
-          <ul>
-            <li><i class="fas fa-circle-check"></i> English (Fluent)</li>
-            <li><i class="fas fa-circle-check"></i> Mandarin (Native)</li>
-            <li><i class="fas fa-circle-check"></i> Cantonese (Fluent)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2><i class="fas fa-envelope"></i> Contact</h2>
-      <p>Email: xuyusi917@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/yusixu/" target="_blank">My LinkedIn</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Yusi Xu. All rights reserved.</p>
-  </footer>
-</body>
+    <footer>
+      <p>&copy; 2026 Yusi Xu. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
