@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI in Instructional Design — A Workflow Case Study | Yusi Xu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .case-study {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .case-study header {
+        padding: 12vh 0 6vh;
+        max-width: none;
+        text-align: left;
+      }
+      .case-study header h1 {
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+        text-transform: none;
+        letter-spacing: -0.01em;
+      }
+      .case-study header .byline {
+        font-family: var(--font-mono);
+        color: var(--accent-color);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+      }
+      .case-study header .meta {
+        font-family: var(--font-mono);
+        color: var(--text-muted);
+        font-size: 0.8rem;
+      }
+      .case-study header .meta a {
+        color: var(--text-muted);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+      .case-study header .meta a:hover {
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 1rem;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.2rem;
+        transition: var(--transition);
+      }
+      .back-link:hover {
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+      }
+      .case-study section.body {
+        padding: 3rem 0;
+        border-top: 1px solid var(--border-color);
+      }
+      .case-study section.body:first-of-type {
+        border-top: none;
+      }
+      .case-study h2 {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        color: var(--text-main);
+        text-transform: none;
+        letter-spacing: -0.01em;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      .case-study h2::before {
+        content: none;
+      }
+      .case-study h3 {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin: 2rem 0 1rem;
+      }
+      .case-study p {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-main);
+        margin-bottom: 1.2rem;
+      }
+      .case-study strong {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+      .case-study em {
+        color: var(--text-main);
+        font-style: italic;
+      }
+      .case-study a {
+        color: var(--accent-color);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 255, 65, 0.4);
+        transition: var(--transition);
+      }
+      .case-study a:hover {
+        border-bottom-color: var(--accent-color);
+      }
+      .case-study ul,
+      .case-study ol {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 1.8;
+        color: var(--text-main);
+        margin: 0 0 1.5rem 1.5rem;
+        padding: 0;
+      }
+      .case-study ol {
+        list-style: decimal;
+      }
+      .case-study ul {
+        list-style: square;
+      }
+      .case-study li {
+        margin-bottom: 0.4rem;
+      }
+      .case-study li::marker {
+        color: var(--accent-color);
+      }
+      .case-study pre {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: var(--accent-color);
+        background: rgba(0, 255, 65, 0.04);
+        border: 1px solid var(--border-color);
+        border-left: 2px solid var(--accent-color);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+        white-space: pre;
+      }
+      .case-study code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+        color: var(--accent-color);
+        background: rgba(0, 255, 65, 0.08);
+        padding: 0.1em 0.4em;
+        border-radius: 2px;
+      }
+      .case-study pre code {
+        background: transparent;
+        padding: 0;
+      }
+      .case-study hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 3rem 0;
+      }
+      .case-study .table-wrapper {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border: 1px solid var(--border-color);
+      }
+      .case-study table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+      }
+      .case-study th,
+      .case-study td {
+        text-align: left;
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid var(--border-color);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+      .case-study th {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--text-muted);
+        background: rgba(255, 255, 255, 0.02);
+        font-weight: 400;
+      }
+      .case-study tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .case-study td strong {
+        color: var(--accent-color);
+      }
+      .case-study .footnote {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-align: center;
+        padding: 3rem 0 5rem;
+        font-style: italic;
+      }
+      @media (max-width: 700px) {
+        .case-study h2 { font-size: 1.5rem; }
+        .case-study header h1 { font-size: 2rem; }
+        .case-study th, .case-study td { padding: 0.7rem 0.8rem; font-size: 0.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Courses</a></li>
+        <li><a href="../index.html">Writing</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="case-study">
+      <header>
+        <p class="byline">Case Study</p>
+        <h1>AI in Instructional Design — A Workflow Case Study</h1>
+        <p class="meta">
+          <strong style="color: var(--text-main); font-weight: 400;">Yusi Xu</strong> · Senior Instructional Designer<br>
+          <a href="https://peecatboo.github.io">peecatboo.github.io</a> ·
+          <a href="mailto:yusixu@outlook.com">yusixu@outlook.com</a>
+        </p>
+        <a href="../index.html" class="back-link">← Back to portfolio</a>
+      </header>
+
+      <section class="body">
+        <h2>Why this document exists</h2>
+        <p>Most ID candidates can name AI tools. Fewer can speak to where AI fits in a <em>regulated</em> production environment — where source materials cannot leave the firm, where SMEs require verifiable accuracy, and where the cost of a single hallucinated clinical detail is unacceptable.</p>
+        <p>This case study walks through how AI is integrated into my production pipeline, anchored in <em>Code Blue: Simulated Cardiac Arrest</em> (<a href="../code-blue/story.html">live demo</a>) — and how I keep that workflow inside the data-governance boundaries my employer and clients require.</p>
+      </section>
+
+      <section class="body">
+        <h2>The constraint that shapes everything</h2>
+        <p>In healthcare ID, three categories of source content cannot be uploaded to third-party LLMs:</p>
+        <ol>
+          <li>Institutional policies</li>
+          <li>Employer-proprietary content (existing courseware, internal frameworks)</li>
+          <li>Client-provided content from healthcare organization customers</li>
+        </ol>
+        <p>Only public materials — AHA 2020 ACLS guidelines, peer-reviewed literature, FDA-published documents — can be uploaded freely.</p>
+        <p>This is not a hypothetical concern. It rules out the "drop your PDFs into NotebookLM" workflow that dominates current ID-with-AI tutorials. It requires a different production pattern.</p>
+      </section>
+
+      <section class="body">
+        <h2>My pattern: outline first, then elaborate</h2>
+        <p>The key move: <strong>AI never sees the protected source material directly. AI only sees an outline I have already written in my own words.</strong></p>
+        <pre><code>Protected source (e.g., institutional policy, client material)
+         ↓
+   I read it myself
+         ↓
+   I write a detailed outline in my own words
+         ↓
+   Outline → ChatGPT  AND  outline → Claude (same prompt, two outputs)
+         ↓
+   Compare drafts; cherry-pick or merge
+         ↓
+   Human edit pass
+         ↓
+   SME review</code></pre>
+        <p>Two things this protects:</p>
+        <ul>
+          <li>Proprietary or regulated content never leaves my machine in a form usable elsewhere.</li>
+          <li>The outline I feed AI is already filtered through clinical and instructional judgment — so AI's job becomes <em>elaboration</em>, not <em>interpretation</em> of sensitive source material.</li>
+        </ul>
+      </section>
+
+      <section class="body">
+        <h2>Why I run both ChatGPT and Claude in parallel</h2>
+        <p>For drafting work, I run the same outline through both ChatGPT and Claude, then pick the stronger draft or merge the two.</p>
+        <p>The tools fail in different ways. One run gives me one perspective; two runs give me a comparison I can use to catch generic phrasing, awkward transitions, or clinical claims that neither tool flagged independently. The second draft costs effectively nothing, and the pick-or-merge step is the fastest editorial pass I have.</p>
+        <p>This pattern only works if you have an outline strong enough that both tools are producing comparable drafts. If the outline is weak, both outputs are weak in the same way — and you have no signal.</p>
+      </section>
+
+      <section class="body">
+        <h2>Code Blue: what AI actually did</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>What I did</th>
+                <th>What AI did</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Source synthesis</td>
+                <td>Read AHA 2020 ACLS guidelines + institutional protocols; built detailed outline in my own words</td>
+                <td>Nothing — protected sources stay local</td>
+              </tr>
+              <tr>
+                <td>Scenario design</td>
+                <td>Designed the two-pathway structure, mapped 17 decision points to Bloom's L1–L4, wrote distractors</td>
+                <td>Nothing — clinical judgment work</td>
+              </tr>
+              <tr>
+                <td><strong>Transcript drafting</strong></td>
+                <td>Wrote outlines for each screen's narration</td>
+                <td><strong>Elaborated outlines into spoken-language transcripts (dual ChatGPT + Claude, picked stronger version per screen)</strong></td>
+              </tr>
+              <tr>
+                <td>Voiceover and animation</td>
+                <td>Specified voice characteristics, supplied hand-drawn character images, defined pacing</td>
+                <td>ElevenLabs synthesized voice and generated lip-sync character animation from uploaded images and transcripts</td>
+              </tr>
+              <tr>
+                <td>Pronunciation QA</td>
+                <td>Logged every flagged medical term from SME review</td>
+                <td>Re-synthesized in ElevenLabs (phonetic spellings, pacing tags, re-records)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="body">
+        <h2>The ElevenLabs lip-sync workflow</h2>
+        <p>For Code Blue, character animations are driven by ElevenLabs. I upload the hand-drawn 2D character image; ElevenLabs generates the voice from the transcript and produces lip-synced animation for that character. This replaces what used to require (a) voice talent and animator hired separately, or (b) skipping character animation altogether.</p>
+
+        <h3>The pronunciation QA loop is non-negotiable</h3>
+        <p>Medical pronunciation is the recurring failure mode. ElevenLabs reliably mispronounces specialized terminology — drug names, anatomical Latin, clinical acronyms. My standard loop:</p>
+        <ol>
+          <li>Initial synthesis from approved transcript</li>
+          <li>SME plays through, flags every mispronunciation in a tracking doc</li>
+          <li>I edit in ElevenLabs (phonetic spelling, pacing tags, or full re-record)</li>
+          <li>SME re-checks</li>
+          <li>Final SCORM build</li>
+        </ol>
+        <p>In my experience, at least one specialized term needs phonetic correction in nearly every simulation we ship. Skipping this loop means a learner hears a key clinical term pronounced wrong in the middle of a high-stakes scenario — and the credibility of the entire course collapses. AI voice synthesis is fast; the QA cost of using it is what most production timelines underestimate.</p>
+      </section>
+
+      <section class="body">
+        <h2>Principles I hold</h2>
+        <ol>
+          <li><strong>AI never sees the protected source.</strong> If I cannot describe the content in my own outline, AI cannot draft from it.</li>
+          <li><strong>Two drafts beat one.</strong> Running the same task through ChatGPT and Claude in parallel produces better final output than picking one tool and iterating with it alone.</li>
+          <li><strong>AI is for first drafts, not final outputs</strong> — especially in clinical or other high-stakes contexts.</li>
+          <li><strong>The SME QA loop on AI-generated voiceover is non-negotiable.</strong> Mispronounced specialized terms break learner trust faster than almost anything else in a course.</li>
+          <li><strong>Don't hide AI usage from SMEs.</strong> Reviewers catch more — and review more carefully — when they know which sections were AI-drafted.</li>
+        </ol>
+      </section>
+
+      <section class="body">
+        <h2>Tech stack</h2>
+        <ul>
+          <li><strong>ChatGPT</strong> and <strong>Anthropic Claude (claude.ai)</strong> — dual-tool drafting and editorial review</li>
+          <li><strong>ElevenLabs</strong> — voice synthesis and lip-sync character animation</li>
+          <li><strong>Articulate Storyline 360 / Rise 360</strong> — authoring and SCORM packaging (no AI in this layer)</li>
+        </ul>
+      </section>
+
+      <p class="footnote">Last updated: May 2026 · Yusi Xu</p>
+    </main>
+
+    <footer>
+      <p style="text-align:center;">&copy; 2026 Yusi Xu. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
