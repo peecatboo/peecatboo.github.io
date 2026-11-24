@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI in Instructional Design — A Workflow Case Study | Yusi Xu</title>
-    <meta name="description" content="How AI fits in a regulated production environment — data governance, dual-tool drafting (ChatGPT + Claude), and the SME QA loop that AI tutorials don't talk about. By Yusi Xu, Instructional Designer." />
+    <meta name="description" content="How AI fits in a regulated production environment: data governance, dual-tool drafting (ChatGPT + Claude), and the SME QA loop that AI tutorials don't talk about. By Yusi Xu, Instructional Designer." />
     <meta name="author" content="Yusi Xu" />
     <link rel="canonical" href="https://peecatboo.github.io/ai-workflow/" />
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://peecatboo.github.io/ai-workflow/" />
     <meta property="og:title" content="AI in Instructional Design — A Workflow Case Study" />
-    <meta property="og:description" content="How AI fits in a regulated production environment — data governance, dual-tool drafting, and the SME QA loop that AI tutorials don't talk about." />
+    <meta property="og:description" content="How AI fits in a regulated production environment: data governance, dual-tool drafting, and the SME QA loop that AI tutorials don't talk about." />
     <meta property="og:image" content="https://peecatboo.github.io/img/og-case-study.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AI in Instructional Design — A Workflow Case Study" />
-    <meta name="twitter:description" content="How AI fits in a regulated production environment — data governance, dual-tool drafting, and the SME QA loop." />
+    <meta name="twitter:description" content="How AI fits in a regulated production environment: data governance, dual-tool drafting, and the SME QA loop." />
     <meta name="twitter:image" content="https://peecatboo.github.io/img/og-case-study.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,8 +256,8 @@
 
       <section class="body">
         <h2>Why this document exists</h2>
-        <p>Most ID candidates can name AI tools. Fewer can speak to where AI fits in a <em>regulated</em> production environment — where source materials cannot leave the firm, where SMEs require verifiable accuracy, and where the cost of a single hallucinated clinical detail is unacceptable.</p>
-        <p>This case study walks through how AI is integrated into my production pipeline, anchored in <em>Code Blue: Simulated Cardiac Arrest</em> (<a href="../code-blue/story.html">live demo</a>) — and how I keep that workflow inside the data-governance boundaries my employer and clients require.</p>
+        <p>Most ID candidates can name AI tools. Fewer can speak to where AI fits in a <em>regulated</em> production environment: where source materials cannot leave the firm, where SMEs require verifiable accuracy, and where the cost of a single hallucinated clinical detail is unacceptable.</p>
+        <p>This case study walks through how AI is integrated into my production pipeline, anchored in <em>Code Blue: Simulated Cardiac Arrest</em> (<a href="../code-blue/story.html">live demo</a>), and how I kept that workflow inside the data-governance boundaries my employer and its clients required.</p>
       </section>
 
       <section class="body">
@@ -268,8 +268,9 @@
           <li>Employer-proprietary content (existing courseware, internal frameworks)</li>
           <li>Client-provided content from healthcare organization customers</li>
         </ol>
-        <p>Only public materials — AHA 2020 ACLS guidelines, peer-reviewed literature, FDA-published documents — can be uploaded freely.</p>
+        <p>Only public materials (AHA 2020 ACLS guidelines, peer-reviewed literature, FDA-published documents) can be uploaded freely.</p>
         <p>This is not a hypothetical concern. It rules out the "drop your PDFs into NotebookLM" workflow that dominates current ID-with-AI tutorials. It requires a different production pattern.</p>
+        <p>The same rule holds anywhere client data is regulated: privileged documents at a law firm, client financials at an accounting firm, account data in banking and insurance, transaction and tenant records in real estate. The pattern below was built for healthcare, but it transfers directly.</p>
       </section>
 
       <section class="body">
@@ -291,7 +292,7 @@
         <p>Two things this protects:</p>
         <ul>
           <li>Proprietary or regulated content never leaves my machine in a form usable elsewhere.</li>
-          <li>The outline I feed AI is already filtered through clinical and instructional judgment — so AI's job becomes <em>elaboration</em>, not <em>interpretation</em> of sensitive source material.</li>
+          <li>The outline I feed AI is already filtered through clinical and instructional judgment, so AI's job becomes <em>elaboration</em>, not <em>interpretation</em> of sensitive source material.</li>
         </ul>
       </section>
 
@@ -299,7 +300,7 @@
         <h2>Why I run both ChatGPT and Claude in parallel</h2>
         <p>For drafting work, I run the same outline through both ChatGPT and Claude, then pick the stronger draft or merge the two.</p>
         <p>The tools fail in different ways. One run gives me one perspective; two runs give me a comparison I can use to catch generic phrasing, awkward transitions, or clinical claims that neither tool flagged independently. The second draft costs effectively nothing, and the pick-or-merge step is the fastest editorial pass I have.</p>
-        <p>This pattern only works if you have an outline strong enough that both tools are producing comparable drafts. If the outline is weak, both outputs are weak in the same way — and you have no signal.</p>
+        <p>This pattern only works if you have an outline strong enough that both tools are producing comparable drafts. If the outline is weak, both outputs are weak in the same way, and you have no signal.</p>
       </section>
 
       <section class="body">
@@ -317,12 +318,12 @@
               <tr>
                 <td>Source synthesis</td>
                 <td>Read AHA 2020 ACLS guidelines + institutional protocols; built detailed outline in my own words</td>
-                <td>Nothing — protected sources stay local</td>
+                <td>Nothing (protected sources stay local)</td>
               </tr>
               <tr>
                 <td>Scenario design</td>
                 <td>Designed the two-pathway structure, mapped 17 decision points to Bloom's L1–L4, wrote distractors</td>
-                <td>Nothing — clinical judgment work</td>
+                <td>Nothing (clinical judgment work)</td>
               </tr>
               <tr>
                 <td><strong>Transcript drafting</strong></td>
@@ -349,7 +350,7 @@
         <p>For Code Blue, character animations are driven by ElevenLabs. I upload the hand-drawn 2D character image; ElevenLabs generates the voice from the transcript and produces lip-synced animation for that character. This replaces what used to require (a) voice talent and animator hired separately, or (b) skipping character animation altogether.</p>
 
         <h3>The pronunciation QA loop is non-negotiable</h3>
-        <p>Medical pronunciation is the recurring failure mode. ElevenLabs reliably mispronounces specialized terminology — drug names, anatomical Latin, clinical acronyms. My standard loop:</p>
+        <p>Medical pronunciation is the recurring failure mode. ElevenLabs reliably mispronounces specialized terminology: drug names, anatomical Latin, clinical acronyms. My standard loop:</p>
         <ol>
           <li>Initial synthesis from approved transcript</li>
           <li>SME plays through, flags every mispronunciation in a tracking doc</li>
@@ -357,7 +358,7 @@
           <li>SME re-checks</li>
           <li>Final SCORM build</li>
         </ol>
-        <p>In my experience, at least one specialized term needs phonetic correction in nearly every simulation we ship. Skipping this loop means a learner hears a key clinical term pronounced wrong in the middle of a high-stakes scenario — and the credibility of the entire course collapses. AI voice synthesis is fast; the QA cost of using it is what most production timelines underestimate.</p>
+        <p>In my experience, at least one specialized term needs phonetic correction in nearly every simulation we shipped. Skipping this loop means a learner hears a key clinical term pronounced wrong in the middle of a high-stakes scenario, and the credibility of the entire course collapses. AI voice synthesis is fast; the QA cost of using it is what most production timelines underestimate.</p>
       </section>
 
       <section class="body">
@@ -365,35 +366,41 @@
         <ol>
           <li><strong>AI never sees the protected source.</strong> If I cannot describe the content in my own outline, AI cannot draft from it.</li>
           <li><strong>Two drafts beat one.</strong> Running the same task through ChatGPT and Claude in parallel produces better final output than picking one tool and iterating with it alone.</li>
-          <li><strong>AI is for first drafts, not final outputs</strong> — especially in clinical or other high-stakes contexts.</li>
+          <li><strong>AI is for first drafts, not final outputs</strong>, especially in clinical or other high-stakes contexts.</li>
           <li><strong>The SME QA loop on AI-generated voiceover is non-negotiable.</strong> Mispronounced specialized terms break learner trust faster than almost anything else in a course.</li>
-          <li><strong>Layered AI by emotional need.</strong> Where vocal range, suspense, or emotional delivery matters — game-show hosts, in-scene actor dialogue — I keep live performance. AI takes structured narration and instructional roles. Voice allocation is a design decision, not a default.</li>
-          <li><strong>Don't hide AI usage from SMEs.</strong> Reviewers catch more — and review more carefully — when they know which sections were AI-drafted.</li>
+          <li><strong>Layered AI by emotional need.</strong> Where vocal range, suspense, or emotional delivery matters (game-show hosts, in-scene actor dialogue), I keep live performance. AI takes structured narration and instructional roles. Voice allocation is a design decision, not a default.</li>
+          <li><strong>Don't hide AI usage from SMEs.</strong> Reviewers catch more, and review more carefully, when they know which sections were AI-drafted.</li>
         </ol>
       </section>
 
       <section class="body">
         <h2>Where this has shipped</h2>
-        <p>The full pipeline described above — outline-first drafting, dual-tool ChatGPT + Claude, and ElevenLabs voice with emotion-layered allocation — was established with <em>Code Blue</em> (2026). Earlier Relias simulations used a leaner variant: ElevenLabs voiceover with single-tool drafting, before both Claude and ChatGPT were stable enough for parallel use.</p>
+        <p>The full pipeline described above (outline-first drafting, dual-tool ChatGPT + Claude, and ElevenLabs voice with emotion-layered allocation) was established with <em>Code Blue</em> at Relias. Earlier simulations used a leaner variant: ElevenLabs voiceover with single-tool drafting, before both Claude and ChatGPT were stable enough for parallel use.</p>
         <p>The ElevenLabs voice layer runs across these builds, with allocation tuned to each design:</p>
         <ul>
-          <li><strong>Critical Care Series: Fluids, Electrolytes, and Homeostasis</strong> (Course of the Year, NPS 80+) — single-voice clinical narration over diagnosis-driven ECG and lab interpretation.</li>
-          <li><strong>Code Blue: Simulated Cardiac Arrest</strong> — virtual-nurse character voices across branching ACLS/BLS pathways.</li>
-          <li><strong>Perioperative Series: Surgical Safety</strong> — AI for three opponent-nurse voices in the Jeopardy format; live-actor host where the game-show energy requires emotional range.</li>
+          <li><strong>Critical Care Series: Fluids, Electrolytes, and Homeostasis</strong> (Course of the Year, NPS 80+): single-voice clinical narration over diagnosis-driven ECG and lab interpretation.</li>
+          <li><strong>Code Blue: Simulated Cardiac Arrest</strong>: virtual-nurse character voices across branching ACLS/BLS pathways.</li>
+          <li><strong>Perioperative Series: Surgical Safety</strong>: AI for three opponent-nurse voices in the Jeopardy format; live-actor host where the game-show energy requires emotional range.</li>
+          <li><strong>Reference audio lessons</strong>: ElevenLabs narration turned need-to-know reference content into podcast-style lessons learners could listen to on the go.</li>
         </ul>
         <p>The variation is design surface (diagnosis, branching simulation, gamified competition). The AI workflow underneath is the same.</p>
       </section>
 
       <section class="body">
+        <h2>Since 2025: building with AI APIs</h2>
+        <p>Since October 2025, I've been building small tools on the Claude and OpenAI APIs, such as a reading assistant that explains a difficult passage on request. Working at the API level keeps me close to what these models can and can't do, which is what decides where they belong in a course pipeline.</p>
+      </section>
+
+      <section class="body">
         <h2>Tech stack</h2>
         <ul>
-          <li><strong>ChatGPT</strong> and <strong>Anthropic Claude (claude.ai)</strong> — dual-tool drafting and editorial review</li>
-          <li><strong>ElevenLabs</strong> — voice synthesis and lip-sync character animation</li>
-          <li><strong>Articulate Storyline 360 / Rise 360</strong> — authoring and SCORM packaging (no AI in this layer)</li>
+          <li><strong>ChatGPT</strong> and <strong>Anthropic Claude (claude.ai)</strong>: dual-tool drafting and editorial review</li>
+          <li><strong>ElevenLabs</strong>: voice synthesis and lip-sync character animation</li>
+          <li><strong>Articulate Storyline 360 / Rise 360</strong>: authoring and SCORM packaging (no AI in this layer)</li>
         </ul>
       </section>
 
-      <p class="footnote">Last updated: May 2026 · Yusi Xu</p>
+      <p class="footnote">Last updated: November 2026 · Yusi Xu</p>
     </main>
 
     <footer>
