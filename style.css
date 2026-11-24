@@ -62,6 +62,13 @@ header p {
   text-transform: uppercase;
 }
 
+header p.tagline {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: none;
+  margin-top: 0.6rem;
+}
+
 /* Navigation */
 nav {
   position: fixed;
